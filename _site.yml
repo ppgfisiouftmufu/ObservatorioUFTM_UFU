@@ -1,0 +1,240 @@
+---
+title: Observatório
+date: '`r format(Sys.Date())`'
+author:
+  - name: PPGFIS-UFTM-UFU
+  - email: "ppgfisio@uftm.edu.br"
+repository_url: https://github.com/ppgfisiouftmufu/ObservatorioUFTM_UFU
+creative_commons: CC BY-NC
+output_dir: docs
+include:
+  - header.html
+  - google-translate.html
+  - footer.html
+exclude:
+  - cache
+  - Metrics
+  - Scripts
+  - Sucupira
+search: true
+navbar:
+  left:
+    - text: ""
+      icon: "fa-home"
+      href: [index.html]
+    - text: "Programa"
+      href: [programa.html]
+      menu:
+        - text: "Programa"
+          href: [programa.html]
+        - text: "Dados básicos do Programa"
+          href: [programa.html#dados-basicos]
+        - text: "Breve histórico"
+          href: [programa.html#breve-historico]
+        - text: "Área de avaliação"
+          href: [programa#area-avaliacao.html]
+        - text: "Nota"
+          href: [programa.html#nota]
+        - text: "Área de concentração"
+          href: [programa.html#area-concentracao]
+        - text: "Linhas de pesquisa"
+          href: [programa.html#linha-pesquisa]
+        - text: "Projetos de pesquisa"
+          href: [programa.html#projeto-pesquisa]
+        - text: "Agendas de pesquisa"
+          href: [programa.html#agendas-pesquisa]
+        - text: "Cursos"
+          href: [programa.html#cursos]
+        - text: "Estrutura curricular"
+          href: [programa.html#estrutura-curricular]
+        - text: "Turmas"
+          href: [programa.html#turmas]
+        - text: "Calendários"
+          href: [programa.html#calendarios]
+        - text: "Editais de processo seletivo"
+          href: [programa.html#editais]
+        - text: "Infraestrutura"
+          href: [programa.html#infraestrutura]
+        - text: "Laboratórios de pesquisa"
+          href: [programa.html#laboratorios-pesquisa]
+        - text: "Convênios institucionais"
+          href: [programa.html#convenios]
+        - text: "Cooperação entre instituições"
+          href: [programa.html#cooperacao]
+        - text: "Internacionalização"
+          href: [programa.html#internacional]
+        - text: "Financiadores"
+          href: [programa.html#financiadores]
+        - text: "Bolsas de estudo"
+          href: [programa.html#bolsas]
+    - text: "Pessoas"
+      href: [pessoas.html]
+      menu:
+        - text: "Pessoas"
+          href: [pessoas.html]
+        - text: "Secretaria"
+          href: [pessoas.html#secretaria]
+        - text: "Coordenação"
+          href: [pessoas.html#coordenacao]
+        - text: "Docentes"
+          href: [pessoas.html#docentes]
+        - text: "Pós-doutorandos"
+          href: [pessoas.html#posdocs]
+        - text: "Discentes"
+          href: [pessoas.html#discentes]
+        - text: "Egressos"
+          href: [pessoas.html#egressos]
+        - text: "Bolsistas"
+          href: [pessoas.html#bolsistas]
+        - text: "Grupos de pesquisa"
+          href: [pessoas.html#grupos-pesquisa]
+        - text: "Participantes externos"
+          href: [pessoas.html#participantes-externos]
+    - text: "Produções"
+      href: [producoes.html]
+      menu:
+        - text: "Produções"
+          href: [producoes.html]
+        - text: "Trabalhos de conclusão"
+          href: [producoes.html#TCC]
+        - text: "Repositórios"
+          href: [producoes.html#repositorios]
+        - text: "Artigos completos"
+          href: [producoes.html#artigos-completos]
+        - text: "Artigos resumos"
+          href: [producoes.html#artigos-resumos]
+        - text: "Preprints"
+          href: [producoes.html#preprints]
+        - text: "Livros"
+          href: [producoes.html#livros]
+        - text: "Capítulos"
+          href: [producoes.html#capitulos]
+        - text: "Trabalhos em anais de eventos"
+          href: [producoes.html#trabalhos-em-anais]
+        - text: "Desenvolvimento de aplicativos"
+          href: [producoes.html#aplicativos]
+        - text: "Retratações"
+          href: [producoes.html#retratacoes]
+    - text: "Destaques"
+      href: [destaques.html]
+      menu:
+        - text: "Destaques"
+          href: [destaques.html]
+        - text: "Egressos"
+          href: [destaques.html#egressos-destaque]
+        - text: "Dissertações/Teses"
+          href: [destaques.html#TCC-destaque]
+        - text: "Produções: Visibilidade"
+          href: [destaques.html#destaque-visibilidade]
+        - text: "Produções: Prestígio"
+          href: [destaques.html#destaque-prestigio]
+        - text: "Prêmios"
+          href: [destaques.html#premios]
+        - text: "Prêmio CAPES de Tese"
+          href: [destaques.html#premio-capes]
+        - text: "Representatividade"
+          href: [destaques.html#representatividade]
+        - text: "Divulgação"
+          href: [destaques.html#divulgacao]
+    - text: "Impactos"
+      href: [impactos.html]
+      menu:
+        - text: "Impactos"
+          href: [impactos.html]
+        - text: "Educacional"
+          href: [impactos.html#impacto-educacional]
+        - text: "Científico"
+          href: [impactos.html#impacto-cientifico]
+        - text: "Sociocultural"
+          href: [impactos.html#impacto-sociocultural]
+        - text: "Tecnológico/Econômico"
+          href: [impactos.html#impacto-tecnologico]
+        - text: "Ações durante a pandemia"
+          href: [impactos.html#acoes-pandemia]
+    - text: "Galeria"
+      href: [galeria.html]
+      menu:
+        - text: "Galeria"
+          href: [galeria.html]
+        - text: "Videos"
+          href: [galeria.html#videos]
+        - text: "Podcasts"
+          href: [galeria.html#podcasts]
+    - text: "Autoavaliação"
+      href: [autoavaliacao.html]
+      menu:
+        - text: "Autoavaliação"
+          href: [autoavaliacao.html]
+        - text: "Metodologia"
+          href: [autoavaliacao.html#metodologia]
+        - text: "Resultados"
+          href: [autoavaliacao.html#resultados]
+          menu:
+            - text: "Síntese dos dados"
+              href: [autoavaliacao.html#sintese-dados]
+            - text: "Documentos"
+              href: [autoavaliacao.html#documentos]
+            - text: "Qualidade das disciplinas"
+              href: [autoavaliacao.html#qualidade-disciplinas]
+            - text: "Pesquisa do egresso"
+              href: [autoavaliacao.html#pesquisa-egresso]
+        - text: "Ficha de avaliação"
+          href: [autoavaliacao.html#ficha-avaliacao]
+        - text: "1. Programa"
+          href: [autoavaliacao.html#programa]
+        - text: "2. Formação"
+          href: [autoavaliacao.html#formacao]
+        - text: "3. Impacto na sociedade"
+          href: [autoavaliacao.html#impacto]
+        - text: "Relatório quadrienal"
+          icon: "fa-file-pdf"
+          href: [autoavaliacao.pdf]
+    - text: "Downloads"
+      href: [downloads.html]
+    - text: "Links"
+      href: [links.html]
+  right:
+    - text: ""
+      icon: "fa-envelope"
+      href: [mailto:ppgfisio@uftm.edu.br]
+    - text: ""
+      icon: "fa-github"
+      href: [https://github.com/ppgfisiouftmufu/ObservatorioUFTM_UFU]
+    - text: ""
+      icon: "fa-share-nodes"
+      menu:
+        - text: ""
+          icon: "fa-instagram"
+          href: [https://www.instagram.com/ppgfisioterapia]
+        - text: ""
+          icon: "fa-facebook"
+          href: [https://pt-br.facebook.com/ppgfisiouftmufu]
+
+output:
+  html_document:
+    theme: flatly
+    highlight: textmate
+    include:
+      in_header: [header.html]
+      before_body: [google-translate.html]
+      after_body: [footer.html]
+    css:
+      - ./CSS/index.css
+      - ./CSS/generic.css
+      - ./CSS/logo-above-toc.css
+      - ./CSS/main-color.css
+      - ./CSS/narrow-margins.css
+      - ./CSS/responsive.css
+    toc: true
+    toc_depth: 3
+    toc_float: true
+    edit: null
+    sharing:
+      facebook: yes
+      twitter: yes
+      google: yes
+      all:
+        - facebook
+        - twitter
+        - google
+---
