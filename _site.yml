@@ -2,9 +2,9 @@
 title: Observatório
 date: '`r format(Sys.Date())`'
 author:
-  - name: PPGFIS-UFTM-UFU
-  - email: "ppgfisio@uftm.edu.br"
-repository_url: https://github.com/ppgfisiouftmufu/ObservatorioUFTM_UFU
+  - name: Arthur de Sá Ferreira
+  - email: "arthur_sf@icloud.com"
+repository_url: https://github.com/FerreiraAS
 creative_commons: CC BY-NC
 output_dir: docs
 include:
@@ -193,13 +193,9 @@ navbar:
       href: [downloads.html]
     - text: "Links"
       href: [links.html]
-  right:
     - text: ""
       icon: "fa-envelope"
       href: [mailto:ppgfisio@uftm.edu.br]
-    - text: ""
-      icon: "fa-github"
-      href: [https://github.com/ppgfisiouftmufu/ObservatorioUFTM_UFU]
     - text: ""
       icon: "fa-share-nodes"
       menu:
@@ -209,6 +205,10 @@ navbar:
         - text: ""
           icon: "fa-facebook"
           href: [https://pt-br.facebook.com/ppgfisiouftmufu]
+  right:
+    - text: ""
+      icon: "fa-github"
+      href: [https://github.com/FerreiraAS/observatorio]
 
 output:
   html_document:
