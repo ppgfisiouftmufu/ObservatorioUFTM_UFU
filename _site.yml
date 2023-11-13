@@ -194,15 +194,18 @@ navbar:
     - text: "Links"
       href: [links.html]
     - text: ""
-      icon: "fa-envelope"
-      href: [mailto:ppgfisio@uftm.edu.br]
-    - text: ""
       icon: "fa-share-nodes"
       menu:
-        - text: ""
+        - text: "E-mail"
+          icon: "fa-envelope"
+          href: [mailto:ppgfisio@uftm.edu.br]
+        - text: "Site institucional"
+          icon: "fa-globe"
+          href: [https://www.uftm.edu.br/stricto-sensu/ppgfisio]
+        - text: "Instagram"
           icon: "fa-instagram"
           href: [https://www.instagram.com/ppgfisioterapia]
-        - text: ""
+        - text: "Facebook"
           icon: "fa-facebook"
           href: [https://pt-br.facebook.com/ppgfisiouftmufu]
   right:
