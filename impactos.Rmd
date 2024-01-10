@@ -812,7 +812,7 @@ for (i in 1:dim(periodicos)[1]) {
 
 # print table
 source("Scripts/table-with-buttons.R", local = knitr::knit_global())
-create_dt(periodicos, title = "Períódicos institucionais")
+create_dt(periodicos, title = "Impactos - Períódicos institucionais")
 
 cat('\n\n')
 cat('<br><a style="float:right" href="#top"><b>Início &nbsp;</b>⬆️</a><br>')
@@ -873,7 +873,7 @@ cep.vigentes <- cbind(cep.vigentes.raw[, -3], Abrir)
 
 # print table
 source("Scripts/table-with-buttons.R", local = knitr::knit_global())
-create_dt(cep.vigentes, title = "Comitê de Ética em Pesquisa - Documentos vigentes")
+create_dt(cep.vigentes, title = "Impactos - Comitê de Ética em Pesquisa - Documentos vigentes")
 
 cat('\n\n')
 cat('<br><a style="float:right" href="#top"><b>Início &nbsp;</b>⬆️</a><br>')
@@ -910,7 +910,7 @@ cep.revogados <- cbind(cep.revogados.raw[, -3], Abrir)
 
 # print table
 source("Scripts/table-with-buttons.R", local = knitr::knit_global())
-create_dt(cep.revogados, title = "Comitê de Ética em Pesquisa - Documentos revogados")
+create_dt(cep.revogados, title = "Impactos - Comitê de Ética em Pesquisa - Documentos revogados")
   
 cat('\n\n')
 cat('<br><a style="float:right" href="#top"><b>Início &nbsp;</b>⬆️</a><br>')
@@ -930,7 +930,173 @@ cat('<br>')
 
 ### **Políticas** {#politicas .tabset}
 
-```{r politicas, eval = has.politicas}
+#### **Tabela**
+
+```{r politicas-sintese, eval = has.impacto.sage.files}
+# list all Sage Profiles
+files.to.read <-
+  list.files(file.path(getwd(), "Impacto", "Sage Policy Profiles"),
+            full.names = TRUE,
+            recursive = FALSE)
+
+# column bind all into a single dataframe
+sage.profiles.raw <- data.frame()
+for (i in 1:length(files.to.read)) {
+  sage.profiles.raw <-
+    rbind(sage.profiles.raw,
+          read.csv2(files.to.read[i],
+                    header = TRUE,
+                    sep = ",",
+                    stringsAsFactors = FALSE))
+}
+
+# remove duplicates
+sage.profiles.raw  <-
+  sage.profiles.raw[!duplicated(sage.profiles.raw$Policy.Document.ID), ]
+
+# select columns
+sage.profiles <- dplyr::select(sage.profiles.raw,
+                               c("Published.on",
+                                 "Title",
+                                 "Source.title",
+                                 "Document.URL",
+                                 "Source.country",
+                                 "Source.type",
+                                 "Cited.research.titles",
+                                 "Cited.research.DOIs"
+                                 ))
+
+# format Published.on as year
+sage.profiles$Published.on <-
+  format(as.Date(sage.profiles$Published.on, "%Y-%m-%d"), "%Y")
+
+# use title case
+sage.profiles$Source.title <-
+  tools::toTitleCase(sage.profiles$Source.title)
+sage.profiles$Source.type <-
+  tools::toTitleCase(sage.profiles$Source.type)
+
+# format link of Source.title using Document.URL and drop the latter column
+sage.profiles$Source.title <-
+  paste0('<a href="',
+         sage.profiles$Document.URL,
+         '" target="_blank"',
+         '>',
+         sage.profiles$Source.title,
+         "</a>",
+         sep = "")
+
+# loop for all entries to bind Cited.research.titles with respective Cited.research.DOIs
+bib.data.out <- c()
+for (i in 1:nrow(sage.profiles)) {
+  bib.data.in <- c()
+  dois.data <-
+    stringr::str_split_1(string = sage.profiles$Cited.research.DOIs[i],
+                         pattern = "  ，")
+  # try to retrieve data from the cache file
+  for (j in 1:length(dois.data)) {
+    indexes <- match(tolower(dois.data[j]), tolower(doi_all$doi))
+    if(sjmisc::is_empty(indexes)){
+      bib.data.in <- NA
+    } else {
+    bib.data.in <-
+        paste0(
+          bib.data.in,
+          ifelse(length(bib.data.in) > 1, "\n\n", ""),
+          doi_all$author.names[indexes[j]],
+          ". ",
+          "(", doi_all$published_on[indexes[j]], ")",
+          ". ",
+          "<strong>", doi_all$title[indexes[j]],"</strong>", 
+          ". ",
+          "<i>", doi_all$journal[indexes[j]], "</i>", 
+          ". ",
+          paste0(
+            '<a href="https://doi.org/',
+            doi_all$doi[indexes[j]],
+            '" target="_blank"',
+            '>',
+            doi_all$doi[indexes[j]],
+            '</a>'
+          )
+        )
+    }
+  }
+  bib.data.out <- c(bib.data.out, bib.data.in)
+}
+sage.profiles$Fontes <- bib.data.out
+
+# drop columns
+sage.profiles$Document.URL <- NULL
+sage.profiles$Cited.research.titles <- NULL
+sage.profiles$Cited.research.DOIs <- NULL
+
+# rename columns
+colnames(sage.profiles) <- c("Ano",
+                             "Título",
+                             "Fonte (URL)",
+                             "País",
+                             "Tipo",
+                             "Pesquisas citadas (DOI)")
+
+# keep complete cases only
+sage.profiles <-
+  sage.profiles[complete.cases(sage.profiles), ]
+sage.profiles.raw <-
+  sage.profiles.raw[complete.cases(sage.profiles), ]
+
+# sort by year decreasing
+sage.profiles <-
+  sage.profiles[order(sage.profiles$Ano, decreasing = TRUE), ]
+sage.profiles.raw <-
+  sage.profiles.raw[order(sage.profiles$Ano, decreasing = TRUE), ]
+
+# create DT table
+source("Scripts/table-with-buttons.R", local = knitr::knit_global())
+create_dt(sage.profiles, title = "Impactos - Produção citada em diretrizes e políticas")
+
+cat('\n\n')
+cat(
+  "*Fonte:* [**SAGE Profile Policies**](https://www.socialsciencespace.com/sagepolicyprofiles/)"
+)
+cat('<br><a style="float:right" href="#top"><b>Início &nbsp;</b>⬆️</a><br>')
+```
+
+<br>
+
+#### **Gráficos**
+
+```{r politicas-graficos, eval = has.impacto.sage.files}
+cross.table.politicas <-
+  as.matrix(table(format(as.Date(sage.profiles.raw$Published.on, "%Y-%m-%d"), "%Y")))
+colnames(cross.table.politicas) <- "Quantidade"
+
+# generate plot of total per year
+par(
+  oma = c(2, 0.1, 2, 0.1),
+  mar = c(5, 4, 2, 2)
+)
+# generate plot of turmas per year
+
+barplot(
+  cross.table.politicas,
+  las = 2,
+  ylab = "Políticas",
+  main = "Quantidade de documentos",
+  col = c("darkblue"),
+  beside = TRUE,
+  bty = "n"
+)
+axis(1, at = 1:length(cross.table.politicas), labels = rownames(cross.table.politicas), las = 2)
+
+cat('\n\n')
+cat(
+  "*Fonte:* [**SAGE Profile Policies**](https://www.socialsciencespace.com/sagepolicyprofiles/)"
+)
+cat('<br><a style="float:right" href="#top"><b>Início &nbsp;</b>⬆️</a><br>')
+```
+
+```{r politicas-docentes, eval = has.politicas}
 # initialize all sheets
 abas <- readxl::excel_sheets("PPG/Políticas.xlsx")
 
@@ -1337,7 +1503,7 @@ if (dim(projetos)[1] != 0) {
       "Início"
     )
   source("Scripts/table-with-buttons.R", local = knitr::knit_global())
-  create_dt(table.projetos, title = "Ações durante a Pandemia - Projetos de Pesquisa")
+  create_dt(table.projetos, title = "Impactos - Ações durante a Pandemia - Projetos de Pesquisa")
 } else {
   cat('\n\n')
   cat('*Sem produção para exibir no período*')
@@ -1403,7 +1569,7 @@ if (dim(financiadores)[1] != 0)
 cat('\n\n')
 
 source("Scripts/table-with-buttons.R", local = knitr::knit_global())
-try(create_dt(financiadores, title = "Ações durante a Pandemia - Financiadores"),
+try(create_dt(financiadores, title = "Impactos - Ações durante a Pandemia - Financiadores"),
     silent = TRUE)
 
 cat('\n\n')
@@ -1484,7 +1650,7 @@ table.tcc <- table.tcc %>% dplyr::arrange(dplyr::desc(as.numeric(table.tcc$'Ano'
                                         table.tcc$'Título')
 # print table
 source("Scripts/table-with-buttons.R", local = knitr::knit_global())
-create_dt(table.tcc, title = "Ações durante a Pandemia - Teses")
+create_dt(table.tcc, title = "Impactos - Ações durante a Pandemia - Teses")
 
 source("Scripts/fonte-sucupira.R", local = knitr::knit_global())
 ```
@@ -1559,7 +1725,7 @@ table.tcc <- table.tcc %>% dplyr::arrange(dplyr::desc(as.numeric(table.tcc$'Ano'
                                         table.tcc$'Título')
 # print table
 source("Scripts/table-with-buttons.R", local = knitr::knit_global())
-create_dt(table.tcc, title = "Ações durante a Pandemia - Dissertações")
+create_dt(table.tcc, title = "Impactos - Ações durante a Pandemia - Dissertações")
 
 source("Scripts/fonte-sucupira.R", local = knitr::knit_global())
 ```
@@ -2082,7 +2248,7 @@ for (j in 1:length(abas)) {
   # print table
   if (dim(premios)[1] != 0) {
     source("Scripts/table-with-buttons.R", local = knitr::knit_global())
-    cat(knitr::knit_print(create_dt(premios, title = "Prêmios")))
+    cat(knitr::knit_print(create_dt(premios, title = "Impactos - Ações durante a Pandemia - Prêmios")))
   } else {
     cat("*Sem dados para exibir*")
   }
