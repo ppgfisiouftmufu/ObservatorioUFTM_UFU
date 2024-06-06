@@ -191,8 +191,6 @@ navbar:
           href: [impactos.html#impacto-sociocultural]
         - text: "Ações durante a pandemia"
           href: [impactos.html#acoes-pandemia]
-    - text: "Galeria"
-      href: [galeria.html]
     - text: "Downloads"
       href: [downloads.html]
     - text: "Autoavaliação"
@@ -228,7 +226,7 @@ navbar:
         - text: "E-mail"
           icon: "fa-envelope"
           href: [mailto:ppgfisio@uftm.edu.br]
-        - text: "Site institucional"
+        - text: "Site"
           icon: "fa-globe"
           href: [https://www.uftm.edu.br/stricto-sensu/ppgfisio]
         - text: "Instagram"
@@ -237,9 +235,9 @@ navbar:
         - text: "Facebook"
           icon: "fa-facebook"
           href: [https://pt-br.facebook.com/ppgfisiouftmufu]
-    - text: ""
-      icon: "fa-binoculars"
-      href: [https://sucupira-beta.capes.gov.br/sucupira4/observatorio/detalhamento/programas/206694]
+        - text: "Observatório CAPES"
+          icon: "fa-binoculars"
+          href: [https://sucupira-beta.capes.gov.br/sucupira4/observatorio/detalhamento/programas/206694]
     - text: ""
       icon: "fa-github"
       href: [https://github.com/FerreiraAS/observatorio]
