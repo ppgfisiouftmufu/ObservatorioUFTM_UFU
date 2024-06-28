@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.6.14)  19 JUN 2024 22:14
+This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.6.14)  28 JUN 2024 01:50
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1051,7 +1051,17 @@ File: bkm-dvipdfm.def 2023-12-10 v1.31 bookmark driver for dvipdfm (HO)
 \BKM@id=\count386
 )) (/usr/local/texlive/2024/texmf-dist/tex/latex/xurl/xurl.sty
 Package: xurl 2022/01/09 v 0.10 modify URL breaks
-) (./autoavaliacao.aux)
+) (./autoavaliacao.aux
+
+LaTeX Warning: Label `tab:1-1-1-PP-DP' multiply defined.
+
+
+LaTeX Warning: Label `tab:1-1-1-docentes' multiply defined.
+
+
+LaTeX Warning: Label `tab:1-1-1-posdoutorandos' multiply defined.
+
+)
 \openout1 = `autoavaliacao.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 169.
@@ -1346,154 +1356,152 @@ File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 [6]
 
 [7]
-Overfull \hbox (14.03862pt too wide) in paragraph at lines 410--410
- []\T1/lmr/m/n/10 Comportamento 
+Overfull \hbox (175.2347pt too wide) in paragraph at lines 359--372
+ [][] 
  []
 
 
-Overfull \hbox (6.4561pt too wide) in paragraph at lines 410--410
- []\T1/lmr/m/n/10 Determinantes 
- []
-
-
-Overfull \hbox (10.23354pt too wide) in paragraph at lines 410--410
+Overfull \hbox (10.23354pt too wide) in paragraph at lines 433--433
  \T1/lmr/m/n/10 Sensoriomotora 
  []
 
 
-Overfull \hbox (7.31653pt too wide) in paragraph at lines 410--410
+Overfull \hbox (7.31653pt too wide) in paragraph at lines 433--433
  []\T1/lmr/m/n/10 Biomarcadores 
  []
 
 
-Overfull \hbox (16.42857pt too wide) in paragraph at lines 410--410
+Overfull \hbox (14.03862pt too wide) in paragraph at lines 433--433
+ []\T1/lmr/m/n/10 Comportamento 
+ []
+
+
+Overfull \hbox (16.42857pt too wide) in paragraph at lines 433--433
  []\T1/lmr/m/n/10 Desenvolvimento 
  []
 
 
-Overfull \vbox (4721.90936pt too high) has occurred while \output is active []
+Overfull \hbox (6.4561pt too wide) in paragraph at lines 433--433
+ []\T1/lmr/m/n/10 Determinantes 
+ []
 
 
 
 [8]
+Overfull \vbox (4721.90936pt too high) has occurred while \output is active []
+
+
 
 [9]
 
 [10]
 
 [11]
-Overfull \hbox (175.2347pt too wide) in paragraph at lines 471--511
- [][] 
- []
-
-
 
 [12]
 
 [13]
-
-[14]
-Overfull \hbox (11.27757pt too wide) in paragraph at lines 576--576
+Overfull \hbox (11.27757pt too wide) in paragraph at lines 613--613
 []\T1/lmr/m/n/10 Disciplina|  
  []
 
 
-Overfull \hbox (18.6389pt too wide) in paragraph at lines 576--576
+Overfull \hbox (18.6389pt too wide) in paragraph at lines 613--613
 []\T1/lmr/m/n/10 Obrigatória 
  []
 
 
-Overfull \hbox (18.6389pt too wide) in paragraph at lines 576--576
+Overfull \hbox (18.6389pt too wide) in paragraph at lines 613--613
 []\T1/lmr/m/n/10 Obrigatória 
  []
 
 
-Overfull \hbox (27.2307pt too wide) in paragraph at lines 576--576
+Overfull \hbox (27.2307pt too wide) in paragraph at lines 613--613
 []\T1/lmr/m/n/10 AVALIAÇÃO 
  []
 
 
-Overfull \hbox (27.2307pt too wide) in paragraph at lines 576--576
+Overfull \hbox (27.2307pt too wide) in paragraph at lines 613--613
 []\T1/lmr/m/n/10 AVALIAÇÃO 
  []
 
 
-Overfull \hbox (18.48001pt too wide) in paragraph at lines 576--576
+Overfull \hbox (18.48001pt too wide) in paragraph at lines 613--613
 []\T1/lmr/m/n/10 BIOÉTICA 
  []
 
 
-Overfull \hbox (42.647pt too wide) in paragraph at lines 576--576
+Overfull \hbox (42.647pt too wide) in paragraph at lines 613--613
 []\T1/lmr/m/n/10 BIOMECÂNICA 
  []
 
 
-Overfull \hbox (6.50003pt too wide) in paragraph at lines 576--576
+Overfull \hbox (6.50003pt too wide) in paragraph at lines 613--613
 \T1/lmr/m/n/10 MENTO 
  []
 
 
-Overfull \hbox (25.66623pt too wide) in paragraph at lines 576--576
+Overfull \hbox (25.66623pt too wide) in paragraph at lines 613--613
 []\T1/lmr/m/n/10 CONTROLE 
  []
 
 
-Overfull \hbox (6.35757pt too wide) in paragraph at lines 576--576
+Overfull \hbox (6.35757pt too wide) in paragraph at lines 613--613
 \T1/lmr/m/n/10 NEURO- 
  []
 
 
-Overfull \hbox (25.94402pt too wide) in paragraph at lines 576--576
+Overfull \hbox (25.94402pt too wide) in paragraph at lines 613--613
 \T1/lmr/m/n/10 SENSORIAL|  
  []
 
 
-Overfull \hbox (18.48042pt too wide) in paragraph at lines 576--576
+Overfull \hbox (18.48042pt too wide) in paragraph at lines 613--613
 []\T1/lmr/m/n/10 DIDÁTICA 
  []
 
 
-Overfull \hbox (41.53598pt too wide) in paragraph at lines 576--576
+Overfull \hbox (41.53598pt too wide) in paragraph at lines 613--613
 []\T1/lmr/m/n/10 FISIOTERAPIA 
  []
 
 
-Overfull \hbox (63.721pt too wide) in paragraph at lines 576--576
+Overfull \hbox (63.721pt too wide) in paragraph at lines 613--613
 []\T1/lmr/m/n/10 FUNCIONALIDADE, 
  []
 
 
-Overfull \hbox (2.74977pt too wide) in paragraph at lines 576--576
+Overfull \hbox (2.74977pt too wide) in paragraph at lines 613--613
 \T1/lmr/m/n/10 SAÚDE|  
  []
 
 
-Overfull \hbox (47.023pt too wide) in paragraph at lines 576--576
+Overfull \hbox (47.023pt too wide) in paragraph at lines 613--613
 []\T1/lmr/m/n/10 METODOLOGIA 
  []
 
 
-Overfull \hbox (23.58252pt too wide) in paragraph at lines 576--576
+Overfull \hbox (23.58252pt too wide) in paragraph at lines 613--613
 []\T1/lmr/m/n/10 POLÍTICAS 
  []
 
 
-Overfull \hbox (2.74977pt too wide) in paragraph at lines 576--576
+Overfull \hbox (2.74977pt too wide) in paragraph at lines 613--613
 \T1/lmr/m/n/10 SAÚDE 
  []
 
 
-Overfull \hbox (32.472pt too wide) in paragraph at lines 576--576
+Overfull \hbox (32.472pt too wide) in paragraph at lines 613--613
 []\T1/lmr/m/n/10 SEMINÁRIOS 
  []
 
 
-Overfull \hbox (13.63951pt too wide) in paragraph at lines 576--576
+Overfull \hbox (13.63951pt too wide) in paragraph at lines 613--613
 []\T1/lmr/m/n/10 TÓPICOS 
  []
 
 
-Overfull \hbox (2.74977pt too wide) in paragraph at lines 576--576
+Overfull \hbox (2.74977pt too wide) in paragraph at lines 613--613
 \T1/lmr/m/n/10 SAÚDE 
  []
 
@@ -1501,6 +1509,8 @@ Overfull \hbox (2.74977pt too wide) in paragraph at lines 576--576
 Overfull \vbox (1077.8983pt too high) has occurred while \output is active []
 
 
+
+[14]
 
 [15]
 
@@ -1535,13 +1545,13 @@ Overfull \vbox (1077.8983pt too high) has occurred while \output is active []
 [30]
 
 [31]
-
-[32]
-Overfull \hbox (132.859pt too wide) in paragraph at lines 751--789
+Overfull \hbox (132.859pt too wide) in paragraph at lines 788--826
  [][] 
  []
 
 
+
+[32]
 
 [33]
 
@@ -1554,13 +1564,13 @@ Overfull \hbox (132.859pt too wide) in paragraph at lines 751--789
 [37]
 
 [38]
-
-[39]
-Overfull \hbox (223.62308pt too wide) in paragraph at lines 839--877
+Overfull \hbox (223.62308pt too wide) in paragraph at lines 876--914
  [][] 
  []
 
 
+
+[39]
 
 [40]
 
@@ -1570,11 +1580,7 @@ Overfull \hbox (223.62308pt too wide) in paragraph at lines 839--877
 
 [43]
 
-[44]
-
-[45]
-
-[46] (./autoavaliacao.aux)
+[44] (./autoavaliacao.aux)
  ***********
 LaTeX2e <2024-06-01> patch level 1
 L3 programming layer <2024-05-27>
@@ -1582,14 +1588,17 @@ L3 programming layer <2024-05-27>
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
+
+LaTeX Warning: There were multiply-defined labels.
+
  ) 
 Here is how much of TeX's memory you used:
  37260 strings out of 474256
- 721467 string characters out of 5742727
+ 721470 string characters out of 5742727
  2026557 words of memory out of 5000000
  59355 multiletter control sequences out of 15000+600000
  594537 words of font info for 71 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  94i,19n,122p,1202b,503s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on autoavaliacao.pdf (49 pages).
+Output written on autoavaliacao.pdf (47 pages).
