@@ -87,8 +87,6 @@ navbar:
         - text: "Iniciação científica"
           href: [pessoas.html#iniciacao-cientifica]
         - text: "Grupos de pesquisa"
-          href: [pessoas.html#grupos-pesquisa]
-        - text: "Bancas examinadoras"
           href: [pessoas.html#bancas-examinadoras]
         - text: "Participantes externos"
           href: [pessoas.html#participantes-externos]
@@ -97,6 +95,8 @@ navbar:
       menu:
         - text: "-Teses e dissertações-"
           href: [repositorio.html]
+        - text: "Bancas examinadoras"
+          href: [repositorio.html#grupos-pesquisa]
         - text: "Tese"
           href: [repositorio.html#tese]
         - text: "Dissertação"
