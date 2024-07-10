@@ -1,0 +1,2061 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>Programa</title>
+
+<script src="site_libs/header-attrs-2.27/header-attrs.js"></script>
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/flatly.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="site_libs/jqueryui-1.13.2/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<link href="site_libs/htmltools-fill-0.5.8.1/fill.css" rel="stylesheet" />
+<script src="site_libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
+<link href="site_libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
+<script src="site_libs/datatables-binding-0.33/datatables.js"></script>
+<link href="site_libs/dt-core-1.13.6/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="site_libs/dt-core-1.13.6/css/jquery.dataTables.extra.css" rel="stylesheet" />
+<script src="site_libs/dt-core-1.13.6/js/jquery.dataTables.min.js"></script>
+<script src="site_libs/pdfmake-1.13.6/pdfmake.js"></script>
+<script src="site_libs/pdfmake-1.13.6/vfs_fonts.js"></script>
+<link href="site_libs/dt-ext-buttons-1.13.6/css/buttons.dataTables.min.css" rel="stylesheet" />
+<script src="site_libs/dt-ext-buttons-1.13.6/js/dataTables.buttons.min.js"></script>
+<script src="site_libs/dt-ext-buttons-1.13.6/js/buttons.html5.min.js"></script>
+<script src="site_libs/dt-ext-buttons-1.13.6/js/buttons.colVis.min.js"></script>
+<script src="site_libs/dt-ext-buttons-1.13.6/js/buttons.print.min.js"></script>
+<link href="site_libs/dt-ext-responsive-1.13.6/css/responsive.dataTables.min.css" rel="stylesheet" />
+<script src="site_libs/dt-ext-responsive-1.13.6/js/dataTables.responsive.min.js"></script>
+<link href="site_libs/dt-plugin-searchhighlight-1.13.6/source.css" rel="stylesheet" />
+<script src="site_libs/dt-plugin-searchhighlight-1.13.6/jquery.highlight.js"></script>
+<script src="site_libs/dt-plugin-searchhighlight-1.13.6/source.min.js"></script>
+<link href="site_libs/crosstalk-1.2.1/css/crosstalk.min.css" rel="stylesheet" />
+<script src="site_libs/crosstalk-1.2.1/js/crosstalk.min.js"></script>
+<link href="site_libs/font-awesome-6.4.2/css/all.min.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-6.4.2/css/v4-shims.min.css" rel="stylesheet" />
+<link rel="shortcut icon" href="favicon_io/android-chrome-192x192.png" sizes="192x192" type="image/png">
+<link rel="shortcut icon" href="favicon_io/android-chrome-512x512.png" sizes="512x512" type="image/png">
+<link rel="apple-touch-icon" href="favicon_io/apple-touch-icon.png" type="image/png">
+<link rel="icon" href="favicon_io/favicon-16x16.png" sizes="16x16" type="image/png">
+<link rel="icon" href="favicon_io/favicon-32x32.png" sizes="32x32" type="image/png">
+<link rel="shortcut icon" href="favicon_io/favicon.ico" type="image/x-icon">
+<meta name="citation_doi" content="doi:10.5281/zenodo.8322622"/>
+<meta name="Doi" content="doi:10.5281/zenodo.8322622"/>
+<meta name="DC.Identifier" content="doi:10.5281/zenodo.8322622"/>
+<meta name="DC.DOI" content="doi:10.5281/zenodo.8322622"/>
+<meta name="DC.Identifier.DOI" content="doi:10.5281/zenodo.8322622"/>
+<meta name="DOIs" content="doi:10.5281/zenodo.8322622"/>
+<meta name="bepress_citation_doi" content="doi:10.5281/zenodo.8322622"/>
+<meta name="rft_id" content="doi:10.5281/zenodo.8322622"/></head>
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+<style type="text/css">code{white-space: pre;}</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+
+
+
+<link rel="stylesheet" href="CSS/generic.css" type="text/css" />
+<link rel="stylesheet" href="CSS/logo-above-toc.css" type="text/css" />
+<link rel="stylesheet" href="CSS/main-color.css" type="text/css" />
+<link rel="stylesheet" href="CSS/narrow-margins.css" type="text/css" />
+<link rel="stylesheet" href="CSS/responsive.css" type="text/css" />
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
+}
+pre code {
+  padding: 0;
+}
+</style>
+
+
+<style type="text/css">
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #adb5bd;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script type="text/javascript">
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark the anchor link active (and if it's in a dropdown, also mark that active)
+  var dropdown = menuAnchor.closest('li.dropdown');
+  if (window.bootstrap) { // Bootstrap 4+
+    menuAnchor.addClass('active');
+    dropdown.find('> .dropdown-toggle').addClass('active');
+  } else { // Bootstrap 3
+    menuAnchor.parent().addClass('active');
+    dropdown.addClass('active');
+  }
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "\e259";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "\e258";
+  font-family: 'Glyphicons Halflings';
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+
+</style>
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html"></a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">
+    <span class="fa fa-home"></span>
+     
+    
+  </a>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    Programa
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="programa.html">-Programa-</a>
+    </li>
+    <li>
+      <a href="programa.html#dados-basicos">Dados básicos do Programa</a>
+    </li>
+    <li>
+      <a href="programa.html#breve-historico">Breve histórico</a>
+    </li>
+    <li>
+      <a href="programa#area-avaliacao.html">Área de avaliação</a>
+    </li>
+    <li>
+      <a href="programa.html#nota">Nota</a>
+    </li>
+    <li>
+      <a href="programa.html#area-concentracao">Área de concentração</a>
+    </li>
+    <li>
+      <a href="programa.html#linha-pesquisa">Linhas de pesquisa</a>
+    </li>
+    <li>
+      <a href="programa.html#projeto-pesquisa">Projetos de pesquisa</a>
+    </li>
+    <li>
+      <a href="programa.html#agendas-pesquisa">Agendas de pesquisa</a>
+    </li>
+    <li>
+      <a href="programa.html#financiadores">Financiadores</a>
+    </li>
+    <li>
+      <a href="programa.html#infraestrutura">Infraestrutura</a>
+    </li>
+    <li>
+      <a href="programa.html#laboratorios-pesquisa">Laboratórios de pesquisa</a>
+    </li>
+    <li>
+      <a href="programa.html#cursos">Cursos</a>
+    </li>
+    <li>
+      <a href="programa.html#estrutura-curricular">Estrutura curricular</a>
+    </li>
+    <li>
+      <a href="programa.html#editais">Processo seletivo para ingresso</a>
+    </li>
+    <li>
+      <a href="programa.html#bolsas">Bolsas de estudo</a>
+    </li>
+    <li>
+      <a href="programa.html#calendarios">Calendários</a>
+    </li>
+    <li>
+      <a href="programa.html#turmas">Turmas</a>
+    </li>
+    <li>
+      <a href="programa.html#convenios">Convênios institucionais</a>
+    </li>
+    <li>
+      <a href="programa.html#cooperacao">Cooperação entre instituições</a>
+    </li>
+    <li>
+      <a href="programa.html#internacional">Internacionalização</a>
+    </li>
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    Pessoas
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="pessoas.html">-Pessoas-</a>
+    </li>
+    <li>
+      <a href="pessoas.html#secretaria">Secretaria</a>
+    </li>
+    <li>
+      <a href="pessoas.html#coordenacao">Coordenação</a>
+    </li>
+    <li>
+      <a href="pessoas.html#docentes">Docentes</a>
+    </li>
+    <li>
+      <a href="pessoas.html#posdocs">Pós-doutorandos</a>
+    </li>
+    <li>
+      <a href="pessoas.html#discentes">Discentes</a>
+    </li>
+    <li>
+      <a href="pessoas.html#egressos">Egressos</a>
+    </li>
+    <li>
+      <a href="pessoas.html#iniciacao-cientifica">Iniciação científica</a>
+    </li>
+    <li>
+      <a href="pessoas.html#bancas-examinadoras">Grupos de pesquisa</a>
+    </li>
+    <li>
+      <a href="pessoas.html#participantes-externos">Participantes externos</a>
+    </li>
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    Teses e dissertações
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="repositorio.html">-Teses e dissertações-</a>
+    </li>
+    <li>
+      <a href="repositorio.html#grupos-pesquisa">Bancas examinadoras</a>
+    </li>
+    <li>
+      <a href="repositorio.html#tese">Tese</a>
+    </li>
+    <li>
+      <a href="repositorio.html#dissertacao">Dissertação</a>
+    </li>
+    <li>
+      <a href="repositorio.html#repositorio">Repositório</a>
+    </li>
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    Bibliográfica
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="bibliografica.html#jornal-revista">Artigo em jornal ou revista</a>
+    </li>
+    <li>
+      <a href="bibliografica.html#artigo-periodico">Artigo em periódico</a>
+    </li>
+    <li>
+      <a href="bibliografica.html#livro">Livro</a>
+    </li>
+    <li>
+      <a href="bibliografica.html#partitura">Partitura</a>
+    </li>
+    <li>
+      <a href="bibliografica.html#trabalho-em-anais">Trabalho em anais</a>
+    </li>
+    <li>
+      <a href="bibliografica.html#traducao">Tradução</a>
+    </li>
+    <li>
+      <a href="bibliografica.html#outro">Outro</a>
+    </li>
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    Técnica
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="tecnica.html#apresentacao-trabalho">Apresentação de trabalho</a>
+    </li>
+    <li>
+      <a href="tecnica.html#cartas-mapas">Cartas, mapas ou similares</a>
+    </li>
+    <li>
+      <a href="tecnica.html#curso-curta-duracao">Curso de curta duração</a>
+    </li>
+    <li>
+      <a href="tecnica.html#aplicativo">Desenvolvimento de aplicativo</a>
+    </li>
+    <li>
+      <a href="tecnica.html#didatico-instrucional">Desenvolvimento de material didático e instrucional</a>
+    </li>
+    <li>
+      <a href="tecnica.html#produto">Desenvolvimento de produto</a>
+    </li>
+    <li>
+      <a href="tecnica.html#tecnica">Desenvolvimento de técnica</a>
+    </li>
+    <li>
+      <a href="tecnica.html#editoria">Editoria</a>
+    </li>
+    <li>
+      <a href="tecnica.html#manutencao-obra">Manutenção de obra artística</a>
+    </li>
+    <li>
+      <a href="tecnica.html#maquete">Maquete</a>
+    </li>
+    <li>
+      <a href="tecnica.html#organizacao-evento">Organização de evento</a>
+    </li>
+    <li>
+      <a href="tecnica.html#patente">Patente</a>
+    </li>
+    <li>
+      <a href="tecnica.html#radio-tv">Programa de rádio ou TV</a>
+    </li>
+    <li>
+      <a href="tecnica.html#relatorio-pesquisa">Relatório de pesquisa</a>
+    </li>
+    <li>
+      <a href="tecnica.html#servico-tecnico">Serviço técnico</a>
+    </li>
+    <li>
+      <a href="tecnica.html#outro">Outro</a>
+    </li>
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    Destaques
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="destaques.html">-Destaques-</a>
+    </li>
+    <li>
+      <a href="destaques.html#egressos-destaque">Egressos</a>
+    </li>
+    <li>
+      <a href="destaques.html#TCC-destaque">Dissertações/Teses</a>
+    </li>
+    <li>
+      <a href="destaques.html#destaque-altmetric">Engajamento com a produção</a>
+    </li>
+    <li>
+      <a href="destaques.html#destaque-citescore">Citações recentes do periódico</a>
+    </li>
+    <li>
+      <a href="destaques.html#destaque-sjr">Prestígio do periódico</a>
+    </li>
+    <li>
+      <a href="destaques.html#premios">Prêmios</a>
+    </li>
+    <li>
+      <a href="destaques.html#premio-capes">Prêmio CAPES de Tese</a>
+    </li>
+    <li>
+      <a href="destaques.html#representatividade">Representatividade</a>
+    </li>
+    <li>
+      <a href="destaques.html#divulgacao">Divulgação científica</a>
+    </li>
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    Impactos
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="impactos.html">-Impactos-</a>
+    </li>
+    <li>
+      <a href="impactos.html#impacto-educacional">Impacto educacional</a>
+    </li>
+    <li>
+      <a href="impactos.html#impacto-cientifico">Impacto científico</a>
+    </li>
+    <li>
+      <a href="impactos.html#impacto-tecnologico">Impacto tecnológico/econômico</a>
+    </li>
+    <li>
+      <a href="impactos.html#impacto-sociocultural">Impacto sociocultural</a>
+    </li>
+    <li>
+      <a href="impactos.html#acoes-pandemia">Ações durante a pandemia</a>
+    </li>
+  </ul>
+</li>
+<li>
+  <a href="downloads.html">Downloads</a>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    Autoavaliação
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="autoavaliacao.html">-Autoavaliação-</a>
+    </li>
+    <li>
+      <a href="autoavaliacao.html#metodologia">Metodologia</a>
+    </li>
+    <li>
+      <a href="autoavaliacao.html#autoavaliacao-ppg">Autoavaliação PPG</a>
+    </li>
+    <li>
+      <a href="autoavaliacao.html#avaliacao-capes">Avaliação CAPES</a>
+    </li>
+    <li>
+      <a href="autoavaliacao.html#coleta">Dados do Coleta</a>
+    </li>
+    <li>
+      <a href="autoavaliacao.html#ficha-avaliacao">Ficha de avaliação</a>
+    </li>
+    <li>
+      <a href="autoavaliacao.html#programa">1. Programa</a>
+    </li>
+    <li>
+      <a href="autoavaliacao.html#formacao">2. Formação</a>
+    </li>
+    <li>
+      <a href="autoavaliacao.html#impacto">3. Impacto na sociedade</a>
+    </li>
+    <li>
+      <a href="autoavaliacao.html#relatorio-quadrienal">Relatório quadrienal</a>
+    </li>
+    <li>
+      <a href="autoavaliacao.pdf">
+        <span class="fa fa-file-pdf"></span>
+         
+        Relatório quadrienal
+      </a>
+    </li>
+  </ul>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    <span class="fa fa-share-nodes"></span>
+     
+    
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="mailto:ppgfisio@uftm.edu.br">
+        <span class="fa fa-envelope"></span>
+         
+        E-mail
+      </a>
+    </li>
+    <li>
+      <a href="https://www.uftm.edu.br/stricto-sensu/ppgfisio">
+        <span class="fa fa-globe"></span>
+         
+        Site
+      </a>
+    </li>
+    <li>
+      <a href="https://www.instagram.com/ppgfisioterapia">
+        <span class="fa fa-instagram"></span>
+         
+        Instagram
+      </a>
+    </li>
+    <li>
+      <a href="https://pt-br.facebook.com/ppgfisiouftmufu">
+        <span class="fa fa-facebook"></span>
+         
+        Facebook
+      </a>
+    </li>
+    <li>
+      <a href="https://sucupira-beta.capes.gov.br/sucupira4/observatorio/detalhamento/programas/206694">
+        <span class="fa fa-binoculars"></span>
+         
+        Observatório CAPES
+      </a>
+    </li>
+  </ul>
+</li>
+<li>
+  <a href="https://github.com/FerreiraAS/observatorio">
+    <span class="fa fa-github"></span>
+     
+    
+  </a>
+</li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+<!--Script for adding a Google Translation bar-->
+
+<html lang="pt-BR">
+<div align="right" id="google_translate_element"></div>
+
+<script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({pageLanguage: 'pt'}, 'google_translate_element');
+}
+</script>
+
+<script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script> 
+
+</html>
+
+<div id="header">
+
+
+
+<h1 class="title toc-ignore">Programa</h1>
+
+</div>
+
+
+<!--set up-->
+<!--load caches-->
+<!--script for inserting LOGO ABOVE THE TOC-->
+<script>
+$(document).ready(function() {
+  $('#TOC').parent().prepend('<div id=\"nav_logo\"><img src="PPG/Images/logo-programa.png"></div>');
+  });
+</script>
+<!--script for sharing-->
+<p align="right">
+<a
+href="https://twitter.com/share?url=https://github.com/FerreiraAS"><svg preserveAspectRatio="none" aria-hidden="true" role="img" viewBox="0 0 448 512" style="height:2em;width:2em;vertical-align:-0.125em;margin-left:0.2em;margin-right:0.2em;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zM351.3 199.3v0c0 86.7-66 186.6-186.6 186.6c-37.2 0-71.7-10.8-100.7-29.4c5.3 .6 10.4 .8 15.8 .8c30.7 0 58.9-10.4 81.4-28c-28.8-.6-53-19.5-61.3-45.5c10.1 1.5 19.2 1.5 29.6-1.2c-30-6.1-52.5-32.5-52.5-64.4v-.8c8.7 4.9 18.9 7.9 29.6 8.3c-9-6-16.4-14.1-21.5-23.6s-7.8-20.2-7.7-31c0-12.2 3.2-23.4 8.9-33.1c32.3 39.8 80.8 65.8 135.2 68.6c-9.3-44.5 24-80.6 64-80.6c18.9 0 35.9 7.9 47.9 20.7c14.8-2.8 29-8.3 41.6-15.8c-4.9 15.2-15.2 28-28.8 36.1c13.2-1.4 26-5.1 37.8-10.2c-8.9 13.1-20.1 24.7-32.9 34c.2 2.8 .2 5.7 .2 8.5z"/></svg></a>
+<a
+href="https://www.facebook.com/sharer.php?u=https://github.com/FerreiraAS"><svg preserveAspectRatio="none" aria-hidden="true" role="img" viewBox="0 0 448 512" style="height:2em;width:2em;vertical-align:-0.125em;margin-left:0.2em;margin-right:0.2em;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M400 32H48A48 48 0 0 0 0 80v352a48 48 0 0 0 48 48h137.25V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.27c-30.81 0-40.42 19.12-40.42 38.73V256h68.78l-11 71.69h-57.78V480H400a48 48 0 0 0 48-48V80a48 48 0 0 0-48-48z"/></svg></a>
+<a
+href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://github.com/FerreiraAS"><svg preserveAspectRatio="none" aria-hidden="true" role="img" viewBox="0 0 448 512" style="height:2em;width:2em;vertical-align:-0.125em;margin-left:0.2em;margin-right:0.2em;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg></a>
+</p>
+<p><br></p>
+<div id="dados-basicos" class="section level2 tabset">
+<h2 class="tabset"><strong>Dados básicos do Programa</strong></h2>
+<!--script for generating HORIZONTAL LINE-->
+<hr style="height:2px;border-width:0;color:black;background-color:black">
+<iframe src="https://sucupira.capes.gov.br/sucupira/public/consultas/coleta/programa/viewPrograma.jsf?popup=true&amp;cd_programa=32012012170P1" style="width:100%; height:600px; border:2px solid black;">
+</iframe>
+<p><strong>Fontes</strong>: <a
+href="https://sucupira.capes.gov.br/sucupira/"><strong>Plataforma
+Sucupira</strong></a></p>
+<p><br><a style="float:right" href="#top"><b>Início  </b>
+<svg aria-hidden="true" role="img" viewBox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM385 231c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-71-71V376c0 13.3-10.7 24-24 24s-24-10.7-24-24V193.9l-71 71c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9L239 119c9.4-9.4 24.6-9.4 33.9 0L385 231z"/></svg>
+</a><br></p>
+<p><br></p>
+</div>
+<div id="breve-historico" class="section level2 tabset">
+<h2 class="tabset"><strong>Breve histórico</strong></h2>
+<!--script for generating HORIZONTAL LINE-->
+<hr style="height:2px;border-width:0;color:black;background-color:black">
+<p><br></p>
+<p><br></p>
+</div>
+<div id="area-avaliacao" class="section level2 tabset">
+<h2 class="tabset"><strong>Área de avaliação</strong></h2>
+<!--script for generating HORIZONTAL LINE-->
+<hr style="height:2px;border-width:0;color:black;background-color:black">
+<div class="datatables html-widget html-fill-item" id="htmlwidget-b4653eccf650e8a054bf" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-b4653eccf650e8a054bf">{"x":{"filter":"none","vertical":false,"extensions":["Buttons","Responsive"],"caption":"<caption>10/07/2024<\/caption>","data":[["Áreas de avaliação","Área 21","Fórum da Área 21"],["<a href=\"https://www.gov.br/capes/pt-br/acesso-a-informacao/acoes-e-programas/avaliacao/sobre-a-avaliacao/areas-avaliacao/sobre-as-areas-de-avaliacao/sobre-as-areas-de-avaliacao\" target=\"_blank\"><svg aria-hidden=\"true\" role=\"img\" viewBox=\"0 0 512 512\" style=\"height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;\"><path d=\"M352 0c-12.9 0-24.6 7.8-29.6 19.8s-2.2 25.7 6.9 34.9L370.7 96 201.4 265.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L416 141.3l41.4 41.4c9.2 9.2 22.9 11.9 34.9 6.9s19.8-16.6 19.8-29.6V32c0-17.7-14.3-32-32-32H352zM80 32C35.8 32 0 67.8 0 112V432c0 44.2 35.8 80 80 80H400c44.2 0 80-35.8 80-80V320c0-17.7-14.3-32-32-32s-32 14.3-32 32V432c0 8.8-7.2 16-16 16H80c-8.8 0-16-7.2-16-16V112c0-8.8 7.2-16 16-16H192c17.7 0 32-14.3 32-32s-14.3-32-32-32H80z\"/><\/svg><\/a>","<a href=\"https://www.gov.br/capes/pt-br/acesso-a-informacao/acoes-e-programas/avaliacao/sobre-a-avaliacao/areas-avaliacao/sobre-as-areas-de-avaliacao/colegio-de-ciencias-da-vida/ciencias-da-saude/educacao-fisica\" target=\"_blank\"><svg aria-hidden=\"true\" role=\"img\" viewBox=\"0 0 512 512\" style=\"height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;\"><path d=\"M352 0c-12.9 0-24.6 7.8-29.6 19.8s-2.2 25.7 6.9 34.9L370.7 96 201.4 265.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L416 141.3l41.4 41.4c9.2 9.2 22.9 11.9 34.9 6.9s19.8-16.6 19.8-29.6V32c0-17.7-14.3-32-32-32H352zM80 32C35.8 32 0 67.8 0 112V432c0 44.2 35.8 80 80 80H400c44.2 0 80-35.8 80-80V320c0-17.7-14.3-32-32-32s-32 14.3-32 32V432c0 8.8-7.2 16-16 16H80c-8.8 0-16-7.2-16-16V112c0-8.8 7.2-16 16-16H192c17.7 0 32-14.3 32-32s-14.3-32-32-32H80z\"/><\/svg><\/a>","<a href=\"https://www.fef.unicamp.br/fef/posgraduacao/forumpg21\" target=\"_blank\"><svg aria-hidden=\"true\" role=\"img\" viewBox=\"0 0 512 512\" style=\"height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;\"><path d=\"M352 0c-12.9 0-24.6 7.8-29.6 19.8s-2.2 25.7 6.9 34.9L370.7 96 201.4 265.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L416 141.3l41.4 41.4c9.2 9.2 22.9 11.9 34.9 6.9s19.8-16.6 19.8-29.6V32c0-17.7-14.3-32-32-32H352zM80 32C35.8 32 0 67.8 0 112V432c0 44.2 35.8 80 80 80H400c44.2 0 80-35.8 80-80V320c0-17.7-14.3-32-32-32s-32 14.3-32 32V432c0 8.8-7.2 16-16 16H80c-8.8 0-16-7.2-16-16V112c0-8.8 7.2-16 16-16H192c17.7 0 32-14.3 32-32s-14.3-32-32-32H80z\"/><\/svg><\/a>"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Documento<\/th>\n      <th>Abrir<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"colReorder":false,"pageLength":4,"scrolX":false,"dom":"Bftip","searchHighlight":true,"buttons":[{"extend":"copy","text":"Copiar","filename":"Programa - Área CAPES"},{"extend":"csv","text":"CSV","filename":"Programa - Área CAPES"},{"extend":"pdf","text":"PDF","title":"Programa - Área CAPES","filename":"Programa - Área CAPES"}],"language":{"info":"Mostrando de _START_ até _END_ de _TOTAL_","zeroRecords":"Nenhum registro encontrado","search":"Pesquisar","paginate":{"next":"Próximo","previous":"Anterior"}},"columnDefs":[{"name":"Documento","targets":0},{"name":"Abrir","targets":1}],"order":[],"autoWidth":false,"orderClasses":false,"responsive":true,"lengthMenu":[4,10,25,50,100]},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
+<p><strong>Fontes</strong>: <a
+href="https://sucupira.capes.gov.br/sucupira/"><strong>Plataforma
+Sucupira</strong></a></p>
+<p><br><a style="float:right" href="#top"><b>Início  </b>
+<svg aria-hidden="true" role="img" viewBox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM385 231c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-71-71V376c0 13.3-10.7 24-24 24s-24-10.7-24-24V193.9l-71 71c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9L239 119c9.4-9.4 24.6-9.4 33.9 0L385 231z"/></svg>
+</a><br></p>
+<p><br></p>
+</div>
+<div id="nota" class="section level2">
+<h2><strong>Nota</strong></h2>
+<!--script for generating HORIZONTAL LINE-->
+<hr style="height:2px;border-width:0;color:black;background-color:black">
+<p><br></p>
+<p><br></p>
+</div>
+<div id="area-concentracao" class="section level2 tabset">
+<h2 class="tabset"><strong>Área de concentração</strong></h2>
+<!--script for generating HORIZONTAL LINE-->
+<hr style="height:2px;border-width:0;color:black;background-color:black">
+<div id="atual" class="section level3">
+<h3><strong>Atual</strong></h3>
+<p><br></p>
+</div>
+<div id="inativas" class="section level3">
+<h3><strong>Inativas</strong></h3>
+<p><br></p>
+</div>
+</div>
+<div id="linha-pesquisa" class="section level2 tabset">
+<h2 class="tabset"><strong>Linhas de pesquisa</strong></h2>
+<!--script for generating HORIZONTAL LINE-->
+<hr style="height:2px;border-width:0;color:black;background-color:black">
+<div id="atual-1" class="section level3">
+<h3><strong>Atual</strong></h3>
+<p><br></p>
+</div>
+<div id="inativas-1" class="section level3">
+<h3><strong>Inativas</strong></h3>
+<p><br></p>
+</div>
+</div>
+<div id="projeto-pesquisa" class="section level2 tabset">
+<h2 class="tabset"><strong>Projetos de pesquisa</strong></h2>
+<!--script for generating HORIZONTAL LINE-->
+<hr style="height:2px;border-width:0;color:black;background-color:black">
+<div id="em-andamento" class="section level3 tabset">
+<h3 class="tabset"><strong>Em andamento</strong></h3>
+<div class="datatables html-widget html-fill-item" id="htmlwidget-ff850874422489d2889b" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-ff850874422489d2889b">{"x":{"filter":"none","vertical":false,"extensions":["Buttons","Responsive"],"caption":"<caption>10/07/2024<\/caption>","data":[["AVALIAÇÃO E INTERVENÇÃO EM FISIOTERAPIA","AVALIAÇÃO E INTERVENÇÃO EM FISIOTERAPIA","AVALIAÇÃO E INTERVENÇÃO EM FISIOTERAPIA","AVALIAÇÃO E INTERVENÇÃO EM FISIOTERAPIA","AVALIAÇÃO E INTERVENÇÃO EM FISIOTERAPIA","AVALIAÇÃO E INTERVENÇÃO EM FISIOTERAPIA","AVALIAÇÃO E INTERVENÇÃO EM FISIOTERAPIA","AVALIAÇÃO E INTERVENÇÃO EM FISIOTERAPIA","AVALIAÇÃO E INTERVENÇÃO EM FISIOTERAPIA","AVALIAÇÃO E INTERVENÇÃO EM FISIOTERAPIA","AVALIAÇÃO E INTERVENÇÃO EM FISIOTERAPIA","AVALIAÇÃO E INTERVENÇÃO EM FISIOTERAPIA","AVALIAÇÃO E INTERVENÇÃO EM FISIOTERAPIA","AVALIAÇÃO E INTERVENÇÃO EM FISIOTERAPIA","AVALIAÇÃO E INTERVENÇÃO EM FISIOTERAPIA","AVALIAÇÃO E INTERVENÇÃO EM FISIOTERAPIA","AVALIAÇÃO E INTERVENÇÃO EM FISIOTERAPIA","AVALIAÇÃO E INTERVENÇÃO EM FISIOTERAPIA","AVALIAÇÃO E INTERVENÇÃO EM FISIOTERAPIA","AVALIAÇÃO E INTERVENÇÃO EM FISIOTERAPIA","AVALIAÇÃO E INTERVENÇÃO EM FISIOTERAPIA","AVALIAÇÃO E INTERVENÇÃO EM FISIOTERAPIA","AVALIAÇÃO E INTERVENÇÃO EM FISIOTERAPIA","AVALIAÇÃO E INTERVENÇÃO EM FISIOTERAPIA","AVALIAÇÃO E INTERVENÇÃO EM FISIOTERAPIA","AVALIAÇÃO E INTERVENÇÃO EM FISIOTERAPIA","AVALIAÇÃO E INTERVENÇÃO EM FISIOTERAPIA","AVALIAÇÃO E INTERVENÇÃO EM FISIOTERAPIA","AVALIAÇÃO E INTERVENÇÃO EM FISIOTERAPIA","AVALIAÇÃO E INTERVENÇÃO EM FISIOTERAPIA","AVALIAÇÃO E INTERVENÇÃO EM FISIOTERAPIA","AVALIAÇÃO E INTERVENÇÃO EM FISIOTERAPIA","AVALIAÇÃO E INTERVENÇÃO EM FISIOTERAPIA","AVALIAÇÃO E INTERVENÇÃO EM FISIOTERAPIA","AVALIAÇÃO E INTERVENÇÃO EM FISIOTERAPIA","AVALIAÇÃO E INTERVENÇÃO EM FISIOTERAPIA","AVALIAÇÃO E INTERVENÇÃO EM FISIOTERAPIA","AVALIAÇÃO E INTERVENÇÃO EM FISIOTERAPIA","AVALIAÇÃO E INTERVENÇÃO EM FISIOTERAPIA","AVALIAÇÃO E INTERVENÇÃO EM FISIOTERAPIA","AVALIAÇÃO E INTERVENÇÃO EM FISIOTERAPIA","AVALIAÇÃO E INTERVENÇÃO EM FISIOTERAPIA","AVALIAÇÃO E INTERVENÇÃO EM FISIOTERAPIA","AVALIAÇÃO E INTERVENÇÃO EM FISIOTERAPIA","AVALIAÇÃO E INTERVENÇÃO EM FISIOTERAPIA"],["PROCESSOS DE AVALIAÇÃO E INTERVENÇÃO FISIOTERAPÊUTICA DOS SISTEMAS CARDIORRESPIRATÓRIO E NEUROMUSCULAR.","PROCESSOS DE AVALIAÇÃO E INTERVENÇÃO FISIOTERAPÊUTICA DOS SISTEMAS CARDIORRESPIRATÓRIO E NEUROMUSCULAR.","PROCESSO DE AVALIAÇÃO E INTERVENÇÃO FISIOTERAPÊUTICA DO SISTEMA MUSCULOESQUELÉTICO","PROCESSO DE AVALIAÇÃO E INTERVENÇÃO FISIOTERAPÊUTICA DO SISTEMA MUSCULOESQUELÉTICO","PROCESSO DE AVALIAÇÃO E INTERVENÇÃO FISIOTERAPÊUTICA DO SISTEMA MUSCULOESQUELÉTICO","PROCESSO DE AVALIAÇÃO E INTERVENÇÃO FISIOTERAPÊUTICA DO SISTEMA MUSCULOESQUELÉTICO","PROCESSO DE AVALIAÇÃO E INTERVENÇÃO FISIOTERAPÊUTICA DO SISTEMA MUSCULOESQUELÉTICO","PROCESSO DE AVALIAÇÃO E INTERVENÇÃO FISIOTERAPÊUTICA DO SISTEMA MUSCULOESQUELÉTICO","PROCESSO DE AVALIAÇÃO E INTERVENÇÃO FISIOTERAPÊUTICA DO SISTEMA MUSCULOESQUELÉTICO","PROCESSO DE AVALIAÇÃO E INTERVENÇÃO FISIOTERAPÊUTICA DO SISTEMA MUSCULOESQUELÉTICO","PROCESSO DE AVALIAÇÃO E INTERVENÇÃO FISIOTERAPÊUTICA DO SISTEMA MUSCULOESQUELÉTICO","PROCESSO DE AVALIAÇÃO E INTERVENÇÃO FISIOTERAPÊUTICA DO SISTEMA MUSCULOESQUELÉTICO","PROCESSO DE AVALIAÇÃO E INTERVENÇÃO FISIOTERAPÊUTICA DO SISTEMA MUSCULOESQUELÉTICO","PROCESSO DE AVALIAÇÃO E INTERVENÇÃO FISIOTERAPÊUTICA DO SISTEMA MUSCULOESQUELÉTICO","PROCESSO DE AVALIAÇÃO E INTERVENÇÃO FISIOTERAPÊUTICA DO SISTEMA MUSCULOESQUELÉTICO","PROCESSO DE AVALIAÇÃO E INTERVENÇÃO FISIOTERAPÊUTICA DO SISTEMA MUSCULOESQUELÉTICO","PROCESSO DE AVALIAÇÃO E INTERVENÇÃO FISIOTERAPÊUTICA DO SISTEMA MUSCULOESQUELÉTICO","PROCESSO DE AVALIAÇÃO E INTERVENÇÃO FISIOTERAPÊUTICA DO SISTEMA MUSCULOESQUELÉTICO","PROCESSOS DE AVALIAÇÃO E INTERVENÇÃO FISIOTERAPÊUTICA DOS SISTEMAS CARDIORRESPIRATÓRIO E NEUROMUSCULAR.","PROCESSOS DE AVALIAÇÃO E INTERVENÇÃO FISIOTERAPÊUTICA DOS SISTEMAS CARDIORRESPIRATÓRIO E NEUROMUSCULAR.","PROCESSOS DE AVALIAÇÃO E INTERVENÇÃO FISIOTERAPÊUTICA DOS SISTEMAS CARDIORRESPIRATÓRIO E NEUROMUSCULAR.","PROCESSOS DE AVALIAÇÃO E INTERVENÇÃO FISIOTERAPÊUTICA DOS SISTEMAS CARDIORRESPIRATÓRIO E NEUROMUSCULAR.","PROCESSO DE AVALIAÇÃO E INTERVENÇÃO FISIOTERAPÊUTICA DO SISTEMA MUSCULOESQUELÉTICO","PROCESSO DE AVALIAÇÃO E INTERVENÇÃO FISIOTERAPÊUTICA DO SISTEMA MUSCULOESQUELÉTICO","PROCESSO DE AVALIAÇÃO E INTERVENÇÃO FISIOTERAPÊUTICA DO SISTEMA MUSCULOESQUELÉTICO","PROCESSO DE AVALIAÇÃO E INTERVENÇÃO FISIOTERAPÊUTICA DO SISTEMA MUSCULOESQUELÉTICO","PROCESSOS DE AVALIAÇÃO E INTERVENÇÃO FISIOTERAPÊUTICA DOS SISTEMAS CARDIORRESPIRATÓRIO E NEUROMUSCULAR.","PROCESSOS DE AVALIAÇÃO E INTERVENÇÃO FISIOTERAPÊUTICA DOS SISTEMAS CARDIORRESPIRATÓRIO E NEUROMUSCULAR.","PROCESSOS DE AVALIAÇÃO E INTERVENÇÃO FISIOTERAPÊUTICA DOS SISTEMAS CARDIORRESPIRATÓRIO E NEUROMUSCULAR.","PROCESSOS DE AVALIAÇÃO E INTERVENÇÃO FISIOTERAPÊUTICA DOS SISTEMAS CARDIORRESPIRATÓRIO E NEUROMUSCULAR.","PROCESSO DE AVALIAÇÃO E INTERVENÇÃO FISIOTERAPÊUTICA DO SISTEMA MUSCULOESQUELÉTICO","PROCESSO DE AVALIAÇÃO E INTERVENÇÃO FISIOTERAPÊUTICA DO SISTEMA MUSCULOESQUELÉTICO","PROCESSO DE AVALIAÇÃO E INTERVENÇÃO FISIOTERAPÊUTICA DO SISTEMA MUSCULOESQUELÉTICO","PROCESSO DE AVALIAÇÃO E INTERVENÇÃO FISIOTERAPÊUTICA DO SISTEMA MUSCULOESQUELÉTICO","PROCESSO DE AVALIAÇÃO E INTERVENÇÃO FISIOTERAPÊUTICA DO SISTEMA MUSCULOESQUELÉTICO","PROCESSO DE AVALIAÇÃO E INTERVENÇÃO FISIOTERAPÊUTICA DO SISTEMA MUSCULOESQUELÉTICO","PROCESSO DE AVALIAÇÃO E INTERVENÇÃO FISIOTERAPÊUTICA DO SISTEMA MUSCULOESQUELÉTICO","PROCESSOS DE AVALIAÇÃO E INTERVENÇÃO FISIOTERAPÊUTICA DOS SISTEMAS CARDIORRESPIRATÓRIO E NEUROMUSCULAR.","PROCESSOS DE AVALIAÇÃO E INTERVENÇÃO FISIOTERAPÊUTICA DOS SISTEMAS CARDIORRESPIRATÓRIO E NEUROMUSCULAR.","PROCESSO DE AVALIAÇÃO E INTERVENÇÃO FISIOTERAPÊUTICA DO SISTEMA MUSCULOESQUELÉTICO","PROCESSOS DE AVALIAÇÃO E INTERVENÇÃO FISIOTERAPÊUTICA DOS SISTEMAS CARDIORRESPIRATÓRIO E NEUROMUSCULAR.","PROCESSOS DE AVALIAÇÃO E INTERVENÇÃO FISIOTERAPÊUTICA DOS SISTEMAS CARDIORRESPIRATÓRIO E NEUROMUSCULAR.","PROCESSOS DE AVALIAÇÃO E INTERVENÇÃO FISIOTERAPÊUTICA DOS SISTEMAS CARDIORRESPIRATÓRIO E NEUROMUSCULAR.","PROCESSOS DE AVALIAÇÃO E INTERVENÇÃO FISIOTERAPÊUTICA DOS SISTEMAS CARDIORRESPIRATÓRIO E NEUROMUSCULAR.","PROCESSOS DE AVALIAÇÃO E INTERVENÇÃO FISIOTERAPÊUTICA DOS SISTEMAS CARDIORRESPIRATÓRIO E NEUROMUSCULAR."],["Respostas hemodinâmicas, metabólicas e inflamatórias agudas e crônicas em mulheres após a menopausa submetidas à diferentes tipos de treinamento com exercícios","Saúde da mulher: menopausa e atividade física","Análise biomecânica do movimento humano e suas disfunções","Avaliação e intervenção fisioterapêutica nas condições traumato-ortopédicas e esportivas","Atenção fisioterapêutica à gestante","Avaliação e intervenção fisioterapêutica sobre a saúde da mulher","Avaliação neuromecânica e intervenção em disfunções musculoesqueléticas","Avaliação e intervenção no processo de envelhecimento.","Liga interdisciplinar de saúde do idoso","Programa mais idade mais saúde: residencial para idosos vida & saúde","Programa universidade aberta a terceira idade","Projeto mais idade mais saúde","Projeto uberaba mexa-se pela vida","Adaptações do desempenho funcional às aplicações de recursos eletrofísicos, manuais e cinesioterapêuticos","Atenção integral ao deficiente visual","Grupo de ensino e pesquisa em modalidades de fisioterapia - enpefisio","Massagem shantala na uftm e redes sociais","Pilates na deficiência visual","Liga acadêmica de fisioterapia oncológica - lafon","Biomarcadores inflamatórios e do estresse oxidativo em doenças cardiovasculares e respiratórias","Efeitos da fisioterapia sobre a força e capacidade funcional em portadores de doenças cardiorrespiratórias, sepse, envelhecimento e imobilidade no leito","Controle motor, avaliação, orientação e intervenção em doenças neurológicas","Liga acadêmica de saúde esportiva","Uso da biomecânica clínica como ferramenta de avaliação e intervenção em saúde e desempenho funcional humano","Avaliação e tratamento fisioterapêutico nas alterações musculoesqueléticas.","Programa liga acadêmica de fisioterapia desportiva: lafide/ufu","Acolhimento e orientação para pais e cudiadores de crianças com síndrome de down","Avaliação e intervenção neuro-sensoriomotora e funcional nos ciclos de vida","Desenvolvimento motor e ações manipulativas no ato de brincar com cubos sensoriais.","Liga acadêmica de trissomia do 21","Determinantes e condicionantes do processo saúde-doença, funcionalidade e cuidado de pessoas idosas","Avaliação de protocolos de exercícios resistidos para diferentes tipos de disfunções músculo-esqueléticas.","Avaliação e intervenção fisioterapêutica à saúde das populações","Liga acadêmica de saúde coletiva - lasc","Programa de educação pelo trabalho para a saúde","Avaliação e intervenção fisioterapêutica na dor e nas disfunções musculoesqueléticas e neuromusculares da mão e membro superior.","Proame: programa de atenção interdisciplinar no tratamento das lesões do membro superior e coluna cervical","Avaliação funcional e diagnóstico clínico em doenças do sistema nervoso central e periférico","Investigações sobre a saúde integral infantil","Comportamento motor humano e fatores atencionais e motivacionais: análise dos mecanismos, variáveis moderadoras e efeitos no desempenho e aquisição de diferentes habilidades motoras e populações","Exploração funcional dos sistemas cardiopulmonar e metabólico","Investigação de doenças cardíacas e metabólicas e suas repercurssões sistemicas em modelo experimental com pequenos animais.","Liga acadêmica de reabilitação cardiovascular","Liga acadêmica de terapias integrativas","Avaliação e intervenção fisioterapêutica nos aspectos da saúde, nos sistemas cardiorrespiratório e metabólico, qualidade de vida, funcionalidade em diferentes agravos a saúde."],["Pesquisa","Extensão","Pesquisa","Pesquisa","Extensão","Pesquisa","Pesquisa","Pesquisa","Outra","Extensão","Extensão","Extensão","Extensão","Pesquisa","Pesquisa","Outra","Extensão","Extensão","Outra","Pesquisa","Pesquisa","Pesquisa","Outra","Pesquisa","Pesquisa","Extensão","Extensão","Pesquisa","Pesquisa","Outra","Pesquisa","Pesquisa","Pesquisa","Outra","Outra","Pesquisa","Extensão","Pesquisa","Pesquisa","Pesquisa","Pesquisa","Pesquisa","Outra","Outra","Pesquisa"],["05/03/2018","01/01/2018","06/01/2023","06/01/2023","01/01/2021","01/01/2021","07/08/2017","08/08/2017","15/06/2020","02/09/2022","06/08/2009","26/08/2016","26/08/2016","01/08/2016","01/08/2016","01/01/2021","01/01/2021","01/01/2021","01/02/2022","01/08/2016","01/02/2017","01/08/2016","01/03/2018","04/01/2021","01/03/2017","01/01/2020","01/03/2019","03/01/2017","03/01/2017","01/03/2021","01/01/2019","03/01/2017","01/01/2021","01/06/2022","25/08/2022","02/01/2017","08/08/2016","02/01/2018","01/08/2022","01/01/2023","02/01/2018","02/01/2018","01/03/2019","01/03/2019","01/01/2021"],["Guilherme Morais Puga","Guilherme Morais Puga","Thiago Ribeiro Teles Dos Santos","Thiago Ribeiro Teles Dos Santos","Vanessa Santos Pereira Baldon","Vanessa Santos Pereira Baldon","Valdeci Carlos Dionisio","Lislei Jorge Patrizzi Martins","Lislei Jorge Patrizzi Martins","Lislei Jorge Patrizzi Martins","Lislei Jorge Patrizzi Martins","Lislei Jorge Patrizzi Martins","Lislei Jorge Patrizzi Martins","Nuno Miguel Lopes De Oliveira","Nuno Miguel Lopes De Oliveira","Nuno Miguel Lopes De Oliveira","Nuno Miguel Lopes De Oliveira","Nuno Miguel Lopes De Oliveira","Vitoria Helena Maciel Coelho","Carlos Fernando Ronchi","Carlos Fernando Ronchi","Luciane Aparecida Pascucci Sande De Souza","Daniel Ferreira Moreira Lobato","Daniel Ferreira Moreira Lobato","Lilian Ramiro Felicio","Lilian Ramiro Felicio","Karina Pereira","Karina Pereira","Karina Pereira","Karina Pereira","Juliana Martins Pinto","Dernival Bertoncello","Isabel Aparecida Porcatti De Walsh","Isabel Aparecida Porcatti De Walsh","Isabel Aparecida Porcatti De Walsh","Luciane Fernanda Rodrigues Martinho Fernandes","Luciane Fernanda Rodrigues Martinho Fernandes","Gustavo Jose Luvizutto","Vivian Mara Goncalves De Oliveira Azevedo","Ricardo Drews","Eduardo Elias Vieira De Carvalho","Eduardo Elias Vieira De Carvalho","Eduardo Elias Vieira De Carvalho","Eduardo Elias Vieira De Carvalho","Marilita Falangola Accioly"],["Brasil","Brasil","Brasil","Brasil","Brasil","Brasil","Brasil","Brasil","Brasil","Brasil","Brasil","Brasil","Brasil","Brasil","Brasil","Brasil","Brasil","Brasil","Brasil","Brasil","Brasil","Brasil","Brasil","Brasil","Brasil","Brasil","Brasil","Brasil","Brasil","Brasil","Brasil","Brasil","Brasil","Brasil","Brasil","Brasil","Brasil","Brasil","Brasil","Brasil","Brasil","Brasil","Brasil","Brasil","Brasil"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Área de Concentração<\/th>\n      <th>Linha de Pesquisa<\/th>\n      <th>Projeto<\/th>\n      <th>Natureza<\/th>\n      <th>Início<\/th>\n      <th>Responsável<\/th>\n      <th>País<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"colReorder":false,"pageLength":4,"scrolX":false,"dom":"Bftip","searchHighlight":true,"buttons":[{"extend":"copy","text":"Copiar","filename":"Programa - Projetos - Em andamento"},{"extend":"csv","text":"CSV","filename":"Programa - Projetos - Em andamento"},{"extend":"pdf","text":"PDF","title":"Programa - Projetos - Em andamento","filename":"Programa - Projetos - Em andamento"}],"language":{"info":"Mostrando de _START_ até _END_ de _TOTAL_","zeroRecords":"Nenhum registro encontrado","search":"Pesquisar","paginate":{"next":"Próximo","previous":"Anterior"}},"columnDefs":[{"name":"Área de Concentração","targets":0},{"name":"Linha de Pesquisa","targets":1},{"name":"Projeto","targets":2},{"name":"Natureza","targets":3},{"name":"Início","targets":4},{"name":"Responsável","targets":5},{"name":"País","targets":6}],"order":[],"autoWidth":false,"orderClasses":false,"responsive":true,"lengthMenu":[4,10,25,50,100]},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
+<p><strong>Fontes</strong>: <a
+href="https://sucupira.capes.gov.br/sucupira/"><strong>Plataforma
+Sucupira</strong></a></p>
+<p><br><a style="float:right" href="#top"><b>Início  </b>
+<svg aria-hidden="true" role="img" viewBox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM385 231c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-71-71V376c0 13.3-10.7 24-24 24s-24-10.7-24-24V193.9l-71 71c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9L239 119c9.4-9.4 24.6-9.4 33.9 0L385 231z"/></svg>
+</a><br></p>
+<p><br></p>
+</div>
+<div id="encerrados" class="section level3 tabset">
+<h3 class="tabset"><strong>Encerrados</strong></h3>
+<div class="datatables html-widget html-fill-item" id="htmlwidget-b426ee2a75da15649fb4" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-b426ee2a75da15649fb4">{"x":{"filter":"none","vertical":false,"extensions":["Buttons","Responsive"],"caption":"<caption>10/07/2024<\/caption>","data":[["AVALIAÇÃO E INTERVENÇÃO EM FISIOTERAPIA","AVALIAÇÃO E INTERVENÇÃO EM FISIOTERAPIA","AVALIAÇÃO E INTERVENÇÃO EM FISIOTERAPIA","AVALIAÇÃO E INTERVENÇÃO EM FISIOTERAPIA","AVALIAÇÃO E INTERVENÇÃO EM FISIOTERAPIA","AVALIAÇÃO E INTERVENÇÃO EM FISIOTERAPIA","AVALIAÇÃO E INTERVENÇÃO EM FISIOTERAPIA","AVALIAÇÃO E INTERVENÇÃO EM FISIOTERAPIA","AVALIAÇÃO E INTERVENÇÃO EM FISIOTERAPIA","AVALIAÇÃO E INTERVENÇÃO EM FISIOTERAPIA","AVALIAÇÃO E INTERVENÇÃO EM FISIOTERAPIA","AVALIAÇÃO E INTERVENÇÃO EM FISIOTERAPIA","AVALIAÇÃO E INTERVENÇÃO EM FISIOTERAPIA","AVALIAÇÃO E INTERVENÇÃO EM FISIOTERAPIA","AVALIAÇÃO E INTERVENÇÃO EM FISIOTERAPIA","AVALIAÇÃO E INTERVENÇÃO EM FISIOTERAPIA",null,"AVALIAÇÃO E INTERVENÇÃO EM FISIOTERAPIA","AVALIAÇÃO E INTERVENÇÃO EM FISIOTERAPIA","AVALIAÇÃO E INTERVENÇÃO EM FISIOTERAPIA","AVALIAÇÃO E INTERVENÇÃO EM FISIOTERAPIA","AVALIAÇÃO E INTERVENÇÃO EM FISIOTERAPIA","AVALIAÇÃO E INTERVENÇÃO EM FISIOTERAPIA","AVALIAÇÃO E INTERVENÇÃO EM FISIOTERAPIA",null,"AVALIAÇÃO E INTERVENÇÃO EM FISIOTERAPIA","AVALIAÇÃO E INTERVENÇÃO EM FISIOTERAPIA","AVALIAÇÃO E INTERVENÇÃO EM FISIOTERAPIA","AVALIAÇÃO E INTERVENÇÃO EM FISIOTERAPIA","AVALIAÇÃO E INTERVENÇÃO EM FISIOTERAPIA","AVALIAÇÃO E INTERVENÇÃO EM FISIOTERAPIA","AVALIAÇÃO E INTERVENÇÃO EM FISIOTERAPIA","AVALIAÇÃO E INTERVENÇÃO EM FISIOTERAPIA","AVALIAÇÃO E INTERVENÇÃO EM FISIOTERAPIA","AVALIAÇÃO E INTERVENÇÃO EM FISIOTERAPIA","AVALIAÇÃO E INTERVENÇÃO EM FISIOTERAPIA","AVALIAÇÃO E INTERVENÇÃO EM FISIOTERAPIA","AVALIAÇÃO E INTERVENÇÃO EM FISIOTERAPIA","AVALIAÇÃO E INTERVENÇÃO EM FISIOTERAPIA","AVALIAÇÃO E INTERVENÇÃO EM FISIOTERAPIA","AVALIAÇÃO E INTERVENÇÃO EM FISIOTERAPIA","AVALIAÇÃO E INTERVENÇÃO EM FISIOTERAPIA"],["PROCESSO DE AVALIAÇÃO E INTERVENÇÃO FISIOTERAPÊUTICA DO SISTEMA MUSCULOESQUELÉTICO","PROCESSO DE AVALIAÇÃO E INTERVENÇÃO FISIOTERAPÊUTICA DO SISTEMA MUSCULOESQUELÉTICO","PROCESSO DE AVALIAÇÃO E INTERVENÇÃO FISIOTERAPÊUTICA DO SISTEMA MUSCULOESQUELÉTICO","PROCESSO DE AVALIAÇÃO E INTERVENÇÃO FISIOTERAPÊUTICA DO SISTEMA MUSCULOESQUELÉTICO","PROCESSO DE AVALIAÇÃO E INTERVENÇÃO FISIOTERAPÊUTICA DO SISTEMA MUSCULOESQUELÉTICO","PROCESSO DE AVALIAÇÃO E INTERVENÇÃO FISIOTERAPÊUTICA DO SISTEMA MUSCULOESQUELÉTICO","PROCESSO DE AVALIAÇÃO E INTERVENÇÃO FISIOTERAPÊUTICA DO SISTEMA MUSCULOESQUELÉTICO","PROCESSO DE AVALIAÇÃO E INTERVENÇÃO FISIOTERAPÊUTICA DO SISTEMA MUSCULOESQUELÉTICO","PROCESSO DE AVALIAÇÃO E INTERVENÇÃO FISIOTERAPÊUTICA DO SISTEMA MUSCULOESQUELÉTICO","PROCESSO DE AVALIAÇÃO E INTERVENÇÃO FISIOTERAPÊUTICA DO SISTEMA MUSCULOESQUELÉTICO","PROCESSO DE AVALIAÇÃO E INTERVENÇÃO FISIOTERAPÊUTICA DO SISTEMA MUSCULOESQUELÉTICO","PROCESSO DE AVALIAÇÃO E INTERVENÇÃO FISIOTERAPÊUTICA DO SISTEMA MUSCULOESQUELÉTICO","PROCESSO DE AVALIAÇÃO E INTERVENÇÃO FISIOTERAPÊUTICA DO SISTEMA MUSCULOESQUELÉTICO","PROCESSO DE AVALIAÇÃO E INTERVENÇÃO FISIOTERAPÊUTICA DO SISTEMA MUSCULOESQUELÉTICO","PROCESSO DE AVALIAÇÃO E INTERVENÇÃO FISIOTERAPÊUTICA DO SISTEMA MUSCULOESQUELÉTICO","PROCESSO DE AVALIAÇÃO E INTERVENÇÃO FISIOTERAPÊUTICA DO SISTEMA MUSCULOESQUELÉTICO","PROJETO ISOLADO","PROCESSOS DE AVALIAÇÃO E INTERVENÇÃO FISIOTERAPÊUTICA DOS SISTEMAS CARDIORRESPIRATÓRIO E NEUROMUSCULAR.","PROCESSO DE AVALIAÇÃO E INTERVENÇÃO FISIOTERAPÊUTICA DO SISTEMA MUSCULOESQUELÉTICO","PROCESSO DE AVALIAÇÃO E INTERVENÇÃO FISIOTERAPÊUTICA DO SISTEMA MUSCULOESQUELÉTICO","PROCESSO DE AVALIAÇÃO E INTERVENÇÃO FISIOTERAPÊUTICA DO SISTEMA MUSCULOESQUELÉTICO","PROCESSO DE AVALIAÇÃO E INTERVENÇÃO FISIOTERAPÊUTICA DO SISTEMA MUSCULOESQUELÉTICO","PROCESSOS DE AVALIAÇÃO E INTERVENÇÃO FISIOTERAPÊUTICA DOS SISTEMAS CARDIORRESPIRATÓRIO E NEUROMUSCULAR.","PROCESSOS DE AVALIAÇÃO E INTERVENÇÃO FISIOTERAPÊUTICA DOS SISTEMAS CARDIORRESPIRATÓRIO E NEUROMUSCULAR.","PROJETO ISOLADO","PROCESSO DE AVALIAÇÃO E INTERVENÇÃO FISIOTERAPÊUTICA DO SISTEMA MUSCULOESQUELÉTICO","PROCESSOS DE AVALIAÇÃO E INTERVENÇÃO FISIOTERAPÊUTICA DOS SISTEMAS CARDIORRESPIRATÓRIO E NEUROMUSCULAR.","PROCESSOS DE AVALIAÇÃO E INTERVENÇÃO FISIOTERAPÊUTICA DOS SISTEMAS CARDIORRESPIRATÓRIO E NEUROMUSCULAR.","PROCESSOS DE AVALIAÇÃO E INTERVENÇÃO FISIOTERAPÊUTICA DOS SISTEMAS CARDIORRESPIRATÓRIO E NEUROMUSCULAR.","PROCESSOS DE AVALIAÇÃO E INTERVENÇÃO FISIOTERAPÊUTICA DOS SISTEMAS CARDIORRESPIRATÓRIO E NEUROMUSCULAR.","PROCESSO DE AVALIAÇÃO E INTERVENÇÃO FISIOTERAPÊUTICA DO SISTEMA MUSCULOESQUELÉTICO","PROCESSO DE AVALIAÇÃO E INTERVENÇÃO FISIOTERAPÊUTICA DO SISTEMA MUSCULOESQUELÉTICO","PROCESSO DE AVALIAÇÃO E INTERVENÇÃO FISIOTERAPÊUTICA DO SISTEMA MUSCULOESQUELÉTICO","PROCESSOS DE AVALIAÇÃO E INTERVENÇÃO FISIOTERAPÊUTICA DOS SISTEMAS CARDIORRESPIRATÓRIO E NEUROMUSCULAR.","PROCESSO DE AVALIAÇÃO E INTERVENÇÃO FISIOTERAPÊUTICA DO SISTEMA MUSCULOESQUELÉTICO","PROCESSO DE AVALIAÇÃO E INTERVENÇÃO FISIOTERAPÊUTICA DO SISTEMA MUSCULOESQUELÉTICO","PROCESSO DE AVALIAÇÃO E INTERVENÇÃO FISIOTERAPÊUTICA DO SISTEMA MUSCULOESQUELÉTICO","PROCESSO DE AVALIAÇÃO E INTERVENÇÃO FISIOTERAPÊUTICA DO SISTEMA MUSCULOESQUELÉTICO","PROCESSOS DE AVALIAÇÃO E INTERVENÇÃO FISIOTERAPÊUTICA DOS SISTEMAS CARDIORRESPIRATÓRIO E NEUROMUSCULAR.","PROCESSOS DE AVALIAÇÃO E INTERVENÇÃO FISIOTERAPÊUTICA DOS SISTEMAS CARDIORRESPIRATÓRIO E NEUROMUSCULAR.","PROCESSOS DE AVALIAÇÃO E INTERVENÇÃO FISIOTERAPÊUTICA DOS SISTEMAS CARDIORRESPIRATÓRIO E NEUROMUSCULAR.","PROCESSOS DE AVALIAÇÃO E INTERVENÇÃO FISIOTERAPÊUTICA DOS SISTEMAS CARDIORRESPIRATÓRIO E NEUROMUSCULAR."],["Avaliação e tratamento da incontinência urinária de esforço durante a prática de corrida em mulheres","Atenção a gestante: exercício físico","Prevenção e tratamento das disfunções do assoalho pélvico feminino","Efeitos de diferentes programas de exercícios para o tratamento da incontinência urinária de esforço de mulheres: estudo prospectivo, randomizado e controlado","Assoalho pélvico feminino: avaliação e intervenção fisioterapêutica","Atenção à gestante: preparação perineal para o parto","Respostas musculares após a intervenção fisioterapêutica com uso do dilatador vaginal em gestantes","Tratamento de mulheres com incontinência urinária","Efeito do exercício terapêutico nas mudanças e adaptações  neuromecânicas do movimento humano","Comparação da oscilação postural em diferentes superficies entre indivíduos com e sem osteoatrite do joelho: associação com experiencia da dor e função cognitiva","Influência da dor no equilíbrio e na atividade muscular durante o agachamento em indivíduos com e sem osteoartrite de joelho","Avaliação e reabilitação do assoalho pélvico masculino","Dupla tarefa e funcionalidade no processo de envelhecimento","Avaliação e efeito da atuação da fisioterapia na reabilitação do assoalho pélvico","Inquérito sobre a utilização de oito práticas que promovem a saúde no município de uberaba-mg","Treinamento motor, cognitivo e funcionalidade de idosos","Massagem shantala nos centros de referências de assistência social (cras) e creches municipais","Avaliação da função pulmonar e intervenções fisioterapêuticas nas diversas disfunções do sistema respiratório","Estudos biomecânicos sobre o uso de recursos terapêuticos para a melhora da saúde e do desempenho funcional humano","Uso da biomecânica clínica como ferramenta de avaliação em saúde e desempenho funcional humano","Exercícios abdominais em diferentes posições em indivíduos com e sem lombalgia: estudo eletromiográfico","Avaliação biomecânica de membro inferior em atletas","Avaliação e intervenção neurosensoriomotora na infância e na adolescência","Fisioterapia na deficiência visual","Núcleo rondon da universidade federal do triângulo mineiro","Estudo longitudinal da funcionalidade em idosos (elfi) / longitudinal investigation of functioning among elderly (life).","Relações entre aspectos psicossociais, cognição e comportamentos relacionados à saúde.","Identificação do risco de acidentes em idosos saudáveis e com doença de parkinson durante simulação de travessia de rua","Fisioterapia em grupo para pacientes com doença de parkinson: efeitos sobre a mobilidade funcional","Vida em movimento","Análise eletromiográfica de indivíduos em diferentes tipos de treinamento físico e tratamento para reabilitação física","Comparação entre exercícios resistidos tradicionais e protocolos de exercícios específicos para diferentes tipos de disfunções músculo-esqueléticas.","Avaliação das condições de trabalho e indicadores de saúde dos trabalhadores","Avaliação e intervenção fisioterapêutica à saúde das populações","Análise biomecânica do movimento humano","Avaliação e intervenção fisioterapêutica nas disfunções do membro superior e da coluna vertebral","Utilização da estimulação elétrica nervosa transcutânea como recursos para alívio da dor","Avaliação da dor e dos efeitos clínicos e sistêmicos após utilização de recursos eletrofísicos para alívio da dor","Bases neurofisiológicas da recuperação da função e plasticidade neural","Modulação autonômica em diversas situações clínicas e condições físicas","Avaliação, intervenção em saúde, qualidade de vida e aspectos funcionais nos diferentes níveis de atenção à saúde","Estudo do comportamento dos sistemas cardiopulmonar e metabólico frente a diferentes situações"],["Pesquisa","Extensão","Pesquisa","Pesquisa","Pesquisa","Extensão","Pesquisa","Extensão","Pesquisa","Pesquisa","Pesquisa","Pesquisa","Pesquisa","Pesquisa","Pesquisa","Pesquisa","Extensão","Pesquisa","Pesquisa","Pesquisa","Pesquisa","Pesquisa","Pesquisa","Pesquisa","Extensão","Pesquisa","Pesquisa","Pesquisa","Pesquisa","Extensão","Pesquisa","Pesquisa","Pesquisa","Pesquisa","Pesquisa","Pesquisa","Pesquisa","Pesquisa","Pesquisa","Pesquisa","Pesquisa","Pesquisa"],["01/03/2016","01/01/2019","01/08/2016","01/03/2016","01/08/2016","01/01/2017","01/03/2016","01/01/2018","01/08/2016","07/03/2016","16/03/2015","16/02/2016","01/08/2016","01/08/2016","03/01/2017","03/01/2017","03/01/2017","01/08/2016","01/02/2018","01/03/2018","01/03/2015","01/03/2016","01/08/2016","01/08/2016","08/08/2016","01/03/2018","01/03/2018","01/07/2014","01/07/2015","03/04/2017","01/08/2016","01/08/2016","01/08/2016","08/08/2016","01/08/2016","01/08/2016","01/08/2016","02/01/2017","02/01/2018","01/08/2016","08/08/2016","03/01/2017"],["31/12/2018","31/12/2020","31/12/2020","31/01/2018","31/12/2020","31/12/2020","31/12/2020","31/12/2020","31/12/2016","02/02/2018","02/02/2018","31/12/2016","31/12/2016","31/12/2018","31/12/2018","31/12/2018","31/12/2017","12/12/2017","31/12/2020","31/12/2020","31/12/2017","31/12/2021","30/12/2016","31/12/2016","31/12/2017","31/12/2018","31/12/2018","31/12/2019","31/12/2020","31/12/2020","31/12/2016","31/12/2016","31/12/2020","31/12/2020","30/12/2016","30/12/2016","31/12/2016","31/12/2019","31/12/2018","31/12/2016","31/12/2020","31/12/2020"],["Ana Paula Magalhaes Resende Bernardes","Ana Paula Magalhaes Resende Bernardes","Ana Paula Magalhaes Resende Bernardes","Vanessa Santos Pereira Baldon","Vanessa Santos Pereira Baldon","Vanessa Santos Pereira Baldon","Vanessa Santos Pereira Baldon","Vanessa Santos Pereira Baldon","Valdeci Carlos Dionisio","Valdeci Carlos Dionisio","Valdeci Carlos Dionisio","Lislei Jorge Patrizzi Martins","Lislei Jorge Patrizzi Martins","Lislei Jorge Patrizzi Martins","Lislei Jorge Patrizzi Martins","Lislei Jorge Patrizzi Martins","Nuno Miguel Lopes De Oliveira","Carlos Fernando Ronchi","Daniel Ferreira Moreira Lobato","Daniel Ferreira Moreira Lobato","Lilian Ramiro Felicio","Lilian Ramiro Felicio","Karina Pereira","Karina Pereira","Karina Pereira","Juliana Martins Pinto","Juliana Martins Pinto","Camilla Zamfolini Hallal","Camilla Zamfolini Hallal","Camilla Zamfolini Hallal","Dernival Bertoncello","Dernival Bertoncello","Isabel Aparecida Porcatti De Walsh","Isabel Aparecida Porcatti De Walsh","Luciane Fernanda Rodrigues Martinho Fernandes","Luciane Fernanda Rodrigues Martinho Fernandes","Luciane Fernanda Rodrigues Martinho Fernandes","Luciane Fernanda Rodrigues Martinho Fernandes","Gustavo Jose Luvizutto","Marilita Falangola Accioly","Marilita Falangola Accioly","Marilita Falangola Accioly"],["Brasil","Brasil","Brasil","Brasil","Brasil","Brasil","Brasil","Brasil","Brasil","Brasil","Brasil","Brasil","Brasil","Brasil","Brasil","Brasil","Brasil","Brasil","Brasil","Brasil","Brasil","Brasil","Brasil","Brasil","Brasil","Brasil","Brasil","Brasil","Brasil","Brasil","Brasil","Brasil","Brasil","Brasil","Brasil","Brasil","Brasil","Brasil","Brasil","Brasil","Brasil","Brasil"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Área de Concentração<\/th>\n      <th>Linha de Pesquisa<\/th>\n      <th>Projeto<\/th>\n      <th>Natureza<\/th>\n      <th>Início<\/th>\n      <th>Fim<\/th>\n      <th>Responsável<\/th>\n      <th>País<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"colReorder":false,"pageLength":4,"scrolX":false,"dom":"Bftip","searchHighlight":true,"buttons":[{"extend":"copy","text":"Copiar","filename":"Programa - Projetos de Pesquisa - Encerrados"},{"extend":"csv","text":"CSV","filename":"Programa - Projetos de Pesquisa - Encerrados"},{"extend":"pdf","text":"PDF","title":"Programa - Projetos de Pesquisa - Encerrados","filename":"Programa - Projetos de Pesquisa - Encerrados"}],"language":{"info":"Mostrando de _START_ até _END_ de _TOTAL_","zeroRecords":"Nenhum registro encontrado","search":"Pesquisar","paginate":{"next":"Próximo","previous":"Anterior"}},"columnDefs":[{"name":"Área de Concentração","targets":0},{"name":"Linha de Pesquisa","targets":1},{"name":"Projeto","targets":2},{"name":"Natureza","targets":3},{"name":"Início","targets":4},{"name":"Fim","targets":5},{"name":"Responsável","targets":6},{"name":"País","targets":7}],"order":[],"autoWidth":false,"orderClasses":false,"responsive":true,"lengthMenu":[4,10,25,50,100]},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
+<p><strong>Fontes</strong>: <a
+href="https://sucupira.capes.gov.br/sucupira/"><strong>Plataforma
+Sucupira</strong></a></p>
+<p><br><a style="float:right" href="#top"><b>Início  </b>
+<svg aria-hidden="true" role="img" viewBox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM385 231c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-71-71V376c0 13.3-10.7 24-24 24s-24-10.7-24-24V193.9l-71 71c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9L239 119c9.4-9.4 24.6-9.4 33.9 0L385 231z"/></svg>
+</a><br></p>
+<p><br></p>
+</div>
+</div>
+<div id="agendas-pesquisa" class="section level2 tabset">
+<h2 class="tabset"><strong>Agendas de pesquisa</strong></h2>
+<!--script for generating HORIZONTAL LINE-->
+<hr style="height:2px;border-width:0;color:black;background-color:black">
+<p><br></p>
+<p><br></p>
+</div>
+<div id="financiadores" class="section level2 tabset">
+<h2 class="tabset"><strong>Financiadores</strong></h2>
+<!--script for generating HORIZONTAL LINE-->
+<hr style="height:2px;border-width:0;color:black;background-color:black">
+<div id="financiadores-projetos" class="section level3 tabset">
+<h3 class="tabset"><strong>Projetos de pesquisa</strong></h3>
+<div id="auxilio-financeiro" class="section level4">
+<h4><strong>Auxílio financeiro</strong></h4>
+<div class="datatables html-widget html-fill-item" id="htmlwidget-6b19b7457e960c7548d6" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-6b19b7457e960c7548d6">{"x":{"filter":"none","vertical":false,"extensions":["Buttons","Responsive"],"caption":"<caption>10/07/2024<\/caption>","data":[["UNIVERSIDADE FEDERAL DO TRIÂNGULO MINEIRO","FUNDACAO DE AMPARO A PESQUISA DO ESTADO DE MINAS GERAIS","FUNDACAO DE AMPARO A PESQUISA DO ESTADO DE MINAS GERAIS","UNIVERSIDADE FEDERAL DO TRIÂNGULO MINEIRO","UNIVERSIDADE FEDERAL DO TRIÂNGULO MINEIRO","CONS NAC DE DESENVOLVIMENTO CIENTIFICO E TECNOLOGICO","FUNDACAO DE AMPARO A PESQUISA DO ESTADO DE MINAS GERAIS","FUNDACAO DE AMPARO A PESQUISA DO ESTADO DE MINAS GERAIS","FUNDACAO DE AMPARO A PESQUISA DO ESTADO DE MINAS GERAIS","FUNDACAO DE AMPARO A PESQUISA DO ESTADO DE MINAS GERAIS","FUNDACAO DE AMPARO A PESQUISA DO ESTADO DE MINAS GERAIS","CONS NAC DE DESENVOLVIMENTO CIENTIFICO E TECNOLOGICO","MINISTERIO DA EDUCACAO","FUNDACAO DE AMPARO A PESQUISA DO ESTADO DE MINAS GERAIS","CONS NAC DE DESENVOLVIMENTO CIENTIFICO E TECNOLOGICO","FUNDACAO DE AMPARO A PESQUISA DO ESTADO DE MINAS GERAIS","UNIVERSIDADE FEDERAL DE UBERLÂNDIA","UNIVERSIDADE FEDERAL DE UBERLÂNDIA","CONS NAC DE DESENVOLVIMENTO CIENTIFICO E TECNOLOGICO","UNIVERSIDADE FEDERAL DE UBERLÂNDIA","UNIVERSIDADE FEDERAL DO TRIÂNGULO MINEIRO","FUNDACAO DE AMPARO A PESQUISA DO ESTADO DE MINAS GERAIS","UNIVERSIDADE FEDERAL DE UBERLÂNDIA","FUNDACAO DE AMPARO A PESQUISA DO ESTADO DE MINAS GERAIS","FUNDACAO DE AMPARO A PESQUISA DO ESTADO DE MINAS GERAIS"],["Outro auxílio financeiro","Outro auxílio financeiro","Outro auxílio financeiro","Outro auxílio financeiro","Outro auxílio financeiro","Outro auxílio financeiro","Outro auxílio financeiro","Outro auxílio financeiro","Outro auxílio financeiro","Outro auxílio financeiro","Outro auxílio financeiro","Outro auxílio financeiro","Outro auxílio financeiro","Outro auxílio financeiro","Outro auxílio financeiro","Outro auxílio financeiro","Outro auxílio financeiro","Outro auxílio financeiro","Outro auxílio financeiro","Outro auxílio financeiro","Outro auxílio financeiro","Outro auxílio financeiro","Outro auxílio financeiro","Outro auxílio financeiro","Outro auxílio financeiro"],["01/01/2018","01/01/2019","01/02/2018","01/03/2019","01/03/2019","01/06/2017","01/06/2017","01/07/2014","01/08/2016","01/08/2016","01/08/2019","01/12/2014","01/12/2022","03/01/2017","03/08/2015","03/08/2015","04/03/2019","05/03/2018","05/03/2018","06/03/2017","06/06/2018","06/11/2018","07/08/2017","29/03/2021","30/11/2017"],[null,null,"31/08/2019","01/03/2020","26/02/2021","31/05/2020","31/07/2019","01/07/2018","30/12/2016","31/07/2018",null,"01/07/2018","01/12/2023","17/07/2017","04/07/2018","31/07/2018","03/02/2020","04/02/2019","04/07/2018","05/02/2018","05/03/2020",null,"31/07/2018",null,"29/11/2019"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Agência<\/th>\n      <th>Natureza<\/th>\n      <th>Início<\/th>\n      <th>Fim<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"colReorder":false,"pageLength":4,"scrolX":false,"dom":"Bftip","searchHighlight":true,"buttons":[{"extend":"copy","text":"Copiar","filename":"Programa - Financiadores - Projetos de Pesquisa - Auxílios"},{"extend":"csv","text":"CSV","filename":"Programa - Financiadores - Projetos de Pesquisa - Auxílios"},{"extend":"pdf","text":"PDF","title":"Programa - Financiadores - Projetos de Pesquisa - Auxílios","filename":"Programa - Financiadores - Projetos de Pesquisa - Auxílios"}],"language":{"info":"Mostrando de _START_ até _END_ de _TOTAL_","zeroRecords":"Nenhum registro encontrado","search":"Pesquisar","paginate":{"next":"Próximo","previous":"Anterior"}},"columnDefs":[{"name":"Agência","targets":0},{"name":"Natureza","targets":1},{"name":"Início","targets":2},{"name":"Fim","targets":3}],"order":[],"autoWidth":false,"orderClasses":false,"responsive":true,"lengthMenu":[4,10,25,50,100]},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
+<p><strong>Fontes</strong>: <a
+href="https://sucupira.capes.gov.br/sucupira/"><strong>Plataforma
+Sucupira</strong></a></p>
+<p><br><a style="float:right" href="#top"><b>Início  </b>
+<svg aria-hidden="true" role="img" viewBox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM385 231c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-71-71V376c0 13.3-10.7 24-24 24s-24-10.7-24-24V193.9l-71 71c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9L239 119c9.4-9.4 24.6-9.4 33.9 0L385 231z"/></svg>
+</a><br></p>
+<p><br></p>
+</div>
+<div id="bolsas" class="section level4">
+<h4><strong>Bolsas</strong></h4>
+<div class="datatables html-widget html-fill-item" id="htmlwidget-a8abc4c55cb451a9fa31" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-a8abc4c55cb451a9fa31">{"x":{"filter":"none","vertical":false,"extensions":["Buttons","Responsive"],"caption":"<caption>10/07/2024<\/caption>","data":[["UNIVERSIDADE FEDERAL DE UBERLÂNDIA","CONS NAC DE DESENVOLVIMENTO CIENTIFICO E TECNOLOGICO","CONS NAC DE DESENVOLVIMENTO CIENTIFICO E TECNOLOGICO","FUND COORD DE APERFEICOAMENTO DE PESSOAL DE NIVEL SUP","FUNDACAO DE AMPARO A PESQUISA DO ESTADO DE MINAS GERAIS","MINISTERIO DA EDUCACAO","CONS NAC DE DESENVOLVIMENTO CIENTIFICO E TECNOLOGICO","FUNDACAO DE AMPARO A PESQUISA DO ESTADO DE MINAS GERAIS","CONS NAC DE DESENVOLVIMENTO CIENTIFICO E TECNOLOGICO","FUNDACAO DE AMPARO A PESQUISA DO ESTADO DE MINAS GERAIS","MINISTERIO DA EDUCACAO","FUNDACAO DE AMPARO A PESQUISA DO ESTADO DE MINAS GERAIS","UNIVERSIDADE FEDERAL DO TRIÂNGULO MINEIRO","FUNDACAO DE AMPARO A PESQUISA DO ESTADO DE MINAS GERAIS","FUNDACAO DE AMPARO A PESQUISA DO ESTADO DE MINAS GERAIS","CONS NAC DE DESENVOLVIMENTO CIENTIFICO E TECNOLOGICO","CONS NAC DE DESENVOLVIMENTO CIENTIFICO E TECNOLOGICO"],["Bolsa","Bolsa","Bolsa","Bolsa","Bolsa","Bolsa","Bolsa","Bolsa","Bolsa","Bolsa","Bolsa","Bolsa","Bolsa","Bolsa","Bolsa","Bolsa","Bolsa"],["01/01/2019","01/03/2017","01/03/2017","01/03/2017","01/03/2017","01/03/2017","01/03/2018","01/03/2018","01/03/2019","01/03/2019","01/04/2017","01/08/2017","01/08/2018","01/08/2018","01/08/2018","04/03/2019","05/03/2018"],[null,"28/02/2018","28/02/2019","28/02/2019","28/02/2019","28/02/2019","28/02/2019","28/02/2020","28/02/2020","28/02/2020","01/04/2018","31/07/2018","01/01/2019","28/02/2019","31/07/2019","28/02/2020","28/02/2019"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Agência<\/th>\n      <th>Natureza<\/th>\n      <th>Início<\/th>\n      <th>Fim<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"colReorder":false,"pageLength":4,"scrolX":false,"dom":"Bftip","searchHighlight":true,"buttons":[{"extend":"copy","text":"Copiar","filename":"Programa - Financiadores - Projetos de Pesquisa - Bolsas"},{"extend":"csv","text":"CSV","filename":"Programa - Financiadores - Projetos de Pesquisa - Bolsas"},{"extend":"pdf","text":"PDF","title":"Programa - Financiadores - Projetos de Pesquisa - Bolsas","filename":"Programa - Financiadores - Projetos de Pesquisa - Bolsas"}],"language":{"info":"Mostrando de _START_ até _END_ de _TOTAL_","zeroRecords":"Nenhum registro encontrado","search":"Pesquisar","paginate":{"next":"Próximo","previous":"Anterior"}},"columnDefs":[{"name":"Agência","targets":0},{"name":"Natureza","targets":1},{"name":"Início","targets":2},{"name":"Fim","targets":3}],"order":[],"autoWidth":false,"orderClasses":false,"responsive":true,"lengthMenu":[4,10,25,50,100]},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
+<p><strong>Fontes</strong>: <a
+href="https://sucupira.capes.gov.br/sucupira/"><strong>Plataforma
+Sucupira</strong></a></p>
+<p><br><a style="float:right" href="#top"><b>Início  </b>
+<svg aria-hidden="true" role="img" viewBox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM385 231c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-71-71V376c0 13.3-10.7 24-24 24s-24-10.7-24-24V193.9l-71 71c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9L239 119c9.4-9.4 24.6-9.4 33.9 0L385 231z"/></svg>
+</a><br></p>
+<p><br></p>
+</div>
+</div>
+<div id="trabalhos-de-conclusão-de-curso" class="section level3">
+<h3><strong>Trabalhos de conclusão de curso</strong></h3>
+<div class="datatables html-widget html-fill-item" id="htmlwidget-e7f09a7b5aa5ecfdb0f1" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-e7f09a7b5aa5ecfdb0f1">{"x":{"filter":"none","vertical":false,"extensions":["Buttons","Responsive"],"caption":"<caption>10/07/2024<\/caption>","data":[["FUND COORD DE APERFEICOAMENTO DE PESSOAL DE NIVEL SUP","FUND COORD DE APERFEICOAMENTO DE PESSOAL DE NIVEL SUP","FUND COORD DE APERFEICOAMENTO DE PESSOAL DE NIVEL SUP","FUNDACAO DE AMPARO A PESQUISA DO ESTADO DE MINAS GERAIS","FUND COORD DE APERFEICOAMENTO DE PESSOAL DE NIVEL SUP","FUND COORD DE APERFEICOAMENTO DE PESSOAL DE NIVEL SUP","FUND COORD DE APERFEICOAMENTO DE PESSOAL DE NIVEL SUP","FUND COORD DE APERFEICOAMENTO DE PESSOAL DE NIVEL SUP","CONS NAC DE DESENVOLVIMENTO CIENTIFICO E TECNOLOGICO","FUND COORD DE APERFEICOAMENTO DE PESSOAL DE NIVEL SUP","FUNDACAO DE AMPARO A PESQUISA DO ESTADO DE MINAS GERAIS","FUNDACAO DE AMPARO A PESQUISA DO ESTADO DE MINAS GERAIS","FUND COORD DE APERFEICOAMENTO DE PESSOAL DE NIVEL SUP","FUND COORD DE APERFEICOAMENTO DE PESSOAL DE NIVEL SUP","FUND COORD DE APERFEICOAMENTO DE PESSOAL DE NIVEL SUP","FUNDACAO DE AMPARO A PESQUISA DO ESTADO DE MINAS GERAIS","MINISTERIO DA EDUCACAO","UNIVERSIDADE FEDERAL DO TRIÂNGULO MINEIRO"],["Programa de demanda social","Programa de demanda social","Programa de demanda social","Bolsa de mestrado e doutorado","Programa de demanda social","Programa de demanda social","Programa de demanda social","Programa de demanda social","Apoio a projetos de pesquisa","Programa de demanda social","Auxílio à pesquisa","Demanda universal - edital 01/2015 - fapemig","Programa de demanda social","Programa de demanda social","Programa de demanda social","Bolsa de mestrado e doutorado","Bolsa","Auxilio financeiro"],["01/03/2018","01/03/2018","01/03/2018","01/03/2018","01/03/2018","01/03/2019","01/08/2018","01/08/2019","01/08/2019","01/08/2019","01/08/2019","02/03/2018","02/03/2018","03/03/2021","06/05/2021","08/08/2016","08/08/2016","16/02/2017"],["03/03/2020","10/12/2020","17/02/2020","17/02/2020","20/02/2020","25/06/2021","21/07/2021","20/04/2022","25/08/2021","27/10/2021","29/10/2021","21/02/2020","28/04/2020","23/03/2023","24/09/2021","13/07/2018","30/07/2018","11/12/2018"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Agência<\/th>\n      <th>Natureza<\/th>\n      <th>Início<\/th>\n      <th>Fim<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"colReorder":false,"pageLength":4,"scrolX":false,"dom":"Bftip","searchHighlight":true,"buttons":[{"extend":"copy","text":"Copiar","filename":"Financiadores - Trabalhos de Conclusão de Curso"},{"extend":"csv","text":"CSV","filename":"Financiadores - Trabalhos de Conclusão de Curso"},{"extend":"pdf","text":"PDF","title":"Financiadores - Trabalhos de Conclusão de Curso","filename":"Financiadores - Trabalhos de Conclusão de Curso"}],"language":{"info":"Mostrando de _START_ até _END_ de _TOTAL_","zeroRecords":"Nenhum registro encontrado","search":"Pesquisar","paginate":{"next":"Próximo","previous":"Anterior"}},"columnDefs":[{"name":"Agência","targets":0},{"name":"Natureza","targets":1},{"name":"Início","targets":2},{"name":"Fim","targets":3}],"order":[],"autoWidth":false,"orderClasses":false,"responsive":true,"lengthMenu":[4,10,25,50,100]},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
+<p><strong>Fontes</strong>: <a
+href="https://sucupira.capes.gov.br/sucupira/"><strong>Plataforma
+Sucupira</strong></a></p>
+<p><br><a style="float:right" href="#top"><b>Início  </b>
+<svg aria-hidden="true" role="img" viewBox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM385 231c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-71-71V376c0 13.3-10.7 24-24 24s-24-10.7-24-24V193.9l-71 71c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9L239 119c9.4-9.4 24.6-9.4 33.9 0L385 231z"/></svg>
+</a><br></p>
+<p><br></p>
+</div>
+<div id="detalhamento" class="section level3">
+<h3><strong>Detalhamento</strong></h3>
+<p><br></p>
+</div>
+</div>
+<div id="infraestrutura" class="section level2 tabset">
+<h2 class="tabset"><strong>Infraestrutura</strong></h2>
+<!--script for generating HORIZONTAL LINE-->
+<hr style="height:2px;border-width:0;color:black;background-color:black">
+<p><br></p>
+<p><br></p>
+</div>
+<div id="laboratorios-pesquisa" class="section level2 tabset">
+<h2 class="tabset"><strong>Laboratórios de pesquisa</strong></h2>
+<!--script for generating HORIZONTAL LINE-->
+<hr style="height:2px;border-width:0;color:black;background-color:black">
+<p><br></p>
+<p><br></p>
+</div>
+<div id="cursos" class="section level2 tabset">
+<h2 class="tabset"><strong>Cursos</strong></h2>
+<!--script for generating HORIZONTAL LINE-->
+<hr style="height:2px;border-width:0;color:black;background-color:black">
+<div id="níveis" class="section level3">
+<h3><strong>Níveis</strong></h3>
+<p><br></p>
+</div>
+<div id="créditos" class="section level3">
+<h3><strong>Créditos</strong></h3>
+<p><br></p>
+</div>
+<div id="calculadora-creditos-d" class="section level3 tabset">
+<h3 class="tabset"><strong>Calculadora de créditos (D)</strong></h3>
+<center>
+<strong>TOTAL REQUERIDO: CR</strong> <br> Créditos OBRIGATÓRIOS
+marcados: <strong id=msgOBRDSC></strong> <br> Créditos ELETIVOS
+marcados: <strong id=msgELEDSC></strong>
+</center>
+<div id="obrigatórios" class="section level4">
+<h4><strong>Obrigatórios</strong></h4>
+<!--script for generating CALCULATOR FORM-->
+<script>
+function chkcontrol3(j) {
+var sumOBRDSC=0;
+for(var i=0; i < document.formOBRDSC.ckb.length; i++){
+  if(document.formOBRDSC.ckb[i].checked){
+    sumOBRDSC = sumOBRDSC + parseInt(document.formOBRDSC.ckb[i].value);
+    }
+  document.getElementById("msgOBRDSC").innerHTML= sumOBRDSC + " CR";
+  }
+}
+</script>
+<p><strong>Fontes</strong>: <a
+href="https://sucupira.capes.gov.br/sucupira/"><strong>Plataforma
+Sucupira</strong></a></p>
+<p><br><a style="float:right" href="#top"><b>Início  </b>
+<svg aria-hidden="true" role="img" viewBox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM385 231c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-71-71V376c0 13.3-10.7 24-24 24s-24-10.7-24-24V193.9l-71 71c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9L239 119c9.4-9.4 24.6-9.4 33.9 0L385 231z"/></svg>
+</a><br></p>
+<p><br></p>
+</div>
+<div id="eletivos" class="section level4">
+<h4><strong>Eletivos</strong></h4>
+<!--script for generating CALCULATOR FORM-->
+<script>
+function chkcontrol4(j) {
+var sumELEDSC=0;
+for(var i=0; i < document.formELEDSC.ckb.length; i++){
+  if(document.formELEDSC.ckb[i].checked){
+    sumELEDSC = sumELEDSC + parseInt(document.formELEDSC.ckb[i].value);
+    }
+  document.getElementById("msgELEDSC").innerHTML= sumELEDSC + " CR";
+  }
+}
+</script>
+<p><strong>Fontes</strong>: <a
+href="https://sucupira.capes.gov.br/sucupira/"><strong>Plataforma
+Sucupira</strong></a></p>
+<p><br><a style="float:right" href="#top"><b>Início  </b>
+<svg aria-hidden="true" role="img" viewBox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM385 231c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-71-71V376c0 13.3-10.7 24-24 24s-24-10.7-24-24V193.9l-71 71c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9L239 119c9.4-9.4 24.6-9.4 33.9 0L385 231z"/></svg>
+</a><br></p>
+<p><br></p>
+</div>
+</div>
+<div id="calculadora-creditos-m" class="section level3 tabset">
+<h3 class="tabset"><strong>Calculadora de créditos (M)</strong></h3>
+<center>
+<strong>TOTAL REQUERIDO: CR</strong> <br> Créditos OBRIGATÓRIOS
+marcados: <strong id=msgOBRMSC></strong> <br> Créditos ELETIVOS
+marcados: <strong id=msgELEMSC></strong>
+</center>
+<div id="obrigatórios-1" class="section level4">
+<h4><strong>Obrigatórios</strong></h4>
+<!--script for generating CALCULATOR FORM-->
+<script>
+function chkcontrol1(j) {
+var sumOBRMSC=0;
+for(var i=0; i < document.formOBRMSC.ckb.length; i++){
+  if(document.formOBRMSC.ckb[i].checked){
+    sumOBRMSC = sumOBRMSC + parseInt(document.formOBRMSC.ckb[i].value);
+    }
+  document.getElementById("msgOBRMSC").innerHTML= sumOBRMSC + " CR";
+  }
+}
+</script>
+<form name="formOBRMSC" method="post" action="check.php">
+<table class="table table-striped">
+<tr>
+<td>
+<input type="checkbox" name="ckb" value=" 2 " onclick="chkcontrol1( 0 )">
+BIOÉTICA E ÉTICA EM PESQUISA (2 CR) (30 CH) </input>
+</td>
+</tr>
+<tr>
+<td>
+<input type="checkbox" name="ckb" value=" 3 " onclick="chkcontrol1( 1 )">
+DIDÁTICA DO ENSINO SUPERIOR E ESTÁGIO DE DOCÊNCIA (3 CR) (45 CH)
+</input>
+</td>
+</tr>
+<tr>
+<td>
+<input type="checkbox" name="ckb" value=" 4 " onclick="chkcontrol1( 2 )">
+METODOLOGIA CIENTÍFICA E BIOESTATÍSTICA (4 CR) (60 CH) </input>
+</td>
+</tr>
+<tr>
+<td>
+<input type="checkbox" name="ckb" value=" 3 " onclick="chkcontrol1( 3 )">
+SEMINÁRIOS DE PESQUISA E REDAÇÃO CIENTÍFICA (3 CR) (45 CH) </input>
+</td>
+</tr>
+</table>
+</form>
+<p><strong>Fontes</strong>: <a
+href="https://sucupira.capes.gov.br/sucupira/"><strong>Plataforma
+Sucupira</strong></a></p>
+<p><br><a style="float:right" href="#top"><b>Início  </b>
+<svg aria-hidden="true" role="img" viewBox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM385 231c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-71-71V376c0 13.3-10.7 24-24 24s-24-10.7-24-24V193.9l-71 71c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9L239 119c9.4-9.4 24.6-9.4 33.9 0L385 231z"/></svg>
+</a><br></p>
+<p><br></p>
+</div>
+<div id="eletivos-1" class="section level4">
+<h4><strong>Eletivos</strong></h4>
+<!--script for generating CALCULATOR FORM-->
+<script>
+function chkcontrol2(j) {
+var sumELEMSC=0;
+for(var i=0; i < document.formELEMSC.ckb.length; i++){
+  if(document.formELEMSC.ckb[i].checked){
+    sumELEMSC = sumELEMSC + parseInt(document.formELEMSC.ckb[i].value);
+    }
+  document.getElementById("msgELEMSC").innerHTML= sumELEMSC + " CR";
+  }
+}
+</script>
+<form name="formELEMSC" method="post" action="check.php">
+<table class="table table-striped">
+<tr>
+<td>
+<input type="checkbox" name="ckb" value=" 3 " onclick="chkcontrol2( 0 )">
+AVALIAÇÃO E INTERVENÇÃO FISIOTERAPÊUTICA EM GERONTOLOGIA (3 CR) (45 CH)
+</input>
+</td>
+</tr>
+<tr>
+<td>
+<input type="checkbox" name="ckb" value=" 3 " onclick="chkcontrol2( 1 )">
+AVALIAÇÃO E INTERVENÇÃO FISIOTERAPÊUTICA NO SISTEMA CARDIOVASCULAR E
+RESPIRATÓRIO (3 CR) (45 CH) </input>
+</td>
+</tr>
+<tr>
+<td>
+<input type="checkbox" name="ckb" value=" 4 " onclick="chkcontrol2( 2 )">
+BIOMECÂNICA DA POSTURA E DO MOVIMENTO HUMANO (4 CR) (60 CH) </input>
+</td>
+</tr>
+<tr>
+<td>
+<input type="checkbox" name="ckb" value=" 3 " onclick="chkcontrol2( 3 )">
+CONTROLE MOTOR E INTERVENÇÃO FISIOTERAPÊUTICA NO SISTEMA NEURO-SENSORIAL
+(3 CR) (45 CH) </input>
+</td>
+</tr>
+<tr>
+<td>
+<input type="checkbox" name="ckb" value=" 2 " onclick="chkcontrol2( 4 )">
+FISIOTERAPIA BASEADA EM EVIDÊNCIAS (2 CR) (30 CH) </input>
+</td>
+</tr>
+<tr>
+<td>
+<input type="checkbox" name="ckb" value=" 3 " onclick="chkcontrol2( 5 )">
+FUNCIONALIDADE, DEFICIÊNCIA E SAÚDE (3 CR) (45 CH) </input>
+</td>
+</tr>
+<tr>
+<td>
+<input type="checkbox" name="ckb" value=" 3 " onclick="chkcontrol2( 6 )">
+POLÍTICAS PÚBLICAS DE SAÚDE E EPIDEMIOLOGIA (3 CR) (45 CH) </input>
+</td>
+</tr>
+<tr>
+<td>
+<input type="checkbox" name="ckb" value=" 2 " onclick="chkcontrol2( 7 )">
+TÓPICOS EM FISIOTERAPIA NA SAÚDE DA MULHER (2 CR) (30 CH) </input>
+</td>
+</tr>
+</table>
+</form>
+<p><strong>Fontes</strong>: <a
+href="https://sucupira.capes.gov.br/sucupira/"><strong>Plataforma
+Sucupira</strong></a></p>
+<p><br><a style="float:right" href="#top"><b>Início  </b>
+<svg aria-hidden="true" role="img" viewBox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM385 231c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-71-71V376c0 13.3-10.7 24-24 24s-24-10.7-24-24V193.9l-71 71c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9L239 119c9.4-9.4 24.6-9.4 33.9 0L385 231z"/></svg>
+</a><br></p>
+<p><br></p>
+</div>
+</div>
+</div>
+<div id="estrutura-curricular" class="section level2 tabset">
+<h2 class="tabset"><strong>Estrutura curricular</strong></h2>
+<!--script for generating HORIZONTAL LINE-->
+<hr style="height:2px;border-width:0;color:black;background-color:black">
+<div id="disciplinas" class="section level3">
+<h3><strong>Disciplinas</strong></h3>
+<div class="datatables html-widget html-fill-item" id="htmlwidget-70f6478672b1ed0f9316" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-70f6478672b1ed0f9316">{"x":{"filter":"none","vertical":false,"extensions":["Buttons","Responsive"],"caption":"<caption>10/07/2024<\/caption>","data":[["AVALIAÇÃO E INTERVENÇÃO FISIOTERAPÊUTICA EM GERONTOLOGIA","AVALIAÇÃO E INTERVENÇÃO FISIOTERAPÊUTICA NO SISTEMA CARDIOVASCULAR E RESPIRATÓRIO","BIOÉTICA E ÉTICA EM PESQUISA","BIOMECÂNICA DA POSTURA E DO MOVIMENTO HUMANO","CONTROLE MOTOR E INTERVENÇÃO FISIOTERAPÊUTICA NO SISTEMA NEURO-SENSORIAL","DIDÁTICA DO ENSINO SUPERIOR E ESTÁGIO DE DOCÊNCIA","FISIOTERAPIA BASEADA EM EVIDÊNCIAS","FUNCIONALIDADE, DEFICIÊNCIA E SAÚDE","METODOLOGIA CIENTÍFICA E BIOESTATÍSTICA","POLÍTICAS PÚBLICAS DE SAÚDE E EPIDEMIOLOGIA","SEMINÁRIOS DE PESQUISA E REDAÇÃO CIENTÍFICA","TÓPICOS EM FISIOTERAPIA NA SAÚDE DA MULHER"],["Não","Não","Sim","Não","Não","Sim","Não","Não","Sim","Não","Sim","Não"],["3","3","2","4","3","3","2","3","4","3","3","2"],["45","45","30","60","45","45","30","45","60","45","45","30"],["2017","2017","2016","2016","2017","2016","2016","2017","2017","2017","2017","2017"],[null,null,null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null,null,null]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Disciplina<\/th>\n      <th>Obrigatória (MA)<\/th>\n      <th>CR<\/th>\n      <th>CH<\/th>\n      <th>Início<\/th>\n      <th>Obrigatória (DA)<\/th>\n      <th>CR<\/th>\n      <th>CH<\/th>\n      <th>Início<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"colReorder":false,"pageLength":4,"scrolX":false,"dom":"Bftip","searchHighlight":true,"buttons":[{"extend":"copy","text":"Copiar","filename":"Programa - Disciplinas - Ativas"},{"extend":"csv","text":"CSV","filename":"Programa - Disciplinas - Ativas"},{"extend":"pdf","text":"PDF","title":"Programa - Disciplinas - Ativas","filename":"Programa - Disciplinas - Ativas"}],"language":{"info":"Mostrando de _START_ até _END_ de _TOTAL_","zeroRecords":"Nenhum registro encontrado","search":"Pesquisar","paginate":{"next":"Próximo","previous":"Anterior"}},"columnDefs":[{"name":"Disciplina","targets":0},{"name":"Obrigatória (MA)","targets":1},{"name":"CR","targets":2},{"name":"CH","targets":3},{"name":"Início","targets":4},{"name":"Obrigatória (DA)","targets":5},{"name":"CR","targets":6},{"name":"CH","targets":7},{"name":"Início","targets":8}],"order":[],"autoWidth":false,"orderClasses":false,"responsive":true,"lengthMenu":[4,10,25,50,100]},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
+<p><strong>Fontes</strong>: <a
+href="https://sucupira.capes.gov.br/sucupira/"><strong>Plataforma
+Sucupira</strong></a></p>
+<p><br><a style="float:right" href="#top"><b>Início  </b>
+<svg aria-hidden="true" role="img" viewBox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM385 231c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-71-71V376c0 13.3-10.7 24-24 24s-24-10.7-24-24V193.9l-71 71c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9L239 119c9.4-9.4 24.6-9.4 33.9 0L385 231z"/></svg>
+</a><br></p>
+<p><br></p>
+</div>
+<div id="ementas" class="section level3">
+<h3><strong>Ementas</strong></h3>
+<p><br></p>
+</div>
+<div id="bibliografia" class="section level3">
+<h3><strong>Bibliografia</strong></h3>
+<p><br></p>
+</div>
+<div id="inativas-2" class="section level3">
+<h3><strong>Inativas</strong></h3>
+<div class="datatables html-widget html-fill-item" id="htmlwidget-26dafab95baab6af4046" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-26dafab95baab6af4046">{"x":{"filter":"none","vertical":false,"extensions":["Buttons","Responsive"],"caption":"<caption>10/07/2024<\/caption>","data":[[],[],[],[],[],[],[],[],[]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Disciplina<\/th>\n      <th>Obrigatória (MA)<\/th>\n      <th>CR<\/th>\n      <th>CH<\/th>\n      <th>Fim<\/th>\n      <th>Obrigatória (DA)<\/th>\n      <th>CR<\/th>\n      <th>CH<\/th>\n      <th>Fim<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"colReorder":false,"pageLength":4,"scrolX":false,"dom":"Bftip","searchHighlight":true,"buttons":[{"extend":"copy","text":"Copiar","filename":"Programa - Disciplinas - Inativas"},{"extend":"csv","text":"CSV","filename":"Programa - Disciplinas - Inativas"},{"extend":"pdf","text":"PDF","title":"Programa - Disciplinas - Inativas","filename":"Programa - Disciplinas - Inativas"}],"language":{"info":"Mostrando de _START_ até _END_ de _TOTAL_","zeroRecords":"Nenhum registro encontrado","search":"Pesquisar","paginate":{"next":"Próximo","previous":"Anterior"}},"columnDefs":[{"name":"Disciplina","targets":0},{"name":"Obrigatória (MA)","targets":1},{"name":"CR","targets":2},{"name":"CH","targets":3},{"name":"Fim","targets":4},{"name":"Obrigatória (DA)","targets":5},{"name":"CR","targets":6},{"name":"CH","targets":7},{"name":"Fim","targets":8}],"order":[],"autoWidth":false,"orderClasses":false,"responsive":true,"lengthMenu":[4,10,25,50,100]},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
+<p><strong>Fontes</strong>: <a
+href="https://sucupira.capes.gov.br/sucupira/"><strong>Plataforma
+Sucupira</strong></a></p>
+<p><br><a style="float:right" href="#top"><b>Início  </b>
+<svg aria-hidden="true" role="img" viewBox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM385 231c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-71-71V376c0 13.3-10.7 24-24 24s-24-10.7-24-24V193.9l-71 71c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9L239 119c9.4-9.4 24.6-9.4 33.9 0L385 231z"/></svg>
+</a><br></p>
+<p><br></p>
+</div>
+</div>
+<div id="editais" class="section level2 tabset">
+<h2 class="tabset"><strong>Processo seletivo para ingresso</strong></h2>
+<!--script for generating HORIZONTAL LINE-->
+<hr style="height:2px;border-width:0;color:black;background-color:black">
+<p><br></p>
+<p><br></p>
+</div>
+<div id="bolsas" class="section level2 tabset">
+<h2 class="tabset"><strong>Bolsas de estudo</strong></h2>
+<!--script for generating HORIZONTAL LINE-->
+<hr style="height:2px;border-width:0;color:black;background-color:black">
+<p><br></p>
+<p><br></p>
+</div>
+<div id="calendarios" class="section level2 tabset">
+<h2 class="tabset"><strong>Calendários</strong></h2>
+<!--script for generating HORIZONTAL LINE-->
+<hr style="height:2px;border-width:0;color:black;background-color:black">
+<p><br></p>
+<p><br></p>
+</div>
+<div id="turmas" class="section level2 tabset">
+<h2 class="tabset"><strong>Turmas</strong></h2>
+<!--script for generating HORIZONTAL LINE-->
+<hr style="height:2px;border-width:0;color:black;background-color:black">
+<div id="section" class="section level3">
+<h3><strong>2024-2021</strong></h3>
+<table class="table table-striped table-hover table-condensed table-responsive" style="margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:left;">
+2023/1
+</th>
+<th style="text-align:center;">
+2022/2
+</th>
+<th style="text-align:center;">
+2022/1
+</th>
+<th style="text-align:center;">
+2021/2
+</th>
+<th style="text-align:right;">
+2021/1
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Oferecida
+</td>
+<td style="text-align:left;">
+✅
+</td>
+<td style="text-align:center;">
+✅
+</td>
+<td style="text-align:center;">
+✅
+</td>
+<td style="text-align:center;">
+✅
+</td>
+<td style="text-align:right;">
+✅
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+AIFG
+</td>
+<td style="text-align:left;">
+✔
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+✔
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:right;">
+✔
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+AIFSCR
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+✔
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+✔
+</td>
+<td style="text-align:right;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+BÉP
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+✔
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+✔
+</td>
+<td style="text-align:right;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+BPMH
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+✔
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+✔
+</td>
+<td style="text-align:right;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+CMIFSN
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+✔
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+✔
+</td>
+<td style="text-align:right;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+DESED
+</td>
+<td style="text-align:left;">
+✔
+</td>
+<td style="text-align:center;">
+✔
+</td>
+<td style="text-align:center;">
+✔
+</td>
+<td style="text-align:center;">
+✔
+</td>
+<td style="text-align:right;">
+✔
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+FBE
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+✔
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+✔
+</td>
+<td style="text-align:right;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+FDS
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+✔
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:right;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+MCB
+</td>
+<td style="text-align:left;">
+✔
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+✔
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:right;">
+✔
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+PPSE
+</td>
+<td style="text-align:left;">
+✔
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+✔
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:right;">
+✔
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+SPRC
+</td>
+<td style="text-align:left;">
+✔
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+✔
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:right;">
+✔
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+TFSM
+</td>
+<td style="text-align:left;">
+✔
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:right;">
+✔
+</td>
+</tr>
+</tbody>
+</table>
+<p><em>AIFG: Avaliação E Intervenção Fisioterapêutica Em
+Gerontologia</em>; <em>AIFSCR: Avaliação E Intervenção Fisioterapêutica
+No Sistema Cardiovascular E Respiratório</em>; <em>BÉP: Bioética E Ética
+Em Pesquisa</em>; <em>BPMH: Biomecânica Da Postura E Do Movimento
+Humano</em>; <em>CMIFSN: Controle Motor E Intervenção Fisioterapêutica
+No Sistema Neuro-Sensorial</em>; <em>DESED: Didática Do Ensino Superior
+E Estágio De Docência</em>; <em>FBE: Fisioterapia Baseada Em
+Evidências</em>; <em>FDS: Funcionalidade, Deficiência E Saúde</em>;
+<em>MCB: Metodologia Científica E Bioestatística</em>; <em>PPSE:
+Políticas Públicas De Saúde E Epidemiologia</em>; <em>SPRC: Seminários
+De Pesquisa E Redação Científica</em>; <em>TFSM: Tópicos Em Fisioterapia
+Na Saúde Da Mulher</em></p>
+<p><strong>Fontes</strong>: <a
+href="https://sucupira.capes.gov.br/sucupira/"><strong>Plataforma
+Sucupira</strong></a></p>
+<p><br><a style="float:right" href="#top"><b>Início  </b>
+<svg aria-hidden="true" role="img" viewBox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM385 231c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-71-71V376c0 13.3-10.7 24-24 24s-24-10.7-24-24V193.9l-71 71c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9L239 119c9.4-9.4 24.6-9.4 33.9 0L385 231z"/></svg>
+</a><br></p>
+<p><br></p>
+</div>
+<div id="section-1" class="section level3">
+<h3><strong>2020-2017</strong></h3>
+<table class="table table-striped table-hover table-condensed table-responsive" style="margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:left;">
+2020/2
+</th>
+<th style="text-align:center;">
+2020/1
+</th>
+<th style="text-align:center;">
+2019/2
+</th>
+<th style="text-align:center;">
+2019/1
+</th>
+<th style="text-align:center;">
+2018/2
+</th>
+<th style="text-align:center;">
+2018/1
+</th>
+<th style="text-align:right;">
+2017/1
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Oferecida
+</td>
+<td style="text-align:left;">
+✅
+</td>
+<td style="text-align:center;">
+✅
+</td>
+<td style="text-align:center;">
+✅
+</td>
+<td style="text-align:center;">
+✅
+</td>
+<td style="text-align:center;">
+✅
+</td>
+<td style="text-align:center;">
+✅
+</td>
+<td style="text-align:right;">
+✅
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+AIFG
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+✔
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+✔
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+✔
+</td>
+<td style="text-align:right;">
+✔
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+AIFSCR
+</td>
+<td style="text-align:left;">
+✔
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+✔
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+✔
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:right;">
+✔
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+BÉP
+</td>
+<td style="text-align:left;">
+✔
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+✔
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+✔
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:right;">
+✔
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+BPMH
+</td>
+<td style="text-align:left;">
+✔
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+✔
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+✔
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:right;">
+✔
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+CMIFSN
+</td>
+<td style="text-align:left;">
+✔
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+✔
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+✔
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:right;">
+✔
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+DESED
+</td>
+<td style="text-align:left;">
+✔
+</td>
+<td style="text-align:center;">
+✔
+</td>
+<td style="text-align:center;">
+✔
+</td>
+<td style="text-align:center;">
+✔
+</td>
+<td style="text-align:center;">
+✔
+</td>
+<td style="text-align:center;">
+✔
+</td>
+<td style="text-align:right;">
+✔
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+FBE
+</td>
+<td style="text-align:left;">
+✔
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+✔
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+✔
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:right;">
+✔
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+FDS
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+✔
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+✔
+</td>
+<td style="text-align:right;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+MCB
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+✔
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+✔
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+✔
+</td>
+<td style="text-align:right;">
+✔
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+PPSE
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+✔
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+✔
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+✔
+</td>
+<td style="text-align:right;">
+✔
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+SPRC
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+✔
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+✔
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+✔
+</td>
+<td style="text-align:right;">
+✔
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+TFSM
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+✔
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:right;">
+✔
+</td>
+</tr>
+</tbody>
+</table>
+<p><em>AIFG: Avaliação E Intervenção Fisioterapêutica Em
+Gerontologia</em>; <em>AIFSCR: Avaliação E Intervenção Fisioterapêutica
+No Sistema Cardiovascular E Respiratório</em>; <em>BÉP: Bioética E Ética
+Em Pesquisa</em>; <em>BPMH: Biomecânica Da Postura E Do Movimento
+Humano</em>; <em>CMIFSN: Controle Motor E Intervenção Fisioterapêutica
+No Sistema Neuro-Sensorial</em>; <em>DESED: Didática Do Ensino Superior
+E Estágio De Docência</em>; <em>FBE: Fisioterapia Baseada Em
+Evidências</em>; <em>FDS: Funcionalidade, Deficiência E Saúde</em>;
+<em>MCB: Metodologia Científica E Bioestatística</em>; <em>PPSE:
+Políticas Públicas De Saúde E Epidemiologia</em>; <em>SPRC: Seminários
+De Pesquisa E Redação Científica</em>; <em>TFSM: Tópicos Em Fisioterapia
+Na Saúde Da Mulher</em></p>
+<p><strong>Fontes</strong>: <a
+href="https://sucupira.capes.gov.br/sucupira/"><strong>Plataforma
+Sucupira</strong></a></p>
+<p><br><a style="float:right" href="#top"><b>Início  </b>
+<svg aria-hidden="true" role="img" viewBox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM385 231c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-71-71V376c0 13.3-10.7 24-24 24s-24-10.7-24-24V193.9l-71 71c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9L239 119c9.4-9.4 24.6-9.4 33.9 0L385 231z"/></svg>
+</a><br></p>
+<p><br></p>
+</div>
+<div id="section-2" class="section level3">
+<h3><strong>2016-2013</strong></h3>
+<table class="table table-striped table-hover table-condensed table-responsive" style="margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:left;">
+2016/1
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Oferecida
+</td>
+<td style="text-align:left;">
+✅
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+BÉP
+</td>
+<td style="text-align:left;">
+✔
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+BPMH
+</td>
+<td style="text-align:left;">
+✔
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+DESED
+</td>
+<td style="text-align:left;">
+✔
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+FBE
+</td>
+<td style="text-align:left;">
+✔
+</td>
+</tr>
+</tbody>
+</table>
+<p><em>BÉP: Bioética E Ética Em Pesquisa</em>; <em>BPMH: Biomecânica Da
+Postura E Do Movimento Humano</em>; <em>DESED: Didática Do Ensino
+Superior E Estágio De Docência</em>; <em>FBE: Fisioterapia Baseada Em
+Evidências</em></p>
+<p><strong>Fontes</strong>: <a
+href="https://sucupira.capes.gov.br/sucupira/"><strong>Plataforma
+Sucupira</strong></a></p>
+<p><br><a style="float:right" href="#top"><b>Início  </b>
+<svg aria-hidden="true" role="img" viewBox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM385 231c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-71-71V376c0 13.3-10.7 24-24 24s-24-10.7-24-24V193.9l-71 71c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9L239 119c9.4-9.4 24.6-9.4 33.9 0L385 231z"/></svg>
+</a><br></p>
+<p><br></p>
+</div>
+<div id="section-3" class="section level3">
+<h3><strong>2012-2010</strong></h3>
+<p><br></p>
+</div>
+</div>
+<div id="convenios" class="section level2 tabset">
+<h2 class="tabset"><strong>Convênios institucionais</strong></h2>
+<!--script for generating HORIZONTAL LINE-->
+<hr style="height:2px;border-width:0;color:black;background-color:black">
+<p><br></p>
+<p><br></p>
+</div>
+<div id="cooperacao" class="section level2 tabset">
+<h2 class="tabset"><strong>Cooperação interinstitucional</strong></h2>
+<!--script for generating HORIZONTAL LINE-->
+<hr style="height:2px;border-width:0;color:black;background-color:black">
+<p><br></p>
+<p><br></p>
+</div>
+<div id="internacional" class="section level2 tabset">
+<h2 class="tabset"><strong>Internacionalização</strong></h2>
+<!--script for generating HORIZONTAL LINE-->
+<hr style="height:2px;border-width:0;color:black;background-color:black">
+<p><br></p>
+<p><br></p>
+</div>
+
+<!--script for generating HORIZONTAL LINE-->
+<hr style="height:10px;border-width:0;color:black;background-color:black">
+
+<br>
+
+<div style="text-align: center; vertical-align: baseline">
+  <p>Copyright &copy; 2021-<script type="text/javascript">document.write( new Date().getFullYear() );</script> Arthur de Sá Ferreira, DSc. Todos os direitos reservados. Última atualização em <span id="datetime"></span><script>var dt = new Date().toLocaleDateString(); document.getElementById("datetime").innerHTML=dt.toLocaleString();</script>.<p/></div>
+
+<div style="text-align: center; vertical-align: baseline;">
+  <p><b>Observatório</b> por <a id="cy-effective-orcid-url" class="underline" href="https://orcid.org/0000-0001-7014-2002" target="orcid.widget" rel="me noopener noreferrer" style="vertical-align: baseline;"> <img src="https://orcid.org/sites/default/files/images/orcid_16x16.png" style="width: 1em; margin-inline-start: 0.5em" alt="ORCID iD icon"/> Arthur de Sá Ferreira</a> está licenciado sob <a rel="license" data-spdx="Apache-2.0" href="https://www.apache.org/licenses/LICENSE-2.0">Apache License 2.0</a></p>
+</div>
+
+<div style="text-align: center; vertical-align: baseline;">
+  <img style="vertical-align: baseline" width="2%" src="https://raw.githubusercontent.com/rstudio/hex-stickers/main/thumbs/RStudio.png"> Desenvolvido em <a href="https://www.rstudio.com/" target="_blank">RStudio</a> usando <a href="https://rmarkdown.rstudio.com" target="_blank">R Markdown</a>
+</div>
+
+<br>
+
+<!--print ZENODO citation-->
+<div style="text-align: center; vertical-align: baseline;">
+<a href="https://doi.org/10.5281/zenodo.8322622"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.8322622.svg" alt="DOI"></a>
+</div>
+
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+
+<script>
+$(document).ready(function ()  {
+
+    // temporarily add toc-ignore selector to headers for the consistency with Pandoc
+    $('.unlisted.unnumbered').addClass('toc-ignore')
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
