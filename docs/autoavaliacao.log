@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.8.22)  22 AUG 2024 23:50
+This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.8.22)  27 AUG 2024 06:11
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1134,40 +1134,40 @@ LaTeX Warning: Label `tab:turmas' multiply defined.
 )
 \openout1 = `autoavaliacao.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 171.
-LaTeX Font Info:    ... okay on input line 171.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 171.
-LaTeX Font Info:    ... okay on input line 171.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 171.
-LaTeX Font Info:    ... okay on input line 171.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 171.
-LaTeX Font Info:    ... okay on input line 171.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 171.
-LaTeX Font Info:    ... okay on input line 171.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 171.
-LaTeX Font Info:    ... okay on input line 171.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 171.
-LaTeX Font Info:    ... okay on input line 171.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 171.
-LaTeX Font Info:    ... okay on input line 171.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 171.
-LaTeX Font Info:    ... okay on input line 171.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 171.
-LaTeX Font Info:    ... okay on input line 171.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 172.
+LaTeX Font Info:    ... okay on input line 172.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 172.
+LaTeX Font Info:    ... okay on input line 172.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 172.
+LaTeX Font Info:    ... okay on input line 172.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 172.
+LaTeX Font Info:    ... okay on input line 172.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 172.
+LaTeX Font Info:    ... okay on input line 172.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 172.
+LaTeX Font Info:    ... okay on input line 172.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 172.
+LaTeX Font Info:    ... okay on input line 172.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 172.
+LaTeX Font Info:    ... okay on input line 172.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 172.
+LaTeX Font Info:    ... okay on input line 172.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 172.
+LaTeX Font Info:    ... okay on input line 172.
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
-(Font)                  OT1/lmr/m/n --> TU/lmr/m/n on input line 171.
+(Font)                  OT1/lmr/m/n --> TU/lmr/m/n on input line 172.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/lmr/m/it --> TU/lmr/m/it on input line 171.
+(Font)                  OT1/lmr/m/it --> TU/lmr/m/it on input line 172.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/lmr/bx/n --> TU/lmr/bx/n on input line 171.
+(Font)                  OT1/lmr/bx/n --> TU/lmr/bx/n on input line 172.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/lmss/m/n --> TU/lmss/m/n on input line 171.
+(Font)                  OT1/lmss/m/n --> TU/lmss/m/n on input line 172.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/lmss/bx/n --> TU/lmss/bx/n on input line 171.
+(Font)                  OT1/lmss/bx/n --> TU/lmss/bx/n on input line 172.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/lmtt/m/n --> TU/lmtt/m/n on input line 171.
+(Font)                  OT1/lmtt/m/n --> TU/lmtt/m/n on input line 172.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/lmtt/m/n --> TU/lmtt/bx/n on input line 171.
+(Font)                  OT1/lmtt/m/n --> TU/lmtt/bx/n on input line 172.
 
 Package fontspec Info: 
 (fontspec)             latinmodern-math scale = 0.9999964596882403.
@@ -1198,7 +1198,7 @@ pt=math;language=dflt;"
 pt=math;language=dflt;"
 
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(0)/m/n' will be
-(Font)              scaled to size 10.0pt on input line 171.
+(Font)              scaled to size 10.0pt on input line 172.
 
 Package fontspec Info: 
 (fontspec)             latinmodern-math scale = 0.9999964596882403.
@@ -1241,18 +1241,18 @@ ath.otf]/OT:script=math;language=dflt;+ssty=1;"
 pt=math;language=dflt;"
 
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 10.0pt on input line 171.
+(Font)              scaled to size 10.0pt on input line 172.
 LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `normal' on input line 171.
+(Font)              `operators' in the math version `normal' on input line 172.
 
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
 (Font)                  OT1/lmr/m/n --> TU/latinmodern-math.otf(1)/m/n on input
- line 171.
+ line 172.
 LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `bold' on input line 171.
+(Font)              `operators' in the math version `bold' on input line 172.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
 (Font)                  OT1/lmr/bx/n --> TU/latinmodern-math.otf(1)/b/n on inpu
-t line 171.
+t line 172.
 
 Package fontspec Info: 
 (fontspec)             latinmodern-math scale = 0.9999964596882403.
@@ -1326,15 +1326,15 @@ ript=math;language=dflt;"<6-8.5>s*[1.000096459334209]"[latinmodern-math.otf]/OT
 t=math;language=dflt;"
 
 LaTeX Font Info:    Encoding `OMS' has changed to `TU' for symbol font
-(Font)              `symbols' in the math version `normal' on input line 171.
+(Font)              `symbols' in the math version `normal' on input line 172.
 LaTeX Font Info:    Overwriting symbol font `symbols' in version `normal'
 (Font)                  OMS/lmsy/m/n --> TU/latinmodern-math.otf(2)/m/n on inpu
-t line 171.
+t line 172.
 LaTeX Font Info:    Encoding `OMS' has changed to `TU' for symbol font
-(Font)              `symbols' in the math version `bold' on input line 171.
+(Font)              `symbols' in the math version `bold' on input line 172.
 LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
 (Font)                  OMS/lmsy/b/n --> TU/latinmodern-math.otf(2)/b/n on inpu
-t line 171.
+t line 172.
 
 Package fontspec Info: 
 (fontspec)             latinmodern-math scale = 0.9999964596882403.
@@ -1403,22 +1403,22 @@ pt=math;language=dflt;"
 
 LaTeX Font Info:    Encoding `OMX' has changed to `TU' for symbol font
 (Font)              `largesymbols' in the math version `normal' on input line 1
-71.
+72.
 LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
 (Font)                  OMX/lmex/m/n --> TU/latinmodern-math.otf(3)/m/n on inpu
-t line 171.
+t line 172.
 LaTeX Font Info:    Encoding `OMX' has changed to `TU' for symbol font
-(Font)              `largesymbols' in the math version `bold' on input line 171
+(Font)              `largesymbols' in the math version `bold' on input line 172
 .
 LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
 (Font)                  OMX/lmex/m/n --> TU/latinmodern-math.otf(3)/b/n on inpu
-t line 171.
-LaTeX Info: Redefining \microtypecontext on input line 171.
-Package microtype Info: Applying patch `item' on input line 171.
-Package microtype Info: Applying patch `toc' on input line 171.
-Package microtype Info: Applying patch `eqnum' on input line 171.
-Package microtype Info: Applying patch `footnote' on input line 171.
-Package microtype Info: Applying patch `verbatim' on input line 171.
+t line 172.
+LaTeX Info: Redefining \microtypecontext on input line 172.
+Package microtype Info: Applying patch `item' on input line 172.
+Package microtype Info: Applying patch `toc' on input line 172.
+Package microtype Info: Applying patch `eqnum' on input line 172.
+Package microtype Info: Applying patch `footnote' on input line 172.
+Package microtype Info: Applying patch `verbatim' on input line 172.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using protrusion set `basicmath'.
 Package microtype Info: No adjustment of tracking.
@@ -1466,7 +1466,7 @@ ern Roman (RS)
 (/usr/local/texlive/2024/texmf-dist/tex/latex/ninecolors/ninecolors.sty
 Package: ninecolors 2022-02-13 v2022D Select colors with proper color contrast
 )
-Package hyperref Info: Link coloring OFF on input line 171.
+Package hyperref Info: Link coloring OFF on input line 172.
 
 (/usr/local/texlive/2024/texmf-dist/tex/latex/translations/translations-basic-d
 ictionary-brazil.trsl
@@ -1474,7 +1474,7 @@ File: translations-basic-dictionary-brazil.trsl (brazil translation file `trans
 lations-basic-dictionary')
 )
 Package translations Info: loading dictionary `translations-basic-dictionary' f
-or `brazil'. on input line 171.
+or `brazil'. on input line 172.
 File: PPG/Images/Cover-1.pdf Graphic file (type pdf)
 <use PPG/Images/Cover-1.pdf>
 File: PPG/Images/Cover-1.pdf Graphic file (type pdf)
@@ -1566,7 +1566,7 @@ File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 [3]
 
 [4]
-Overfull \hbox (175.19319pt too wide) in paragraph at lines 335--351
+Overfull \hbox (175.19319pt too wide) in paragraph at lines 336--352
  [][] 
  []
 
@@ -1593,193 +1593,193 @@ Overfull \hbox (175.19319pt too wide) in paragraph at lines 335--351
 > Step: execute table commands.
 > Step: calculate cell and line sizes.
 
-Underfull \hbox (badness 1728) in paragraph at lines 496--496
+Underfull \hbox (badness 1728) in paragraph at lines 497--497
 \TU/lmr/m/n/10 VENÇÃO FISIOTERA-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 496--496
+Underfull \hbox (badness 10000) in paragraph at lines 497--497
 []\TU/lmr/m/n/10 AVALIAÇÃO E IN-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 496--496
+Underfull \hbox (badness 10000) in paragraph at lines 497--497
 \TU/lmr/m/n/10 TERVENÇÃO FISI-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 496--496
+Underfull \hbox (badness 10000) in paragraph at lines 497--497
 \TU/lmr/m/n/10 OTERAPÊUTICA
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 496--496
+Underfull \hbox (badness 10000) in paragraph at lines 497--497
 \TU/lmr/m/n/10 NO SISTEMA CAR-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 496--496
+Underfull \hbox (badness 10000) in paragraph at lines 497--497
 \TU/lmr/m/n/10 DIOVASCULAR E
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 496--496
+Underfull \hbox (badness 10000) in paragraph at lines 497--497
 []\TU/lmr/m/n/10 BIOMECÂNICA DA
  []
 
 
-Underfull \hbox (badness 5475) in paragraph at lines 496--496
+Underfull \hbox (badness 5475) in paragraph at lines 497--497
 []\TU/lmr/m/n/10 BIOÉTICA E ÉTICA
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 496--496
+Underfull \hbox (badness 10000) in paragraph at lines 497--497
 []\TU/lmr/m/n/10 CONTROLE MOTOR
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 496--496
+Underfull \hbox (badness 10000) in paragraph at lines 497--497
 \TU/lmr/m/n/10 E INTERVENÇÃO
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 496--496
+Underfull \hbox (badness 10000) in paragraph at lines 497--497
 \TU/lmr/m/n/10 FISIOTERAPÊUTICA
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 496--496
+Underfull \hbox (badness 10000) in paragraph at lines 497--497
 []\TU/lmr/m/n/10 DIDÁTICA DO EN-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 496--496
+Underfull \hbox (badness 10000) in paragraph at lines 497--497
 \TU/lmr/m/n/10 SINO SUPERIOR E
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 496--496
+Underfull \hbox (badness 10000) in paragraph at lines 497--497
 []\TU/lmr/m/n/10 FUNCIONALIDADE,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 496--496
+Underfull \hbox (badness 10000) in paragraph at lines 497--497
 \TU/lmr/m/n/10 DEFICIÊNCIA E
  []
 
 
-Underfull \hbox (badness 7030) in paragraph at lines 496--496
+Underfull \hbox (badness 7030) in paragraph at lines 497--497
 \TU/lmr/m/n/10 TÍFICA E BIOESTA-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 496--496
+Underfull \hbox (badness 10000) in paragraph at lines 497--497
 []\TU/lmr/m/n/10 POLÍTICAS PÚBLI-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 496--496
+Underfull \hbox (badness 10000) in paragraph at lines 497--497
 \TU/lmr/m/n/10 CAS DE SAÚDE E
  []
 
 
-Underfull \hbox (badness 5345) in paragraph at lines 496--496
+Underfull \hbox (badness 5345) in paragraph at lines 497--497
 \TU/lmr/m/n/10 QUISA E REDAÇÃO
  []
 
 > Step: build the whole table.
 
-Underfull \hbox (badness 1728) in paragraph at lines 496--496
+Underfull \hbox (badness 1728) in paragraph at lines 497--497
 \TU/lmr/m/n/10 VENÇÃO FISIOTERA-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 496--496
+Underfull \hbox (badness 10000) in paragraph at lines 497--497
 []\TU/lmr/m/n/10 AVALIAÇÃO E IN-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 496--496
+Underfull \hbox (badness 10000) in paragraph at lines 497--497
 \TU/lmr/m/n/10 TERVENÇÃO FISI-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 496--496
+Underfull \hbox (badness 10000) in paragraph at lines 497--497
 \TU/lmr/m/n/10 OTERAPÊUTICA
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 496--496
+Underfull \hbox (badness 10000) in paragraph at lines 497--497
 \TU/lmr/m/n/10 NO SISTEMA CAR-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 496--496
+Underfull \hbox (badness 10000) in paragraph at lines 497--497
 \TU/lmr/m/n/10 DIOVASCULAR E
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 496--496
+Underfull \hbox (badness 10000) in paragraph at lines 497--497
 []\TU/lmr/m/n/10 BIOMECÂNICA DA
  []
 
 
-Underfull \hbox (badness 5475) in paragraph at lines 496--496
+Underfull \hbox (badness 5475) in paragraph at lines 497--497
 []\TU/lmr/m/n/10 BIOÉTICA E ÉTICA
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 496--496
+Underfull \hbox (badness 10000) in paragraph at lines 497--497
 []\TU/lmr/m/n/10 CONTROLE MOTOR
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 496--496
+Underfull \hbox (badness 10000) in paragraph at lines 497--497
 \TU/lmr/m/n/10 E INTERVENÇÃO
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 496--496
+Underfull \hbox (badness 10000) in paragraph at lines 497--497
 \TU/lmr/m/n/10 FISIOTERAPÊUTICA
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 496--496
+Underfull \hbox (badness 10000) in paragraph at lines 497--497
 []\TU/lmr/m/n/10 DIDÁTICA DO EN-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 496--496
+Underfull \hbox (badness 10000) in paragraph at lines 497--497
 \TU/lmr/m/n/10 SINO SUPERIOR E
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 496--496
+Underfull \hbox (badness 10000) in paragraph at lines 497--497
 []\TU/lmr/m/n/10 FUNCIONALIDADE,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 496--496
+Underfull \hbox (badness 10000) in paragraph at lines 497--497
 \TU/lmr/m/n/10 DEFICIÊNCIA E
  []
 
 
-Underfull \hbox (badness 7030) in paragraph at lines 496--496
+Underfull \hbox (badness 7030) in paragraph at lines 497--497
 \TU/lmr/m/n/10 TÍFICA E BIOESTA-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 496--496
+Underfull \hbox (badness 10000) in paragraph at lines 497--497
 []\TU/lmr/m/n/10 POLÍTICAS PÚBLI-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 496--496
+Underfull \hbox (badness 10000) in paragraph at lines 497--497
 \TU/lmr/m/n/10 CAS DE SAÚDE E
  []
 
 
-Underfull \hbox (badness 5345) in paragraph at lines 496--496
+Underfull \hbox (badness 5345) in paragraph at lines 497--497
 \TU/lmr/m/n/10 QUISA E REDAÇÃO
  []
 
@@ -1818,7 +1818,7 @@ Underfull \hbox (badness 5345) in paragraph at lines 496--496
 [27]
 
 [28]
-Overfull \hbox (132.83316pt too wide) in paragraph at lines 754--773
+Overfull \hbox (132.83316pt too wide) in paragraph at lines 755--774
  [][] 
  []
 
@@ -1837,7 +1837,7 @@ Overfull \hbox (132.83316pt too wide) in paragraph at lines 754--773
 [34]
 
 [35]
-Overfull \hbox (223.56319pt too wide) in paragraph at lines 857--895
+Overfull \hbox (223.56319pt too wide) in paragraph at lines 858--896
  [][] 
  []
 
@@ -1863,10 +1863,10 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 43775 strings out of 474235
- 913875 string characters out of 5742253
+ 43776 strings out of 474235
+ 913899 string characters out of 5742253
  1945609 words of memory out of 5000000
- 65835 multiletter control sequences out of 15000+600000
+ 65836 multiletter control sequences out of 15000+600000
  563524 words of font info for 74 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  99i,19n,123p,1202b,1057s stack positions out of 10000i,1000n,20000p,200000b,200000s
