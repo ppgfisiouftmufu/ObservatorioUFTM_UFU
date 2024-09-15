@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.9.13)  13 SEP 2024 23:00
+This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.9.13)  15 SEP 2024 12:04
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1126,6 +1126,138 @@ File: bkm-dvipdfm.def 2023-12-10 v1.31 bookmark driver for dvipdfm (HO)
 Package: xurl 2022/01/09 v 0.10 modify URL breaks
 ) (./autoavaliacao.aux
 
+LaTeX Warning: Label `tab:1-1-1-PP-DP-landscape' multiply defined.
+
+
+LaTeX Warning: Label `tab:1-1-1-PP-DP-landscape' multiply defined.
+
+
+LaTeX Warning: Label `tab:1-1-1-PP-DP-landscape' multiply defined.
+
+
+LaTeX Warning: Label `tab:1-1-1-PP-DP-landscape' multiply defined.
+
+
+LaTeX Warning: Label `tab:1-1-1-PP-DP-landscape' multiply defined.
+
+
+LaTeX Warning: Label `tab:1-1-1-PP-DP-landscape' multiply defined.
+
+
+LaTeX Warning: Label `tab:1-1-1-PP-DP-landscape' multiply defined.
+
+
+LaTeX Warning: Label `tab:1-1-1-PP-DP-landscape' multiply defined.
+
+
+LaTeX Warning: Label `tab:1-1-1-PP-DP-landscape' multiply defined.
+
+
+LaTeX Warning: Label `tab:1-1-1-PP-DP-landscape' multiply defined.
+
+
+LaTeX Warning: Label `tab:1-1-1-PP-DP-landscape' multiply defined.
+
+
+LaTeX Warning: Label `tab:1-1-1-PP-DP-landscape' multiply defined.
+
+
+LaTeX Warning: Label `tab:1-1-1-PP-DP-landscape' multiply defined.
+
+
+LaTeX Warning: Label `tab:1-1-1-PP-DP-landscape' multiply defined.
+
+
+LaTeX Warning: Label `tab:1-1-1-PP-DP-landscape' multiply defined.
+
+
+LaTeX Warning: Label `tab:1-1-1-PP-DP-landscape' multiply defined.
+
+
+LaTeX Warning: Label `tab:1-1-1-PP-DP-landscape' multiply defined.
+
+
+LaTeX Warning: Label `tab:1-1-1-PP-DP-landscape' multiply defined.
+
+
+LaTeX Warning: Label `tab:1-1-1-PP-DP-landscape' multiply defined.
+
+
+LaTeX Warning: Label `tab:1-1-1-PP-DP-landscape' multiply defined.
+
+
+LaTeX Warning: Label `tab:1-1-1-PP-DP-landscape' multiply defined.
+
+
+LaTeX Warning: Label `tab:1-1-1-PP-DP-landscape' multiply defined.
+
+
+LaTeX Warning: Label `tab:1-1-1-PP-DP-landscape' multiply defined.
+
+
+LaTeX Warning: Label `tab:1-1-1-PP-DP-landscape' multiply defined.
+
+
+LaTeX Warning: Label `tab:1-1-1-PP-DP-landscape' multiply defined.
+
+
+LaTeX Warning: Label `tab:1-1-1-PP-DP-landscape' multiply defined.
+
+
+LaTeX Warning: Label `tab:1-1-1-PP-DP-landscape' multiply defined.
+
+
+LaTeX Warning: Label `tab:1-1-1-PP-DP-landscape' multiply defined.
+
+
+LaTeX Warning: Label `tab:1-1-1-PP-DP-landscape' multiply defined.
+
+
+LaTeX Warning: Label `tab:1-1-1-PP-DP-landscape' multiply defined.
+
+
+LaTeX Warning: Label `tab:1-1-1-PP-DP-landscape' multiply defined.
+
+
+LaTeX Warning: Label `tab:1-1-1-PP-DP-landscape' multiply defined.
+
+
+LaTeX Warning: Label `tab:1-1-1-PP-DP-landscape' multiply defined.
+
+
+LaTeX Warning: Label `tab:1-1-1-PP-DP-landscape' multiply defined.
+
+
+LaTeX Warning: Label `tab:1-1-1-PP-DP-landscape' multiply defined.
+
+
+LaTeX Warning: Label `tab:1-1-1-PP-DP-landscape' multiply defined.
+
+
+LaTeX Warning: Label `tab:1-1-1-PP-DP-landscape' multiply defined.
+
+
+LaTeX Warning: Label `tab:1-1-1-PP-DP-landscape' multiply defined.
+
+
+LaTeX Warning: Label `tab:1-1-1-PP-DP-landscape' multiply defined.
+
+
+LaTeX Warning: Label `tab:1-1-1-PP-DP-landscape' multiply defined.
+
+
+LaTeX Warning: Label `tab:1-1-1-PP-DP-landscape' multiply defined.
+
+
+LaTeX Warning: Label `tab:1-1-1-PP-DP-landscape' multiply defined.
+
+
+LaTeX Warning: Label `tab:1-1-1-PP-DP-landscape' multiply defined.
+
+
+LaTeX Warning: Label `tab:1-1-1-PP-DP-landscape' multiply defined.
+
+
 LaTeX Warning: Label `tab:turmas' multiply defined.
 
 
@@ -1585,522 +1717,8 @@ Overfull \hbox (3.09442pt too wide) in paragraph at lines 398--413
 
 
 [6]
-> Step: init table outer spec.
-> Step: parse table options.
-> Step: split table.
-> Step: init table inner spec.
-> Step: parse table inner spec.
-> Step: execute table commands.
-> Step: calculate cell and line sizes.
-
-Overfull \hbox (6.7111pt too wide) in paragraph at lines 532--532
-[]\TU/lmr/bx/n/10 ID 
- []
-
-
-Underfull \hbox (badness 1546) in paragraph at lines 532--532
-[]\TU/lmr/m/n/10 Processos De Avalia-
- []
-
-
-Underfull \hbox (badness 2512) in paragraph at lines 532--532
-\TU/lmr/m/n/10 tório e Neuromuscu-
- []
-
-
-Underfull \hbox (badness 4217) in paragraph at lines 532--532
-[]\TU/lmr/m/n/10 Nuno Miguel Lopes
- []
-
-
-Underfull \hbox (badness 4217) in paragraph at lines 532--532
-[]\TU/lmr/m/n/10 Nuno Miguel Lopes
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 532--532
-[]\TU/lmr/m/n/10 Vanessa Santos Pe-
- []
-
-
-Overfull \hbox (5.0311pt too wide) in paragraph at lines 532--532
-[]\TU/lmr/bx/n/10 10 
- []
-
-
-Underfull \hbox (badness 3364) in paragraph at lines 532--532
-[]\TU/lmr/m/n/10 Avaliação e Intervenção Fisiotera-
- []
-
-
-Underfull \hbox (badness 2418) in paragraph at lines 532--532
-\TU/lmr/m/n/10 pêutica Nas Condições Traumato-
- []
-
-
-Overfull \hbox (5.0311pt too wide) in paragraph at lines 532--532
-[]\TU/lmr/bx/n/10 11 
- []
-
-
-Underfull \hbox (badness 1546) in paragraph at lines 532--532
-[]\TU/lmr/m/n/10 Processos De Avalia-
- []
-
-
-Underfull \hbox (badness 2512) in paragraph at lines 532--532
-\TU/lmr/m/n/10 tório e Neuromuscu-
- []
-
-
-Overfull \hbox (5.0311pt too wide) in paragraph at lines 532--532
-[]\TU/lmr/bx/n/10 12 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 532--532
-[]\TU/lmr/m/n/10 Vanessa Santos Pe-
- []
-
-
-Overfull \hbox (5.0311pt too wide) in paragraph at lines 532--532
-[]\TU/lmr/bx/n/10 13 
- []
-
-
-Overfull \hbox (5.0311pt too wide) in paragraph at lines 532--532
-[]\TU/lmr/bx/n/10 14 
- []
-
-
-Underfull \hbox (badness 1546) in paragraph at lines 532--532
-[]\TU/lmr/m/n/10 Processos De Avalia-
- []
-
-
-Underfull \hbox (badness 2512) in paragraph at lines 532--532
-\TU/lmr/m/n/10 tório e Neuromuscu-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 532--532
-[]\TU/lmr/m/n/10 Avaliação e Intervenção Neuro-
- []
-
-
-Underfull \hbox (badness 7649) in paragraph at lines 532--532
-\TU/lmr/m/n/10 Sensoriomotora e Funcional Nos
- []
-
-
-Overfull \hbox (5.0311pt too wide) in paragraph at lines 532--532
-[]\TU/lmr/bx/n/10 15 
- []
-
-
-Underfull \hbox (badness 2846) in paragraph at lines 532--532
-[]\TU/lmr/m/n/10 Lislei Jorge Patrizzi
- []
-
-
-Overfull \hbox (5.0311pt too wide) in paragraph at lines 532--532
-[]\TU/lmr/bx/n/10 16 
- []
-
-
-Overfull \hbox (5.0311pt too wide) in paragraph at lines 532--532
-[]\TU/lmr/bx/n/10 17 
- []
-
-
-Underfull \hbox (badness 1546) in paragraph at lines 532--532
-[]\TU/lmr/m/n/10 Processos De Avalia-
- []
-
-
-Underfull \hbox (badness 2512) in paragraph at lines 532--532
-\TU/lmr/m/n/10 tório e Neuromuscu-
- []
-
-
-Underfull \hbox (badness 1859) in paragraph at lines 532--532
-[]\TU/lmr/m/n/10 Avaliação Funcional e Diagnóstico
- []
-
-
-Underfull \hbox (badness 8094) in paragraph at lines 532--532
-[]\TU/lmr/m/n/10 Gustavo Jose Luvi-
- []
-
-
-Overfull \hbox (5.0311pt too wide) in paragraph at lines 532--532
-[]\TU/lmr/bx/n/10 18 
- []
-
-
-Underfull \hbox (badness 1546) in paragraph at lines 532--532
-[]\TU/lmr/m/n/10 Processos De Avalia-
- []
-
-
-Underfull \hbox (badness 2512) in paragraph at lines 532--532
-\TU/lmr/m/n/10 tório e Neuromuscu-
- []
-
-
-Overfull \hbox (5.0311pt too wide) in paragraph at lines 532--532
-[]\TU/lmr/bx/n/10 19 
- []
-
-
-Underfull \hbox (badness 1496) in paragraph at lines 532--532
-[]\TU/lmr/m/n/10 Comportamento Motor Humano e
- []
-
-
-Overfull \hbox (5.0311pt too wide) in paragraph at lines 532--532
-[]\TU/lmr/bx/n/10 20 
- []
-
-
-Underfull \hbox (badness 1546) in paragraph at lines 532--532
-[]\TU/lmr/m/n/10 Processos De Avalia-
- []
-
-
-Underfull \hbox (badness 2512) in paragraph at lines 532--532
-\TU/lmr/m/n/10 tório e Neuromuscu-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 532--532
-[]\TU/lmr/m/n/10 Luciane Aparecida
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 532--532
-\TU/lmr/m/n/10 Pascucci Sande De
- []
-
-
-Overfull \hbox (5.0311pt too wide) in paragraph at lines 532--532
-[]\TU/lmr/bx/n/10 21 
- []
-
-
-Underfull \hbox (badness 1546) in paragraph at lines 532--532
-[]\TU/lmr/m/n/10 Processos De Avalia-
- []
-
-
-Underfull \hbox (badness 2512) in paragraph at lines 532--532
-\TU/lmr/m/n/10 tório e Neuromuscu-
- []
-
-
-Overfull \hbox (5.0311pt too wide) in paragraph at lines 532--532
-[]\TU/lmr/bx/n/10 22 
- []
-
-
-Overfull \hbox (5.0311pt too wide) in paragraph at lines 532--532
-[]\TU/lmr/bx/n/10 23 
- []
-
-
-Underfull \hbox (badness 1546) in paragraph at lines 532--532
-[]\TU/lmr/m/n/10 Processos De Avalia-
- []
-
-
-Underfull \hbox (badness 2512) in paragraph at lines 532--532
-\TU/lmr/m/n/10 tório e Neuromuscu-
- []
-
-
-Overfull \hbox (5.0311pt too wide) in paragraph at lines 532--532
-[]\TU/lmr/bx/n/10 24 
- []
-
-
-Underfull \hbox (badness 1546) in paragraph at lines 532--532
-[]\TU/lmr/m/n/10 Processos De Avalia-
- []
-
-
-Underfull \hbox (badness 2512) in paragraph at lines 532--532
-\TU/lmr/m/n/10 tório e Neuromuscu-
- []
-
-
-Overfull \hbox (5.0311pt too wide) in paragraph at lines 532--532
-[]\TU/lmr/bx/n/10 25 
- []
-
-
-Underfull \hbox (badness 4217) in paragraph at lines 532--532
-[]\TU/lmr/m/n/10 Nuno Miguel Lopes
- []
-
-
-Overfull \hbox (5.0311pt too wide) in paragraph at lines 532--532
-[]\TU/lmr/bx/n/10 26 
- []
-
-
-Underfull \hbox (badness 1546) in paragraph at lines 532--532
-[]\TU/lmr/m/n/10 Processos De Avalia-
- []
-
-
-Underfull \hbox (badness 2512) in paragraph at lines 532--532
-\TU/lmr/m/n/10 tório e Neuromuscu-
- []
-
-
-Overfull \hbox (5.0311pt too wide) in paragraph at lines 532--532
-[]\TU/lmr/bx/n/10 27 
- []
-
-
-Underfull \hbox (badness 1546) in paragraph at lines 532--532
-[]\TU/lmr/m/n/10 Processos De Avalia-
- []
-
-
-Underfull \hbox (badness 2512) in paragraph at lines 532--532
-\TU/lmr/m/n/10 tório e Neuromuscu-
- []
-
-
-Overfull \hbox (5.0311pt too wide) in paragraph at lines 532--532
-[]\TU/lmr/bx/n/10 28 
- []
-
-
-Underfull \hbox (badness 1546) in paragraph at lines 532--532
-[]\TU/lmr/m/n/10 Processos De Avalia-
- []
-
-
-Underfull \hbox (badness 2512) in paragraph at lines 532--532
-\TU/lmr/m/n/10 tório e Neuromuscu-
- []
-
-
-Overfull \hbox (5.0311pt too wide) in paragraph at lines 532--532
-[]\TU/lmr/bx/n/10 29 
- []
-
-
-Underfull \hbox (badness 4995) in paragraph at lines 532--532
-[]\TU/lmr/m/n/10 Daniel Ferreira Mo-
- []
-
-
-Overfull \hbox (5.0311pt too wide) in paragraph at lines 532--532
-[]\TU/lmr/bx/n/10 30 
- []
-
-
-Underfull \hbox (badness 1546) in paragraph at lines 532--532
-[]\TU/lmr/m/n/10 Processos De Avalia-
- []
-
-
-Underfull \hbox (badness 2512) in paragraph at lines 532--532
-\TU/lmr/m/n/10 tório e Neuromuscu-
- []
-
-
-Overfull \hbox (5.0311pt too wide) in paragraph at lines 532--532
-[]\TU/lmr/bx/n/10 31 
- []
-
-
-Underfull \hbox (badness 1546) in paragraph at lines 532--532
-[]\TU/lmr/m/n/10 Processos De Avalia-
- []
-
-
-Underfull \hbox (badness 2512) in paragraph at lines 532--532
-\TU/lmr/m/n/10 tório e Neuromuscu-
- []
-
-
-Overfull \hbox (5.0311pt too wide) in paragraph at lines 532--532
-[]\TU/lmr/bx/n/10 32 
- []
-
-
-Underfull \hbox (badness 2846) in paragraph at lines 532--532
-[]\TU/lmr/m/n/10 Lislei Jorge Patrizzi
- []
-
-
-Overfull \hbox (5.0311pt too wide) in paragraph at lines 532--532
-[]\TU/lmr/bx/n/10 33 
- []
-
-
-Overfull \hbox (5.0311pt too wide) in paragraph at lines 532--532
-[]\TU/lmr/bx/n/10 34 
- []
-
-
-Underfull \hbox (badness 4217) in paragraph at lines 532--532
-[]\TU/lmr/m/n/10 Nuno Miguel Lopes
- []
-
-
-Overfull \hbox (5.0311pt too wide) in paragraph at lines 532--532
-[]\TU/lmr/bx/n/10 35 
- []
-
-
-Overfull \hbox (5.0311pt too wide) in paragraph at lines 532--532
-[]\TU/lmr/bx/n/10 36 
- []
-
-
-Overfull \hbox (5.0311pt too wide) in paragraph at lines 532--532
-[]\TU/lmr/bx/n/10 37 
- []
-
-
-Overfull \hbox (5.0311pt too wide) in paragraph at lines 532--532
-[]\TU/lmr/bx/n/10 38 
- []
-
-
-Underfull \hbox (badness 4217) in paragraph at lines 532--532
-[]\TU/lmr/m/n/10 Nuno Miguel Lopes
- []
-
-
-Overfull \hbox (5.0311pt too wide) in paragraph at lines 532--532
-[]\TU/lmr/bx/n/10 39 
- []
-
-
-Underfull \hbox (badness 4266) in paragraph at lines 532--532
-\TU/lmr/m/n/10 Residencial Para Idosos Vida &
- []
-
-
-Underfull \hbox (badness 2846) in paragraph at lines 532--532
-[]\TU/lmr/m/n/10 Lislei Jorge Patrizzi
- []
-
-
-Overfull \hbox (5.0311pt too wide) in paragraph at lines 532--532
-[]\TU/lmr/bx/n/10 40 
- []
-
-
-Underfull \hbox (badness 2846) in paragraph at lines 532--532
-[]\TU/lmr/m/n/10 Lislei Jorge Patrizzi
- []
-
-
-Overfull \hbox (5.0311pt too wide) in paragraph at lines 532--532
-[]\TU/lmr/bx/n/10 41 
- []
-
-
-Underfull \hbox (badness 2846) in paragraph at lines 532--532
-[]\TU/lmr/m/n/10 Lislei Jorge Patrizzi
- []
-
-
-Overfull \hbox (5.0311pt too wide) in paragraph at lines 532--532
-[]\TU/lmr/bx/n/10 42 
- []
-
-
-Underfull \hbox (badness 2846) in paragraph at lines 532--532
-[]\TU/lmr/m/n/10 Lislei Jorge Patrizzi
- []
-
-
-Overfull \hbox (5.0311pt too wide) in paragraph at lines 532--532
-[]\TU/lmr/bx/n/10 43 
- []
-
-
-Underfull \hbox (badness 1546) in paragraph at lines 532--532
-[]\TU/lmr/m/n/10 Processos De Avalia-
- []
-
-
-Underfull \hbox (badness 2512) in paragraph at lines 532--532
-\TU/lmr/m/n/10 tório e Neuromuscu-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 532--532
-[]\TU/lmr/m/n/10 Guilherme Morais
- []
-
-
-Overfull \hbox (5.0311pt too wide) in paragraph at lines 532--532
-[]\TU/lmr/bx/n/10 44 
- []
-
-
-Underfull \hbox (badness 1546) in paragraph at lines 532--532
-[]\TU/lmr/m/n/10 Processos De Avalia-
- []
-
-
-Underfull \hbox (badness 2512) in paragraph at lines 532--532
-\TU/lmr/m/n/10 tório e Neuromuscu-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 532--532
-[]\TU/lmr/m/n/10 Guilherme Morais
- []
-
-
-Overfull \hbox (5.0311pt too wide) in paragraph at lines 532--532
-[]\TU/lmr/bx/n/10 45 
- []
-
-
-Underfull \hbox (badness 4995) in paragraph at lines 532--532
-[]\TU/lmr/m/n/10 Daniel Ferreira Mo-
- []
-
-> Step: build the whole table.
-
-Overfull \hbox (6.7111pt too wide) in paragraph at lines 532--532
-[]\TU/lmr/bx/n/10 ID 
- []
-
-
-Underfull \hbox (badness 1546) in paragraph at lines 532--532
-[]\TU/lmr/m/n/10 Processos De Avalia-
- []
-
-
-Underfull \hbox (badness 2512) in paragraph at lines 532--532
-\TU/lmr/m/n/10 tório e Neuromuscu-
- []
-
-
-Underfull \hbox (badness 4217) in paragraph at lines 532--532
-[]\TU/lmr/m/n/10 Nuno Miguel Lopes
- []
-
-
-Underfull \hbox (badness 4217) in paragraph at lines 532--532
-[]\TU/lmr/m/n/10 Nuno Miguel Lopes
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 532--532
-[]\TU/lmr/m/n/10 Vanessa Santos Pe-
+Overfull \hbox (3.48088pt too wide) in paragraph at lines 433--433
+[]\TU/lmr/bx/n/10 Natureza|  
  []
 
 
@@ -2108,502 +1726,26 @@ Underfull \hbox (badness 10000) in paragraph at lines 532--532
 [7
 
 ]
-Overfull \hbox (5.0311pt too wide) in paragraph at lines 532--532
-[]\TU/lmr/bx/n/10 10 
- []
-
-
-Underfull \hbox (badness 3364) in paragraph at lines 532--532
-[]\TU/lmr/m/n/10 Avaliação e Intervenção Fisiotera-
- []
-
-
-Underfull \hbox (badness 2418) in paragraph at lines 532--532
-\TU/lmr/m/n/10 pêutica Nas Condições Traumato-
- []
-
-
-Overfull \hbox (5.0311pt too wide) in paragraph at lines 532--532
-[]\TU/lmr/bx/n/10 11 
- []
-
-
-Underfull \hbox (badness 1546) in paragraph at lines 532--532
-[]\TU/lmr/m/n/10 Processos De Avalia-
- []
-
-
-Underfull \hbox (badness 2512) in paragraph at lines 532--532
-\TU/lmr/m/n/10 tório e Neuromuscu-
- []
-
-
-Overfull \hbox (5.0311pt too wide) in paragraph at lines 532--532
-[]\TU/lmr/bx/n/10 12 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 532--532
-[]\TU/lmr/m/n/10 Vanessa Santos Pe-
- []
-
-
-Overfull \hbox (5.0311pt too wide) in paragraph at lines 532--532
-[]\TU/lmr/bx/n/10 13 
- []
-
-
-Overfull \hbox (5.0311pt too wide) in paragraph at lines 532--532
-[]\TU/lmr/bx/n/10 14 
- []
-
-
-Underfull \hbox (badness 1546) in paragraph at lines 532--532
-[]\TU/lmr/m/n/10 Processos De Avalia-
- []
-
-
-Underfull \hbox (badness 2512) in paragraph at lines 532--532
-\TU/lmr/m/n/10 tório e Neuromuscu-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 532--532
-[]\TU/lmr/m/n/10 Avaliação e Intervenção Neuro-
- []
-
-
-Underfull \hbox (badness 7649) in paragraph at lines 532--532
-\TU/lmr/m/n/10 Sensoriomotora e Funcional Nos
- []
-
-
 
 [8]
-Overfull \hbox (5.0311pt too wide) in paragraph at lines 532--532
-[]\TU/lmr/bx/n/10 15 
- []
-
-
-Underfull \hbox (badness 2846) in paragraph at lines 532--532
-[]\TU/lmr/m/n/10 Lislei Jorge Patrizzi
- []
-
-
-Overfull \hbox (5.0311pt too wide) in paragraph at lines 532--532
-[]\TU/lmr/bx/n/10 16 
- []
-
-
-Overfull \hbox (5.0311pt too wide) in paragraph at lines 532--532
-[]\TU/lmr/bx/n/10 17 
- []
-
-
-Underfull \hbox (badness 1546) in paragraph at lines 532--532
-[]\TU/lmr/m/n/10 Processos De Avalia-
- []
-
-
-Underfull \hbox (badness 2512) in paragraph at lines 532--532
-\TU/lmr/m/n/10 tório e Neuromuscu-
- []
-
-
-Underfull \hbox (badness 1859) in paragraph at lines 532--532
-[]\TU/lmr/m/n/10 Avaliação Funcional e Diagnóstico
- []
-
-
-Underfull \hbox (badness 8094) in paragraph at lines 532--532
-[]\TU/lmr/m/n/10 Gustavo Jose Luvi-
- []
-
-
-Overfull \hbox (5.0311pt too wide) in paragraph at lines 532--532
-[]\TU/lmr/bx/n/10 18 
- []
-
-
-Underfull \hbox (badness 1546) in paragraph at lines 532--532
-[]\TU/lmr/m/n/10 Processos De Avalia-
- []
-
-
-Underfull \hbox (badness 2512) in paragraph at lines 532--532
-\TU/lmr/m/n/10 tório e Neuromuscu-
- []
-
-
-Overfull \hbox (5.0311pt too wide) in paragraph at lines 532--532
-[]\TU/lmr/bx/n/10 19 
- []
-
-
-Underfull \hbox (badness 1496) in paragraph at lines 532--532
-[]\TU/lmr/m/n/10 Comportamento Motor Humano e
- []
-
-
-Overfull \hbox (5.0311pt too wide) in paragraph at lines 532--532
-[]\TU/lmr/bx/n/10 20 
- []
-
-
-Underfull \hbox (badness 1546) in paragraph at lines 532--532
-[]\TU/lmr/m/n/10 Processos De Avalia-
- []
-
-
-Underfull \hbox (badness 2512) in paragraph at lines 532--532
-\TU/lmr/m/n/10 tório e Neuromuscu-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 532--532
-[]\TU/lmr/m/n/10 Luciane Aparecida
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 532--532
-\TU/lmr/m/n/10 Pascucci Sande De
- []
-
-
 
 [9]
-Overfull \hbox (5.0311pt too wide) in paragraph at lines 532--532
-[]\TU/lmr/bx/n/10 21 
- []
-
-
-Underfull \hbox (badness 1546) in paragraph at lines 532--532
-[]\TU/lmr/m/n/10 Processos De Avalia-
- []
-
-
-Underfull \hbox (badness 2512) in paragraph at lines 532--532
-\TU/lmr/m/n/10 tório e Neuromuscu-
- []
-
-
-Overfull \hbox (5.0311pt too wide) in paragraph at lines 532--532
-[]\TU/lmr/bx/n/10 22 
- []
-
-
-Overfull \hbox (5.0311pt too wide) in paragraph at lines 532--532
-[]\TU/lmr/bx/n/10 23 
- []
-
-
-Underfull \hbox (badness 1546) in paragraph at lines 532--532
-[]\TU/lmr/m/n/10 Processos De Avalia-
- []
-
-
-Underfull \hbox (badness 2512) in paragraph at lines 532--532
-\TU/lmr/m/n/10 tório e Neuromuscu-
- []
-
-
-Overfull \hbox (5.0311pt too wide) in paragraph at lines 532--532
-[]\TU/lmr/bx/n/10 24 
- []
-
-
-Underfull \hbox (badness 1546) in paragraph at lines 532--532
-[]\TU/lmr/m/n/10 Processos De Avalia-
- []
-
-
-Underfull \hbox (badness 2512) in paragraph at lines 532--532
-\TU/lmr/m/n/10 tório e Neuromuscu-
- []
-
-
-Overfull \hbox (5.0311pt too wide) in paragraph at lines 532--532
-[]\TU/lmr/bx/n/10 25 
- []
-
-
-Underfull \hbox (badness 4217) in paragraph at lines 532--532
-[]\TU/lmr/m/n/10 Nuno Miguel Lopes
- []
-
-
-Overfull \hbox (5.0311pt too wide) in paragraph at lines 532--532
-[]\TU/lmr/bx/n/10 26 
- []
-
-
-Underfull \hbox (badness 1546) in paragraph at lines 532--532
-[]\TU/lmr/m/n/10 Processos De Avalia-
- []
-
-
-Underfull \hbox (badness 2512) in paragraph at lines 532--532
-\TU/lmr/m/n/10 tório e Neuromuscu-
- []
-
-
 
 [10]
-Overfull \hbox (5.0311pt too wide) in paragraph at lines 532--532
-[]\TU/lmr/bx/n/10 27 
- []
-
-
-Underfull \hbox (badness 1546) in paragraph at lines 532--532
-[]\TU/lmr/m/n/10 Processos De Avalia-
- []
-
-
-Underfull \hbox (badness 2512) in paragraph at lines 532--532
-\TU/lmr/m/n/10 tório e Neuromuscu-
- []
-
-
-Overfull \hbox (5.0311pt too wide) in paragraph at lines 532--532
-[]\TU/lmr/bx/n/10 28 
- []
-
-
-Underfull \hbox (badness 1546) in paragraph at lines 532--532
-[]\TU/lmr/m/n/10 Processos De Avalia-
- []
-
-
-Underfull \hbox (badness 2512) in paragraph at lines 532--532
-\TU/lmr/m/n/10 tório e Neuromuscu-
- []
-
-
-Overfull \hbox (5.0311pt too wide) in paragraph at lines 532--532
-[]\TU/lmr/bx/n/10 29 
- []
-
-
-Underfull \hbox (badness 4995) in paragraph at lines 532--532
-[]\TU/lmr/m/n/10 Daniel Ferreira Mo-
- []
-
-
-Overfull \hbox (5.0311pt too wide) in paragraph at lines 532--532
-[]\TU/lmr/bx/n/10 30 
- []
-
-
-Underfull \hbox (badness 1546) in paragraph at lines 532--532
-[]\TU/lmr/m/n/10 Processos De Avalia-
- []
-
-
-Underfull \hbox (badness 2512) in paragraph at lines 532--532
-\TU/lmr/m/n/10 tório e Neuromuscu-
- []
-
-
-Overfull \hbox (5.0311pt too wide) in paragraph at lines 532--532
-[]\TU/lmr/bx/n/10 31 
- []
-
-
-Underfull \hbox (badness 1546) in paragraph at lines 532--532
-[]\TU/lmr/m/n/10 Processos De Avalia-
- []
-
-
-Underfull \hbox (badness 2512) in paragraph at lines 532--532
-\TU/lmr/m/n/10 tório e Neuromuscu-
- []
-
-
-Overfull \hbox (5.0311pt too wide) in paragraph at lines 532--532
-[]\TU/lmr/bx/n/10 32 
- []
-
-
-Underfull \hbox (badness 2846) in paragraph at lines 532--532
-[]\TU/lmr/m/n/10 Lislei Jorge Patrizzi
- []
-
-
 
 [11]
-Overfull \hbox (5.0311pt too wide) in paragraph at lines 532--532
-[]\TU/lmr/bx/n/10 33 
- []
-
-
-Overfull \hbox (5.0311pt too wide) in paragraph at lines 532--532
-[]\TU/lmr/bx/n/10 34 
- []
-
-
-Underfull \hbox (badness 4217) in paragraph at lines 532--532
-[]\TU/lmr/m/n/10 Nuno Miguel Lopes
- []
-
-
-Overfull \hbox (5.0311pt too wide) in paragraph at lines 532--532
-[]\TU/lmr/bx/n/10 35 
- []
-
-
-Overfull \hbox (5.0311pt too wide) in paragraph at lines 532--532
-[]\TU/lmr/bx/n/10 36 
- []
-
-
-Overfull \hbox (5.0311pt too wide) in paragraph at lines 532--532
-[]\TU/lmr/bx/n/10 37 
- []
-
-
-Overfull \hbox (5.0311pt too wide) in paragraph at lines 532--532
-[]\TU/lmr/bx/n/10 38 
- []
-
-
-Underfull \hbox (badness 4217) in paragraph at lines 532--532
-[]\TU/lmr/m/n/10 Nuno Miguel Lopes
- []
-
-
-Overfull \hbox (5.0311pt too wide) in paragraph at lines 532--532
-[]\TU/lmr/bx/n/10 39 
- []
-
-
-Underfull \hbox (badness 4266) in paragraph at lines 532--532
-\TU/lmr/m/n/10 Residencial Para Idosos Vida &
- []
-
-
-Underfull \hbox (badness 2846) in paragraph at lines 532--532
-[]\TU/lmr/m/n/10 Lislei Jorge Patrizzi
- []
-
-
-Overfull \hbox (5.0311pt too wide) in paragraph at lines 532--532
-[]\TU/lmr/bx/n/10 40 
- []
-
-
-Underfull \hbox (badness 2846) in paragraph at lines 532--532
-[]\TU/lmr/m/n/10 Lislei Jorge Patrizzi
- []
-
-
 
 [12]
-Overfull \hbox (5.0311pt too wide) in paragraph at lines 532--532
-[]\TU/lmr/bx/n/10 41 
- []
-
-
-Underfull \hbox (badness 2846) in paragraph at lines 532--532
-[]\TU/lmr/m/n/10 Lislei Jorge Patrizzi
- []
-
-
-Overfull \hbox (5.0311pt too wide) in paragraph at lines 532--532
-[]\TU/lmr/bx/n/10 42 
- []
-
-
-Underfull \hbox (badness 2846) in paragraph at lines 532--532
-[]\TU/lmr/m/n/10 Lislei Jorge Patrizzi
- []
-
-
-Overfull \hbox (5.0311pt too wide) in paragraph at lines 532--532
-[]\TU/lmr/bx/n/10 43 
- []
-
-
-Underfull \hbox (badness 1546) in paragraph at lines 532--532
-[]\TU/lmr/m/n/10 Processos De Avalia-
- []
-
-
-Underfull \hbox (badness 2512) in paragraph at lines 532--532
-\TU/lmr/m/n/10 tório e Neuromuscu-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 532--532
-[]\TU/lmr/m/n/10 Guilherme Morais
- []
-
-
-Overfull \hbox (5.0311pt too wide) in paragraph at lines 532--532
-[]\TU/lmr/bx/n/10 44 
- []
-
-
-Underfull \hbox (badness 1546) in paragraph at lines 532--532
-[]\TU/lmr/m/n/10 Processos De Avalia-
- []
-
-
-Underfull \hbox (badness 2512) in paragraph at lines 532--532
-\TU/lmr/m/n/10 tório e Neuromuscu-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 532--532
-[]\TU/lmr/m/n/10 Guilherme Morais
- []
-
-
-Overfull \hbox (5.0311pt too wide) in paragraph at lines 532--532
-[]\TU/lmr/bx/n/10 45 
- []
-
-
-Underfull \hbox (badness 4995) in paragraph at lines 532--532
-[]\TU/lmr/m/n/10 Daniel Ferreira Mo-
- []
-
-
 
 [13]
 
-[14
-
-]
-> Step: init table outer spec.
-> Step: parse table options.
-> Step: split table.
-> Step: init table inner spec.
-> Step: parse table inner spec.
-> Step: execute table commands.
-> Step: calculate cell and line sizes.
-> Step: build the whole table.
-
+[14]
 
 [15]
-Overfull \hbox (3.09442pt too wide) in paragraph at lines 638--653
- [][] 
- []
-
-
 
 [16]
-Overfull \hbox (3.09442pt too wide) in paragraph at lines 671--687
- [][] 
- []
-
-
 
 [17]
-Overfull \hbox (3.09442pt too wide) in paragraph at lines 704--734
- [][] 
- []
-
-
 
 [18]
 
@@ -2634,200 +1776,12 @@ Overfull \hbox (3.09442pt too wide) in paragraph at lines 704--734
 [31]
 
 [32]
-Overfull \hbox (3.09442pt too wide) in paragraph at lines 954--981
- [][] 
- []
-
-
 
 [33]
-> Step: init table outer spec.
-> Step: parse table options.
-> Step: split table.
-> Step: init table inner spec.
-> Step: parse table inner spec.
-> Step: execute table commands.
-> Step: calculate cell and line sizes.
-
-Underfull \hbox (badness 10000) in paragraph at lines 1046--1046
-[]\TU/lmr/bx/n/10 Processo De
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1046--1046
-\TU/lmr/bx/n/10 Avaliação E
- []
-
-
-Underfull \hbox (badness 1472) in paragraph at lines 1046--1046
-\TU/lmr/bx/n/10 Sistema Muscu-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1046--1046
-[]\TU/lmr/bx/n/10 Processos De
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1046--1046
-\TU/lmr/bx/n/10 Avaliação E
- []
-
-
-Underfull \hbox (badness 2103) in paragraph at lines 1046--1046
-\TU/lmr/bx/n/10 Sistemas Cardi-
- []
-
-
-Underfull \hbox (badness 1292) in paragraph at lines 1046--1046
-\TU/lmr/bx/n/10 orrespiratório E
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1046--1046
-[]\TU/lmr/m/n/10 Carlos Fernando
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1046--1046
-[]\TU/lmr/m/n/10 Dernival Berton-
- []
-
-
-Underfull \hbox (badness 1102) in paragraph at lines 1046--1046
-[]\TU/lmr/m/n/10 Eduardo Elias Vi-
- []
-
-
-Underfull \hbox (badness 4531) in paragraph at lines 1046--1046
-[]\TU/lmr/m/n/10 Guilherme Morais
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1046--1046
-[]\TU/lmr/m/n/10 Isabel Aparecida
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1046--1046
-[]\TU/lmr/m/n/10 Juliana Martins
- []
-
-
-Underfull \hbox (badness 6332) in paragraph at lines 1046--1046
-[]\TU/lmr/m/n/10 Luciane Fernanda
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1046--1046
-\TU/lmr/m/n/10 Rodrigues Marti-
- []
-
-
-Underfull \hbox (badness 1681) in paragraph at lines 1046--1046
-[]\TU/lmr/m/n/10 Marilita Falangola
- []
-
-> Step: build the whole table.
-
-Underfull \hbox (badness 10000) in paragraph at lines 1046--1046
-[]\TU/lmr/bx/n/10 Processo De
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1046--1046
-\TU/lmr/bx/n/10 Avaliação E
- []
-
-
-Underfull \hbox (badness 1472) in paragraph at lines 1046--1046
-\TU/lmr/bx/n/10 Sistema Muscu-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1046--1046
-[]\TU/lmr/bx/n/10 Processos De
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1046--1046
-\TU/lmr/bx/n/10 Avaliação E
- []
-
-
-Underfull \hbox (badness 2103) in paragraph at lines 1046--1046
-\TU/lmr/bx/n/10 Sistemas Cardi-
- []
-
-
-Underfull \hbox (badness 1292) in paragraph at lines 1046--1046
-\TU/lmr/bx/n/10 orrespiratório E
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1046--1046
-[]\TU/lmr/m/n/10 Carlos Fernando
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1046--1046
-[]\TU/lmr/m/n/10 Dernival Berton-
- []
-
-
-Underfull \hbox (badness 1102) in paragraph at lines 1046--1046
-[]\TU/lmr/m/n/10 Eduardo Elias Vi-
- []
-
-
-Underfull \hbox (badness 4531) in paragraph at lines 1046--1046
-[]\TU/lmr/m/n/10 Guilherme Morais
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1046--1046
-[]\TU/lmr/m/n/10 Isabel Aparecida
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1046--1046
-[]\TU/lmr/m/n/10 Juliana Martins
- []
-
-
-Underfull \hbox (badness 6332) in paragraph at lines 1046--1046
-[]\TU/lmr/m/n/10 Luciane Fernanda
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1046--1046
-\TU/lmr/m/n/10 Rodrigues Marti-
- []
-
-
-Underfull \hbox (badness 1681) in paragraph at lines 1046--1046
-[]\TU/lmr/m/n/10 Marilita Falangola
- []
-
-
 
 [34]
-Overfull \hbox (3.09442pt too wide) in paragraph at lines 1060--1067
- [][] 
- []
-
-
 
 [35]
-> Step: init table outer spec.
-> Step: parse table options.
-> Step: split table.
-> Step: init table inner spec.
-> Step: parse table inner spec.
-> Step: execute table commands.
-> Step: calculate cell and line sizes.
-> Step: build the whole table.
-
 
 [36]
 
@@ -2840,9 +1794,6 @@ Overfull \hbox (3.09442pt too wide) in paragraph at lines 1060--1067
 [40]
 
 [41]
-Overfull \vbox (178.32903pt too high) has occurred while \output is active []
-
-
 
 [42]
 
@@ -2854,7 +1805,300 @@ Overfull \vbox (178.32903pt too high) has occurred while \output is active []
 
 [46]
 
-[47] (./autoavaliacao.aux)
+[47]
+
+[48]
+
+[49]
+
+[50]
+
+[51]
+
+[52
+
+]
+> Step: init table outer spec.
+> Step: parse table options.
+> Step: split table.
+> Step: init table inner spec.
+> Step: parse table inner spec.
+> Step: execute table commands.
+> Step: calculate cell and line sizes.
+> Step: build the whole table.
+
+
+[53]
+Overfull \hbox (3.09442pt too wide) in paragraph at lines 1108--1123
+ [][] 
+ []
+
+
+
+[54]
+Overfull \hbox (3.09442pt too wide) in paragraph at lines 1141--1157
+ [][] 
+ []
+
+
+
+[55]
+Overfull \hbox (3.09442pt too wide) in paragraph at lines 1174--1204
+ [][] 
+ []
+
+
+
+[56]
+
+[57]
+
+[58]
+
+[59]
+
+[60]
+
+[61]
+
+[62]
+
+[63]
+
+[64]
+
+[65]
+
+[66]
+
+[67]
+
+[68]
+
+[69]
+
+[70]
+Overfull \hbox (3.09442pt too wide) in paragraph at lines 1424--1451
+ [][] 
+ []
+
+
+
+[71]
+> Step: init table outer spec.
+> Step: parse table options.
+> Step: split table.
+> Step: init table inner spec.
+> Step: parse table inner spec.
+> Step: execute table commands.
+> Step: calculate cell and line sizes.
+
+Underfull \hbox (badness 10000) in paragraph at lines 1516--1516
+[]\TU/lmr/bx/n/10 Processo De
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1516--1516
+\TU/lmr/bx/n/10 Avaliação E
+ []
+
+
+Underfull \hbox (badness 1472) in paragraph at lines 1516--1516
+\TU/lmr/bx/n/10 Sistema Muscu-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1516--1516
+[]\TU/lmr/bx/n/10 Processos De
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1516--1516
+\TU/lmr/bx/n/10 Avaliação E
+ []
+
+
+Underfull \hbox (badness 2103) in paragraph at lines 1516--1516
+\TU/lmr/bx/n/10 Sistemas Cardi-
+ []
+
+
+Underfull \hbox (badness 1292) in paragraph at lines 1516--1516
+\TU/lmr/bx/n/10 orrespiratório E
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1516--1516
+[]\TU/lmr/m/n/10 Carlos Fernando
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1516--1516
+[]\TU/lmr/m/n/10 Dernival Berton-
+ []
+
+
+Underfull \hbox (badness 1102) in paragraph at lines 1516--1516
+[]\TU/lmr/m/n/10 Eduardo Elias Vi-
+ []
+
+
+Underfull \hbox (badness 4531) in paragraph at lines 1516--1516
+[]\TU/lmr/m/n/10 Guilherme Morais
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1516--1516
+[]\TU/lmr/m/n/10 Isabel Aparecida
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1516--1516
+[]\TU/lmr/m/n/10 Juliana Martins
+ []
+
+
+Underfull \hbox (badness 6332) in paragraph at lines 1516--1516
+[]\TU/lmr/m/n/10 Luciane Fernanda
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1516--1516
+\TU/lmr/m/n/10 Rodrigues Marti-
+ []
+
+
+Underfull \hbox (badness 1681) in paragraph at lines 1516--1516
+[]\TU/lmr/m/n/10 Marilita Falangola
+ []
+
+> Step: build the whole table.
+
+Underfull \hbox (badness 10000) in paragraph at lines 1516--1516
+[]\TU/lmr/bx/n/10 Processo De
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1516--1516
+\TU/lmr/bx/n/10 Avaliação E
+ []
+
+
+Underfull \hbox (badness 1472) in paragraph at lines 1516--1516
+\TU/lmr/bx/n/10 Sistema Muscu-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1516--1516
+[]\TU/lmr/bx/n/10 Processos De
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1516--1516
+\TU/lmr/bx/n/10 Avaliação E
+ []
+
+
+Underfull \hbox (badness 2103) in paragraph at lines 1516--1516
+\TU/lmr/bx/n/10 Sistemas Cardi-
+ []
+
+
+Underfull \hbox (badness 1292) in paragraph at lines 1516--1516
+\TU/lmr/bx/n/10 orrespiratório E
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1516--1516
+[]\TU/lmr/m/n/10 Carlos Fernando
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1516--1516
+[]\TU/lmr/m/n/10 Dernival Berton-
+ []
+
+
+Underfull \hbox (badness 1102) in paragraph at lines 1516--1516
+[]\TU/lmr/m/n/10 Eduardo Elias Vi-
+ []
+
+
+Underfull \hbox (badness 4531) in paragraph at lines 1516--1516
+[]\TU/lmr/m/n/10 Guilherme Morais
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1516--1516
+[]\TU/lmr/m/n/10 Isabel Aparecida
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1516--1516
+[]\TU/lmr/m/n/10 Juliana Martins
+ []
+
+
+Underfull \hbox (badness 6332) in paragraph at lines 1516--1516
+[]\TU/lmr/m/n/10 Luciane Fernanda
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1516--1516
+\TU/lmr/m/n/10 Rodrigues Marti-
+ []
+
+
+Underfull \hbox (badness 1681) in paragraph at lines 1516--1516
+[]\TU/lmr/m/n/10 Marilita Falangola
+ []
+
+
+
+[72]
+Overfull \hbox (3.09442pt too wide) in paragraph at lines 1530--1537
+ [][] 
+ []
+
+
+
+[73]
+> Step: init table outer spec.
+> Step: parse table options.
+> Step: split table.
+> Step: init table inner spec.
+> Step: parse table inner spec.
+> Step: execute table commands.
+> Step: calculate cell and line sizes.
+> Step: build the whole table.
+
+
+[74]
+
+[75]
+
+[76]
+
+[77]
+
+[78]
+
+[79]
+Overfull \vbox (178.32903pt too high) has occurred while \output is active []
+
+
+
+[80]
+
+[81]
+
+[82]
+
+[83]
+
+[84]
+
+[85] (./autoavaliacao.aux)
  ***********
 LaTeX2e <2024-06-01> patch level 2
 L3 programming layer <2024-08-30>
@@ -2864,12 +2108,12 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 44250 strings out of 474235
- 927900 string characters out of 5742253
- 2034379 words of memory out of 5000000
- 66310 multiletter control sequences out of 15000+600000
- 573436 words of font info for 83 fonts, out of 8000000 for 9000
+ 43960 strings out of 474235
+ 918442 string characters out of 5742253
+ 1523962 words of memory out of 5000000
+ 66020 multiletter control sequences out of 15000+600000
+ 567278 words of font info for 80 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 99i,19n,123p,1202b,1586s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 99i,19n,123p,1202b,1195s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on autoavaliacao.pdf (50 pages).
+Output written on autoavaliacao.pdf (88 pages).
