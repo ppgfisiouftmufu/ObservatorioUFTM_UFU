@@ -18,7 +18,7 @@ knitr::opts_chunk$set(
   warning = FALSE,
   message = FALSE,
   fig.align = 'center',
-  results = "asis",
+  results = 'asis',
   include = TRUE,
   out.width = "100%",
   knitr.kable.NA = '',
@@ -58,7 +58,7 @@ if(file.exists("PPG/Images/logo-programa.png")) {
 <br>
 
 <p style="font-size:1.5em">
-```{r intro, results = "asis"}
+```{r intro, results = 'asis'}
 if (has.dados.cadastrais && has.sucupira.files) {
   cat(
     'O **Observatório ', toupper(as.character(sigla.PPG)),
@@ -264,7 +264,7 @@ summ.data <- c(summ.coerencia.1)
 source("Scripts/plot-summaries.R", local = knitr::knit_global())
 ```
 
-```{r sintese-coerencia-carousel, echo = FALSE, warning = FALSE, message = FALSE, fig.align = 'center', results = "asis", eval = has.sucupira.files, out.width = "70%"}
+```{r sintese-coerencia-carousel, echo = FALSE, warning = FALSE, message = FALSE, fig.align = 'center', results = 'asis', eval = has.sucupira.files, out.width = "70%"}
 cat('<br>')
 cat('<br>')
 
@@ -305,7 +305,7 @@ clean.text <- TRUE
 source("Scripts/docs-to-wordcloud.R", local = knitr::knit_global())
 ```
 
-```{r sintese-projetos-cloud-carousel, echo = FALSE, warning = FALSE, message = FALSE, fig.align = 'center', results = "asis", eval = has.sucupira.files, out.width = "70%"}
+```{r sintese-projetos-cloud-carousel, echo = FALSE, warning = FALSE, message = FALSE, fig.align = 'center', results = 'asis', eval = has.sucupira.files, out.width = "70%"}
 cat('<br>')
 cat('<br>')
 
@@ -342,8 +342,8 @@ projetos.ac <- sucupira %>%
   dplyr::group_by(Ano, `Área de Concentração`) %>%
   dplyr::summarise(n = n())
 
-# replace NA values by Indefinido
-projetos.ac$`Área de Concentração`[is.na(projetos.ac$`Área de Concentração`)] <- "Indefinido"
+# replace NA values by Indefinida
+projetos.ac$`Área de Concentração`[is.na(projetos.ac$`Área de Concentração`)] <- "Indefinida"
 
 # plot area setup
 layout.m <- c(1)
@@ -406,8 +406,8 @@ projetos.lp <- sucupira %>%
   dplyr::group_by(Ano, `Linha de Pesquisa`) %>%
   dplyr::summarise(n = n())
 
-# replace NA values by Indefinido
-projetos.lp$`Linha de Pesquisa`[is.na(projetos.lp$`Linha de Pesquisa`)] <- "Indefinido"
+# replace NA values by Indefinida
+projetos.lp$`Linha de Pesquisa`[is.na(projetos.lp$`Linha de Pesquisa`)] <- "Indefinida"
 
 # plot area setup
 layout.m <- c(1)
@@ -470,8 +470,8 @@ projetos.situacao <- sucupira %>%
   dplyr::group_by(Ano, Situação) %>%
   dplyr::summarise(n = n())
 
-# replace NA values by Indefinido
-projetos.situacao$Situação[is.na(projetos.situacao$Situação)] <- "Indefinido"
+# replace NA values by Indefinida
+projetos.situacao$Situação[is.na(projetos.situacao$Situação)] <- "Indefinida"
 
 # plot area setup
 layout.m <- c(1)
@@ -534,8 +534,8 @@ projetos.natureza <- sucupira %>%
   dplyr::group_by(Ano, `Natureza do Projeto de Pesquisa`) %>%
   dplyr::summarise(n = n())
 
-# replace NA values by Indefinido
-projetos.natureza$`Natureza do Projeto de Pesquisa`[is.na(projetos.natureza$`Natureza do Projeto de Pesquisa`)] <- "Indefinido"
+# replace NA values by Indefinida
+projetos.natureza$`Natureza do Projeto de Pesquisa`[is.na(projetos.natureza$`Natureza do Projeto de Pesquisa`)] <- "Indefinida"
 
 # plot area setup
 layout.m <- c(1)
@@ -598,8 +598,8 @@ projetos.tipo <- sucupira %>%
   dplyr::group_by(Ano, `Natureza do Projeto de Pesquisa`) %>%
   dplyr::summarise(n = n())
 
-# replace NA values by Indefinido
-projetos.tipo$`Natureza do Projeto de Pesquisa`[is.na(projetos.tipo$`Natureza do Projeto de Pesquisa`)] <- "Indefinido"
+# replace NA values by Indefinida
+projetos.tipo$`Natureza do Projeto de Pesquisa`[is.na(projetos.tipo$`Natureza do Projeto de Pesquisa`)] <- "Indefinida"
 
 # plot area setup
 layout.m <- c(1)
@@ -662,8 +662,8 @@ projetos.categoria <- sucupira %>%
   dplyr::group_by(Ano, `Categoria do Membro do Projeto`) %>%
   dplyr::summarise(n = n())
 
-# replace NA values by Indefinido
-projetos.categoria$`Categoria do Membro do Projeto`[is.na(projetos.categoria$`Categoria do Membro do Projeto`)] <- "Indefinido"
+# replace NA values by Indefinida
+projetos.categoria$`Categoria do Membro do Projeto`[is.na(projetos.categoria$`Categoria do Membro do Projeto`)] <- "Indefinida"
 
 # plot area setup
 layout.m <- c(1)
@@ -768,7 +768,7 @@ summ.data <- summ.table.projetos
 source("Scripts/plot-summaries.R", local = knitr::knit_global())
 ```
 
-```{r sintese-projetos-carousel-1, echo = FALSE, warning = FALSE, message = FALSE, fig.align = 'center', results = "asis", eval = has.sucupira.files, out.width = "100%"}
+```{r sintese-projetos-carousel-1, echo = FALSE, warning = FALSE, message = FALSE, fig.align = 'center', results = 'asis', eval = has.sucupira.files, out.width = "100%"}
 cat('<br>')
 cat('<br>')
 
@@ -809,7 +809,7 @@ cat('\n\n')
 source("Scripts/fonte-metricas.R", local = knitr::knit_global())
 ```
 
-```{r sintese-projetos-carousel-2, echo = FALSE, warning = FALSE, message = FALSE, fig.align = 'center', results = "asis", eval = has.sucupira.files, out.width = "70%"}
+```{r sintese-projetos-carousel-2, echo = FALSE, warning = FALSE, message = FALSE, fig.align = 'center', results = 'asis', eval = has.sucupira.files, out.width = "70%"}
 cat('<br>')
 cat('<br>')
 
@@ -1229,7 +1229,7 @@ summ.data <- summ.table.financiadores
 source("Scripts/plot-summaries.R", local = knitr::knit_global())
 ```
 
-```{r sintese-financiadores-carousel-1, echo = FALSE, warning = FALSE, message = FALSE, fig.align = 'center', results = "asis", eval = has.financiadores, out.width = "100%"}
+```{r sintese-financiadores-carousel-1, echo = FALSE, warning = FALSE, message = FALSE, fig.align = 'center', results = 'asis', eval = has.financiadores, out.width = "100%"}
 cat('<br>')
 cat('<br>')
 
@@ -1265,7 +1265,7 @@ cat('\n\n')
 source("Scripts/fonte-sucupira.R", local = knitr::knit_global())
 ```
 
-```{r sintese-financiadores-carousel-2, echo = FALSE, warning = FALSE, message = FALSE, fig.align = 'center', results = "asis", eval = has.financiadores, out.width = "70%"}
+```{r sintese-financiadores-carousel-2, echo = FALSE, warning = FALSE, message = FALSE, fig.align = 'center', results = 'asis', eval = has.financiadores, out.width = "70%"}
 cat('<br>')
 cat('<br>')
 
@@ -1308,7 +1308,7 @@ clean.text <- FALSE
 source("Scripts/docs-to-wordcloud.R", local = knitr::knit_global())
 ```
 
-```{r sintese-producoes-cloud-carousel, echo = FALSE, warning = FALSE, message = FALSE, fig.align = 'center', results = "asis", eval = has.sucupira.files, out.width = "70%"}
+```{r sintese-producoes-cloud-carousel, echo = FALSE, warning = FALSE, message = FALSE, fig.align = 'center', results = 'asis', eval = has.sucupira.files, out.width = "70%"}
 cat('<br>')
 cat('<br>')
 
@@ -1556,7 +1556,7 @@ plot.3 <- plot.3 %>% plotly::layout(
 )
 ```
 
-```{r sintese-producao-carousel-1, echo = FALSE, warning = FALSE, message = FALSE, fig.align = 'center', results = "asis", eval = has.sucupira.files, out.width = "100%"}
+```{r sintese-producao-carousel-1, echo = FALSE, warning = FALSE, message = FALSE, fig.align = 'center', results = 'asis', eval = has.sucupira.files, out.width = "100%"}
 cat('<br>')
 cat('<br>')
 
@@ -1589,8 +1589,8 @@ metricas_artigos <- metricas_artigos[metricas_artigos$`Item de Detalhamento` == 
 # remove duplicated ID rows
 metricas_artigos <- metricas_artigos[!duplicated(metricas_artigos$`ID da Produção`), ]
 
-# convert NA values in "Indefinido"
-metricas_artigos$Qualis[is.na(metricas_artigos$Qualis)] <- "Indefinido"
+# convert NA values in "Indefinida"
+metricas_artigos$Qualis[is.na(metricas_artigos$Qualis)] <- "Indefinida"
 
 # Qualis
 estratos.capes <- c("A1", "A2", "A3", "A4", "B1", "B2", "B3", "B4", "B5", "C")
@@ -1950,7 +1950,7 @@ summ.data <- summ.table.producao
 source("Scripts/plot-summaries.R", local = knitr::knit_global())
 ```
 
-```{r sintese-artigos-carousel-1, echo = FALSE, warning = FALSE, message = FALSE, fig.align = 'center', results = "asis", eval = any(has.metricas.doi.ppg, has.metricas.doi.sucupira), out.width = "100%"}
+```{r sintese-artigos-carousel-1, echo = FALSE, warning = FALSE, message = FALSE, fig.align = 'center', results = 'asis', eval = any(has.metricas.doi.ppg, has.metricas.doi.sucupira), out.width = "100%"}
 cat('<br>')
 cat('<br>')
 
@@ -1979,7 +1979,7 @@ cat('\n\n')
 source("Scripts/fonte-metricas.R", local = knitr::knit_global())
 ```
 
-```{r sintese-artigos-carousel-2, echo = FALSE, warning = FALSE, message = FALSE, fig.align = 'center', results = "asis", eval = any(has.metricas.doi.ppg, has.metricas.doi.sucupira), out.width = "70%"}
+```{r sintese-artigos-carousel-2, echo = FALSE, warning = FALSE, message = FALSE, fig.align = 'center', results = 'asis', eval = any(has.metricas.doi.ppg, has.metricas.doi.sucupira), out.width = "70%"}
 cat('<br>')
 cat('<br>')
 
@@ -2292,7 +2292,7 @@ summ.data <- summ.table.visibilidade
 source("Scripts/plot-summaries.R", local = knitr::knit_global())
 ```
 
-```{r sintese-visibilidade-carousel-1, echo = FALSE, warning = FALSE, message = FALSE, fig.align = 'center', results = "asis", eval = any(has.metricas.doi.ppg, has.metricas.doi.sucupira), out.width = "100%"}
+```{r sintese-visibilidade-carousel-1, echo = FALSE, warning = FALSE, message = FALSE, fig.align = 'center', results = 'asis', eval = any(has.metricas.doi.ppg, has.metricas.doi.sucupira), out.width = "100%"}
 cat('<br>')
 cat('<br>')
 
@@ -2315,7 +2315,7 @@ cat('\n\n')
 source("Scripts/fonte-metricas.R", local = knitr::knit_global())
 ```
 
-```{r sintese-visibilidade-carousel-2, echo = FALSE, warning = FALSE, message = FALSE, fig.align = 'center', results = "asis", eval = any(has.metricas.doi.ppg, has.metricas.doi.sucupira), out.width = "70%"}
+```{r sintese-visibilidade-carousel-2, echo = FALSE, warning = FALSE, message = FALSE, fig.align = 'center', results = 'asis', eval = any(has.metricas.doi.ppg, has.metricas.doi.sucupira), out.width = "70%"}
 cat('<br>')
 cat('<br>')
 
@@ -2554,7 +2554,7 @@ g2 <- cowplot::ggdraw(g) +
 plot(g2)
 ```
 
-```{r sintese-pessoal-ies-carousel, echo = FALSE, warning = FALSE, message = FALSE, fig.align = 'center', results = "asis", eval = has.discentes, out.width = "70%"}
+```{r sintese-pessoal-ies-carousel, echo = FALSE, warning = FALSE, message = FALSE, fig.align = 'center', results = 'asis', eval = has.discentes, out.width = "70%"}
 cat('<br>')
 cat('<br>')
 
@@ -2828,7 +2828,7 @@ summ.data <- summ.table.pessoal
 source("Scripts/plot-summaries.R", local = knitr::knit_global())
 ```
 
-```{r sintese-pessoal-carousel-1, echo = FALSE, warning = FALSE, message = FALSE, fig.align = 'center', results = "asis", eval = has.sucupira.files, out.width = "100%"}
+```{r sintese-pessoal-carousel-1, echo = FALSE, warning = FALSE, message = FALSE, fig.align = 'center', results = 'asis', eval = has.sucupira.files, out.width = "100%"}
 cat('<br>')
 cat('<br>')
 
@@ -2845,7 +2845,7 @@ cat('\n\n')
 source("Scripts/fonte-sucupira.R", local = knitr::knit_global())
 ```
 
-```{r sintese-pessoal-carousel-2, echo = FALSE, warning = FALSE, message = FALSE, fig.align = 'center', results = "asis", eval = has.sucupira.files, out.width = "70%"}
+```{r sintese-pessoal-carousel-2, echo = FALSE, warning = FALSE, message = FALSE, fig.align = 'center', results = 'asis', eval = has.sucupira.files, out.width = "70%"}
 cat('<br>')
 cat('<br>')
 
@@ -3005,7 +3005,7 @@ summ.data <- summ.table.posdoc
 source("Scripts/plot-summaries.R", local = knitr::knit_global())
 ```
 
-```{r sintese-posdoc-carousel, echo = FALSE, warning = FALSE, message = FALSE, fig.align = 'center', results = "asis", eval = and(has.sucupira.files, has.posdoc)}
+```{r sintese-posdoc-carousel, echo = FALSE, warning = FALSE, message = FALSE, fig.align = 'center', results = 'asis', eval = and(has.sucupira.files, has.posdoc)}
 cat('<br>')
 cat('<br>')
 
@@ -3378,7 +3378,7 @@ summ.data <- summ.table.ies
 source("Scripts/plot-summaries.R", local = knitr::knit_global())
 ```
 
-```{r sintese-rede-carousel, echo = FALSE, warning = FALSE, message = FALSE, fig.align = 'center', results = "asis", eval = has.sucupira.files}
+```{r sintese-rede-carousel, echo = FALSE, warning = FALSE, message = FALSE, fig.align = 'center', results = 'asis', eval = has.sucupira.files}
 cat('<br>')
 cat('<br>')
 
