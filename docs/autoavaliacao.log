@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.9.13)  20 SEP 2024 23:55
+This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.9.22)  25 SEP 2024 05:33
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -337,7 +337,7 @@ Package graphics Info: Driver file: xetex.def on input line 106.
 \Gin@req@height=\dimen182
 \Gin@req@width=\dimen183
 ) (/usr/local/texlive/2024/texmf-dist/tex/generic/babel/babel.sty
-Package: babel 2024/08/29 v24.9 The Babel package
+Package: babel 2024/09/18 v24.10 The Babel package
 \babel@savecnt=\count312
 \U@D=\dimen184
 \l@unhyphenated=\language89
@@ -1640,22 +1640,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 448--448
 > Step: parse table inner spec.
 > Step: execute table commands.
 > Step: calculate cell and line sizes.
-
-Underfull \hbox (badness 10000) in paragraph at lines 479--479
-[]\TU/lmr/m/n/10 Universidade Federal De
- []
-
 > Step: build the whole table.
 
 
 [7
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 479--479
-[]\TU/lmr/m/n/10 Universidade Federal De
- []
-
-
 
 [8]
 
@@ -1717,18 +1707,13 @@ Overfull \hbox (3.09442pt too wide) in paragraph at lines 611--627
 
 
 [12]
-Overfull \hbox (3.09442pt too wide) in paragraph at lines 639--646
+Overfull \hbox (3.09442pt too wide) in paragraph at lines 642--672
  [][] 
  []
 
 
 
 [13]
-Overfull \hbox (3.09442pt too wide) in paragraph at lines 661--691
- [][] 
- []
-
-
 
 [14]
 
@@ -1752,24 +1737,22 @@ Overfull \hbox (3.09442pt too wide) in paragraph at lines 661--691
 
 [24]
 
-[25]
-
-[26
+[25
 
 ]
+
+[26]
 
 [27]
 
 [28]
-
-[29]
-Overfull \hbox (3.09442pt too wide) in paragraph at lines 897--924
+Overfull \hbox (3.09442pt too wide) in paragraph at lines 878--905
  [][] 
  []
 
 
 
-[30
+[29
 
 ]
 > Step: init table outer spec.
@@ -1780,176 +1763,176 @@ Overfull \hbox (3.09442pt too wide) in paragraph at lines 897--924
 > Step: execute table commands.
 > Step: calculate cell and line sizes.
 
-Underfull \hbox (badness 10000) in paragraph at lines 989--989
+Underfull \hbox (badness 10000) in paragraph at lines 970--970
 []\TU/lmr/bx/n/10 Processo De
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 989--989
+Underfull \hbox (badness 10000) in paragraph at lines 970--970
 \TU/lmr/bx/n/10 Avaliação E
  []
 
 
-Underfull \hbox (badness 1472) in paragraph at lines 989--989
+Underfull \hbox (badness 1472) in paragraph at lines 970--970
 \TU/lmr/bx/n/10 Sistema Muscu-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 989--989
+Underfull \hbox (badness 10000) in paragraph at lines 970--970
 []\TU/lmr/bx/n/10 Processos De
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 989--989
+Underfull \hbox (badness 10000) in paragraph at lines 970--970
 \TU/lmr/bx/n/10 Avaliação E
  []
 
 
-Underfull \hbox (badness 2103) in paragraph at lines 989--989
+Underfull \hbox (badness 2103) in paragraph at lines 970--970
 \TU/lmr/bx/n/10 Sistemas Cardi-
  []
 
 
-Underfull \hbox (badness 1292) in paragraph at lines 989--989
+Underfull \hbox (badness 1292) in paragraph at lines 970--970
 \TU/lmr/bx/n/10 orrespiratório E
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 989--989
+Underfull \hbox (badness 10000) in paragraph at lines 970--970
 []\TU/lmr/m/n/10 Carlos Fernando
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 989--989
+Underfull \hbox (badness 10000) in paragraph at lines 970--970
 []\TU/lmr/m/n/10 Dernival Berton-
  []
 
 
-Underfull \hbox (badness 1102) in paragraph at lines 989--989
+Underfull \hbox (badness 1102) in paragraph at lines 970--970
 []\TU/lmr/m/n/10 Eduardo Elias Vi-
  []
 
 
-Underfull \hbox (badness 4531) in paragraph at lines 989--989
+Underfull \hbox (badness 4531) in paragraph at lines 970--970
 []\TU/lmr/m/n/10 Guilherme Morais
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 989--989
+Underfull \hbox (badness 10000) in paragraph at lines 970--970
 []\TU/lmr/m/n/10 Isabel Aparecida
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 989--989
+Underfull \hbox (badness 10000) in paragraph at lines 970--970
 []\TU/lmr/m/n/10 Juliana Martins
  []
 
 
-Underfull \hbox (badness 6332) in paragraph at lines 989--989
+Underfull \hbox (badness 6332) in paragraph at lines 970--970
 []\TU/lmr/m/n/10 Luciane Fernanda
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 989--989
+Underfull \hbox (badness 10000) in paragraph at lines 970--970
 \TU/lmr/m/n/10 Rodrigues Marti-
  []
 
 
-Underfull \hbox (badness 1681) in paragraph at lines 989--989
+Underfull \hbox (badness 1681) in paragraph at lines 970--970
 []\TU/lmr/m/n/10 Marilita Falangola
  []
 
 > Step: build the whole table.
 
-Underfull \hbox (badness 10000) in paragraph at lines 989--989
+Underfull \hbox (badness 10000) in paragraph at lines 970--970
 []\TU/lmr/bx/n/10 Processo De
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 989--989
+Underfull \hbox (badness 10000) in paragraph at lines 970--970
 \TU/lmr/bx/n/10 Avaliação E
  []
 
 
-Underfull \hbox (badness 1472) in paragraph at lines 989--989
+Underfull \hbox (badness 1472) in paragraph at lines 970--970
 \TU/lmr/bx/n/10 Sistema Muscu-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 989--989
+Underfull \hbox (badness 10000) in paragraph at lines 970--970
 []\TU/lmr/bx/n/10 Processos De
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 989--989
+Underfull \hbox (badness 10000) in paragraph at lines 970--970
 \TU/lmr/bx/n/10 Avaliação E
  []
 
 
-Underfull \hbox (badness 2103) in paragraph at lines 989--989
+Underfull \hbox (badness 2103) in paragraph at lines 970--970
 \TU/lmr/bx/n/10 Sistemas Cardi-
  []
 
 
-Underfull \hbox (badness 1292) in paragraph at lines 989--989
+Underfull \hbox (badness 1292) in paragraph at lines 970--970
 \TU/lmr/bx/n/10 orrespiratório E
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 989--989
+Underfull \hbox (badness 10000) in paragraph at lines 970--970
 []\TU/lmr/m/n/10 Carlos Fernando
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 989--989
+Underfull \hbox (badness 10000) in paragraph at lines 970--970
 []\TU/lmr/m/n/10 Dernival Berton-
  []
 
 
-Underfull \hbox (badness 1102) in paragraph at lines 989--989
+Underfull \hbox (badness 1102) in paragraph at lines 970--970
 []\TU/lmr/m/n/10 Eduardo Elias Vi-
  []
 
 
-Underfull \hbox (badness 4531) in paragraph at lines 989--989
+Underfull \hbox (badness 4531) in paragraph at lines 970--970
 []\TU/lmr/m/n/10 Guilherme Morais
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 989--989
+Underfull \hbox (badness 10000) in paragraph at lines 970--970
 []\TU/lmr/m/n/10 Isabel Aparecida
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 989--989
+Underfull \hbox (badness 10000) in paragraph at lines 970--970
 []\TU/lmr/m/n/10 Juliana Martins
  []
 
 
-Underfull \hbox (badness 6332) in paragraph at lines 989--989
+Underfull \hbox (badness 6332) in paragraph at lines 970--970
 []\TU/lmr/m/n/10 Luciane Fernanda
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 989--989
+Underfull \hbox (badness 10000) in paragraph at lines 970--970
 \TU/lmr/m/n/10 Rodrigues Marti-
  []
 
 
-Underfull \hbox (badness 1681) in paragraph at lines 989--989
+Underfull \hbox (badness 1681) in paragraph at lines 970--970
 []\TU/lmr/m/n/10 Marilita Falangola
+ []
+
+
+
+[30]
+Overfull \hbox (3.09442pt too wide) in paragraph at lines 982--989
+ [][] 
  []
 
 
 
 [31]
-Overfull \hbox (3.09442pt too wide) in paragraph at lines 1001--1008
- [][] 
- []
-
-
-
-[32]
 > Step: init table outer spec.
 > Step: parse table options.
 > Step: split table.
@@ -1959,6 +1942,8 @@ Overfull \hbox (3.09442pt too wide) in paragraph at lines 1001--1008
 > Step: calculate cell and line sizes.
 > Step: build the whole table.
 
+
+[32]
 
 [33]
 
@@ -1969,11 +1954,11 @@ Overfull \hbox (3.09442pt too wide) in paragraph at lines 1001--1008
 [36]
 
 [37]
-
-[38]
 Overfull \vbox (178.32903pt too high) has occurred while \output is active []
 
 
+
+[38]
 
 [39]
 
@@ -1983,9 +1968,7 @@ Overfull \vbox (178.32903pt too high) has occurred while \output is active []
 
 [42]
 
-[43]
-
-[44] (./autoavaliacao.aux)
+[43] (./autoavaliacao.aux)
  ***********
 LaTeX2e <2024-06-01> patch level 2
 L3 programming layer <2024-08-30>
@@ -1995,12 +1978,12 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 44024 strings out of 474235
- 920682 string characters out of 5742253
- 1527245 words of memory out of 5000000
- 66084 multiletter control sequences out of 15000+600000
+ 44033 strings out of 474235
+ 920798 string characters out of 5742253
+ 1527420 words of memory out of 5000000
+ 66093 multiletter control sequences out of 15000+600000
  570560 words of font info for 86 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  99i,19n,123p,1202b,1195s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on autoavaliacao.pdf (47 pages).
+Output written on autoavaliacao.pdf (46 pages).
