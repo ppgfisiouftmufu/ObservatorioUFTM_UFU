@@ -8265,9 +8265,32 @@ Sucupira</strong></a> <br><a style="float:right" href="#top"><b>Início
  </b>
 <svg aria-hidden="true" role="img" viewBox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM385 231c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-71-71V376c0 13.3-10.7 24-24 24s-24-10.7-24-24V193.9l-71 71c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9L239 119c9.4-9.4 24.6-9.4 33.9 0L385 231z"/></svg>
 </a><br></p>
+<p>G2: Mede a probabilidade de que duas distribuições de palavras sejam
+diferentes. Sempre retorna valores positivos. Se a frequência de uma
+palavra em um texto for menor do que em outro, o resultado é ajustado
+para indicar a direção. Tende a favorecer palavras que aparecem muitas
+vezes.</p>
+<p>LogRatio: Compara o risco relativo de duas palavras ou grupos de
+palavras. É uma forma intuitiva de ver diferenças. É menos afetado por
+palavras que aparecem raramente, mas pode dar resultados enganosos para
+essas palavras.</p>
+<p>PositiveLRC: Uma versão que indica se há evidência de que uma palavra
+é mais comum em um texto do que em outro. Resultados iguais ou menores
+que zero significam que não há evidência significativa. É útil para
+considerar palavras que não são claramente significativas, especialmente
+em textos menores.</p>
+<p>Um filtro de significância é aplicado, de modo que apenas palavras
+com valores diferentes de zero são exibidas.</p>
+<p>Fonte: Evert S (2023). corpora: Statistics and Data Sets for Corpus
+Frequency Data. R package version 0.6, <a
+href="https://CRAN.R-project.org/package=corpora"
+class="uri">https://CRAN.R-project.org/package=corpora</a>.</p>
+<!--- knit those table chunk statements -->
+<!-- -->
 <table class="table table-striped table-hover table-condensed table-responsive" style="margin-left: auto; margin-right: auto;">
 <caption>
-Palavras-chave mais frequentes por Linha de Pesquisa
+Palavras-chave mais frequentes por Linha de Pesquisa - Linhas de
+Pesquisa: -
 </caption>
 <thead>
 <tr>
@@ -8299,257 +8322,238 @@ PositiveLRC
 </thead>
 <tbody>
 <tr>
-<td style="text-align:left;width: 3.45cm; font-weight: bold;">
+<td style="text-align:left;width: 5.29cm; font-weight: bold;">
 Processos De Avaliação E Intervenção Fisioterapêutica Dos Sistemas
 Cardiorrespiratório E Neuromuscular.
 </td>
-<td style="text-align:left;width: 3.45cm; font-weight: bold;">
+<td style="text-align:left;width: 5.29cm; font-weight: bold;">
 Processo De Avaliação E Intervenção Fisioterapêutica Do Sistema
 Musculoesquelético
 </td>
-<td style="text-align:left;width: 3.45cm; ">
+<td style="text-align:left;width: 5.29cm; ">
 CARDÍACA
 </td>
-<td style="text-align:left;width: 3.45cm; ">
+<td style="text-align:left;width: 5.29cm; ">
 5
 </td>
-<td style="text-align:left;width: 3.45cm; ">
+<td style="text-align:left;width: 5.29cm; ">
 0
 </td>
-<td style="text-align:left;width: 3.45cm; ">
+<td style="text-align:left;width: 5.29cm; ">
 6.886
 </td>
-<td style="text-align:left;width: 3.45cm; ">
+<td style="text-align:left;width: 5.29cm; ">
 3.433
 </td>
-<td style="text-align:left;width: 3.45cm; ">
+<td style="text-align:left;width: 5.29cm; ">
 0.259
 </td>
 </tr>
 <tr>
-<td style="text-align:left;width: 3.45cm; font-weight: bold;">
+<td style="text-align:left;width: 5.29cm; font-weight: bold;">
 Processos De Avaliação E Intervenção Fisioterapêutica Dos Sistemas
 Cardiorrespiratório E Neuromuscular.
 </td>
-<td style="text-align:left;width: 3.45cm; font-weight: bold;">
+<td style="text-align:left;width: 5.29cm; font-weight: bold;">
 Processo De Avaliação E Intervenção Fisioterapêutica Do Sistema
 Musculoesquelético
 </td>
-<td style="text-align:left;width: 3.45cm; ">
+<td style="text-align:left;width: 5.29cm; ">
 AUTONÔMICA
 </td>
-<td style="text-align:left;width: 3.45cm; ">
+<td style="text-align:left;width: 5.29cm; ">
 3
 </td>
-<td style="text-align:left;width: 3.45cm; ">
+<td style="text-align:left;width: 5.29cm; ">
 0
 </td>
-<td style="text-align:left;width: 3.45cm; ">
+<td style="text-align:left;width: 5.29cm; ">
 4.121
 </td>
-<td style="text-align:left;width: 3.45cm; ">
+<td style="text-align:left;width: 5.29cm; ">
 2.781
 </td>
-<td style="text-align:left;width: 3.45cm; ">
+<td style="text-align:left;width: 5.29cm; ">
 -0.804
 </td>
 </tr>
 <tr>
-<td style="text-align:left;width: 3.45cm; font-weight: bold;">
+<td style="text-align:left;width: 5.29cm; font-weight: bold;">
 Processos De Avaliação E Intervenção Fisioterapêutica Dos Sistemas
 Cardiorrespiratório E Neuromuscular.
 </td>
-<td style="text-align:left;width: 3.45cm; font-weight: bold;">
+<td style="text-align:left;width: 5.29cm; font-weight: bold;">
 Processo De Avaliação E Intervenção Fisioterapêutica Do Sistema
 Musculoesquelético
 </td>
-<td style="text-align:left;width: 3.45cm; ">
+<td style="text-align:left;width: 5.29cm; ">
 CRIANÇAS
 </td>
-<td style="text-align:left;width: 3.45cm; ">
+<td style="text-align:left;width: 5.29cm; ">
 3
 </td>
-<td style="text-align:left;width: 3.45cm; ">
+<td style="text-align:left;width: 5.29cm; ">
 0
 </td>
-<td style="text-align:left;width: 3.45cm; ">
+<td style="text-align:left;width: 5.29cm; ">
 4.121
 </td>
-<td style="text-align:left;width: 3.45cm; ">
+<td style="text-align:left;width: 5.29cm; ">
 2.781
 </td>
-<td style="text-align:left;width: 3.45cm; ">
+<td style="text-align:left;width: 5.29cm; ">
 -0.804
 </td>
 </tr>
 <tr>
-<td style="text-align:left;width: 3.45cm; font-weight: bold;">
+<td style="text-align:left;width: 5.29cm; font-weight: bold;">
 Processos De Avaliação E Intervenção Fisioterapêutica Dos Sistemas
 Cardiorrespiratório E Neuromuscular.
 </td>
-<td style="text-align:left;width: 3.45cm; font-weight: bold;">
+<td style="text-align:left;width: 5.29cm; font-weight: bold;">
 Processo De Avaliação E Intervenção Fisioterapêutica Do Sistema
 Musculoesquelético
 </td>
-<td style="text-align:left;width: 3.45cm; ">
+<td style="text-align:left;width: 5.29cm; ">
 FÍSICO
 </td>
-<td style="text-align:left;width: 3.45cm; ">
+<td style="text-align:left;width: 5.29cm; ">
 3
 </td>
-<td style="text-align:left;width: 3.45cm; ">
+<td style="text-align:left;width: 5.29cm; ">
 0
 </td>
-<td style="text-align:left;width: 3.45cm; ">
+<td style="text-align:left;width: 5.29cm; ">
 4.121
 </td>
-<td style="text-align:left;width: 3.45cm; ">
+<td style="text-align:left;width: 5.29cm; ">
 2.781
 </td>
-<td style="text-align:left;width: 3.45cm; ">
+<td style="text-align:left;width: 5.29cm; ">
 -0.804
 </td>
 </tr>
 <tr>
-<td style="text-align:left;width: 3.45cm; font-weight: bold;">
+<td style="text-align:left;width: 5.29cm; font-weight: bold;">
 Processos De Avaliação E Intervenção Fisioterapêutica Dos Sistemas
 Cardiorrespiratório E Neuromuscular.
 </td>
-<td style="text-align:left;width: 3.45cm; font-weight: bold;">
+<td style="text-align:left;width: 5.29cm; font-weight: bold;">
 Processo De Avaliação E Intervenção Fisioterapêutica Do Sistema
 Musculoesquelético
 </td>
-<td style="text-align:left;width: 3.45cm; ">
+<td style="text-align:left;width: 5.29cm; ">
 FUNÇÃO
 </td>
-<td style="text-align:left;width: 3.45cm; ">
+<td style="text-align:left;width: 5.29cm; ">
 3
 </td>
-<td style="text-align:left;width: 3.45cm; ">
+<td style="text-align:left;width: 5.29cm; ">
 0
 </td>
-<td style="text-align:left;width: 3.45cm; ">
+<td style="text-align:left;width: 5.29cm; ">
 4.121
 </td>
-<td style="text-align:left;width: 3.45cm; ">
+<td style="text-align:left;width: 5.29cm; ">
 2.781
 </td>
-<td style="text-align:left;width: 3.45cm; ">
+<td style="text-align:left;width: 5.29cm; ">
 -0.804
 </td>
 </tr>
 <tr>
-<td style="text-align:left;width: 3.45cm; font-weight: bold;">
+<td style="text-align:left;width: 5.29cm; font-weight: bold;">
 Processos De Avaliação E Intervenção Fisioterapêutica Dos Sistemas
 Cardiorrespiratório E Neuromuscular.
 </td>
-<td style="text-align:left;width: 3.45cm; font-weight: bold;">
+<td style="text-align:left;width: 5.29cm; font-weight: bold;">
 Processo De Avaliação E Intervenção Fisioterapêutica Do Sistema
 Musculoesquelético
 </td>
-<td style="text-align:left;width: 3.45cm; ">
+<td style="text-align:left;width: 5.29cm; ">
 HIPERTENSAS
 </td>
-<td style="text-align:left;width: 3.45cm; ">
+<td style="text-align:left;width: 5.29cm; ">
 3
 </td>
-<td style="text-align:left;width: 3.45cm; ">
+<td style="text-align:left;width: 5.29cm; ">
 0
 </td>
-<td style="text-align:left;width: 3.45cm; ">
+<td style="text-align:left;width: 5.29cm; ">
 4.121
 </td>
-<td style="text-align:left;width: 3.45cm; ">
+<td style="text-align:left;width: 5.29cm; ">
 2.781
 </td>
-<td style="text-align:left;width: 3.45cm; ">
+<td style="text-align:left;width: 5.29cm; ">
 -0.804
 </td>
 </tr>
 <tr>
-<td style="text-align:left;width: 3.45cm; font-weight: bold;">
+<td style="text-align:left;width: 5.29cm; font-weight: bold;">
 Processos De Avaliação E Intervenção Fisioterapêutica Dos Sistemas
 Cardiorrespiratório E Neuromuscular.
 </td>
-<td style="text-align:left;width: 3.45cm; font-weight: bold;">
+<td style="text-align:left;width: 5.29cm; font-weight: bold;">
 Processo De Avaliação E Intervenção Fisioterapêutica Do Sistema
 Musculoesquelético
 </td>
-<td style="text-align:left;width: 3.45cm; ">
+<td style="text-align:left;width: 5.29cm; ">
 MODULAÇÃO
 </td>
-<td style="text-align:left;width: 3.45cm; ">
+<td style="text-align:left;width: 5.29cm; ">
 3
 </td>
-<td style="text-align:left;width: 3.45cm; ">
+<td style="text-align:left;width: 5.29cm; ">
 0
 </td>
-<td style="text-align:left;width: 3.45cm; ">
+<td style="text-align:left;width: 5.29cm; ">
 4.121
 </td>
-<td style="text-align:left;width: 3.45cm; ">
+<td style="text-align:left;width: 5.29cm; ">
 2.781
 </td>
-<td style="text-align:left;width: 3.45cm; ">
+<td style="text-align:left;width: 5.29cm; ">
 -0.804
 </td>
 </tr>
 <tr>
-<td style="text-align:left;width: 3.45cm; font-weight: bold;">
+<td style="text-align:left;width: 5.29cm; font-weight: bold;">
 Processos De Avaliação E Intervenção Fisioterapêutica Dos Sistemas
 Cardiorrespiratório E Neuromuscular.
 </td>
-<td style="text-align:left;width: 3.45cm; font-weight: bold;">
+<td style="text-align:left;width: 5.29cm; font-weight: bold;">
 Processo De Avaliação E Intervenção Fisioterapêutica Do Sistema
 Musculoesquelético
 </td>
-<td style="text-align:left;width: 3.45cm; ">
+<td style="text-align:left;width: 5.29cm; ">
 RESPIRATÓRIA
 </td>
-<td style="text-align:left;width: 3.45cm; ">
+<td style="text-align:left;width: 5.29cm; ">
 3
 </td>
-<td style="text-align:left;width: 3.45cm; ">
+<td style="text-align:left;width: 5.29cm; ">
 0
 </td>
-<td style="text-align:left;width: 3.45cm; ">
+<td style="text-align:left;width: 5.29cm; ">
 4.121
 </td>
-<td style="text-align:left;width: 3.45cm; ">
+<td style="text-align:left;width: 5.29cm; ">
 2.781
 </td>
-<td style="text-align:left;width: 3.45cm; ">
+<td style="text-align:left;width: 5.29cm; ">
 -0.804
 </td>
 </tr>
 </tbody>
 </table>
-<p>G2: Mede a probabilidade de que duas distribuições de palavras sejam
-diferentes. Sempre retorna valores positivos. Se a frequência de uma
-palavra em um texto for menor do que em outro, o resultado é ajustado
-para indicar a direção. Tende a favorecer palavras que aparecem muitas
-vezes.</p>
-<p>LogRatio: Compara o risco relativo de duas palavras ou grupos de
-palavras. É uma forma intuitiva de ver diferenças. É menos afetado por
-palavras que aparecem raramente, mas pode dar resultados enganosos para
-essas palavras.</p>
-<p>PositiveLRC: Uma versão que indica se há evidência de que uma palavra
-é mais comum em um texto do que em outro. Resultados iguais ou menores
-que zero significam que não há evidência significativa. É útil para
-considerar palavras que não são claramente significativas, especialmente
-em textos menores.</p>
-<p>Um filtro de significância é aplicado, de modo que apenas palavras
-com valores diferentes de zero são exibidas.</p>
-<p>Fonte: Evert S (2023). corpora: Statistics and Data Sets for Corpus
-Frequency Data. R package version 0.6, <a
-href="https://CRAN.R-project.org/package=corpora"
-class="uri">https://CRAN.R-project.org/package=corpora</a>. <br>
-<strong>Fontes</strong>: <a
+<p><strong>Fontes</strong>: <a
 href="https://sucupira.capes.gov.br/sucupira/"><strong>Plataforma
 Sucupira</strong></a> <br><a style="float:right" href="#top"><b>Início
  </b>
 <svg aria-hidden="true" role="img" viewBox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM385 231c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-71-71V376c0 13.3-10.7 24-24 24s-24-10.7-24-24V193.9l-71 71c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9L239 119c9.4-9.4 24.6-9.4 33.9 0L385 231z"/></svg>
 </a><br></p>
+<p><br></p>
 </div>
 </div>
 <div id="section-12" class="section level3">
