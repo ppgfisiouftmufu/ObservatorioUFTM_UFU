@@ -1,11 +1,11 @@
-This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.11.14)  14 NOV 2024 19:43
+This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2025.1.2)  2 JAN 2025 15:16
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **autoavaliacao.tex
 (./autoavaliacao.tex
-LaTeX2e <2024-11-01>
-L3 programming layer <2024-11-02>
+LaTeX2e <2024-11-01> patch level 1
+L3 programming layer <2024-12-09>
 (/Users/asferreira/Library/TinyTeX/texmf-dist/tex/latex/base/book.cls
 Document Class: book 2024/06/29 v1.4n Standard LaTeX document class
 (/Users/asferreira/Library/TinyTeX/texmf-dist/tex/latex/base/bk10.clo
@@ -96,9 +96,9 @@ LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
 )) (/Users/asferreira/Library/TinyTeX/texmf-dist/tex/generic/iftex/iftex.sty
-Package: iftex 2022/02/03 v1.0f TeX engine tests
+Package: iftex 2024/12/12 v1.0g TeX engine tests
 ) (/Users/asferreira/Library/TinyTeX/texmf-dist/tex/latex/unicode-math/unicode-math.sty (/Users/asferreira/Library/TinyTeX/texmf-dist/tex/latex/l3kernel/expl3.sty
-Package: expl3 2024-11-02 L3 programming layer (loader) 
+Package: expl3 2024-12-09 L3 programming layer (loader) 
 (/Users/asferreira/Library/TinyTeX/texmf-dist/tex/latex/l3backend/l3backend-xetex.def
 File: l3backend-xetex.def 2024-05-08 L3 backend support: XeTeX
 \g__graphics_track_int=\count279
@@ -293,7 +293,7 @@ Package graphics Info: Driver file: xetex.def on input line 106.
 \Gin@req@height=\dimen181
 \Gin@req@width=\dimen182
 ) (/Users/asferreira/Library/TinyTeX/texmf-dist/tex/generic/babel/babel.sty
-Package: babel 2024/11/08 v24.13 The multilingual framework for pdfLaTeX, LuaLaTeX and XeLaTeX
+Package: babel 2024/12/21 v24.15 The multilingual framework for pdfLaTeX, LuaLaTeX and XeLaTeX
 \babel@savecnt=\count312
 \U@D=\dimen183
 \l@unhyphenated=\language6
@@ -913,7 +913,7 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 28
 ) (/Users/asferreira/Library/TinyTeX/texmf-dist/tex/latex/draftwatermark/draftwatermark.sty
 Package: draftwatermark 2024/03/04 3.3 Put a gray textual watermark on document pages
 ) (/Users/asferreira/Library/TinyTeX/texmf-dist/tex/latex/siunitx/siunitx.sty
-Package: siunitx 2024-09-30 v3.3.22 A comprehensive (SI) units package
+Package: siunitx 2024-12-06 v3.4.0 A comprehensive (SI) units package
 \l__siunitx_number_uncert_offset_int=\count395
 \l__siunitx_number_exponent_fixed_int=\count396
 \l__siunitx_number_min_decimal_int=\count397
@@ -947,6 +947,12 @@ Package: bookmark 2023-12-10 v1.31 PDF bookmarks (HO)
 File: bkm-dvipdfm.def 2023-12-10 v1.31 bookmark driver for dvipdfm (HO)
 \BKM@id=\count409
 )) (./autoavaliacao.aux
+
+LaTeX Warning: Label `tab:2-2-1-list-tables' multiply defined.
+
+
+LaTeX Warning: Label `tab:2-2-1-list-tables' multiply defined.
+
 
 LaTeX Warning: Label `tab:turmas' multiply defined.
 
@@ -1327,25 +1333,10 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
 
 ]
-Overfull \hbox (3.09442pt too wide) in paragraph at lines 281--291
- [][] 
- []
-
-
 
 [2]
-Overfull \hbox (3.09442pt too wide) in paragraph at lines 303--315
- [][] 
- []
-
-
 
 [3]
-Overfull \hbox (3.09442pt too wide) in paragraph at lines 327--348
- [][] 
- []
-
-
 
 [4]
 > Step: init table outer spec.
@@ -1356,64 +1347,24 @@ Overfull \hbox (3.09442pt too wide) in paragraph at lines 327--348
 > Step: execute table commands.
 > Step: calculate cell and line sizes.
 
-Underfull \hbox (badness 10000) in paragraph at lines 387--387
-[]\TU/lmr/m/n/10 Atenção Fisioterapêutica à
- []
-
-
-Underfull \hbox (badness 2495) in paragraph at lines 387--387
-[]\TU/lmr/m/n/10 Avaliação De Protocolos De
- []
-
-
-Underfull \hbox (badness 3058) in paragraph at lines 387--387
-\TU/lmr/m/n/10 Neuromusculares Da Mão e
- []
-
-
-Underfull \hbox (badness 1107) in paragraph at lines 387--387
+Underfull \hbox (badness 1107) in paragraph at lines 348--348
 \TU/lmr/m/n/10 drigues Martinho Fer-
  []
 
 
-Underfull \hbox (badness 4144) in paragraph at lines 387--387
-[]\TU/lmr/m/n/10 Avaliação e Intervenção No
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 387--387
-[]\TU/lmr/m/n/10 Lislei Jorge Patrizzi
+Underfull \hbox (badness 10000) in paragraph at lines 348--348
+[]\TU/lmr/m/n/10 Avaliação Biomecânica De
  []
 
 > Step: build the whole table.
 
-Underfull \hbox (badness 10000) in paragraph at lines 387--387
-[]\TU/lmr/m/n/10 Atenção Fisioterapêutica à
- []
-
-
-Underfull \hbox (badness 2495) in paragraph at lines 387--387
-[]\TU/lmr/m/n/10 Avaliação De Protocolos De
- []
-
-
-Underfull \hbox (badness 3058) in paragraph at lines 387--387
-\TU/lmr/m/n/10 Neuromusculares Da Mão e
- []
-
-
-Underfull \hbox (badness 1107) in paragraph at lines 387--387
+Underfull \hbox (badness 1107) in paragraph at lines 348--348
 \TU/lmr/m/n/10 drigues Martinho Fer-
  []
 
 
-Underfull \hbox (badness 4144) in paragraph at lines 387--387
-[]\TU/lmr/m/n/10 Avaliação e Intervenção No
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 387--387
-[]\TU/lmr/m/n/10 Lislei Jorge Patrizzi
+Underfull \hbox (badness 10000) in paragraph at lines 348--348
+[]\TU/lmr/m/n/10 Avaliação Biomecânica De
  []
 
 > Step: init table outer spec.
@@ -1423,76 +1374,14 @@ Underfull \hbox (badness 10000) in paragraph at lines 387--387
 > Step: parse table inner spec.
 > Step: execute table commands.
 > Step: calculate cell and line sizes.
-
-Underfull \hbox (badness 10000) in paragraph at lines 418--418
-[]\TU/lmr/m/n/10 Respostas Hemodinâmicas,
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 418--418
-\TU/lmr/m/n/10 Metabólicas e Inflamatórias
- []
-
-
-Underfull \hbox (badness 1038) in paragraph at lines 418--418
-\TU/lmr/m/n/10 Agudas e Crônicas Em Mu-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 418--418
-\TU/lmr/m/n/10 lheres Após a Menopausa
- []
-
-
-Underfull \hbox (badness 1824) in paragraph at lines 418--418
-\TU/lmr/m/n/10 Submetidas à Diferentes Ti-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 418--418
-\TU/lmr/m/n/10 pos De Treinamento Com
- []
-
 > Step: build the whole table.
 
 
 [5
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 418--418
-[]\TU/lmr/m/n/10 Respostas Hemodinâmicas,
- []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 418--418
-\TU/lmr/m/n/10 Metabólicas e Inflamatórias
- []
-
-
-Underfull \hbox (badness 1038) in paragraph at lines 418--418
-\TU/lmr/m/n/10 Agudas e Crônicas Em Mu-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 418--418
-\TU/lmr/m/n/10 lheres Após a Menopausa
- []
-
-
-Underfull \hbox (badness 1824) in paragraph at lines 418--418
-\TU/lmr/m/n/10 Submetidas à Diferentes Ti-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 418--418
-\TU/lmr/m/n/10 pos De Treinamento Com
- []
-
-
-
-[6]
-
-[7
+[6
 
 ]
 > Step: init table outer spec.
@@ -1503,58 +1392,35 @@ Underfull \hbox (badness 10000) in paragraph at lines 418--418
 > Step: execute table commands.
 > Step: calculate cell and line sizes.
 
-Overfull \hbox (4.77612pt too wide) in paragraph at lines 501--501
+Overfull \hbox (4.77612pt too wide) in paragraph at lines 426--426
 []\TU/lmr/bx/n/10 Periodicidade 
  []
 
 
-Underfull \hbox (badness 1281) in paragraph at lines 501--501
+Underfull \hbox (badness 1281) in paragraph at lines 426--426
 []\TU/lmr/bx/n/10 Biomecânica Da Postura e Do
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 501--501
-[]\TU/lmr/bx/n/10 Funcionalidade, Deficiência e
  []
 
 > Step: build the whole table.
 
-Overfull \hbox (4.77612pt too wide) in paragraph at lines 501--501
+Overfull \hbox (4.77612pt too wide) in paragraph at lines 426--426
 []\TU/lmr/bx/n/10 Periodicidade 
  []
 
 
-Underfull \hbox (badness 1281) in paragraph at lines 501--501
+Underfull \hbox (badness 1281) in paragraph at lines 426--426
 []\TU/lmr/bx/n/10 Biomecânica Da Postura e Do
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 501--501
-[]\TU/lmr/bx/n/10 Funcionalidade, Deficiência e
- []
 
-
+[7]
 
 [8]
-Overfull \hbox (3.09442pt too wide) in paragraph at lines 519--534
- [][] 
- []
-
-
 
 [9]
-Overfull \hbox (3.09442pt too wide) in paragraph at lines 550--566
- [][] 
- []
-
-
 
 [10]
-Overfull \hbox (3.09442pt too wide) in paragraph at lines 581--611
- [][] 
- []
-
-
 
 [11]
 
@@ -1565,13 +1431,6 @@ Overfull \hbox (3.09442pt too wide) in paragraph at lines 581--611
 [14]
 
 [15]
-Overfull \hbox (3.09442pt too wide) in paragraph at lines 713--723
- [][] 
- []
-
-
-
-[16]
 > Step: init table outer spec.
 > Step: parse table options.
 > Step: split table.
@@ -1580,226 +1439,67 @@ Overfull \hbox (3.09442pt too wide) in paragraph at lines 713--723
 > Step: execute table commands.
 > Step: calculate cell and line sizes.
 
-Overfull \hbox (12.4192pt too wide) in paragraph at lines 802--802
-[]\TU/lmr/bx/n/10 PositiveLRC 
+Underfull \hbox (badness 1107) in paragraph at lines 620--620
+\TU/lmr/m/n/10 drigues Martinho Fer-
  []
 
 
-Underfull \hbox (badness 2913) in paragraph at lines 802--802
-[]\TU/lmr/bx/n/10 Processos De Avaliação E
- []
-
-
-Underfull \hbox (badness 5787) in paragraph at lines 802--802
-[]\TU/lmr/bx/n/10 Processo De Avaliação E
- []
-
-
-Underfull \hbox (badness 2913) in paragraph at lines 802--802
-[]\TU/lmr/bx/n/10 Processos De Avaliação E
- []
-
-
-Underfull \hbox (badness 5787) in paragraph at lines 802--802
-[]\TU/lmr/bx/n/10 Processo De Avaliação E
- []
-
-
-Underfull \hbox (badness 2913) in paragraph at lines 802--802
-[]\TU/lmr/bx/n/10 Processos De Avaliação E
- []
-
-
-Underfull \hbox (badness 5787) in paragraph at lines 802--802
-[]\TU/lmr/bx/n/10 Processo De Avaliação E
- []
-
-
-Underfull \hbox (badness 2913) in paragraph at lines 802--802
-[]\TU/lmr/bx/n/10 Processos De Avaliação E
- []
-
-
-Underfull \hbox (badness 5787) in paragraph at lines 802--802
-[]\TU/lmr/bx/n/10 Processo De Avaliação E
- []
-
-
-Underfull \hbox (badness 2913) in paragraph at lines 802--802
-[]\TU/lmr/bx/n/10 Processos De Avaliação E
- []
-
-
-Underfull \hbox (badness 5787) in paragraph at lines 802--802
-[]\TU/lmr/bx/n/10 Processo De Avaliação E
- []
-
-
-Underfull \hbox (badness 2913) in paragraph at lines 802--802
-[]\TU/lmr/bx/n/10 Processos De Avaliação E
- []
-
-
-Underfull \hbox (badness 5787) in paragraph at lines 802--802
-[]\TU/lmr/bx/n/10 Processo De Avaliação E
- []
-
-
-Underfull \hbox (badness 2913) in paragraph at lines 802--802
-[]\TU/lmr/bx/n/10 Processos De Avaliação E
- []
-
-
-Underfull \hbox (badness 5787) in paragraph at lines 802--802
-[]\TU/lmr/bx/n/10 Processo De Avaliação E
- []
-
-
-Underfull \hbox (badness 2913) in paragraph at lines 802--802
-[]\TU/lmr/bx/n/10 Processos De Avaliação E
- []
-
-
-Underfull \hbox (badness 5787) in paragraph at lines 802--802
-[]\TU/lmr/bx/n/10 Processo De Avaliação E
+Underfull \hbox (badness 10000) in paragraph at lines 620--620
+[]\TU/lmr/m/n/10 Avaliação Biomecânica De
  []
 
 > Step: build the whole table.
 
-Overfull \hbox (12.4192pt too wide) in paragraph at lines 802--802
-[]\TU/lmr/bx/n/10 PositiveLRC 
+Underfull \hbox (badness 1107) in paragraph at lines 620--620
+\TU/lmr/m/n/10 drigues Martinho Fer-
  []
 
 
-Underfull \hbox (badness 2913) in paragraph at lines 802--802
-[]\TU/lmr/bx/n/10 Processos De Avaliação E
+Underfull \hbox (badness 10000) in paragraph at lines 620--620
+[]\TU/lmr/m/n/10 Avaliação Biomecânica De
  []
 
-
-Underfull \hbox (badness 5787) in paragraph at lines 802--802
-[]\TU/lmr/bx/n/10 Processo De Avaliação E
- []
-
-
-Underfull \hbox (badness 2913) in paragraph at lines 802--802
-[]\TU/lmr/bx/n/10 Processos De Avaliação E
- []
-
-
-Underfull \hbox (badness 5787) in paragraph at lines 802--802
-[]\TU/lmr/bx/n/10 Processo De Avaliação E
- []
+> Step: init table outer spec.
+> Step: parse table options.
+> Step: split table.
+> Step: init table inner spec.
+> Step: parse table inner spec.
+> Step: execute table commands.
+> Step: calculate cell and line sizes.
+> Step: build the whole table.
 
 
-Underfull \hbox (badness 2913) in paragraph at lines 802--802
-[]\TU/lmr/bx/n/10 Processos De Avaliação E
- []
+[16
 
-
-Underfull \hbox (badness 5787) in paragraph at lines 802--802
-[]\TU/lmr/bx/n/10 Processo De Avaliação E
- []
-
-
-Underfull \hbox (badness 2913) in paragraph at lines 802--802
-[]\TU/lmr/bx/n/10 Processos De Avaliação E
- []
-
-
-Underfull \hbox (badness 5787) in paragraph at lines 802--802
-[]\TU/lmr/bx/n/10 Processo De Avaliação E
- []
-
-
+]
 
 [17
 
 ]
-Underfull \hbox (badness 2913) in paragraph at lines 802--802
-[]\TU/lmr/bx/n/10 Processos De Avaliação E
- []
-
-
-Underfull \hbox (badness 5787) in paragraph at lines 802--802
-[]\TU/lmr/bx/n/10 Processo De Avaliação E
- []
-
-
-Underfull \hbox (badness 2913) in paragraph at lines 802--802
-[]\TU/lmr/bx/n/10 Processos De Avaliação E
- []
-
-
-Underfull \hbox (badness 5787) in paragraph at lines 802--802
-[]\TU/lmr/bx/n/10 Processo De Avaliação E
- []
-
-
-Underfull \hbox (badness 2913) in paragraph at lines 802--802
-[]\TU/lmr/bx/n/10 Processos De Avaliação E
- []
-
-
-Underfull \hbox (badness 5787) in paragraph at lines 802--802
-[]\TU/lmr/bx/n/10 Processo De Avaliação E
- []
-
-
-Underfull \hbox (badness 2913) in paragraph at lines 802--802
-[]\TU/lmr/bx/n/10 Processos De Avaliação E
- []
-
-
-Underfull \hbox (badness 5787) in paragraph at lines 802--802
-[]\TU/lmr/bx/n/10 Processo De Avaliação E
- []
-
-
 
 [18]
 
-[19
-
-]
-Overfull \hbox (15.0944pt too wide) in paragraph at lines 826--839
- [][] 
- []
-
-
+[19]
 
 [20]
 
 [21]
-Overfull \hbox (3.09442pt too wide) in paragraph at lines 861--874
- [][] 
- []
-
-
 
 [22]
 
 [23]
 
-[24]
-
-[25]
-
-[26
+[24
 
 ]
 
+[25]
+
+[26]
+
 [27]
 
-[28]
-
-[29]
-Overfull \hbox (3.09442pt too wide) in paragraph at lines 1000--1027
- [][] 
- []
-
-
-
-[30
+[28
 
 ]
 > Step: init table outer spec.
@@ -1810,283 +1510,218 @@ Overfull \hbox (3.09442pt too wide) in paragraph at lines 1000--1027
 > Step: execute table commands.
 > Step: calculate cell and line sizes.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1092--1092
+Underfull \hbox (badness 10000) in paragraph at lines 911--911
 []\TU/lmr/bx/n/10 Nome do
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1092--1092
+Underfull \hbox (badness 6300) in paragraph at lines 911--911
 \TU/lmr/bx/n/10 Membro do
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1092--1092
+Underfull \hbox (badness 10000) in paragraph at lines 911--911
+[]\TU/lmr/m/n/10 Ana Paula
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 911--911
+\TU/lmr/m/n/10 Magalhaes
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 911--911
+\TU/lmr/m/n/10 Resende Ber-
+ []
+
+
+Underfull \hbox (badness 4518) in paragraph at lines 911--911
+[]\TU/lmr/m/n/10 Camilla Zam-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 911--911
 []\TU/lmr/m/n/10 Carlos Fer-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1092--1092
-[]\TU/lmr/m/n/10 Daniel Fer-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1092--1092
-\TU/lmr/m/n/10 reira Moreira
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1092--1092
+Underfull \hbox (badness 7379) in paragraph at lines 911--911
 []\TU/lmr/m/n/10 Dernival Ber-
  []
 
 
-Underfull \hbox (badness 2828) in paragraph at lines 1092--1092
-[]\TU/lmr/m/n/10 Eduardo Elias
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1092--1092
-[]\TU/lmr/m/n/10 Gustavo Jose
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1092--1092
+Underfull \hbox (badness 8189) in paragraph at lines 911--911
 []\TU/lmr/m/n/10 Isabel Apare-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1092--1092
+Underfull \hbox (badness 10000) in paragraph at lines 911--911
 \TU/lmr/m/n/10 cida Porcatti
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1092--1092
-[]\TU/lmr/m/n/10 Juliana Mar-
- []
-
-
-Underfull \hbox (badness 5302) in paragraph at lines 1092--1092
+Underfull \hbox (badness 2790) in paragraph at lines 911--911
 []\TU/lmr/m/n/10 Lilian Ramiro
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1092--1092
-\TU/lmr/m/n/10 cida Pascucci
+Underfull \hbox (badness 8000) in paragraph at lines 911--911
+[]\TU/lmr/m/n/10 Luciane Apa-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1092--1092
-\TU/lmr/m/n/10 Sande De
+Underfull \hbox (badness 10000) in paragraph at lines 911--911
+\TU/lmr/m/n/10 recida Pas-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1092--1092
+Underfull \hbox (badness 10000) in paragraph at lines 911--911
 []\TU/lmr/m/n/10 Luciane Fer-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1092--1092
+Underfull \hbox (badness 10000) in paragraph at lines 911--911
 \TU/lmr/m/n/10 nanda Rodri-
  []
 
 
-Underfull \hbox (badness 1360) in paragraph at lines 1092--1092
-\TU/lmr/m/n/10 gues Martinho
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1092--1092
+Underfull \hbox (badness 10000) in paragraph at lines 911--911
 []\TU/lmr/m/n/10 Nuno Miguel
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1092--1092
+Underfull \hbox (badness 10000) in paragraph at lines 911--911
 \TU/lmr/m/n/10 Lopes De
- []
-
-
-Underfull \hbox (badness 1681) in paragraph at lines 1092--1092
-[]\TU/lmr/m/n/10 Valdeci Carlos
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1092--1092
-[]\TU/lmr/m/n/10 Vivian Mara
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1092--1092
-\TU/lmr/m/n/10 Goncalves
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1092--1092
-\TU/lmr/m/n/10 De Oliveira
  []
 
 > Step: build the whole table.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1092--1092
+Underfull \hbox (badness 10000) in paragraph at lines 911--911
 []\TU/lmr/bx/n/10 Nome do
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1092--1092
+Underfull \hbox (badness 6300) in paragraph at lines 911--911
 \TU/lmr/bx/n/10 Membro do
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1092--1092
+Underfull \hbox (badness 10000) in paragraph at lines 911--911
+[]\TU/lmr/m/n/10 Ana Paula
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 911--911
+\TU/lmr/m/n/10 Magalhaes
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 911--911
+\TU/lmr/m/n/10 Resende Ber-
+ []
+
+
+Underfull \hbox (badness 4518) in paragraph at lines 911--911
+[]\TU/lmr/m/n/10 Camilla Zam-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 911--911
 []\TU/lmr/m/n/10 Carlos Fer-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1092--1092
-[]\TU/lmr/m/n/10 Daniel Fer-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1092--1092
-\TU/lmr/m/n/10 reira Moreira
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1092--1092
+Underfull \hbox (badness 7379) in paragraph at lines 911--911
 []\TU/lmr/m/n/10 Dernival Ber-
  []
 
 
-Underfull \hbox (badness 2828) in paragraph at lines 1092--1092
-[]\TU/lmr/m/n/10 Eduardo Elias
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1092--1092
-[]\TU/lmr/m/n/10 Gustavo Jose
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1092--1092
+Underfull \hbox (badness 8189) in paragraph at lines 911--911
 []\TU/lmr/m/n/10 Isabel Apare-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1092--1092
+Underfull \hbox (badness 10000) in paragraph at lines 911--911
 \TU/lmr/m/n/10 cida Porcatti
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1092--1092
-[]\TU/lmr/m/n/10 Juliana Mar-
- []
-
-
-Underfull \hbox (badness 5302) in paragraph at lines 1092--1092
+Underfull \hbox (badness 2790) in paragraph at lines 911--911
 []\TU/lmr/m/n/10 Lilian Ramiro
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1092--1092
-\TU/lmr/m/n/10 cida Pascucci
+Underfull \hbox (badness 8000) in paragraph at lines 911--911
+[]\TU/lmr/m/n/10 Luciane Apa-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1092--1092
-\TU/lmr/m/n/10 Sande De
+Underfull \hbox (badness 10000) in paragraph at lines 911--911
+\TU/lmr/m/n/10 recida Pas-
  []
 
 
-
-[31
-
-]
-Underfull \hbox (badness 10000) in paragraph at lines 1092--1092
+Underfull \hbox (badness 10000) in paragraph at lines 911--911
 []\TU/lmr/m/n/10 Luciane Fer-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1092--1092
+Underfull \hbox (badness 10000) in paragraph at lines 911--911
 \TU/lmr/m/n/10 nanda Rodri-
  []
 
 
-Underfull \hbox (badness 1360) in paragraph at lines 1092--1092
-\TU/lmr/m/n/10 gues Martinho
- []
 
+[29
 
-Underfull \hbox (badness 10000) in paragraph at lines 1092--1092
+]
+Underfull \hbox (badness 10000) in paragraph at lines 911--911
 []\TU/lmr/m/n/10 Nuno Miguel
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1092--1092
+Underfull \hbox (badness 10000) in paragraph at lines 911--911
 \TU/lmr/m/n/10 Lopes De
  []
 
 
-Underfull \hbox (badness 1681) in paragraph at lines 1092--1092
-[]\TU/lmr/m/n/10 Valdeci Carlos
- []
 
+[30]
 
-Underfull \hbox (badness 10000) in paragraph at lines 1092--1092
-[]\TU/lmr/m/n/10 Vivian Mara
- []
+[31
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 1092--1092
-\TU/lmr/m/n/10 Goncalves
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1092--1092
-\TU/lmr/m/n/10 De Oliveira
- []
-
-
+]
 
 [32]
 
-[33
-
-]
+[33]
 
 [34]
 
 [35]
 
 [36]
-Overfull \hbox (15.0944pt too wide) in paragraph at lines 1135--1177
- [][] 
- []
-
-
 
 [37]
 
 [38]
 
-[39]
-
-[40]
-
-[41] (./autoavaliacao.aux)
+[39] (./autoavaliacao.aux)
  ***********
-LaTeX2e <2024-11-01>
-L3 programming layer <2024-11-02>
+LaTeX2e <2024-11-01> patch level 1
+L3 programming layer <2024-12-09>
  ***********
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 41309 strings out of 475978
- 859791 string characters out of 5777099
- 1481584 words of memory out of 5000000
- 63525 multiletter control sequences out of 15000+600000
- 573994 words of font info for 90 fonts, out of 8000000 for 9000
+ 41306 strings out of 475872
+ 859640 string characters out of 5774151
+ 1432702 words of memory out of 5000000
+ 63624 multiletter control sequences out of 15000+600000
+ 572277 words of font info for 92 fonts, out of 8000000 for 9000
  16 hyphenation exceptions out of 8191
- 99i,19n,123p,458b,1239s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 99i,19n,123p,458b,1293s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on autoavaliacao.pdf (44 pages).
+Output written on autoavaliacao.pdf (42 pages).
