@@ -27,7 +27,8 @@ link-citations: true
 always_allow_html: true
 tables: true
 params:
-  quadrienal.vigente: 2021;2022;2023;2024
+  quadrienal.vigente: 2025;2026;2027;2028
+  render_document: FALSE
 ---
 
 <!--set up-->
@@ -45,6 +46,8 @@ knitr::opts_chunk$set(
   webshot = "webshot",
   dev = "png"
 )
+
+render_document <- params$render_document 
 ```
 
 <!--load caches-->
@@ -64,15 +67,39 @@ $(document).ready(function() {
 
 <!--script for sharing-->
 <p align="right">
-```{r share, eval = knitr::is_html_output()}
+```{r share, eval = all(render_document, knitr::is_html_output())}
 home <- metadata$repository_url
 source("Scripts/social-media-sharing.R", local = knitr::knit_global())
 ```
 </p>
 
+```{r, eval = all(!render_document, knitr::is_html_output())}
+cat('<center><div class="d-grid gap-2" style="width: 100%; display: block;">
+  <button class="btn btn-lg btn-primary" type="button">
+  <a href="autoavaliacao-2025-2028.html">Quadrienal 2025-2028</a>
+  </button>
+  <br>
+  <br>
+  <button class="btn btn-lg btn-primary" type="button">
+  <a href="autoavaliacao-2021-2024.html">Quadrienal 2021-2024</a>
+  </button>
+  <br>
+  <br>
+  <button class="btn btn-lg btn-primary" type="button">
+  <a href="autoavaliacao-2017-2020.html">Quadrienal 2017-2020</a>
+  </button>
+  <br>
+  <br>
+  <button class="btn btn-lg btn-primary" type="button">
+  <a href="autoavaliacao-2013-2016.html">Quadrienal 2013-2016</a>
+  </button>
+</div></center>
+')
+```
+
 <br>
 
-```{r quadrienal-vigente, results = "hide", echo = FALSE, include = FALSE, eval = has.sucupira.files}
+```{r quadrienal-vigente, results = "hide", echo = FALSE, include = FALSE, eval = all(render_document, has.sucupira.files)}
 # get years
 source("Scripts/years-sucupira.R", local = knitr::knit_global())
 
@@ -114,7 +141,7 @@ docentes.quadrienio <- docentes.quadrienio[!duplicated(docentes.quadrienio),]
 docentes.quadrienio <- sort(tools::toTitleCase(tolower(docentes.quadrienio)))
 ```
 
-```{r cover-one, echo = FALSE, include = FALSE, eval = knitr::is_html_output()}
+```{r cover-one, echo = FALSE, include = FALSE, eval = all(render_document, knitr::is_html_output())}
 source("Scripts/cover-1.R", local = knitr::knit_global())
 source("Scripts/cover-2.R", local = knitr::knit_global())
 ```
@@ -129,23 +156,23 @@ source("Scripts/cover-2.R", local = knitr::knit_global())
 \EnableFootNotes
 ```
 
-```{r, eval = knitr::is_html_output()}
+```{r, eval = all(render_document, knitr::is_html_output())}
 cat("## **Avaliação CAPES** {#avalicao-capes .tabset}")
+cat('\n\n')
+cat('<hr style="height:2px;border-width:0;color:black;background-color:black">')
+cat('\n\n')
 ```
 
-```{r, eval = !knitr::is_html_output()}
+```{r, eval = all(render_document, !knitr::is_html_output())}
 cat("## **Avaliação CAPES**")
 cat('\n\n')
 ```
 
-<!--script for generating HORIZONTAL LINE-->
-<hr style="height:2px;border-width:0;color:black;background-color:black">
-
-```{r, eval = !has.avaliacao}
+```{r, eval = all(render_document, !has.avaliacao)}
 cat('<br>')
 ```
 
-```{r avaliacao, eval = has.avaliacao, echo = FALSE, warning = FALSE, message = FALSE, fig.align = 'center', results = 'asis', fig.pos='H'}
+```{r avaliacao, eval = all(render_document, has.avaliacao), echo = FALSE, warning = FALSE, message = FALSE, fig.align = 'center', results = 'asis', fig.pos='H'}
 # initialize all sheets
 abas <- readxl::excel_sheets("PPG/Avaliação.xlsx")
 
@@ -215,19 +242,19 @@ for (j in 1:length(abas)) {
 \newpage
 ```
 
-```{r, eval = all(knitr::is_html_output(), has.sucupira.files)}
-cat("## **Dados do Coleta", paste0(quadrienal.vigente[1], "-", quadrienal.vigente[length(quadrienal.vigente)], "** {#coleta .tabset}"))
-```
-
-```{r, eval = all(!knitr::is_html_output(), has.sucupira.files)}
-cat("## **Dados do Coleta", paste0(quadrienal.vigente[1], "-", quadrienal.vigente[length(quadrienal.vigente)], "** {#coleta .tabset}"))
+```{r, eval = all(render_document, knitr::is_html_output(), has.sucupira.files)}
+cat("## **Preenchimento do Coleta** {#coleta .tabset}")
+cat('\n\n')
+cat('<hr style="height:2px;border-width:0;color:black;background-color:black">')
 cat('\n\n')
 ```
 
-<!--script for generating HORIZONTAL LINE-->
-<hr style="height:2px;border-width:0;color:black;background-color:black">
+```{r, eval = all(render_document, !knitr::is_html_output(), has.sucupira.files)}
+cat("## **Preenchimento do Coleta**")
+cat('\n\n')
+```
 
-```{r descritivo, eval = has.sucupira.files, echo = FALSE, warning = FALSE, message = FALSE, fig.align = 'center', results = 'asis', fig.pos='H'}
+```{r preenchimento-coleta, eval = all(render_document, has.sucupira.files), echo = FALSE, warning = FALSE, message = FALSE, fig.align = 'center', results = 'asis', fig.pos='H'}
 # get years
 source("Scripts/years-sucupira.R", local = knitr::knit_global())
 
@@ -237,7 +264,7 @@ source("Scripts/get-sucupira-sheets-names.R", local = knitr::knit_global())
 summ.df <- data.frame(
   "Ano" = rep(NA, length(quadrienal.vigente) * length(sucupira.sheets)),
   "Aba" = rep(NA, length(quadrienal.vigente) * length(sucupira.sheets)),
-  "Dimensão (L x C)" = rep(NA, length(quadrienal.vigente) * length(sucupira.sheets)),
+  "Dimensão (Linhas)" = rep(NA, length(quadrienal.vigente) * length(sucupira.sheets)),
   check.names = FALSE
 )
 
@@ -252,12 +279,8 @@ if (has.sucupira.files) {
       ano <- quadrienal.vigente[COL]
       summ.df$Ano[COL + length(quadrienal.vigente)*(ROW - 1)] <- ano
       summ.df$Aba[COL + length(quadrienal.vigente)*(ROW - 1)] <- sheet
-      summ.df$`Dimensão (L x C)`[COL + length(quadrienal.vigente)*(ROW - 1)] <-
-        paste0(
-        nrow(!is.na(sucupira.list[[as.character(ano)]])),
-        " x ",
-        ncol(!is.na(sucupira.list[[as.character(ano)]]))
-        )
+      summ.df$`Dimensão (Linhas)`[COL + length(quadrienal.vigente)*(ROW - 1)] <-
+        nrow(!is.na(sucupira.list[[as.character(ano)]]))
     }
   }
 }
@@ -266,11 +289,11 @@ if (has.sucupira.files) {
 summ.df <- tidyr::pivot_wider(
   data = summ.df,
   names_from = Ano,
-  values_from = `Dimensão (L x C)`
+  values_from = `Dimensão (Linhas)`
 )
 
 # print tables
-if (knitr::is_html_output()) {
+if (knitr::is_html_output() && !sjmisc::is_empty(summ.df)) {
   # use kable for HTML output
   knitr::kable(
     summ.df,
@@ -279,7 +302,7 @@ if (knitr::is_html_output()) {
     format = "html",
     booktabs = TRUE,
     linesep = "",
-    caption = "Dados do Coleta por aba (linhas x colunas)"
+    caption = "Prenchimento do Coleta - Quantidade de dados por aba, por ano"
   ) %>% kableExtra::kable_styling(
     bootstrap_options = c("striped", "hover", "condensed", "responsive"),
     full_width = TRUE,
@@ -296,7 +319,7 @@ if (knitr::is_html_output()) {
     width = c(0.60, rep(0.40/(length(quadrienal.vigente)), times = length(quadrienal.vigente)))*(21-3-3),
     style = "bootstrap",
     align = "l",
-    caption = ifelse(knitr::is_html_output(), "", "Dados do Coleta por aba (linhas x colunas)")
+    caption = ifelse(knitr::is_html_output(), "", "Prenchimento do Coleta - Quantidade de dados por aba, por ano")
   ) %>%
     tinytable::theme_tt("multipage", rowhead = 1, latex_float = "H") %>%
     tinytable::style_tt(i = 0, j = 1:ncol(summ.df), bold = TRUE) %>%
@@ -315,33 +338,32 @@ if(knitr::is_latex_output()) {
 
 ```{=latex}
 \newpage
+\vspace*{\fill}
+\section{\textbf{1. Programa}}
+\vspace*{\fill}
+\newpage
 ```
 
-```{r, eval = knitr::is_html_output()}
-cat("## **Ficha de Avaliação** {#ficha-avaliacao}")
+```{r 1-Programa, eval = all(render_document, knitr::is_html_output())}
+cat("## **1. Programa** {#programa .tabset}")
+cat('\n\n')
+cat('<hr style="height:2px;border-width:0;color:black;background-color:black">')
+cat('\n\n')
 ```
 
-<!--script for generating HORIZONTAL LINE-->
-<hr style="height:2px;border-width:0;color:black;background-color:black">
-
-## **1. Programa** {#programa .tabset}
-
-<!--script for generating HORIZONTAL LINE-->
-<hr style="height:2px;border-width:0;color:black;background-color:black">
-
-```{r 1-1-1, eval = knitr::is_html_output()}
+```{r 1-1-1, eval = all(render_document, knitr::is_html_output())}
 cat("### **1.1.1**")
 cat('\n\n')
 cat("#### **Estrutura Acadêmica do Programa** {.tabset}")
 cat('\n\n')
 ```
 
-```{r, eval = !knitr::is_html_output()}
+```{r, eval = all(render_document, !knitr::is_html_output())}
 cat("### **1.1.1 Estrutura Acadêmica do Programa**")
 cat('\n\n')
 ```
 
-```{r cursos-objetivos, eval = has.dados.cadastrais, echo = FALSE, warning = FALSE, message = FALSE, fig.align = 'center', results = 'asis', fig.pos='H'}
+```{r cursos-objetivos, eval = all(render_document, has.dados.cadastrais), echo = FALSE, warning = FALSE, message = FALSE, fig.align = 'center', results = 'asis', fig.pos='H'}
 if(knitr::is_html_output()) {
   cat("##### **Objetivos do curso**")
   cat('\n\n')
@@ -355,7 +377,7 @@ cursos.raw <-
 cursos <- dplyr::select(cursos.raw, c("Nível", "Objetivos"))
 
 # print tables
-if (knitr::is_html_output()) {
+if (knitr::is_html_output() & !sjmisc::is_empty(cursos)) {
   # use kable for HTML output
   knitr::kable(
     cursos,
@@ -396,7 +418,62 @@ if(knitr::is_latex_output()) {
 }
 ```
 
-```{r 1-1-1-data, eval = has.sucupira.files, echo = FALSE, warning = FALSE, message = FALSE, fig.align = 'center', results = 'asis', fig.pos='H'}
+```{r cursos-egressos, eval = all(render_document, has.dados.cadastrais), echo = FALSE, warning = FALSE, message = FALSE, fig.align = 'center', results = 'asis', fig.pos='H'}
+if(knitr::is_html_output()) {
+  cat("##### **Perfil de egressos**")
+  cat('\n\n')
+}
+
+cursos.raw <-
+  readxl::read_excel("PPG/Dados Cadastrais.xlsx",
+                     sheet = "Perfil de Egressos",
+                     col_types = c("text"))
+
+cursos <- dplyr::select(cursos.raw, c("Nível", "Perfil de Egressos"))
+
+# print tables
+if (knitr::is_html_output()) {
+  # use kable for HTML output
+  knitr::kable(
+    cursos,
+    align = "l",
+    escape = FALSE,
+    format = "html",
+    booktabs = TRUE,
+    linesep = "",
+    caption = "Perfil de Egressos"
+  ) %>% kableExtra::kable_styling(
+    bootstrap_options = c("striped", "hover", "condensed", "responsive"),
+    full_width = TRUE,
+    position = "center"
+  ) %>% kableExtra::column_spec(column = 1:ncol(cursos), width = paste0(c(0.10,0.90)*(21-3-3), "cm")) %>%
+      kableExtra::column_spec(column = 1, bold = TRUE) %>%
+      kableExtra::row_spec(row = 0, bold = TRUE)
+} else {
+  # use tinytable for LaTeX output
+  cursos <- data.frame(cursos, check.names = FALSE)
+  options(tinytable_print_output = "latex")
+  tinytable::tt(
+    cursos,
+    width = c(0.10,0.90)*(21-3-3),
+    style = "bootstrap",
+    align = "l",
+    caption = ifelse(knitr::is_html_output(), "", "Perfil de Egressos")
+  ) %>%
+    tinytable::theme_tt("multipage", rowhead = 1, latex_float = "H") %>%
+    tinytable::style_tt(i = 0, j = 1:ncol(cursos), bold = TRUE) %>%
+    tinytable::style_tt(i = 1:nrow(cursos), j = 1, bold = TRUE)
+}
+
+source("Scripts/fonte-sucupira.R", local = knitr::knit_global())
+
+# Add LaTeX commands for new page and float barrier
+if(knitr::is_latex_output()) {
+  cat('\\newpage')
+}
+```
+
+```{r 1-1-1-data, eval = all(render_document, has.sucupira.files), echo = FALSE, warning = FALSE, message = FALSE, fig.align = 'center', results = 'asis', fig.pos='H'}
 # projetos - membros
 sheet <- "Projetos - Membros"
 source("Scripts/read-xlsx-sucupira.R", local = knitr::knit_global())
@@ -504,7 +581,7 @@ sucupira.financiadores.df <- sucupira.financiadores.df[!duplicated(sucupira.fina
 sucupira.financiadores.df$`Data Fim Financiador`[is.na(sucupira.financiadores.df$`Data Fim Financiador`)] <- "Atual"
 ```
 
-```{r 1-1-1-ac, eval = has.sucupira.files, echo = FALSE, warning = FALSE, message = FALSE, fig.align = 'center', results = 'asis', fig.pos='H'}
+```{r 1-1-1-ac, eval = all(render_document, has.sucupira.files), echo = FALSE, warning = FALSE, message = FALSE, fig.align = 'center', results = 'asis', fig.pos='H'}
 # áreas de concentração
 table.ac <-
   data.frame(matrix(
@@ -555,37 +632,40 @@ table.ac.doc <- table(
 ) %>% as.data.frame(check.names = FALSE)
 # drop Freq = 0
 table.ac.doc <- table.ac.doc[table.ac.doc$Freq > 0, ]
-# select AC e Docentes
-table.ac.doc <- dplyr::select(as.data.frame(table.ac.doc), "Var1", "Var2", "Var3")
-names(table.ac.doc) <- c("Ano", "Área de Concentração", "Docente")
-# count docentes per year per AC
-table.ac.doc.freq <- table.ac.doc %>%
-  dplyr::group_by(Ano, `Área de Concentração`) %>%
-  dplyr::summarise(Docente = n())
 
-# long format
-table.ac.doc.long <- data.frame()
-for(i in 1:dim(table.ac.doc.freq)[1]){
-  table.ac.doc.long <- rbind(table.ac.doc.long,
-                             data.frame("Ano" = rep(table.ac.doc.freq$Ano[i], times = table.ac.doc.freq$Docente[i]),
-                                        "Área de Concentração" = rep(table.ac.doc.freq$`Área de Concentração`[i], times = table.ac.doc.freq$Docente[i]),
-                                        "Docente" = rep(table.ac.doc.freq$Docente[i], times = table.ac.doc.freq$Docente[i]),
-                                        check.names = FALSE))
-}
-# rename and drop columns
-table.ac.doc.long <- dplyr::select(table.ac.doc.long, "Ano", "Área de Concentração")
-names(table.ac.doc.long) <- c("Ano", "Docente Permanente")
-
-table.ac.doc.long <- rbind(
-  table.ac.doc.long,
-  data.frame(
-    "Ano" = rep(paste0(
-      min(quadrienal.vigente), "-", max(quadrienal.vigente)
-    ), times = length(unique(table.ac.doc$Docente))),
-    "Docente Permanente" = rep("Áreas", times = length(unique(table.ac.doc$Docente))),
-    check.names = FALSE
+if(!sjmisc::is_empty(table.ac.doc)){
+  # select AC e Docentes
+  table.ac.doc <- dplyr::select(as.data.frame(table.ac.doc), "Var1", "Var2", "Var3")
+  names(table.ac.doc) <- c("Ano", "Área de Concentração", "Docente")
+  # count docentes per year per AC
+  table.ac.doc.freq <- table.ac.doc %>%
+    dplyr::group_by(Ano, `Área de Concentração`) %>%
+    dplyr::summarise(Docente = n())
+  
+  # long format
+  table.ac.doc.long <- data.frame()
+  for(i in 1:dim(table.ac.doc.freq)[1]){
+    table.ac.doc.long <- rbind(table.ac.doc.long,
+                               data.frame("Ano" = rep(table.ac.doc.freq$Ano[i], times = table.ac.doc.freq$Docente[i]),
+                                          "Área de Concentração" = rep(table.ac.doc.freq$`Área de Concentração`[i], times = table.ac.doc.freq$Docente[i]),
+                                          "Docente" = rep(table.ac.doc.freq$Docente[i], times = table.ac.doc.freq$Docente[i]),
+                                          check.names = FALSE))
+  }
+  # rename and drop columns
+  table.ac.doc.long <- dplyr::select(table.ac.doc.long, "Ano", "Área de Concentração")
+  names(table.ac.doc.long) <- c("Ano", "Docente Permanente")
+  
+  table.ac.doc.long <- rbind(
+    table.ac.doc.long,
+    data.frame(
+      "Ano" = rep(paste0(
+        min(quadrienal.vigente), "-", max(quadrienal.vigente)
+      ), times = length(unique(table.ac.doc$Docente))),
+      "Docente Permanente" = rep("Áreas", times = length(unique(table.ac.doc$Docente))),
+      check.names = FALSE
+    )
   )
-)
+}
 
 my_N <- function(data, ...) {
   gtsummary::style_number(sum(data == "Áreas", na.rm = TRUE), digits = 0)
@@ -596,57 +676,65 @@ table.ac.long <- table.ac.long %>%
   dplyr::mutate(dplyr::across(gtsummary::everything(), as.factor))
 
 # print tables
-table.ac.gt <-
-  gtsummary::tbl_summary(
-    table.ac.long,
-    by = "Ano",
-    statistic = list(gtsummary::all_categorical() ~ "{n}"),
-    missing = "no",
-    digits = gtsummary::everything() ~ 0,
-    sort = gtsummary::all_categorical() ~ "frequency"
-  ) %>%
-  gtsummary::modify_header(label = "**Ano**", gtsummary::all_stat_cols() ~ "**{level}**") %>%
-  gtsummary::modify_footnote(gtsummary::all_stat_cols() ~ NA) %>%
-  gtsummary::bold_labels() %>%
-  gtsummary::add_stat(fns = gtsummary::all_categorical() ~ my_N) %>%
-  gtsummary::modify_header(list(
-    add_stat_1 ~ "**Quadriênio**",
-    gtsummary::all_stat_cols() ~ "**{level}**"
-  )) %>%
-  gtsummary::remove_row_type(
-    variables = c('Área de Concentração'),
-    type = "level",
-    level_value = ("Áreas")
-  ) %>%
-  gtsummary::modify_column_hide(columns = paste0("stat_", as.character(length(quadrienal.vigente) + 1)))
+if(!sjmisc::is_empty(table.ac)){
+  table.ac.gt <-
+    gtsummary::tbl_summary(
+      table.ac.long,
+      by = "Ano",
+      statistic = list(gtsummary::all_categorical() ~ "{n}"),
+      missing = "no",
+      digits = gtsummary::everything() ~ 0,
+      sort = gtsummary::all_categorical() ~ "frequency"
+    ) %>%
+    gtsummary::modify_header(label = "**Ano**", gtsummary::all_stat_cols() ~ "**{level}**") %>%
+    gtsummary::modify_footnote(gtsummary::all_stat_cols() ~ NA) %>%
+    gtsummary::bold_labels() %>%
+    gtsummary::add_stat(fns = gtsummary::all_categorical() ~ my_N) %>%
+    gtsummary::modify_header(list(
+      add_stat_1 ~ "**Quadriênio**",
+      gtsummary::all_stat_cols() ~ "**{level}**"
+    )) %>%
+    gtsummary::remove_row_type(
+      variables = c('Área de Concentração'),
+      type = "level",
+      level_value = ("Áreas")
+    ) %>%
+    gtsummary::modify_column_hide(columns = paste0("stat_", as.character(length(quadrienal.vigente) + 1)))
+} else {
+  table.ac.gt <- list()
+}
 
 # print tables
-table.ac.doc.gt <-
-  gtsummary::tbl_summary(
-    table.ac.doc.long,
-    by = "Ano",
-    statistic = list(gtsummary::all_categorical() ~ "{n}"),
-    missing = "no",
-    digits = gtsummary::everything() ~ 0,
-    sort = gtsummary::all_categorical() ~ "frequency"
-  ) %>%
-  gtsummary::modify_header(label = "**Ano**", gtsummary::all_stat_cols() ~ "**{level}**") %>%
-  gtsummary::modify_footnote(gtsummary::all_stat_cols() ~ NA) %>%
-  gtsummary::bold_labels() %>%
-  gtsummary::add_stat(fns = gtsummary::all_categorical() ~ my_N) %>%
-  gtsummary::modify_header(list(
-    add_stat_1 ~ "**Quadriênio**",
-    gtsummary::all_stat_cols() ~ "**{level}**"
-  )) %>%
-  gtsummary::remove_row_type(
-    variables = c('Docente Permanente'),
-    type = "level",
-    level_value = ("Áreas")
-  ) %>%
-  gtsummary::modify_column_hide(columns = paste0("stat_", as.character(length(quadrienal.vigente) + 1)))
+if(!sjmisc::is_empty(table.ac)){
+  table.ac.doc.gt <-
+    gtsummary::tbl_summary(
+      table.ac.doc.long,
+      by = "Ano",
+      statistic = list(gtsummary::all_categorical() ~ "{n}"),
+      missing = "no",
+      digits = gtsummary::everything() ~ 0,
+      sort = gtsummary::all_categorical() ~ "frequency"
+    ) %>%
+    gtsummary::modify_header(label = "**Ano**", gtsummary::all_stat_cols() ~ "**{level}**") %>%
+    gtsummary::modify_footnote(gtsummary::all_stat_cols() ~ NA) %>%
+    gtsummary::bold_labels() %>%
+    gtsummary::add_stat(fns = gtsummary::all_categorical() ~ my_N) %>%
+    gtsummary::modify_header(list(
+      add_stat_1 ~ "**Quadriênio**",
+      gtsummary::all_stat_cols() ~ "**{level}**"
+    )) %>%
+    gtsummary::remove_row_type(
+      variables = c('Docente Permanente'),
+      type = "level",
+      level_value = ("Áreas")
+    ) %>%
+    gtsummary::modify_column_hide(columns = paste0("stat_", as.character(length(quadrienal.vigente) + 1)))
+} else {
+  table.ac.doc.gt <- list()
+}
 ```
 
-```{r 1-1-1-AC, eval = has.sucupira.files, echo = FALSE, warning = FALSE, message = FALSE, fig.align = 'center', results = 'asis', fig.pos='H'}
+```{r 1-1-1-AC, eval = all(render_document, has.sucupira.files), echo = FALSE, warning = FALSE, message = FALSE, fig.align = 'center', results = 'asis', fig.pos='H'}
 if(knitr::is_html_output()) {
   cat("##### **AC** {#descricao-ac}")
   cat('\n\n')
@@ -701,7 +789,7 @@ if(knitr::is_latex_output()) {
 }
 ```
 
-```{r 1-1-1-AC-detalhes, eval = has.dados.cadastrais, echo = FALSE, warning = FALSE, message = FALSE, fig.align = 'center', results = 'asis', fig.pos='H'}
+```{r 1-1-1-AC-detalhes, eval = all(render_document, has.dados.cadastrais), echo = FALSE, warning = FALSE, message = FALSE, fig.align = 'center', results = 'asis', fig.pos='H'}
 # read data
 area.raw <-
   readxl::read_excel("PPG/Dados Cadastrais.xlsx",
@@ -768,7 +856,7 @@ if(knitr::is_latex_output()) {
 }
 ```
 
-```{r 1-1-1-lp, eval = has.sucupira.files, echo = FALSE, warning = FALSE, message = FALSE, fig.align = 'center', results = 'asis', fig.pos='H'}
+```{r 1-1-1-lp, eval = all(render_document, has.sucupira.files), echo = FALSE, warning = FALSE, message = FALSE, fig.align = 'center', results = 'asis', fig.pos='H'}
 table.lp <-
   data.frame(matrix(
     NA,
@@ -815,38 +903,41 @@ table.lp.doc <- table(
 ) %>% as.data.frame()
 # drop Freq = 0
 table.lp.doc <- table.lp.doc[table.lp.doc$Freq > 0, ]
-# select AC e Docentes
-table.lp.doc <- dplyr::select(as.data.frame(table.lp.doc), "Var1", "Var2", "Var3")
-names(table.lp.doc) <- c("Ano", "Linha de Pesquisa", "Docente")
-# count docentes per year per AC
-table.lp.doc.freq <- table.lp.doc %>%
-  dplyr::group_by(Ano, `Linha de Pesquisa`) %>%
-  dplyr::summarise(Docente = n())
 
-# long format
-table.lp.doc.long <- data.frame()
-for(i in 1:dim(table.lp.doc.freq)[1]){
-  table.lp.doc.long <- rbind(table.lp.doc.long,
-                             data.frame("Ano" = rep(table.lp.doc.freq$Ano[i], times = table.lp.doc.freq$Docente[i]),
-                                        "Linha de Pesquisa" = rep(table.lp.doc.freq$`Linha de Pesquisa`[i], times = table.lp.doc.freq$Docente[i]),
-                                        "Docente" = rep(table.lp.doc.freq$Docente[i], times = table.lp.doc.freq$Docente[i]),
-                                        check.names = FALSE))
-}
-
-# rename and drop columns
-table.lp.doc.long <- dplyr::select(table.lp.doc.long, "Ano", "Linha de Pesquisa")
-names(table.lp.doc.long) <- c("Ano", "Docente Permanente")
-
-table.lp.doc.long <- rbind(
-  table.lp.doc.long,
-  data.frame(
-    "Ano" = rep(paste0(
-      min(quadrienal.vigente), "-", max(quadrienal.vigente)
-    ), times = length(unique(table.lp.doc$Docente))),
-    "Docente Permanente" = rep("Linhas", times = length(unique(table.lp.doc$Docente))),
-    check.names = FALSE
+if(!sjmisc::is_empty(table.lp)){
+  # select AC e Docentes
+  table.lp.doc <- dplyr::select(as.data.frame(table.lp.doc), "Var1", "Var2", "Var3")
+  names(table.lp.doc) <- c("Ano", "Linha de Pesquisa", "Docente")
+  # count docentes per year per AC
+  table.lp.doc.freq <- table.lp.doc %>%
+    dplyr::group_by(Ano, `Linha de Pesquisa`) %>%
+    dplyr::summarise(Docente = n())
+  
+  # long format
+  table.lp.doc.long <- data.frame()
+  for(i in 1:dim(table.lp.doc.freq)[1]){
+    table.lp.doc.long <- rbind(table.lp.doc.long,
+                               data.frame("Ano" = rep(table.lp.doc.freq$Ano[i], times = table.lp.doc.freq$Docente[i]),
+                                          "Linha de Pesquisa" = rep(table.lp.doc.freq$`Linha de Pesquisa`[i], times = table.lp.doc.freq$Docente[i]),
+                                          "Docente" = rep(table.lp.doc.freq$Docente[i], times = table.lp.doc.freq$Docente[i]),
+                                          check.names = FALSE))
+  }
+  
+  # rename and drop columns
+  table.lp.doc.long <- dplyr::select(table.lp.doc.long, "Ano", "Linha de Pesquisa")
+  names(table.lp.doc.long) <- c("Ano", "Docente Permanente")
+  
+  table.lp.doc.long <- rbind(
+    table.lp.doc.long,
+    data.frame(
+      "Ano" = rep(paste0(
+        min(quadrienal.vigente), "-", max(quadrienal.vigente)
+      ), times = length(unique(table.lp.doc$Docente))),
+      "Docente Permanente" = rep("Linhas", times = length(unique(table.lp.doc$Docente))),
+      check.names = FALSE
+    )
   )
-)
+}
 
 my_N <- function(data, ...) {
   gtsummary::style_number(sum(data == "Linhas", na.rm = TRUE), digits = 0)
@@ -857,55 +948,63 @@ table.lp.long <- table.lp.long %>%
   dplyr::mutate(dplyr::across(gtsummary::everything(), as.factor))
 
 # print tables
-table.lp.gt <-
-  gtsummary::tbl_summary(
-    table.lp.long,
-    by = "Ano",
-    statistic = list(gtsummary::all_categorical() ~ "{n}"),
-    missing = "no",
-    digits = gtsummary::everything() ~ 0
-  ) %>%
-  gtsummary::modify_header(label = "**Ano**", gtsummary::all_stat_cols() ~ "**{level}**") %>%
-  gtsummary::modify_footnote(gtsummary::all_stat_cols() ~ NA) %>%
-  gtsummary::bold_labels() %>%
-  gtsummary::add_stat(fns = gtsummary::all_categorical() ~ my_N) %>%
-  gtsummary::modify_header(list(
-    add_stat_1 ~ "**Quadriênio**",
-    gtsummary::all_stat_cols() ~ "**{level}**"
-  )) %>%
-  gtsummary::remove_row_type(
-    variables = c('Linha de Pesquisa'),
-    type = "level",
-    level_value = ("Linhas")
-  ) %>%
-  gtsummary::modify_column_hide(columns = paste0("stat_", as.character(length(quadrienal.vigente) + 1)))
+if(!sjmisc::is_empty(table.lp)){
+  table.lp.gt <-
+    gtsummary::tbl_summary(
+      table.lp.long,
+      by = "Ano",
+      statistic = list(gtsummary::all_categorical() ~ "{n}"),
+      missing = "no",
+      digits = gtsummary::everything() ~ 0
+    ) %>%
+    gtsummary::modify_header(label = "**Ano**", gtsummary::all_stat_cols() ~ "**{level}**") %>%
+    gtsummary::modify_footnote(gtsummary::all_stat_cols() ~ NA) %>%
+    gtsummary::bold_labels() %>%
+    gtsummary::add_stat(fns = gtsummary::all_categorical() ~ my_N) %>%
+    gtsummary::modify_header(list(
+      add_stat_1 ~ "**Quadriênio**",
+      gtsummary::all_stat_cols() ~ "**{level}**"
+    )) %>%
+    gtsummary::remove_row_type(
+      variables = c('Linha de Pesquisa'),
+      type = "level",
+      level_value = ("Linhas")
+    ) %>%
+    gtsummary::modify_column_hide(columns = paste0("stat_", as.character(length(quadrienal.vigente) + 1)))
+} else {
+  table.lp.gt <- list()
+}
 
 # print tables
-table.lp.doc.gt <-
-  gtsummary::tbl_summary(
-    table.lp.doc.long,
-    by = "Ano",
-    statistic = list(gtsummary::all_categorical() ~ "{n}"),
-    missing = "no",
-    digits = gtsummary::everything() ~ 0
-  ) %>%
-  gtsummary::modify_header(label = "**Ano**", gtsummary::all_stat_cols() ~ "**{level}**") %>%
-  gtsummary::modify_footnote(gtsummary::all_stat_cols() ~ NA) %>%
-  gtsummary::bold_labels() %>%
-  gtsummary::add_stat(fns = gtsummary::all_categorical() ~ my_N) %>%
-  gtsummary::modify_header(list(
-    add_stat_1 ~ "**Quadriênio**",
-    gtsummary::all_stat_cols() ~ "**{level}**"
-  )) %>%
-  gtsummary::remove_row_type(
-    variables = c('Docente Permanente'),
-    type = "level",
-    level_value = ("Linhas")
-  ) %>%
-  gtsummary::modify_column_hide(columns = paste0("stat_", as.character(length(quadrienal.vigente) + 1)))
+if(!sjmisc::is_empty(table.lp)){
+  table.lp.doc.gt <-
+    gtsummary::tbl_summary(
+      table.lp.doc.long,
+      by = "Ano",
+      statistic = list(gtsummary::all_categorical() ~ "{n}"),
+      missing = "no",
+      digits = gtsummary::everything() ~ 0
+    ) %>%
+    gtsummary::modify_header(label = "**Ano**", gtsummary::all_stat_cols() ~ "**{level}**") %>%
+    gtsummary::modify_footnote(gtsummary::all_stat_cols() ~ NA) %>%
+    gtsummary::bold_labels() %>%
+    gtsummary::add_stat(fns = gtsummary::all_categorical() ~ my_N) %>%
+    gtsummary::modify_header(list(
+      add_stat_1 ~ "**Quadriênio**",
+      gtsummary::all_stat_cols() ~ "**{level}**"
+    )) %>%
+    gtsummary::remove_row_type(
+      variables = c('Docente Permanente'),
+      type = "level",
+      level_value = ("Linhas")
+    ) %>%
+    gtsummary::modify_column_hide(columns = paste0("stat_", as.character(length(quadrienal.vigente) + 1)))
+} else {
+  table.lp.doc.gt <- list()
+}
 ```
 
-```{r 1-1-1-LP, eval = has.sucupira.files, echo = FALSE, warning = FALSE, message = FALSE, fig.align = 'center', results = 'asis', fig.pos='H'}
+```{r 1-1-1-LP, eval = all(render_document, has.sucupira.files), echo = FALSE, warning = FALSE, message = FALSE, fig.align = 'center', results = 'asis', fig.pos='H'}
 if(knitr::is_html_output()) {
   cat("##### **LP** {#descricao-lp}")
   cat('\n\n')
@@ -960,7 +1059,7 @@ if(knitr::is_latex_output()) {
 }
 ```
 
-```{r 1-1-1-LP-detalhes, eval = has.dados.cadastrais, echo = FALSE, warning = FALSE, message = FALSE, fig.align = 'center', results = 'asis', fig.pos='H'}
+```{r 1-1-1-LP-detalhes, eval = all(render_document, has.dados.cadastrais), echo = FALSE, warning = FALSE, message = FALSE, fig.align = 'center', results = 'asis', fig.pos='H'}
 # read data
 linhas.raw <-
   readxl::read_excel("PPG/Dados Cadastrais.xlsx",
@@ -1027,7 +1126,7 @@ if(knitr::is_latex_output()) {
 }
 ```
 
-```{r 1-1-1-pp-lp, eval = has.sucupira.files, echo = FALSE, warning = FALSE, message = FALSE, fig.align = 'center', results = 'asis', fig.pos='H'}
+```{r 1-1-1-pp-lp, eval = all(render_document, has.sucupira.files), echo = FALSE, warning = FALSE, message = FALSE, fig.align = 'center', results = 'asis', fig.pos='H'}
 table.pp <-
   data.frame(matrix(
     NA,
@@ -1081,32 +1180,36 @@ table.pp.long <- table.pp.long %>%
   dplyr::mutate(dplyr::across(gtsummary::everything(), as.factor))
 
 # print tables
-table.pp.gt <-
-  gtsummary::tbl_summary(
-    table.pp.long,
-    by = "Ano",
-    statistic = list(gtsummary::all_categorical() ~ "{n}"),
-    missing = "no",
-    digits = gtsummary::everything() ~ 0,
-    sort = gtsummary::all_categorical() ~ "frequency"
-  ) %>%
-  gtsummary::modify_header(label = "**Ano**", gtsummary::all_stat_cols() ~ "**{level}**") %>%
-  gtsummary::modify_footnote(gtsummary::all_stat_cols() ~ NA) %>%
-  gtsummary::bold_labels() %>%
-  gtsummary::add_stat(fns = gtsummary::all_categorical() ~ my_N) %>%
-  gtsummary::modify_header(list(
-    add_stat_1 ~ "**Quadriênio**",
-    gtsummary::all_stat_cols() ~ "**{level}**"
-  )) %>%
-  gtsummary::remove_row_type(
-    variables = c('Projeto por Linha de Pesquisa'),
-    type = "level",
-    level_value = ("Projetos")
-  ) %>%
-  gtsummary::modify_column_hide(columns = paste0("stat_", as.character(length(quadrienal.vigente) + 1)))
+if(!sjmisc::is_empty(table.pp)){
+  table.pp.gt <-
+    gtsummary::tbl_summary(
+      table.pp.long,
+      by = "Ano",
+      statistic = list(gtsummary::all_categorical() ~ "{n}"),
+      missing = "no",
+      digits = gtsummary::everything() ~ 0,
+      sort = gtsummary::all_categorical() ~ "frequency"
+    ) %>%
+    gtsummary::modify_header(label = "**Ano**", gtsummary::all_stat_cols() ~ "**{level}**") %>%
+    gtsummary::modify_footnote(gtsummary::all_stat_cols() ~ NA) %>%
+    gtsummary::bold_labels() %>%
+    gtsummary::add_stat(fns = gtsummary::all_categorical() ~ my_N) %>%
+    gtsummary::modify_header(list(
+      add_stat_1 ~ "**Quadriênio**",
+      gtsummary::all_stat_cols() ~ "**{level}**"
+    )) %>%
+    gtsummary::remove_row_type(
+      variables = c('Projeto por Linha de Pesquisa'),
+      type = "level",
+      level_value = ("Projetos")
+    ) %>%
+    gtsummary::modify_column_hide(columns = paste0("stat_", as.character(length(quadrienal.vigente) + 1)))
+} else {
+  table.pp.gt <- list()
+}
 ```
 
-```{r 1-1-1-pp-natureza, eval = has.sucupira.files, echo = FALSE, warning = FALSE, message = FALSE, fig.align = 'center', results = 'asis', fig.pos='H'}
+```{r 1-1-1-pp-natureza, eval = all(render_document, has.sucupira.files), echo = FALSE, warning = FALSE, message = FALSE, fig.align = 'center', results = 'asis', fig.pos='H'}
 table.pp.nt <-
   data.frame(matrix(
     NA,
@@ -1156,31 +1259,35 @@ colnames(table.pp.nt.long) <-
   c("Ano", "Natureza do projeto")
 
 # print tables
-table.pp.nt.gt <-
-  gtsummary::tbl_summary(
-    table.pp.nt.long,
-    by = "Ano",
-    statistic = list(gtsummary::all_categorical() ~ "{n}"),
-    missing = "no",
-    digits = gtsummary::everything() ~ 0
-  ) %>%
-  gtsummary::modify_header(label = "**Ano**", gtsummary::all_stat_cols() ~ "**{level}**") %>%
-  gtsummary::modify_footnote(gtsummary::all_stat_cols() ~ NA) %>%
-  gtsummary::bold_labels() %>%
-  gtsummary::add_stat(fns = gtsummary::all_categorical() ~ my_N) %>%
-  gtsummary::modify_header(list(
-    add_stat_1 ~ "**Quadriênio**",
-    gtsummary::all_stat_cols() ~ "**{level}**"
-  )) %>%
-  gtsummary::remove_row_type(
-    variables = c('Natureza do projeto'),
-    type = "level",
-    level_value = ("Projetos")
-  ) %>%
-  gtsummary::modify_column_hide(columns = paste0("stat_", as.character(length(quadrienal.vigente) + 1)))
+if(!sjmisc::is_empty(table.pp.nt)){
+  table.pp.nt.gt <-
+    gtsummary::tbl_summary(
+      table.pp.nt.long,
+      by = "Ano",
+      statistic = list(gtsummary::all_categorical() ~ "{n}"),
+      missing = "no",
+      digits = gtsummary::everything() ~ 0
+    ) %>%
+    gtsummary::modify_header(label = "**Ano**", gtsummary::all_stat_cols() ~ "**{level}**") %>%
+    gtsummary::modify_footnote(gtsummary::all_stat_cols() ~ NA) %>%
+    gtsummary::bold_labels() %>%
+    gtsummary::add_stat(fns = gtsummary::all_categorical() ~ my_N) %>%
+    gtsummary::modify_header(list(
+      add_stat_1 ~ "**Quadriênio**",
+      gtsummary::all_stat_cols() ~ "**{level}**"
+    )) %>%
+    gtsummary::remove_row_type(
+      variables = c('Natureza do projeto'),
+      type = "level",
+      level_value = ("Projetos")
+    ) %>%
+    gtsummary::modify_column_hide(columns = paste0("stat_", as.character(length(quadrienal.vigente) + 1)))
+} else {
+  table.pp.nt.gt <- list()
+}
 ```
 
-```{r 1-1-1-pp-membro, eval = has.sucupira.files, echo = FALSE, warning = FALSE, message = FALSE, fig.align = 'center', results = 'asis', fig.pos='H'}
+```{r 1-1-1-pp-membro, eval = all(render_document, has.sucupira.files), echo = FALSE, warning = FALSE, message = FALSE, fig.align = 'center', results = 'asis', fig.pos='H'}
 table.pp.membro <-
   data.frame(matrix(
     NA,
@@ -1234,6 +1341,7 @@ table.pp.membro <- table.pp.membro %>%
   dplyr::mutate(dplyr::across(gtsummary::everything(), as.factor))
 
 # print tables
+if(!sjmisc::is_empty(table.pp.membro)){
 table.pp.membro.gt <-
   gtsummary::tbl_summary(
     table.pp.membro.long,
@@ -1256,9 +1364,12 @@ table.pp.membro.gt <-
     level_value = ("Responsável")
   ) %>%
   gtsummary::modify_column_hide(columns = paste0("stat_", as.character(length(quadrienal.vigente) + 1)))
+} else {
+  table.pp.membro.gt <- list()
+}
 ```
 
-```{r 1-1-1-pp-auxilios, eval = has.sucupira.files, echo = FALSE, warning = FALSE, message = FALSE, fig.align = 'center', results = 'asis', fig.pos='H'}
+```{r 1-1-1-pp-auxilios, eval = all(render_document, has.sucupira.files), echo = FALSE, warning = FALSE, message = FALSE, fig.align = 'center', results = 'asis', fig.pos='H'}
 # filter by type of financiamento = AUXILIO
 sucupira.aux.df <- sucupira.financiadores.df[sucupira.financiadores.df$`Natureza do Financiador` == "OUTRO AUXÍLIO FINANCEIRO", ]
 
@@ -1315,31 +1426,35 @@ table.pp.financiamento <- table.pp.financiamento %>%
   dplyr::mutate(dplyr::across(gtsummary::everything(), as.factor))
 
 # print tables
-table.pp.auxilio.gt <-
-  gtsummary::tbl_summary(
-    table.pp.financiamento.long,
-    by = "Ano",
-    statistic = list(gtsummary::all_categorical() ~ "{n}"),
-    missing = "no",
-    digits = gtsummary::everything() ~ 0
-  ) %>%
-  gtsummary::modify_header(label = "**Ano**", gtsummary::all_stat_cols() ~ "**{level}**") %>%
-  gtsummary::modify_footnote(gtsummary::all_stat_cols() ~ NA) %>%
-  gtsummary::bold_labels() %>%
-  gtsummary::add_stat(fns = gtsummary::all_categorical() ~ my_N) %>%
-  gtsummary::modify_header(list(
-    add_stat_1 ~ "**Quadriênio**",
-    gtsummary::all_stat_cols() ~ "**{level}**"
-  )) %>%
-  gtsummary::remove_row_type(
-    variables = c('Auxílios'),
-    type = "level",
-    level_value = ("Financiador")
-  ) %>%
-  gtsummary::modify_column_hide(columns = paste0("stat_", as.character(length(quadrienal.vigente) + 1)))
+if(!sjmisc::is_empty(table.pp.financiamento.long)){
+  table.pp.auxilio.gt <-
+    gtsummary::tbl_summary(
+      table.pp.financiamento.long,
+      by = "Ano",
+      statistic = list(gtsummary::all_categorical() ~ "{n}"),
+      missing = "no",
+      digits = gtsummary::everything() ~ 0
+    ) %>%
+    gtsummary::modify_header(label = "**Ano**", gtsummary::all_stat_cols() ~ "**{level}**") %>%
+    gtsummary::modify_footnote(gtsummary::all_stat_cols() ~ NA) %>%
+    gtsummary::bold_labels() %>%
+    gtsummary::add_stat(fns = gtsummary::all_categorical() ~ my_N) %>%
+    gtsummary::modify_header(list(
+      add_stat_1 ~ "**Quadriênio**",
+      gtsummary::all_stat_cols() ~ "**{level}**"
+    )) %>%
+    gtsummary::remove_row_type(
+      variables = c('Auxílios'),
+      type = "level",
+      level_value = ("Financiador")
+    ) %>%
+    gtsummary::modify_column_hide(columns = paste0("stat_", as.character(length(quadrienal.vigente) + 1)))
+} else {
+  table.pp.auxilio.gt <- list()
+}
 ```
 
-```{r 1-1-1-pp-bolsas, eval = has.sucupira.files, echo = FALSE, warning = FALSE, message = FALSE, fig.align = 'center', results = 'asis', fig.pos='H'}
+```{r 1-1-1-pp-bolsas, eval = all(render_document, has.sucupira.files), echo = FALSE, warning = FALSE, message = FALSE, fig.align = 'center', results = 'asis', fig.pos='H'}
 # filter by type of financiamento = BOLSA
 sucupira.bolsas.df <- sucupira.financiadores.df[sucupira.financiadores.df$`Natureza do Financiador` == "BOLSA", ]
 
@@ -1396,31 +1511,35 @@ table.pp.financiamento <- table.pp.financiamento %>%
   dplyr::mutate(dplyr::across(gtsummary::everything(), as.factor))
 
 # print tables
-table.pp.bolsa.gt <-
-  gtsummary::tbl_summary(
-    table.pp.financiamento.long,
-    by = "Ano",
-    statistic = list(gtsummary::all_categorical() ~ "{n}"),
-    missing = "no",
-    digits = gtsummary::everything() ~ 0
-  ) %>%
-  gtsummary::modify_header(label = "**Ano**", gtsummary::all_stat_cols() ~ "**{level}**") %>%
-  gtsummary::modify_footnote(gtsummary::all_stat_cols() ~ NA) %>%
-  gtsummary::bold_labels() %>%
-  gtsummary::add_stat(fns = gtsummary::all_categorical() ~ my_N) %>%
-  gtsummary::modify_header(list(
-    add_stat_1 ~ "**Quadriênio**",
-    gtsummary::all_stat_cols() ~ "**{level}**"
-  )) %>%
-  gtsummary::remove_row_type(
-    variables = c('Bolsas'),
-    type = "level",
-    level_value = ("Financiador")
-  ) %>%
-  gtsummary::modify_column_hide(columns = paste0("stat_", as.character(length(quadrienal.vigente) + 1)))
+if(!sjmisc::is_empty(table.pp.financiamento)){
+  table.pp.bolsa.gt <-
+    gtsummary::tbl_summary(
+      table.pp.financiamento.long,
+      by = "Ano",
+      statistic = list(gtsummary::all_categorical() ~ "{n}"),
+      missing = "no",
+      digits = gtsummary::everything() ~ 0
+    ) %>%
+    gtsummary::modify_header(label = "**Ano**", gtsummary::all_stat_cols() ~ "**{level}**") %>%
+    gtsummary::modify_footnote(gtsummary::all_stat_cols() ~ NA) %>%
+    gtsummary::bold_labels() %>%
+    gtsummary::add_stat(fns = gtsummary::all_categorical() ~ my_N) %>%
+    gtsummary::modify_header(list(
+      add_stat_1 ~ "**Quadriênio**",
+      gtsummary::all_stat_cols() ~ "**{level}**"
+    )) %>%
+    gtsummary::remove_row_type(
+      variables = c('Bolsas'),
+      type = "level",
+      level_value = ("Financiador")
+    ) %>%
+    gtsummary::modify_column_hide(columns = paste0("stat_", as.character(length(quadrienal.vigente) + 1)))
+} else {
+  table.pp.bolsa.gt <- list()
+}
 ```
 
-```{r 1-1-1-PP-DP, eval = has.sucupira.files, echo = FALSE, warning = FALSE, message = FALSE, fig.align = 'center', results = 'asis', fig.pos='H'}
+```{r 1-1-1-PP-DP, eval = all(render_document, has.sucupira.files), echo = FALSE, warning = FALSE, message = FALSE, fig.align = 'center', results = 'asis', fig.pos='H'}
 if(knitr::is_html_output()) {
   cat("##### **PP** {#descricao-pp}")
   cat('\n\n')
@@ -1480,7 +1599,7 @@ if(knitr::is_latex_output()) {
 
 \blandscape
 
-```{r 1-1-1-PP-DP-landscape, eval = has.sucupira.files, echo = FALSE, warning = FALSE, message = FALSE, fig.align = 'center', results = 'asis', fig.pos='H'}
+```{r 1-1-1-PP-DP-landscape, eval = all(render_document, has.sucupira.files), echo = FALSE, warning = FALSE, message = FALSE, fig.align = 'center', results = 'asis', fig.pos='H'}
 # select data
 table.projetos <- dplyr::select(
   sucupira.financiadores.df,
@@ -1523,205 +1642,234 @@ output <- data.frame(
   check.names = FALSE
 )
 
-for (i in 1:length(ids)) {
-  data <- table.projetos[table.projetos$`Identificador do Projeto de Pesquisa` == ids[i], ]
-  output$ID[i] <- unique(data$`Identificador do Projeto de Pesquisa`)
-  output$`Área de Concentração`[i] <- unique(data$`Área de Concentração`)
-  output$`Linha de Pesquisa`[i] <- unique(data$`Linha de Pesquisa`)
-  output$Projeto[i] <- unique(data$`Nome do Projeto de Pesquisa`)
-  output$Natureza[i] <- unique(data$`Natureza do Projeto de Pesquisa`)
-  output$Responsável[i] <- unique(data$`Nome do Membro do Projeto`)
-  n.bolsas <- sum(!is.na(data$Bolsa))
-  if(n.bolsas > 0){
-    output$Bolsa[i] <- paste0("(", 1:n.bolsas, ") ", na.omit(tools::toTitleCase(tolower(unique(data$Bolsa)))), collapse = "; ")
-  } else {
-    output$Bolsa[i] <- ""
+if(!sjmisc::is_empty(ids)){
+  for (i in 1:length(ids)) {
+    data <- table.projetos[table.projetos$`Identificador do Projeto de Pesquisa` == ids[i], ]
+    output$ID[i] <- unique(data$`Identificador do Projeto de Pesquisa`)
+    output$`Área de Concentração`[i] <- unique(data$`Área de Concentração`)
+    output$`Linha de Pesquisa`[i] <- unique(data$`Linha de Pesquisa`)
+    output$Projeto[i] <- unique(data$`Nome do Projeto de Pesquisa`)
+    output$Natureza[i] <- unique(data$`Natureza do Projeto de Pesquisa`)
+    output$Responsável[i] <- unique(data$`Nome do Membro do Projeto`)
+    n.bolsas <- sum(!is.na(data$Bolsa))
+    if(n.bolsas > 0){
+      output$Bolsa[i] <- paste0("(", 1:n.bolsas, ") ", na.omit(tools::toTitleCase(tolower(unique(data$Bolsa)))), collapse = "; ")
+    } else {
+      output$Bolsa[i] <- ""
+    }
+    n.auxilios <- sum(!is.na(data$Auxílio))
+    if(n.auxilios > 0){
+      output$Auxílio[i] <- paste0("(", 1:n.auxilios, ") ", na.omit(tools::toTitleCase(tolower(unique(data$Auxílio)))), collapse = "; ")
+    } else {
+      output$Auxílio[i] <- ""
+    }
+    output$Situação[i] <- unique(data$Situação)
   }
-  n.auxilios <- sum(!is.na(data$Auxílio))
-  if(n.auxilios > 0){
-    output$Auxílio[i] <- paste0("(", 1:n.auxilios, ") ", na.omit(tools::toTitleCase(tolower(unique(data$Auxílio)))), collapse = "; ")
-  } else {
-    output$Auxílio[i] <- ""
+  table.projetos <- output
+  
+  # add ID to the dataframe
+  table.projetos$ID <- seq(1, dim(table.projetos)[1])
+  
+  # Escape characters in table data & % $ # _ { }
+  if(knitr::is_latex_output()) {
+    try(table.projetos <- apply(table.projetos, 2, function(x) gsub("\\&", "\\\\&", x)), silent = TRUE)
+    try(table.projetos <- apply(table.projetos, 2, function(x) gsub("\\%", "\\\\%", x)), silent = TRUE)
+    try(table.projetos <- apply(table.projetos, 2, function(x) gsub("\\$", "\\\\$", x)), silent = TRUE)
+    try(table.projetos <- apply(table.projetos, 2, function(x) gsub("\\#", "\\\\#", x)), silent = TRUE)
+    try(table.projetos <- apply(table.projetos, 2, function(x) gsub("\\_", "\\\\_", x)), silent = TRUE)
+    try(table.projetos <- apply(table.projetos, 2, function(x) gsub("\\{", "\\\\{", x)), silent = TRUE)
+    try(table.projetos <- apply(table.projetos, 2, function(x) gsub("\\}", "\\\\}", x)), silent = TRUE)
   }
-  output$Situação[i] <- unique(data$Situação)
-}
-table.projetos <- output
-
-# add ID to the dataframe
-table.projetos$ID <- seq(1, dim(table.projetos)[1])
-
-# Escape characters in table data & % $ # _ { }
-if(knitr::is_latex_output()) {
-  try(table.projetos <- apply(table.projetos, 2, function(x) gsub("\\&", "\\\\&", x)), silent = TRUE)
-  try(table.projetos <- apply(table.projetos, 2, function(x) gsub("\\%", "\\\\%", x)), silent = TRUE)
-  try(table.projetos <- apply(table.projetos, 2, function(x) gsub("\\$", "\\\\$", x)), silent = TRUE)
-  try(table.projetos <- apply(table.projetos, 2, function(x) gsub("\\#", "\\\\#", x)), silent = TRUE)
-  try(table.projetos <- apply(table.projetos, 2, function(x) gsub("\\_", "\\\\_", x)), silent = TRUE)
-  try(table.projetos <- apply(table.projetos, 2, function(x) gsub("\\{", "\\\\{", x)), silent = TRUE)
-  try(table.projetos <- apply(table.projetos, 2, function(x) gsub("\\}", "\\\\}", x)), silent = TRUE)
-}
-
-table.projetos <- as.data.frame(table.projetos, check.names = FALSE)
-
-colnames(table.projetos) <-
-  c(
-    "ID",
-    "Área de Concentração",
-    "Linha de Pesquisa",
-    "Projeto",
-    "Natureza",
-    "Responsável",
-    "Bolsa",
-    "Auxílio",
-    "Situação"
-  )
-rownames(table.projetos) <- NULL
-
-# unique paired matrix of area de concentração and linha de pesquisa
-AC.LP <- unique(table.projetos[, c("Área de Concentração", "Linha de Pesquisa")])
-
-# create list of tables
-lista.AC.LP <- list()
-for (item in 1:dim(AC.LP)[1]) {
-  lista.AC.LP[[item]] <- table.projetos[table.projetos$`Área de Concentração` == AC.LP[item,1] & table.projetos$`Linha de Pesquisa` == AC.LP[item,2], ]
+  
+  table.projetos <- as.data.frame(table.projetos, check.names = FALSE)
+  
+  colnames(table.projetos) <-
+    c(
+      "ID",
+      "Área de Concentração",
+      "Linha de Pesquisa",
+      "Projeto",
+      "Natureza",
+      "Responsável",
+      "Bolsa",
+      "Auxílio",
+      "Situação"
+    )
+  rownames(table.projetos) <- NULL
+  
+  # unique paired matrix of area de concentração and linha de pesquisa
+  AC.LP <- unique(table.projetos[, c("Área de Concentração", "Linha de Pesquisa")])
+  
+  # create list of tables
+  lista.AC.LP <- list()
+  for (item in 1:dim(AC.LP)[1]) {
+    lista.AC.LP[[item]] <- table.projetos[table.projetos$`Área de Concentração` == AC.LP[item,1] & table.projetos$`Linha de Pesquisa` == AC.LP[item,2], ]
+  }
+} else {
+  lista.AC.LP <- NULL
+  AC.LP <- NULL
 }
 ```
 
-```{r create-markdown-chunks-dynamically, eval = has.sucupira.files}
+```{r create-markdown-chunks-dynamically, eval = all(render_document, has.sucupira.files)}
 # Create R Markdown chunks dynamically because projetos can be very large tables
 
 out <- NULL
 
-for (i in 1:length(lista.AC.LP)) {
-  # Define table caption
-  caption <- paste0('Projetos Liderados por Docentes Permanentes - Área de Concentração: ', toupper(AC.LP[i,1]), ' - ', 'Linha de Pesquisa: ', toupper(AC.LP[i,2]))
-  
-  # drop columns Area de Concentração, Linha de Pesquisa
-  lista.AC.LP[[i]] <- dplyr::select(lista.AC.LP[[i]], -c('Área de Concentração', 'Linha de Pesquisa'))
-  
-  # Generate R Markdown code for this chunk
-  knit_expanded <- paste0(
-    "\n```{r, eval = has.sucupira.files, echo = FALSE, warning = FALSE, message = FALSE, fig.align = 'center', results = 'asis', fig.pos='H'}\n",
-    "cat('\\n\\n<!-- -->\\n\\n')\n",
-    "# print tables\n",
-    "if (knitr::is_html_output()) {\n",
-    "  # use kable for HTML output\n",
-    "  knitr::kable(\n",
-    "    lista.AC.LP[[", i, "]],\n",
-    "    align = 'l',\n",
-    "    escape = FALSE,\n",
-    "    format = 'html',\n",
-    "    booktabs = TRUE,\n",
-    "    linesep = '',\n",
-    "    caption = '", caption, "',\n",
-    "    row.names = FALSE) %>% \n",
-    "    kableExtra::kable_styling(\n",
-    "      bootstrap_options = c('striped', 'hover', 'condensed', 'responsive'),\n",
-    "      full_width = TRUE,\n",
-    "      position = 'center'\n",
-    "    ) %>% \n",
-    "    kableExtra::column_spec(column = 1:ncol(lista.AC.LP[[", i, "]]), width = paste0(c(0.02,0.21,0.08,0.16,0.20,0.20,0.13)*(29-3-3), 'cm')) %>% \n",
-    "    kableExtra::column_spec(column = 1, bold = TRUE) %>% \n",
-    "    kableExtra::row_spec(row = 0, bold = TRUE)\n",
-    "} else {\n",
-    "  # use tinytable for LaTeX output\n",
-    "  linhas.atual <- data.frame(lista.AC.LP[[", i, "]], check.names = FALSE)\n",
-    "  options(tinytable_print_output = 'latex')\n",
-    "  tinytable::tt(\n",
-    "    linhas.atual,\n",
-    "    width = c(0.02,0.21,0.08,0.16,0.20,0.20,0.13)*(29-3-3),\n",
-    "    style = 'bootstrap',\n",
-    "    align = 'l',\n",
-    "    caption = '", caption, "',\n",
-    "    row.names = FALSE\n",
-    "  ) %>% \n",
-    "    tinytable::theme_tt('multipage', rowhead = 1, latex_float = 'H') %>% \n",
-    "    tinytable::style_tt(i = 0, j = 1:ncol(lista.AC.LP[[", i, "]]), bold = TRUE) %>% \n",
-    "    tinytable::style_tt(i = 1:nrow(lista.AC.LP[[", i, "]]), j = 1, bold = TRUE)\n",
-    "}\n",
-    "source('Scripts/fonte-sucupira.R', local = knitr::knit_global())\n",
-    "```"
-  )
-  
-  out <- c(out, knit_expanded)
+if(!sjmisc::is_empty(lista.AC.LP)){
+  for (i in 1:length(lista.AC.LP)) {
+    # Define table caption
+    caption <- paste0('Projetos Liderados por Docentes Permanentes - Área de Concentração: ', toupper(AC.LP[i,1]), ' - ', 'Linha de Pesquisa: ', toupper(AC.LP[i,2]))
+    
+    # drop columns Area de Concentração, Linha de Pesquisa
+    lista.AC.LP[[i]] <- dplyr::select(lista.AC.LP[[i]], -c('Área de Concentração', 'Linha de Pesquisa'))
+    
+    # Generate R Markdown code for this chunk
+    knit_expanded <- paste0(
+      "\n```{r, eval = all(!sjmisc::is_empty(lista.AC.LP), render_document, has.sucupira.files), echo = FALSE, warning = FALSE, message = FALSE, fig.align = 'center', results = 'asis', fig.pos='H'}\n",
+      "cat('\\n\\n<!-- -->\\n\\n')\n",
+      "# print tables\n",
+      "if (knitr::is_html_output()) {\n",
+      "  # use kable for HTML output\n",
+      "  knitr::kable(\n",
+      "    lista.AC.LP[[", i, "]],\n",
+      "    align = 'l',\n",
+      "    escape = FALSE,\n",
+      "    format = 'html',\n",
+      "    booktabs = TRUE,\n",
+      "    linesep = '',\n",
+      "    caption = '", caption, "',\n",
+      "    row.names = FALSE) %>% \n",
+      "    kableExtra::kable_styling(\n",
+      "      bootstrap_options = c('striped', 'hover', 'condensed', 'responsive'),\n",
+      "      full_width = TRUE,\n",
+      "      position = 'center'\n",
+      "    ) %>% \n",
+      "    kableExtra::column_spec(column = 1:ncol(lista.AC.LP[[", i, "]]), width = paste0(c(0.02,0.21,0.08,0.16,0.20,0.20,0.13)*(29-3-3), 'cm')) %>% \n",
+      "    kableExtra::column_spec(column = 1, bold = TRUE) %>% \n",
+      "    kableExtra::row_spec(row = 0, bold = TRUE)\n",
+      "} else {\n",
+      "  # use tinytable for LaTeX output\n",
+      "  linhas.atual <- data.frame(lista.AC.LP[[", i, "]], check.names = FALSE)\n",
+      "  options(tinytable_print_output = 'latex')\n",
+      "  tinytable::tt(\n",
+      "    linhas.atual,\n",
+      "    width = c(0.02,0.21,0.08,0.16,0.20,0.20,0.13)*(29-3-3),\n",
+      "    style = 'bootstrap',\n",
+      "    align = 'l',\n",
+      "    caption = '", caption, "',\n",
+      "    row.names = FALSE\n",
+      "  ) %>% \n",
+      "    tinytable::theme_tt('multipage', rowhead = 1, latex_float = 'H') %>% \n",
+      "    tinytable::style_tt(i = 0, j = 1:ncol(lista.AC.LP[[", i, "]]), bold = TRUE) %>% \n",
+      "    tinytable::style_tt(i = 1:nrow(lista.AC.LP[[", i, "]]), j = 1, bold = TRUE)\n",
+      "}\n",
+      "source('Scripts/fonte-sucupira.R', local = knitr::knit_global())\n",
+      "```"
+    )
+    
+    out <- c(out, knit_expanded)
+  }
 }
 ```
  
 <!--- knit those table chunk statements --> 
-`r if(has.sucupira.files){paste(knitr::knit(text = out), collapse = '\n\n')}`
+`r if(all(!sjmisc::is_empty(lista.AC.LP), render_document, has.sucupira.files)){paste(knitr::knit(text = out), collapse = '\n\n')}`
+
+\newpage
+
+```{r coerencia-abrangencia-ac-lp-pp, eval = all(render_document, has.sucupira.files), echo = FALSE, warning = FALSE, message = FALSE, fig.align = 'center', results = 'asis', fig.pos='H'}
+if(knitr::is_html_output()) {
+  cat("##### **Coerência e Abrangência** {#coerencia-abrangencia}")
+  cat('\n\n')
+}
+
+# tabela com lista de AC, LP e PP (títulos apenas)
+coerencia <- sucupira.df %>% dplyr::select("Área de Concentração", "Linha de Pesquisa", "Nome do Projeto de Pesquisa")
+
+# remove duplicates
+coerencia <- coerencia[!duplicated(coerencia),]
+
+# change all column types to factors
+coerencia <- coerencia %>%
+  dplyr::mutate(dplyr::across(gtsummary::everything(), as.factor))
+
+if(!sjmisc::is_empty(coerencia)){
+  # print tables tbl_cross with thee levels
+  coerencia.gt <- coerencia |>
+    gtsummary::tbl_strata(
+      strata = 'Área de Concentração',
+      .tbl_fun =
+        ~ .x |>
+        gtsummary::tbl_summary(
+          by = 'Linha de Pesquisa',
+          statistic = list(
+            gtsummary::all_categorical() ~ "{n}"
+          ),
+          missing = "no",
+          digits = gtsummary::everything() ~ 0,
+          sort = gtsummary::all_categorical() ~ "alphanumeric"
+        ) %>%
+        gtsummary::modify_header(label = "**Coerência e Abrangência**") %>%
+        gtsummary::modify_footnote(gtsummary::all_stat_cols() ~ NA) %>%
+        gtsummary::bold_labels(),
+      .header = paste0("**{strata}**")
+    )
+} else {
+  coerencia.gt <- list()
+}
+
+# remove 0s from gtsummary
+# coerencia.gt[1]$table_body <- coerencia.gt[1]$table_body %>% 
+#   dplyr::mutate(dplyr::across(sprintf("stat_%d_1", 1:nlevels(coerencia$`Linha de Pesquisa`)), ~gsub("^0.*", "",.)))
+
+# Print HTML table
+if (knitr::is_html_output() && !sjmisc::is_empty(coerencia)) {
+  print(coerencia.gt)
+}
+
+# Print LaTeX table
+if (knitr::is_latex_output() && !sjmisc::is_empty(coerencia)) {
+  cat('\\FloatBarrier')
+  # Convert gtsummary object to kableExtra object
+  kable_table <- gtsummary::as_kable_extra(
+    x = coerencia.gt,
+    escape = FALSE,
+    format = ifelse(knitr::is_html_output(), "html", "latex"),
+    booktabs = TRUE,
+    linesep = "",
+    caption = ifelse(knitr::is_html_output(), "", "Coerência e abrangência conceitual - Área de concentracão -> Linha de Pesquisa -> Projeto de Pesquisa"),
+  ) %>%
+    kableExtra::kable_styling(
+      bootstrap_options = c("basic", "hover", "condensed", "responsive"),
+      latex_options = c("basic", "repeat_header", "HOLD_position"),
+      latex_table_env = "tabularx",
+      full_width = TRUE,
+      position = "center"
+    ) %>% kableExtra::column_spec(column = 1:(1 + nlevels(coerencia$`Área de Concentração`)*nlevels(coerencia$`Linha de Pesquisa`)), width = paste0(c(0.30, rep(0.70/(nlevels(coerencia$`Área de Concentração`)*nlevels(coerencia$`Linha de Pesquisa`)), times = nlevels(coerencia$`Área de Concentração`)*nlevels(coerencia$`Linha de Pesquisa`)))*(29-3-3), "cm"))
+  print(kable_table)
+}
+
+source("Scripts/fonte-sucupira.R", local = knitr::knit_global())
+```
 
 \elandscape
 
 <br>
 
-```{r 1-1-2, eval = knitr::is_html_output()}
+```{r 1-1-2, eval = all(render_document, knitr::is_html_output())}
 cat("### **1.1.2**")
 cat('\n\n')
 cat("#### **Proposta Curricular do Programa** {.tabset}")
 cat('\n\n')
 ```
 
-```{r, eval = !knitr::is_html_output()}
+```{r, eval = all(render_document, !knitr::is_html_output())}
 cat("### **1.1.2 Proposta Curricular do Programa**")
 cat('\n\n')
 ```
 
-```{r cursos-egressos, eval = has.dados.cadastrais, echo = FALSE, warning = FALSE, message = FALSE, fig.align = 'center', results = 'asis', fig.pos='H'}
-if(knitr::is_html_output()) {
-  cat("##### **Perfil do egresso**")
-  cat('\n\n')
-}
-
-cursos.raw <-
-  readxl::read_excel("PPG/Dados Cadastrais.xlsx",
-                     sheet = "Egressos",
-                     col_types = c("text"))
-
-cursos <- dplyr::select(cursos.raw, c("Nível", "Objetivos"))
-
-# print tables
-if (knitr::is_html_output()) {
-  # use kable for HTML output
-  knitr::kable(
-    cursos,
-    align = "l",
-    escape = FALSE,
-    format = "html",
-    booktabs = TRUE,
-    linesep = "",
-    caption = "Perfil do Egresso"
-  ) %>% kableExtra::kable_styling(
-    bootstrap_options = c("striped", "hover", "condensed", "responsive"),
-    full_width = TRUE,
-    position = "center"
-  ) %>% kableExtra::column_spec(column = 1:ncol(cursos), width = paste0(c(0.10,0.90)*(21-3-3), "cm")) %>%
-      kableExtra::column_spec(column = 1, bold = TRUE) %>%
-      kableExtra::row_spec(row = 0, bold = TRUE)
-} else {
-  # use tinytable for LaTeX output
-  cursos <- data.frame(cursos, check.names = FALSE)
-  options(tinytable_print_output = "latex")
-  tinytable::tt(
-    cursos,
-    width = c(0.10,0.90)*(21-3-3),
-    style = "bootstrap",
-    align = "l",
-    caption = ifelse(knitr::is_html_output(), "", "Perfil do Egresso")
-  ) %>%
-    tinytable::theme_tt("multipage", rowhead = 1, latex_float = "H") %>%
-    tinytable::style_tt(i = 0, j = 1:ncol(cursos), bold = TRUE) %>%
-    tinytable::style_tt(i = 1:nrow(cursos), j = 1, bold = TRUE)
-}
-
-source("Scripts/fonte-sucupira.R", local = knitr::knit_global())
-
-# Add LaTeX commands for new page and float barrier
-if(knitr::is_latex_output()) {
-  cat('\\newpage')
-}
-```
-
-```{r 1-1-2-quanti, eval = has.sucupira.files,, echo = FALSE, warning = FALSE, message = FALSE, fig.align = 'center', results = 'asis', fig.pos='H'}
+```{r 1-1-2-quanti, eval = all(render_document, has.sucupira.files),, echo = FALSE, warning = FALSE, message = FALSE, fig.align = 'center', results = 'asis', fig.pos='H'}
 if(knitr::is_html_output()) {
   cat('##### *Quantitativa*')
   cat('\n\n')
@@ -1827,7 +1975,7 @@ if(knitr::is_latex_output()) {
 }
 ```
 
-```{r 1-1-2-disciplinas, eval = has.sucupira.files, echo = FALSE, warning = FALSE, message = FALSE, fig.align = 'center', results = 'asis', fig.pos='H'}
+```{r 1-1-2-disciplinas, eval = all(render_document, has.sucupira.files), echo = FALSE, warning = FALSE, message = FALSE, fig.align = 'center', results = 'asis', fig.pos='H'}
 # Load discipline data
 sheet <- "Disciplinas"
 source("Scripts/read-xlsx-sucupira.R", local = knitr::knit_global())
@@ -1938,7 +2086,7 @@ has.table.msc <- is_valid(table.msc)
 has.table.dsc <- is_valid(table.dsc)
 ```
 
-```{r turmas-periodicidade, eval = has.table.msc, echo = FALSE, warning = FALSE, message = FALSE, fig.align = 'center', results = 'asis', fig.pos='H'}
+```{r turmas-periodicidade, eval = all(render_document, has.table.msc), echo = FALSE, warning = FALSE, message = FALSE, fig.align = 'center', results = 'asis', fig.pos='H'}
 # turmas
 sheet <- "Turmas"
 source("Scripts/read-xlsx-sucupira.R", local = knitr::knit_global())
@@ -2005,7 +2153,7 @@ turmas.dsc <-
   turmas[stringr::str_detect(turmas$`Disciplinas por curso`, course.level),]
 ```
 
-```{r 1-1-2-disciplinas-msc, eval = has.table.msc, echo = FALSE, warning = FALSE, message = FALSE, fig.align = 'center', results = 'asis', fig.pos='H'}
+```{r 1-1-2-disciplinas-msc, eval = all(render_document, has.table.msc), echo = FALSE, warning = FALSE, message = FALSE, fig.align = 'center', results = 'asis', fig.pos='H'}
 if (knitr::is_html_output()) {
   cat('##### *Qualitativa (Mestrado)*')
   cat('\n\n')
@@ -2095,7 +2243,7 @@ if(knitr::is_latex_output()) {
 }
 ```
 
-```{r 1-1-2-disciplinas-dsc, eval = has.table.dsc, echo = FALSE, warning = FALSE, message = FALSE, fig.align = 'center', results = 'asis', fig.pos='H'}
+```{r 1-1-2-disciplinas-dsc, eval = all(render_document, has.table.dsc), echo = FALSE, warning = FALSE, message = FALSE, fig.align = 'center', results = 'asis', fig.pos='H'}
 if (knitr::is_html_output()) {
   cat('##### *Qualitativa (Doutorado)*')
   cat('\n\n')
@@ -2187,19 +2335,19 @@ if(knitr::is_latex_output()) {
 
 <br>
 
-```{r 1-1-3, eval = knitr::is_html_output()}
+```{r 1-1-3, eval = all(render_document, knitr::is_html_output())}
 cat("### **1.1.3**")
 cat('\n\n')
 cat("#### **Infraestrutura** {.tabset}")
 cat('\n\n')
 ```
 
-```{r, eval = !knitr::is_html_output()}
+```{r, eval = all(render_document, !knitr::is_html_output())}
 cat('### **1.1.3 Infraestrutura**')
 cat('\n\n')
 ```
 
-```{r 1-1-3-laboratorios-equipamentos, eval = has.laboratorios, echo = FALSE, warning = FALSE, message = FALSE, fig.align = 'center', results = 'asis', fig.pos='H'}
+```{r 1-1-3-laboratorios-equipamentos, eval = all(render_document, has.laboratorios), echo = FALSE, warning = FALSE, message = FALSE, fig.align = 'center', results = 'asis', fig.pos='H'}
 # Initialize all sheets
 abas <- readxl::excel_sheets("PPG/Laboratórios.xlsx")
 abas <- abas[order(abas, decreasing = FALSE)]
@@ -2317,19 +2465,19 @@ if (knitr::is_html_output()) {
 
 <br>
 
-```{r 1-2-1, eval = knitr::is_html_output()}
+```{r 1-2-1, eval = all(render_document, knitr::is_html_output())}
 cat("### **1.2.1**")
 cat('\n\n')
 cat("#### **Dimensão do corpo Docente Permanente** {.tabset}")
 cat('\n\n')
 ```
 
-```{r, eval = !knitr::is_html_output()}
+```{r, eval = all(render_document, !knitr::is_html_output())}
 cat("### **1.2.1 Dimensão do corpo Docente Permanente**")
 cat('\n\n')
 ```
 
-```{r categoria-corpo-docente, eval = has.sucupira.files, echo = FALSE, warning = FALSE, message = FALSE, fig.align = 'center', results = 'asis', fig.pos='H'}
+```{r categoria-corpo-docente, eval = all(render_document, has.sucupira.files), echo = FALSE, warning = FALSE, message = FALSE, fig.align = 'center', results = 'asis', fig.pos='H'}
 sheet <- "Docentes"
 source("Scripts/read-xlsx-sucupira.R", local = knitr::knit_global())
 
@@ -2406,31 +2554,35 @@ my_N <- function(data, ...) {
 table.doc.long <- table.doc.long %>%
   dplyr::mutate(dplyr::across(gtsummary::everything(), as.factor))
 
-table.1a <-
-  gtsummary::tbl_summary(
-    table.doc.long,
-    by = "Ano",
-    statistic = list(gtsummary::all_categorical() ~ "{n}"),
-    missing = "no",
-    digits = gtsummary::everything() ~ 0,
-    sort = gtsummary::all_categorical() ~ "frequency"
-  ) %>%
-  gtsummary::modify_header(label = "**Ano**", gtsummary::all_stat_cols() ~ "**{level}**") %>%
-  gtsummary::modify_footnote(gtsummary::all_stat_cols() ~ NA) %>%
-  gtsummary::bold_labels() %>%
-  gtsummary::add_stat(fns = gtsummary::all_categorical() ~ my_N) %>%
-  gtsummary::modify_header(
-    list(
-      add_stat_1 ~ "**Quadriênio**",
-      gtsummary::all_stat_cols() ~ "**{level}**"
-    )
-  ) %>%  
-  gtsummary::remove_row_type(variables = c('Categoria'), 
-                  type = "level", level_value = ("Docentes")) %>%
-  gtsummary::modify_column_hide(columns = paste0("stat_", as.character(length(quadrienal.vigente) + 1)))
+if(!sjmisc::is_empty(table.doc)){
+  table.1a <-
+    gtsummary::tbl_summary(
+      table.doc.long,
+      by = "Ano",
+      statistic = list(gtsummary::all_categorical() ~ "{n}"),
+      missing = "no",
+      digits = gtsummary::everything() ~ 0,
+      sort = gtsummary::all_categorical() ~ "frequency"
+    ) %>%
+    gtsummary::modify_header(label = "**Ano**", gtsummary::all_stat_cols() ~ "**{level}**") %>%
+    gtsummary::modify_footnote(gtsummary::all_stat_cols() ~ NA) %>%
+    gtsummary::bold_labels() %>%
+    gtsummary::add_stat(fns = gtsummary::all_categorical() ~ my_N) %>%
+    gtsummary::modify_header(
+      list(
+        add_stat_1 ~ "**Quadriênio**",
+        gtsummary::all_stat_cols() ~ "**{level}**"
+      )
+    ) %>%  
+    gtsummary::remove_row_type(variables = c('Categoria'), 
+                               type = "level", level_value = ("Docentes")) %>%
+    gtsummary::modify_column_hide(columns = paste0("stat_", as.character(length(quadrienal.vigente) + 1)))
+} else {
+  table.1a <- list()
+}
 ```
 
-```{r vinculacao-corpo-docente, eval = has.sucupira.files, echo = FALSE, warning = FALSE, message = FALSE, fig.align = 'center', results = 'asis', fig.pos='H'}
+```{r vinculacao-corpo-docente, eval = all(render_document, has.sucupira.files), echo = FALSE, warning = FALSE, message = FALSE, fig.align = 'center', results = 'asis', fig.pos='H'}
 # docentes
 sheet <- "Docentes"
 source("Scripts/read-xlsx-sucupira.R", local = knitr::knit_global())
@@ -2505,31 +2657,35 @@ my_N <- function(data, ...) {
 table.doc.long <- table.doc.long %>%
   dplyr::mutate(dplyr::across(gtsummary::everything(), as.factor))
 
-table.1b <-
-  gtsummary::tbl_summary(
-    table.doc.long,
-    by = "Ano",
-    statistic = list(gtsummary::all_categorical() ~ "{n}"),
-    missing = "no",
-    digits = gtsummary::everything() ~ 0,
-    sort = gtsummary::all_categorical() ~ "frequency"
-  ) %>%
-  gtsummary::modify_header(label = "**Ano**", gtsummary::all_stat_cols() ~ "**{level}**") %>%
-  gtsummary::modify_footnote(gtsummary::all_stat_cols() ~ NA) %>%
-  gtsummary::bold_labels() %>%
-  gtsummary::add_stat(fns = gtsummary::all_categorical() ~ my_N) %>%
-  gtsummary::modify_header(
-    list(
-      add_stat_1 ~ "**Quadriênio**",
-      gtsummary::all_stat_cols() ~ "**{level}**"
-    )
-  ) %>%  
-  gtsummary::remove_row_type(variables = c('Tipo vínculo'), 
-                  type = "level", level_value = ("Docentes")) %>%
-  gtsummary::modify_column_hide(columns = paste0("stat_", as.character(length(quadrienal.vigente) + 1)))
+if(!sjmisc::is_empty(table.doc)){
+  table.1b <-
+    gtsummary::tbl_summary(
+      table.doc.long,
+      by = "Ano",
+      statistic = list(gtsummary::all_categorical() ~ "{n}"),
+      missing = "no",
+      digits = gtsummary::everything() ~ 0,
+      sort = gtsummary::all_categorical() ~ "frequency"
+    ) %>%
+    gtsummary::modify_header(label = "**Ano**", gtsummary::all_stat_cols() ~ "**{level}**") %>%
+    gtsummary::modify_footnote(gtsummary::all_stat_cols() ~ NA) %>%
+    gtsummary::bold_labels() %>%
+    gtsummary::add_stat(fns = gtsummary::all_categorical() ~ my_N) %>%
+    gtsummary::modify_header(
+      list(
+        add_stat_1 ~ "**Quadriênio**",
+        gtsummary::all_stat_cols() ~ "**{level}**"
+      )
+    ) %>%  
+    gtsummary::remove_row_type(variables = c('Tipo vínculo'), 
+                               type = "level", level_value = ("Docentes")) %>%
+    gtsummary::modify_column_hide(columns = paste0("stat_", as.character(length(quadrienal.vigente) + 1)))
+} else {
+  table.1b <- list()
+}
 ```
 
-```{r regime-corpo-docente, eval = has.sucupira.files, echo = FALSE, warning = FALSE, message = FALSE, fig.align = 'center', results = 'asis', fig.pos='H'}
+```{r regime-corpo-docente, eval = all(render_document, has.sucupira.files), echo = FALSE, warning = FALSE, message = FALSE, fig.align = 'center', results = 'asis', fig.pos='H'}
 # docentes
 sheet <- "Docentes"
 source("Scripts/read-xlsx-sucupira.R", local = knitr::knit_global())
@@ -2609,31 +2765,35 @@ my_N <- function(data, ...) {
 table.doc.long <- table.doc.long %>%
   dplyr::mutate(dplyr::across(gtsummary::everything(), as.factor))
 
-table.1c <-
-  gtsummary::tbl_summary(
-    table.doc.long,
-    by = "Ano",
-    statistic = list(gtsummary::all_categorical() ~ "{n}"),
-    missing = "no",
-    digits = gtsummary::everything() ~ 0,
-    sort = gtsummary::all_categorical() ~ "frequency"
-  ) %>%
-  gtsummary::modify_header(label = "**Ano**", gtsummary::all_stat_cols() ~ "**{level}**") %>%
-  gtsummary::modify_footnote(gtsummary::all_stat_cols() ~ NA) %>%
-  gtsummary::bold_labels() %>%
-  gtsummary::add_stat(fns = gtsummary::all_categorical() ~ my_N) %>%
-  gtsummary::modify_header(
-    list(
-      add_stat_1 ~ "**Quadriênio**",
-      gtsummary::all_stat_cols() ~ "**{level}**"
-    )
-  ) %>%  
-  gtsummary::remove_row_type(variables = c('Regime de Trabalho'), 
-                  type = "level", level_value = ("Docentes")) %>%
-  gtsummary::modify_column_hide(columns = paste0("stat_", as.character(length(quadrienal.vigente) + 1)))
+if(!sjmisc::is_empty(table.doc)){
+  table.1c <-
+    gtsummary::tbl_summary(
+      table.doc.long,
+      by = "Ano",
+      statistic = list(gtsummary::all_categorical() ~ "{n}"),
+      missing = "no",
+      digits = gtsummary::everything() ~ 0,
+      sort = gtsummary::all_categorical() ~ "frequency"
+    ) %>%
+    gtsummary::modify_header(label = "**Ano**", gtsummary::all_stat_cols() ~ "**{level}**") %>%
+    gtsummary::modify_footnote(gtsummary::all_stat_cols() ~ NA) %>%
+    gtsummary::bold_labels() %>%
+    gtsummary::add_stat(fns = gtsummary::all_categorical() ~ my_N) %>%
+    gtsummary::modify_header(
+      list(
+        add_stat_1 ~ "**Quadriênio**",
+        gtsummary::all_stat_cols() ~ "**{level}**"
+      )
+    ) %>%  
+    gtsummary::remove_row_type(variables = c('Regime de Trabalho'), 
+                               type = "level", level_value = ("Docentes")) %>%
+    gtsummary::modify_column_hide(columns = paste0("stat_", as.character(length(quadrienal.vigente) + 1)))
+} else {
+  table.1c <- list()
+}
 ```
 
-```{r carga-horaria-corpo-docente, eval = has.sucupira.files, echo = FALSE, warning = FALSE, message = FALSE, fig.align = 'center', results = 'asis', fig.pos='H'}
+```{r carga-horaria-corpo-docente, eval = all(render_document, has.sucupira.files), echo = FALSE, warning = FALSE, message = FALSE, fig.align = 'center', results = 'asis', fig.pos='H'}
 # docentes
 sheet <- "Docentes"
 source("Scripts/read-xlsx-sucupira.R", local = knitr::knit_global())
@@ -2708,32 +2868,36 @@ my_N <- function(data, ...) {
 table.doc.long <- table.doc.long %>%
   dplyr::mutate(dplyr::across(gtsummary::everything(), as.factor))
 
-table.1d <-
-  gtsummary::tbl_summary(
-    table.doc.long,
-    by = "Ano",
-    statistic = list(gtsummary::all_categorical() ~ "{n}"),
-    missing = "no",
-    digits = gtsummary::everything() ~ 0,
-    # sort alphanumeric THIS ONLY
-    sort = gtsummary::all_categorical() ~ "alphanumeric"
-  ) %>%
-  gtsummary::modify_header(label = "**Ano**", gtsummary::all_stat_cols() ~ "**{level}**") %>%
-  gtsummary::modify_footnote(gtsummary::all_stat_cols() ~ NA) %>%
-  gtsummary::bold_labels() %>%
-  gtsummary::add_stat(fns = gtsummary::all_categorical() ~ my_N) %>%
-  gtsummary::modify_header(
-    list(
-      add_stat_1 ~ "**Quadriênio**",
-      gtsummary::all_stat_cols() ~ "**{level}**"
-    )
-  ) %>%  
-  gtsummary::remove_row_type(variables = c('Carga Horária PG (Semanal)'), 
-                  type = "level", level_value = ("Docentes")) %>%
-  gtsummary::modify_column_hide(columns = paste0("stat_", as.character(length(quadrienal.vigente) + 1)))
+if(!sjmisc::is_empty(table.doc)){
+  table.1d <-
+    gtsummary::tbl_summary(
+      table.doc.long,
+      by = "Ano",
+      statistic = list(gtsummary::all_categorical() ~ "{n}"),
+      missing = "no",
+      digits = gtsummary::everything() ~ 0,
+      # sort alphanumeric THIS ONLY
+      sort = gtsummary::all_categorical() ~ "alphanumeric"
+    ) %>%
+    gtsummary::modify_header(label = "**Ano**", gtsummary::all_stat_cols() ~ "**{level}**") %>%
+    gtsummary::modify_footnote(gtsummary::all_stat_cols() ~ NA) %>%
+    gtsummary::bold_labels() %>%
+    gtsummary::add_stat(fns = gtsummary::all_categorical() ~ my_N) %>%
+    gtsummary::modify_header(
+      list(
+        add_stat_1 ~ "**Quadriênio**",
+        gtsummary::all_stat_cols() ~ "**{level}**"
+      )
+    ) %>%  
+    gtsummary::remove_row_type(variables = c('Carga Horária PG (Semanal)'), 
+                               type = "level", level_value = ("Docentes")) %>%
+    gtsummary::modify_column_hide(columns = paste0("stat_", as.character(length(quadrienal.vigente) + 1)))
+} else {
+  table.1d <- list()
+}
 ```
 
-```{r dimensao-corpo-docente, eval = has.sucupira.files, echo = FALSE, warning = FALSE, message = FALSE, fig.align = 'center', results = 'asis', fig.pos='H'}
+```{r dimensao-corpo-docente, eval = all(render_document, has.sucupira.files), echo = FALSE, warning = FALSE, message = FALSE, fig.align = 'center', results = 'asis', fig.pos='H'}
 # list all tables
 table.1.1.1.dim <- 
   list(table.1a,
@@ -2786,19 +2950,19 @@ if(knitr::is_latex_output()) {
 
 <br>
 
-```{r 1-2-2, eval = knitr::is_html_output()}
+```{r 1-2-2, eval = all(render_document, knitr::is_html_output())}
 cat("### **1.2.2**")
 cat('\n\n')
 cat("#### **Coerência acadêmica do Corpo Docente à proposta do PPG** {.tabset}")
 cat('\n\n')
 ```
 
-```{r, eval = !knitr::is_html_output()}
+```{r, eval = all(render_document, !knitr::is_html_output())}
 cat("### **1.2.2 Coerência acadêmica do Corpo Docente à proposta do PPG**")
 cat('\n\n')
 ```
 
-```{r coerencia-docente-permanente, eval = has.sucupira.files, echo = FALSE, warning = FALSE, message = FALSE, fig.align = 'center', results = 'asis', fig.pos='H'}
+```{r coerencia-docente-permanente, eval = all(render_document, has.sucupira.files), echo = FALSE, warning = FALSE, message = FALSE, fig.align = 'center', results = 'asis', fig.pos='H'}
 # docentes
 sheet <- "Docentes"
 source("Scripts/read-xlsx-sucupira.R", local = knitr::knit_global())
@@ -2872,37 +3036,41 @@ my_N <- function(data, ...) {
   gtsummary::style_number(sum(data == "Docentes", na.rm = TRUE), digits = 0)
 }
 
+# rename table.doc.long
+colnames(table.doc.long)[2] <- "Docentes Permanentes"
+
 # change all column types to factors
 table.doc.long <- table.doc.long %>%
   dplyr::mutate(dplyr::across(gtsummary::everything(), as.factor))
 
-# rename table.doc.long
-colnames(table.doc.long)[2] <- "Docentes Permanentes"
-
 # print tables
-table.1.2.2.doc <- gtsummary::tbl_summary(
-  table.doc.long,
-  by = "Ano",
-  statistic = list(gtsummary::all_categorical() ~ "{n}"),
-  missing = "no",
-  digits = gtsummary::everything() ~ 0,
+if(!sjmisc::is_empty(table.doc)){
+  table.1.2.2.doc <- gtsummary::tbl_summary(
+    table.doc.long,
+    by = "Ano",
+    statistic = list(gtsummary::all_categorical() ~ "{n}"),
+    missing = "no",
+    digits = gtsummary::everything() ~ 0,
     sort = gtsummary::all_categorical() ~ "frequency"
   ) %>%
-  gtsummary::modify_header(label = "**Ano**", gtsummary::all_stat_cols() ~ "**{level}**") %>%
-  gtsummary::modify_footnote(gtsummary::all_stat_cols() ~ NA) %>%
-  gtsummary::bold_labels() %>%
-  gtsummary::add_stat(fns = gtsummary::all_categorical() ~ my_N) %>%
-  gtsummary::modify_header(
-    list(
-      add_stat_1 ~ "**Quadriênio**",
-      gtsummary::all_stat_cols() ~ "**{level}**"
-    )
-  ) %>%
-  gtsummary::remove_row_type(variables = c('Docentes Permanentes'), type = "level", level_value = ("Docentes")) %>%
-  gtsummary::modify_column_hide(columns = paste0("stat_", as.character(length(quadrienal.vigente) + 1)))
+    gtsummary::modify_header(label = "**Ano**", gtsummary::all_stat_cols() ~ "**{level}**") %>%
+    gtsummary::modify_footnote(gtsummary::all_stat_cols() ~ NA) %>%
+    gtsummary::bold_labels() %>%
+    gtsummary::add_stat(fns = gtsummary::all_categorical() ~ my_N) %>%
+    gtsummary::modify_header(
+      list(
+        add_stat_1 ~ "**Quadriênio**",
+        gtsummary::all_stat_cols() ~ "**{level}**"
+      )
+    ) %>%
+    gtsummary::remove_row_type(variables = c('Docentes Permanentes'), type = "level", level_value = ("Docentes")) %>%
+    gtsummary::modify_column_hide(columns = paste0("stat_", as.character(length(quadrienal.vigente) + 1)))
+} else {
+  table.1.2.2.doc <- list()
+}
 ```
 
-```{r coerencia-docente-colaborador, eval = has.sucupira.files, echo = FALSE, warning = FALSE, message = FALSE, fig.align = 'center', results = 'asis', fig.pos='H'}
+```{r coerencia-docente-colaborador, eval = all(render_document, has.sucupira.files), echo = FALSE, warning = FALSE, message = FALSE, fig.align = 'center', results = 'asis', fig.pos='H'}
 # docentes
 sheet <- "Docentes"
 source("Scripts/read-xlsx-sucupira.R", local = knitr::knit_global())
@@ -2979,15 +3147,15 @@ my_N <- function(data, ...) {
   gtsummary::style_number(sum(data == "Docentes", na.rm = TRUE), digits = 0)
 }
 
+# rename table.doc.long
+colnames(table.doc.long)[2] <- "Docentes Colaboradores e Visitantes"
+
 # change all column types to factors
 table.doc.long <- table.doc.long %>%
   dplyr::mutate(dplyr::across(gtsummary::everything(), as.factor))
 
-# rename table.doc.long
-colnames(table.doc.long)[2] <- "Docentes Colaboradores e Visitantes"
-
 # print tables
-if(nrow(table.doc.long) > 0) {
+if(!sjmisc::is_empty(table.doc)){
   table.1.2.2.outros <- gtsummary::tbl_summary(
     table.doc.long,
     by = "Ano",
@@ -3013,7 +3181,7 @@ if(nrow(table.doc.long) > 0) {
 }
 ```
 
-```{r coerencia, eval = has.sucupira.files, echo = FALSE, warning = FALSE, message = FALSE, fig.align = 'center', results = 'asis', fig.pos='H'}
+```{r coerencia, eval = all(render_document, has.sucupira.files), echo = FALSE, warning = FALSE, message = FALSE, fig.align = 'center', results = 'asis', fig.pos='H'}
 # List all tables
 table.1.2.2 <- list(
   table.1.2.2.doc,
@@ -3065,19 +3233,19 @@ if(knitr::is_latex_output()) {
 
 <br>
 
-```{r 1-2-3, eval = knitr::is_html_output()}
+```{r 1-2-3, eval = all(render_document, knitr::is_html_output())}
 cat("### **1.2.3**")
 cat('\n\n')
 cat("#### **Estabilidade do corpo docente permanente** {.tabset}")
 cat('\n\n')
 ```
 
-```{r, eval = !knitr::is_html_output()}
+```{r, eval = all(render_document, !knitr::is_html_output())}
 cat("### **1.2.3 Estabilidade do corpo docente permanente**")
 cat('\n\n')
 ```
 
-```{r estabilidade-corpo-docente, eval = has.sucupira.files, echo = FALSE, warning = FALSE, message = FALSE, fig.align = 'center', results = 'asis', fig.pos='H'}
+```{r estabilidade-corpo-docente, eval = all(render_document, has.sucupira.files), echo = FALSE, warning = FALSE, message = FALSE, fig.align = 'center', results = 'asis', fig.pos='H'}
 # docentes
 sheet <- "Docentes"
 source("Scripts/read-xlsx-sucupira.R", local = knitr::knit_global())
@@ -3216,6 +3384,7 @@ tbl_fix_order <- function(x) {
 }
 
 # print tables
+if(!sjmisc::is_empty(table.doc)){
 table.1.2.3 <- gtsummary::tbl_summary(
   table.doc.long,
   by = "Ano",
@@ -3237,6 +3406,9 @@ table.1.2.3 <- gtsummary::tbl_summary(
   ) %>%
   gtsummary::remove_row_type(variables = c('Nome Docente'), type = "level", level_value = ("Docentes")) %>%
   gtsummary::modify_column_hide(columns = paste0("stat_", as.character(length(quadrienal.vigente) + 1)))
+} else {
+  table.1.2.3 <- list()
+}
 
 # Print HTML table
 if (knitr::is_html_output() && !sjmisc::is_empty(table.1.2.3)) {
@@ -3275,14 +3447,14 @@ if(knitr::is_latex_output()) {
 
 <br>
 
-```{r 1-2-4, eval = knitr::is_html_output()}
+```{r 1-2-4, eval = all(render_document, knitr::is_html_output())}
 cat("### **1.2.4**")
 cat('\n\n')
 cat("#### **Percentual de docentes permanentes com dedicação exclusiva ao PPG** {.tabset}")
 cat('\n\n')
 ```
 
-```{r, eval = !knitr::is_html_output()}
+```{r, eval = all(render_document, !knitr::is_html_output())}
 cat("### **1.2.4 Percentual de docentes permanentes com dedicação exclusiva ao PPG**")
 cat('\n\n')
 ```
@@ -3295,19 +3467,19 @@ cat('\n\n')
 \newpage
 ```
 
-```{r 1-2-5, eval = knitr::is_html_output()}
+```{r 1-2-5, eval = all(render_document, knitr::is_html_output())}
 cat("### **1.2.5**")
 cat('\n\n')
 cat("#### **Capacidade de captação de recursos** {.tabset}")
 cat('\n\n')
 ```
 
-```{r, eval = !knitr::is_html_output()}
+```{r, eval = all(render_document, !knitr::is_html_output())}
 cat("### **1.2.5 Capacidade de captação de recursos**")
 cat('\n\n')
 ```
 
-```{r 1-2-5-captacao-auxilios, eval = has.sucupira.files, echo = FALSE, warning = FALSE, message = FALSE, fig.align = 'center', results = 'asis', fig.pos='H'}
+```{r 1-2-5-captacao-auxilios, eval = all(render_document, has.sucupira.files), echo = FALSE, warning = FALSE, message = FALSE, fig.align = 'center', results = 'asis', fig.pos='H'}
 # filter by type of financiamento = AUXILIO
 sucupira.aux.df <- sucupira.financiadores.df[sucupira.financiadores.df$`Natureza do Financiador` == "OUTRO AUXÍLIO FINANCEIRO", ]
 
@@ -3437,7 +3609,7 @@ if(knitr::is_latex_output() && !sjmisc::is_empty(table.cap.aux)) {
 }
 ```
 
-```{r 1-2-5-captacao-bolsas, eval = has.sucupira.files, echo = FALSE, warning = FALSE, message = FALSE, fig.align = 'center', results = 'asis', fig.pos='H'}
+```{r 1-2-5-captacao-bolsas, eval = all(render_document, has.sucupira.files), echo = FALSE, warning = FALSE, message = FALSE, fig.align = 'center', results = 'asis', fig.pos='H'}
 # filter by type of financiamento = BOLSA
 sucupira.bolsa.df <- sucupira.financiadores.df[sucupira.financiadores.df$`Natureza do Financiador` == "BOLSA", ]
 
@@ -3567,7 +3739,7 @@ if(knitr::is_latex_output() && !sjmisc::is_empty(table.cap.bolsa)) {
 }
 ```
 
-```{r 1-2-5-captacao-pq, eval = has.sucupira.files, echo = FALSE, warning = FALSE, message = FALSE, fig.align = 'center', results = 'asis', fig.pos='H'}
+```{r 1-2-5-captacao-pq, eval = all(render_document, has.sucupira.files), echo = FALSE, warning = FALSE, message = FALSE, fig.align = 'center', results = 'asis', fig.pos='H'}
 sheet <- "Docentes"
 source("Scripts/read-xlsx-sucupira.R", local = knitr::knit_global())
 
@@ -3630,10 +3802,6 @@ table.cap.pq.long <- rbind(table.cap.pq.long,
 my_N <- function(data, ...) {
   gtsummary::style_number(sum(data == "Modalidade", na.rm = TRUE), digits = 0)
 }
-
-# change all column types to factors
-table.cap.pq.long <- table.cap.pq.long %>%
-  dplyr::mutate(dplyr::across(gtsummary::everything(), as.factor))
 
 colnames(table.cap.pq.long) <-
   c("Ano", "Bolsa CNPq")
@@ -3714,19 +3882,19 @@ if(knitr::is_latex_output() && !sjmisc::is_empty(table.cap.pq)) {
 
 <br>
 
-```{r 1-3-1, eval = knitr::is_html_output()}
+```{r 1-3-1, eval = all(render_document, knitr::is_html_output())}
 cat("### **1.3.1**")
 cat('\n\n')
 cat("#### **Adequação da proposta ao Plano Institucional da IES** {.tabset}")
 cat('\n\n')
 ```
 
-```{r, eval = !knitr::is_html_output()}
+```{r, eval = all(render_document, !knitr::is_html_output())}
 cat("### **1.3.1 Adequação da proposta ao Plano Institucional da IES**")
 cat('\n\n')
 ```
 
-```{r planejamento, eval = all(has.planejamento, knitr::is_html_output()), echo = FALSE, warning = FALSE, message = FALSE, fig.align = 'center', results = 'asis', fig.pos='H'}
+```{r planejamento, eval = all(render_document, has.planejamento, knitr::is_html_output()), echo = FALSE, warning = FALSE, message = FALSE, fig.align = 'center', results = 'asis', fig.pos='H'}
 # Initialize all sheets
 abas <- readxl::excel_sheets("PPG/Planejamento estratégico.xlsx")
 
@@ -3761,40 +3929,248 @@ for (i in 1:length(abas)) {
 
 <br>
 
-```{r 1-3-2, eval = knitr::is_html_output()}
+```{r 1-3-2, eval = all(render_document, knitr::is_html_output())}
 cat("### **1.3.2**")
 cat('\n\n')
 cat("#### **Adequação do planejamento** {.tabset}")
 cat('\n\n')
 ```
 
-```{r, eval = !knitr::is_html_output()}
+```{r, eval = all(render_document, !knitr::is_html_output())}
 cat("### **1.3.2 Adequação do planejamento**")
 cat('\n\n')
 ```
 
+\blandscape
 
-<!-- EM CONSTRUÇÃO -->
+```{r 1-4-perfil-discente, eval = all(render_document, has.sucupira.files), echo = FALSE, warning = FALSE, message = FALSE, fig.align = 'center', results = 'asis', fig.pos='H'}
+# Discentes
+sheet <- "Discentes"
+source("Scripts/read-xlsx-sucupira.R", local = knitr::knit_global())
 
-<br>
+# Get years
+source("Scripts/years-sucupira.R", local = knitr::knit_global())
+names(sucupira.list) <- as.character(anos)
 
-```{=latex}
-\newpage
+# Get data for the current period
+sucupira <- sucupira.list[as.character(quadrienal.vigente)] %>%
+  plyr::compact()
+
+for (i in 1:length(sucupira)) {
+  sucupira[[i]] <- cbind(
+    "Anos" = rep(quadrienal.vigente[i], times = dim(sucupira[[i]])[1]),
+    sucupira[[i]]
+  )
+}
+
+sucupira.perfil.disc <- data.frame(do.call(dplyr::bind_rows, sucupira))
+names(sucupira.perfil.disc) <- names(sucupira[[as.character(max(as.numeric(quadrienal.vigente)))]])
+
+# filter columns
+sucupira.perfil.disc <- sucupira.perfil.disc %>%
+  dplyr::select(
+    "Anos",
+    "Nível Discente",
+    "Gênero",
+    "Data de Nascimento",
+    "Raça/Cor",
+    "Portador de Deficiência"
+  )
+
+# compute age for the current period
+sucupira.perfil.disc$Idade <- as.numeric(sucupira.perfil.disc$Anos) - as.numeric(substr(
+  as.Date(sucupira.perfil.disc$`Data de Nascimento`, format = "%d/%m/%Y"),
+  1,
+  4
+))
+
+# try replacing Bacharelado por Graduação
+try(sucupira.perfil.disc$`Nível Discente`[sucupira.perfil.disc$`Nível Discente` == "Bacharelado"] <- "Graduação", silent = TRUE)
+
+# try rename levels Mestrado Profissional by Mestrado
+try(sucupira.perfil.disc$`Nível Discente`[sucupira.perfil.disc$`Nível Discente` == "Mestrado Profissional"] <- "Mestrado")
+
+# try rename levels Mestrado Profissional by Mestrado
+try(sucupira.perfil.disc$`Nível Discente`[sucupira.perfil.disc$`Nível Discente` == "Doutorado Profissional"] <- "Doutorado")
+
+# reorder levels of Nível Discente: "Bacharelado", "Mestrado" and "Doutorado"
+sucupira.perfil.disc$`Nível Discente` <- factor(
+  sucupira.perfil.disc$`Nível Discente`,
+  levels = c(
+    "Graduação",
+    "Mestrado",
+    "Doutorado"
+  )
+)
+
+# rename Gênero por Sexo Biológico
+sucupira.perfil.disc <- sucupira.perfil.disc %>%
+  dplyr::rename("Sexo Biológico" = "Gênero")
+
+# reorder Sexo BIológico as factor
+sucupira.perfil.disc$`Sexo Biológico` <- factor(
+  sucupira.perfil.disc$`Sexo Biológico`,
+  levels = c(
+    "Feminino",
+    "Masculino",
+    "Não Informado"
+  )
+)
+
+# reorder levels of Raça/Cor: "Nào declarado" and "Não dispõe da informação" should be the last levels
+sucupira.perfil.disc$`Raça/Cor` <- factor(
+  sucupira.perfil.disc$`Raça/Cor`,
+  levels = c(
+    "Amarela",
+    "Branca",
+    "Indígena",
+    "Parda",
+    "Preta",
+    "Não declarado",
+    "Não dispõe da informação"
+  )
+)
+
+# rename Portador de Deficiência por "Pessoa com Deficiência"
+sucupira.perfil.disc <- sucupira.perfil.disc %>%
+  dplyr::rename("Pessoa com Deficiência" = "Portador de Deficiência")
+
+# reorder levels of Pessoa com Deficiência
+sucupira.perfil.disc$`Pessoa com Deficiência` <- factor(
+  sucupira.perfil.disc$`Pessoa com Deficiência`,
+  levels = c(
+    "Sim",
+    "Não"
+  )
+)
+
+# compute Adulto vs Idoso
+sucupira.perfil.disc$`Grupo etário` <- ifelse(sucupira.perfil.disc$Idade >= 65, "Pessoa idosa", "Adulto")
+
+# reorder levels of Grupo Etário
+sucupira.perfil.disc$`Grupo etário` <- factor(
+  sucupira.perfil.disc$`Grupo etário`,
+  levels = c(
+    "Adulto",
+    "Pessoa idosa"
+  )
+)
+
+# drop Data de Nascimento
+sucupira.perfil.disc <- sucupira.perfil.disc %>%
+  dplyr::select(
+    -"Data de Nascimento"
+  )
+
+# check nlevels of Nível Discente
+if (nlevels(sucupira.perfil.disc$`Nível Discente`) != 0 && !sjmisc::is_empty(sucupira.perfil.disc)) {
+  if (nlevels(sucupira.perfil.disc$`Nível Discente`) == 1) {
+    # Mestrado OU Doutorado OU Bacharelado
+    # Print tables
+    table.matr.gt <- sucupira.perfil.disc |>
+      gtsummary::tbl_summary(
+        by = Anos,
+        type = list(
+          "Sexo Biológico" ~ "categorical",
+          "Raça/Cor" ~ "categorical",
+          "Pessoa com Deficiência" ~ "categorical",
+          "Idade" ~ "continuous",
+          "Grupo etário" ~ "categorical"
+        ),
+        statistic = list(
+          gtsummary::all_categorical() ~ "{n} ({p}%)",
+          gtsummary::all_continuous() ~ "{median} ({p25}-{p75})"
+          ),
+        missing = "no",
+        digits = gtsummary::everything() ~ 0,
+        sort = gtsummary::all_categorical() ~ "alphanumeric"
+      ) %>%
+      gtsummary::modify_footnote(gtsummary::all_stat_cols() ~ NA) %>%
+      gtsummary::bold_labels()
+  } else if (nlevels(sucupira.perfil.disc$`Nível Discente`) >= 2) {
+    # Bacharelado, Mestrado, Doutorado
+    # Print tables
+    table.matr.gt <- sucupira.perfil.disc |>
+#      dplyr::select('Anos', 'Nome do Orientador', 'Nível Discente') |>
+      gtsummary::tbl_strata(
+        strata = 'Nível Discente',
+        .tbl_fun =
+          ~ .x |>
+          gtsummary::tbl_summary(
+            by = Anos,
+            type = list(
+              "Sexo Biológico" ~ "categorical",
+              "Raça/Cor" ~ "categorical",
+              "Pessoa com Deficiência" ~ "categorical",
+              "Idade" ~ "continuous",
+              "Grupo etário" ~ "categorical"
+            ),
+            statistic = list(
+              gtsummary::all_categorical() ~ "{n} ({p}%)",
+              gtsummary::all_continuous() ~ "{median} ({p25}-{p75})"
+            ),
+            missing = "no",
+            digits = gtsummary::everything() ~ 0,
+            sort = gtsummary::all_categorical() ~ "alphanumeric"
+          ) %>%
+          gtsummary::modify_header(label = "**Discentes matriculados**") %>%
+          gtsummary::modify_footnote(gtsummary::all_stat_cols() ~ NA) %>%
+          gtsummary::bold_labels(),
+        .header = paste0("**{strata}**")
+      )
+  }
+  
+  # Print HTML table
+  if (knitr::is_html_output() && !sjmisc::is_empty(sucupira.perfil.disc)) {
+    print(table.matr.gt)
+  }
+  
+  # Print LaTeX table
+  if (knitr::is_latex_output() && !sjmisc::is_empty(sucupira.perfil.disc)) {
+    cat('\\FloatBarrier')
+    # Convert gtsummary object to kableExtra object
+    kable_table <- gtsummary::as_kable_extra(
+      x = table.matr.gt,
+      escape = FALSE,
+      format = ifelse(knitr::is_html_output(), "html", "latex"),
+      booktabs = TRUE,
+      linesep = "",
+      caption = ifelse(knitr::is_html_output(), "", "Perfil sociodemiográfico dos discentes/egressos por ano"),
+    ) %>%
+      kableExtra::kable_styling(
+        bootstrap_options = c("basic", "hover", "condensed", "responsive"),
+        latex_options = c("basic", "repeat_header", "HOLD_position", "scale_down"), # scale_down added to fit page width
+        latex_table_env = "tabularx",
+        full_width = TRUE,
+        position = "center"
+      ) %>% kableExtra::column_spec(column = 1:(1 + length(unique(sucupira.perfil.disc$Anos))*nlevels(sucupira.perfil.disc$"Nível Discente")), width = paste0(c(0.15, rep(0.85/(length(unique(sucupira.perfil.disc$Anos))*nlevels(sucupira.perfil.disc$"Nível Discente")), times = length(unique(sucupira.perfil.disc$Anos))*nlevels(sucupira.perfil.disc$"Nível Discente")))*(29-3-3), "cm"))
+    print(kable_table)
+  }
+  
+  source("Scripts/fonte-sucupira.R", local = knitr::knit_global())
+}
+
+# Add LaTeX commands for new page and float barrier
+if(knitr::is_latex_output()) {
+  cat('\\newpage')
+}
 ```
 
-```{r 1-4-1, eval = knitr::is_html_output()}
+\elandscape
+
+```{r 1-4-1, eval = all(render_document, knitr::is_html_output())}
 cat("### **1.4.1**")
 cat('\n\n')
 cat("#### **Adequação dos processos e procedimentos utilizados para a autoavaliação** {.tabset}")
 cat('\n\n')
 ```
 
-```{r, eval = !knitr::is_html_output()}
+```{r, eval = all(render_document, !knitr::is_html_output())}
 cat("### **1.4.1 Adequação dos processos e procedimentos utilizados para a autoavaliação**")
 cat('\n\n')
 ```
 
-```{r 1-4-1-metodologia, eval = has.metodologia, echo = FALSE, warning = FALSE, message = FALSE, fig.align = 'center', results = 'asis', fig.pos='H'}
+```{r 1-4-1-metodologia, eval = all(render_document, has.metodologia), echo = FALSE, warning = FALSE, message = FALSE, fig.align = 'center', results = 'asis', fig.pos='H'}
 # initialize all sheets
 abas <- readxl::excel_sheets("PPG/Metodologia.xlsx")
 
@@ -3861,7 +4237,7 @@ for (j in 1:length(abas)) {
 }
 ```
 
-```{r 1-4-1-resultados, eval = has.autoavaliacao, echo = FALSE, warning = FALSE, message = FALSE, fig.align = 'center', results = 'asis', fig.pos='H'}
+```{r 1-4-1-resultados, eval = all(render_document, has.autoavaliacao), echo = FALSE, warning = FALSE, message = FALSE, fig.align = 'center', results = 'asis', fig.pos='H'}
 # initialize all sheets
 abas <- readxl::excel_sheets("PPG/Autoavaliação.xlsx")
 
@@ -3928,32 +4304,40 @@ for (j in 1:length(abas)) {
 }
 ```
 
-```{=latex}
-\newpage
-```
+<br>
 
 <br>
 
+```{=latex}
+\newpage
+\vspace*{\fill}
+\section{\textbf{2. Formação}}
+\vspace*{\fill}
+\newpage
+```
+
+```{r 2-Formacao, eval = all(render_document, knitr::is_html_output())}
+cat("## **2. Formação** {#formacao .tabset}")
+cat('\n\n')
+cat('<hr style="height:2px;border-width:0;color:black;background-color:black">')
+cat('\n\n')
+```
+
 \blandscape
 
-## **2. Formação** {#formacao .tabset}
-
-<!--script for generating HORIZONTAL LINE-->
-<hr style="height:2px;border-width:0;color:black;background-color:black">
-
-```{r 2-1-1, eval = knitr::is_html_output()}
+```{r 2-1-1, eval = all(render_document, knitr::is_html_output())}
 cat("### **2.1.1**")
 cat('\n\n')
 cat("#### **Coerência do produto final** {.tabset}")
 cat('\n\n')
 ```
 
-```{r, eval = !knitr::is_html_output()}
+```{r, eval = all(render_document, !knitr::is_html_output())}
 cat("### **2.1.1 Coerência do produto final**")
 cat('\n\n')
 ```
 
-```{r 2-1-1-coerencia, eval = has.sucupira.files, echo = FALSE, warning = FALSE, message = FALSE, fig.align = 'center', results = 'asis', fig.pos='H'}
+```{r 2-1-1-coerencia, eval = all(render_document, has.sucupira.files), echo = FALSE, warning = FALSE, message = FALSE, fig.align = 'center', results = 'asis', fig.pos='H'}
 # TCC - Banca
 sheet <- "TCC - Banca"
 source("Scripts/read-xlsx-sucupira.R", local = knitr::knit_global())
@@ -4147,7 +4531,7 @@ if (!sjmisc::is_empty(id.TCC)) {
   table.bancas.long <- table.bancas.long %>%
     dplyr::mutate(dplyr::across(gtsummary::everything(), as.factor))
   
-  # reoder factor Ano
+  # reorder factor Ano
   table.bancas.long$Ano <- factor(table.bancas.long$Ano, levels = c(quadrienal.vigente, paste0(
     min(quadrienal.vigente), "-", max(quadrienal.vigente)
   )))
@@ -4176,7 +4560,7 @@ tbl_fix_order <- function(x) {
   x  
 }
 
-if (!sjmisc::is_empty(table.bancas.long)) {
+if (!sjmisc::is_empty(id.TCC)) {
   # print tables
   table.2.1.1 <- gtsummary::tbl_summary(
     dplyr::select(table.bancas.long, "Ano", "Linha de Pesquisa", "Tipo"),
@@ -4237,8 +4621,8 @@ if (!sjmisc::is_empty(table.bancas.long)) {
 }
 ```
 
-```{r 2.1.1-detalhe, eval = has.sucupira.files}
-if (!sjmisc::is_empty(table.bancas.long)) {
+```{r 2.1.1-detalhe, eval = all(!sjmisc::is_empty(id.TCC), render_document, has.sucupira.files)}
+if (!sjmisc::is_empty(lista.kw)) {
   # Create R Markdown chunks dynamically because projetos can be very large tables
   
   out <- NULL
@@ -4249,7 +4633,7 @@ if (!sjmisc::is_empty(table.bancas.long)) {
     
     # Generate R Markdown code for this chunk
     knit_expanded <- paste0(
-      "\n```{r, eval = has.sucupira.files, echo = FALSE, warning = FALSE, message = FALSE, fig.align = 'center', results = 'asis', fig.pos='H'}\n",
+      "\n```{r, eval = all(render_document, has.sucupira.files), echo = FALSE, warning = FALSE, message = FALSE, fig.align = 'center', results = 'asis', fig.pos='H'}\n",
       "cat('\\n\\n<!-- -->\\n\\n')\n",
       "# print tables\n",
       "if (knitr::is_html_output()) {\n",
@@ -4325,14 +4709,14 @@ Fonte: Evert S (2023). corpora: Statistics and Data Sets for Corpus Frequency Da
 
 <br>
 
-```{r 2-1-2, eval = knitr::is_html_output()}
+```{r 2-1-2, eval = all(render_document, knitr::is_html_output())}
 cat("### **2.1.2**")
 cat('\n\n')
 cat("#### **Qualidade do produto final** {.tabset}")
 cat('\n\n')
 ```
 
-```{r, eval = !knitr::is_html_output()}
+```{r, eval = all(render_document, !knitr::is_html_output())}
 cat("### **2.1.2 Qualidade do produto final**")
 cat('\n\n')
 ```
@@ -4348,19 +4732,19 @@ cat('\n\n')
 
 <br>
 
-```{r 2-2-1, eval = knitr::is_html_output()}
+```{r 2-2-1, eval = all(render_document, knitr::is_html_output())}
 cat("### **2.2.1**")
 cat('\n\n')
 cat("#### **Produção do corpo discente em eventos científicos** {.tabset}")
 cat('\n\n')
 ```
 
-```{r, eval = !knitr::is_html_output()}
+```{r, eval = all(render_document, !knitr::is_html_output())}
 cat("### **2.2.1 Produção do corpo discente em eventos científicos**")
 cat('\n\n')
 ```
 
-```{r 2-2-1-data, eval = has.sucupira.files, echo = FALSE, warning = FALSE, message = FALSE, fig.align = 'center', results = 'asis', fig.pos='H'}
+```{r 2-2-1-data, eval = all(render_document, has.sucupira.files), echo = FALSE, warning = FALSE, message = FALSE, fig.align = 'center', results = 'asis', fig.pos='H'}
 # Produções - Autores
 sheet <- "Produções - Autores"
 source("Scripts/read-xlsx-sucupira.R", local = knitr::knit_global())
@@ -4440,7 +4824,7 @@ sucupira.df.anais$`Subtipo de Produção`[is.na(sucupira.df.anais$`Subtipo de Pr
 sucupira.df.anais$`Categoria do Autor Principal`[is.na(sucupira.df.anais$`Categoria do Autor Principal`)] <- "Indefinido"
 ```
 
-```{r 2-2-1-bibliografica, eval = has.sucupira.files, echo = FALSE, warning = FALSE, message = FALSE, fig.align = 'center', results = 'asis', fig.pos='H'}
+```{r 2-2-1-bibliografica, eval=all(render_document, has.sucupira.files), echo=FALSE, fig.align='center', fig.pos='H', message=FALSE, warning=FALSE, results='asis'}
 # filter sucupira.df.anais by "Tipo de Produção" == "Bibliográfica"
 sucupira.df.bib <- unique(sucupira.df.anais[sucupira.df.anais$`Tipo de Produção` == "Bibliográfica", ])
 
@@ -4497,7 +4881,7 @@ table.bib.long <- table.bib.long %>%
   dplyr::mutate(dplyr::across(gtsummary::everything(), as.factor))
 
 # print tables
-if(nrow(sucupira.df.bib) > 0) {
+if(!sjmisc::is_empty(table.bib)) {
   # Print tables
   table.bib.gt <- gtsummary::tbl_summary(
     table.bib.long,
@@ -4526,7 +4910,7 @@ if(nrow(sucupira.df.bib) > 0) {
 }
 ```
 
-```{r 2-2-1-natureza, eval = has.sucupira.files, echo = FALSE, warning = FALSE, message = FALSE, fig.align = 'center', results = 'asis', fig.pos='H'}
+```{r 2-2-1-natureza, eval = all(render_document, has.sucupira.files), echo = FALSE, warning = FALSE, message = FALSE, fig.align = 'center', results = 'asis', fig.pos='H'}
 # filter `Item de Detalhamento` = "Natureza"
 sucupira.df.nat <- sucupira.df.anais %>%
   dplyr::filter(`Item de Detalhamento` == "Natureza")
@@ -4587,7 +4971,7 @@ table.nat.long <- table.nat.long %>%
   dplyr::mutate(dplyr::across(gtsummary::everything(), as.factor))
 
 # print tables
-if(nrow(sucupira.df.nat) > 0) {
+if(!sjmisc::is_empty(table.nat)) {
   # Print tables
   table.nat.gt <- gtsummary::tbl_summary(
     table.nat.long,
@@ -4616,7 +5000,7 @@ if(nrow(sucupira.df.nat) > 0) {
 }
 ```
 
-```{r 2-2-1-local, eval = has.sucupira.files, echo = FALSE, warning = FALSE, message = FALSE, fig.align = 'center', results = 'asis', fig.pos='H'}
+```{r 2-2-1-local, eval = all(render_document, has.sucupira.files), echo = FALSE, warning = FALSE, message = FALSE, fig.align = 'center', results = 'asis', fig.pos='H'}
 # filter `Item de Detalhamento` = "Natureza"
 sucupira.df.local <- sucupira.df.anais %>%
   dplyr::filter(`Item de Detalhamento` == "País")
@@ -4676,7 +5060,7 @@ colnames(table.local.long) <- c("Ano", "País")
 table.local.long <- table.local.long %>%
   dplyr::mutate(dplyr::across(gtsummary::everything(), as.factor))
 
-if(nrow(sucupira.df.local) > 0) {
+if(!sjmisc::is_empty(table.local)) {
   # Print tables
   table.local.gt <- gtsummary::tbl_summary(
     table.local.long,
@@ -4705,7 +5089,7 @@ if(nrow(sucupira.df.local) > 0) {
 }
 ```
 
-```{r 2-2-1-discentes-data, eval = has.sucupira.files, echo = FALSE, warning = FALSE, message = FALSE, fig.align = 'center', results = 'asis', fig.pos='H'}
+```{r 2-2-1-discentes-data, eval = all(render_document, has.sucupira.files), echo = FALSE, warning = FALSE, message = FALSE, fig.align = 'center', results = 'asis', fig.pos='H'}
 # Discentes
 sheet <- "Discentes"
 source("Scripts/read-xlsx-sucupira.R", local = knitr::knit_global())
@@ -4733,7 +5117,7 @@ sucupira.df.disc <- sucupira.df.disc %>%
   dplyr::filter(`Nível Discente` != "Bacharelado")
 ```
 
-```{r 2-2-1-discentes-total, eval = has.sucupira.files, echo = FALSE, warning = FALSE, message = FALSE, fig.align = 'center', results = 'asis', fig.pos='H'}
+```{r 2-2-1-discentes-total, eval = all(render_document, has.sucupira.files), echo = FALSE, warning = FALSE, message = FALSE, fig.align = 'center', results = 'asis', fig.pos='H'}
 table.disc <- data.frame(matrix(
   NA,
   nrow = length(unique(sucupira.df.disc$`Identificador do Discente`)),
@@ -4786,7 +5170,7 @@ colnames(table.disc.long) <- c("Ano", "Discentes")
 table.disc.long <- table.disc.long %>%
   dplyr::mutate(dplyr::across(gtsummary::everything(), as.factor))
 
-if(nrow(table.disc.long) > 0) {
+if(!sjmisc::is_empty(table.disc)) {
   # Print tables
   table.disc.gt <- gtsummary::tbl_summary(
     table.disc.long,
@@ -4815,7 +5199,7 @@ if(nrow(table.disc.long) > 0) {
 }
 ```
 
-```{r 2-2-1-discentes-nivel, eval = has.sucupira.files, echo = FALSE, warning = FALSE, message = FALSE, fig.align = 'center', results = 'asis', fig.pos='H'}
+```{r 2-2-1-discentes-nivel, eval = all(render_document, has.sucupira.files), echo = FALSE, warning = FALSE, message = FALSE, fig.align = 'center', results = 'asis', fig.pos='H'}
 table.nivel <- data.frame(matrix(
   NA,
   nrow = length(unique(sucupira.df.disc$`Identificador do Discente`)),
@@ -4868,7 +5252,7 @@ colnames(table.nivel.long) <- c("Ano", "Nível")
 table.nivel.long <- table.nivel.long %>%
   dplyr::mutate(dplyr::across(gtsummary::everything(), as.factor))
 
-if(nrow(table.nivel.long) > 0){
+if(!sjmisc::is_empty(table.nivel)){
   # Print tables
   table.nivel.gt <- gtsummary::tbl_summary(
     table.nivel.long,
@@ -4897,7 +5281,7 @@ if(nrow(table.nivel.long) > 0){
 }
 ```
 
-```{r 2-2-1-razao, eval = has.sucupira.files, echo = FALSE, warning = FALSE, message = FALSE, fig.align = 'center', results = 'asis', fig.pos='H'}
+```{r 2-2-1-razao, eval = all(render_document, has.sucupira.files), echo = FALSE, warning = FALSE, message = FALSE, fig.align = 'center', results = 'asis', fig.pos='H'}
 # proporção entre total de produção e total de discentes por ano 
 producao.ano <- table.bib.long %>%
   na.omit() %>%
@@ -4928,12 +5312,12 @@ quadrienal.value <- razao.ano$Razão[!razao.ano$Ano %in% quadrienal.vigente]
 # keep only Anos in quadrienal.vigente
 razao.ano <- razao.ano[razao.ano$Ano %in% quadrienal.vigente, ]
 
-# rename columns
-colnames(razao.ano) <- c("Ano", "Razão (trabalhos publicados em Anais por discente)")
-
 my_N <- function(...) {
   gtsummary::style_number(quadrienal.value, digits = 2)
 }
+
+# rename columns
+colnames(razao.ano) <- c("Ano", "Razão (trabalhos publicados em Anais por discente)")
 
 # change all column types to factors
 table.razao.long <- razao.ano %>%
@@ -4941,7 +5325,7 @@ table.razao.long <- razao.ano %>%
 table.razao.long <- razao.ano %>%
   dplyr::mutate(dplyr::across("Razão (trabalhos publicados em Anais por discente)", as.numeric))
 
-if(nrow(table.razao.long) > 0) {
+if(!sjmisc::is_empty(producao.ano) && !sjmisc::is_empty(alunos.ano)) {
   # Print tables
   table.razao.gt <- gtsummary::tbl_summary(
     table.razao.long,
@@ -4965,7 +5349,7 @@ if(nrow(table.razao.long) > 0) {
 }
 ```
 
-```{r 2-2-1-list-tables, eval = has.sucupira.files, echo = FALSE, warning = FALSE, message = FALSE, fig.align = 'center', results = 'asis', fig.pos='H'}
+```{r 2-2-1-list-tables, eval = all(render_document, has.sucupira.files), echo = FALSE, warning = FALSE, message = FALSE, fig.align = 'center', results = 'asis', fig.pos='H'}
 # producão
 # List all tables
 table.2.2.1.a <- list(
@@ -5102,14 +5486,14 @@ if(knitr::is_latex_output()) {
 
 <br>
 
-```{r 2-2-2, eval = knitr::is_html_output()}
+```{r 2-2-2, eval = all(render_document, knitr::is_html_output())}
 cat("### **2.2.2**")
 cat('\n\n')
 cat("#### **Produção bibliográfica dos discentes/egressos – Acadêmico** {.tabset}")
 cat('\n\n')
 ```
 
-```{r, eval = !knitr::is_html_output()}
+```{r, eval = all(render_document, !knitr::is_html_output())}
 cat("### **2.2.2 Produção bibliográfica dos discentes/egressos – Acadêmico**")
 cat('\n\n')
 ```
@@ -5125,19 +5509,19 @@ cat('\n\n')
 
 <br>
 
-```{r 2-3-1, eval = knitr::is_html_output()}
+```{r 2-3-1, eval = all(render_document, knitr::is_html_output())}
 cat("### **2.3.1**")
 cat('\n\n')
 cat("#### **Atuação dos Egressos** {.tabset}")
 cat('\n\n')
 ```
 
-```{r, eval = !knitr::is_html_output()}
+```{r, eval = all(render_document, !knitr::is_html_output())}
 cat("### **2.3.1 Atuação dos Egressos**")
 cat('\n\n')
 ```
 
-```{r 2-3-1-formacao-continuada, eval = has.sucupira.files, echo = FALSE, warning = FALSE, message = FALSE, fig.align = 'center', results = 'asis', fig.pos='H'}
+```{r 2-3-1-formacao-continuada, eval = all(render_document, has.sucupira.files), echo = FALSE, warning = FALSE, message = FALSE, fig.align = 'center', results = 'asis', fig.pos='H'}
 # Discentes
 sheet <- "Discentes"
 source("Scripts/read-xlsx-sucupira.R", local = knitr::knit_global())
@@ -5358,6 +5742,7 @@ tbl_fix_order <- function(x) {
 }
 
 # print tables
+if(!sjmisc::is_empty(table.continuada)){
 table.2.3.1 <-
  gtsummary::tbl_summary(
     table.continuada.part,
@@ -5375,6 +5760,9 @@ table.2.3.1 <-
     statistic = gtsummary::everything() ~ "{n}"
  ) %>%
   gtsummary::modify_footnote(gtsummary::all_stat_cols() ~ NA)
+} else {
+  table.2.3.1 <- list()
+}
 
 # Print HTML table
 if (knitr::is_html_output() && !sjmisc::is_empty(table.2.3.1)) {
@@ -5413,14 +5801,14 @@ if(knitr::is_latex_output()) {
 
 <br>
 
-```{r 2-3-2, eval = knitr::is_html_output()}
+```{r 2-3-2, eval = all(render_document, knitr::is_html_output())}
 cat("### **2.3.2**")
 cat('\n\n')
 cat("#### **Egressos de destaque na sociedade** {.tabset}")
 cat('\n\n')
 ```
 
-```{r, eval = !knitr::is_html_output()}
+```{r, eval = all(render_document, !knitr::is_html_output())}
 cat("### **2.3.2 Egressos de destaque na sociedade**")
 cat('\n\n')
 ```
@@ -5436,14 +5824,14 @@ cat('\n\n')
 
 <br>
 
-```{r 2-4-1, eval = knitr::is_html_output()}
+```{r 2-4-1, eval = all(render_document, knitr::is_html_output())}
 cat("### **2.4.1**")
 cat('\n\n')
 cat("#### **Produção bibliográfica total do Programa – Acadêmico** {.tabset}")
 cat('\n\n')
 ```
 
-```{r, eval = !knitr::is_html_output()}
+```{r, eval = all(render_document, !knitr::is_html_output())}
 cat("### **2.4.1 Produção bibliográfica total do Programa – Acadêmico**")
 cat('\n\n')
 ```
@@ -5461,19 +5849,19 @@ cat('\n\n')
 
 \blandscape
 
-```{r 2-5-1, eval = knitr::is_html_output()}
+```{r 2-5-1, eval = all(render_document, knitr::is_html_output())}
 cat("### **2.5.1**")
 cat('\n\n')
 cat("#### **Atividades de ensino nas disciplinas do PPG** {.tabset}")
 cat('\n\n')
 ```
 
-```{r, eval = !knitr::is_html_output()}
+```{r, eval = all(render_document, !knitr::is_html_output())}
 cat("### **2.5.1 Atividades de ensino nas disciplinas do PPG**")
 cat('\n\n')
 ```
 
-```{r turmas, eval = has.sucupira.files, echo = FALSE, warning = FALSE, message = FALSE, fig.align = 'center', results = 'asis', fig.pos='H'}
+```{r turmas, eval = all(render_document, has.sucupira.files), echo = FALSE, warning = FALSE, message = FALSE, fig.align = 'center', results = 'asis', fig.pos='H'}
 sheet <- "Turmas"
 source("Scripts/read-xlsx-sucupira.R", local = knitr::knit_global())
 
@@ -5528,27 +5916,29 @@ turmas.curso <- turmas %>%
   dplyr::distinct(`Período/Ano`, `Disciplinas`, `Disciplina`, .keep_all = TRUE)
 
 # generate table (total by year)
-table.part1 <-
-  gtsummary::tbl_summary(
-    turmas.curso %>% dplyr::select(
-      "Período/Ano",
-      "Disciplinas",
-      "Categoria"
-    ),
-    by = "Período/Ano",
-    type = list(
-      "Disciplinas" ~ "categorical",
-      "Categoria" ~ "categorical"
-    ),
-    statistic = list(
-      "Disciplinas" ~ "{n}",
-      "Categoria" ~ "{n}"
+if(!sjmisc::is_empty(turmas.curso)){
+  table.part1 <-
+    gtsummary::tbl_summary(
+      turmas.curso %>% dplyr::select(
+        "Período/Ano",
+        "Disciplinas",
+        "Categoria"
       ),
-    missing = "no",
-    digits = list(gtsummary::everything() ~ 0)) %>%
-  gtsummary::modify_header(label = "**Período/Ano**", gtsummary::all_stat_cols() ~ "**{level}**") %>%
-  gtsummary::modify_footnote(gtsummary::all_stat_cols() ~ NA) %>%
-  gtsummary::bold_labels()
+      by = "Período/Ano",
+      type = list(
+        "Disciplinas" ~ "categorical",
+        "Categoria" ~ "categorical"
+      ),
+      statistic = list(
+        "Disciplinas" ~ "{n}",
+        "Categoria" ~ "{n}"
+      ),
+      missing = "no",
+      digits = list(gtsummary::everything() ~ 0)) %>%
+    gtsummary::modify_header(label = "**Período/Ano**", gtsummary::all_stat_cols() ~ "**{level}**") %>%
+    gtsummary::modify_footnote(gtsummary::all_stat_cols() ~ NA) %>%
+    gtsummary::bold_labels()
+}
 
 # Print HTML table
 if (knitr::is_html_output() && !sjmisc::is_empty(table.part1)) {
@@ -5585,24 +5975,26 @@ if(knitr::is_latex_output()) {
 }
 
 # generate table (total by year)
-table.part2 <-
-  gtsummary::tbl_summary(
-    turmas.curso %>% dplyr::select(
-      "Período/Ano",
-      "Disciplina"
-    ),
-    by = "Período/Ano",
-    type = list(
-      "Disciplina" ~ "categorical"
-    ),
-    statistic = list(
-      "Disciplina" ~ "{n}"
+if(!sjmisc::is_empty(turmas.curso)){
+  table.part2 <-
+    gtsummary::tbl_summary(
+      turmas.curso %>% dplyr::select(
+        "Período/Ano",
+        "Disciplina"
       ),
-    missing = "no",
-    digits = list(gtsummary::everything() ~ 0)) %>%
-  gtsummary::modify_header(label = "**Período/Ano**", gtsummary::all_stat_cols() ~ "**{level}**") %>%
-  gtsummary::modify_footnote(gtsummary::all_stat_cols() ~ NA) %>%
-  gtsummary::bold_labels()
+      by = "Período/Ano",
+      type = list(
+        "Disciplina" ~ "categorical"
+      ),
+      statistic = list(
+        "Disciplina" ~ "{n}"
+      ),
+      missing = "no",
+      digits = list(gtsummary::everything() ~ 0)) %>%
+    gtsummary::modify_header(label = "**Período/Ano**", gtsummary::all_stat_cols() ~ "**{level}**") %>%
+    gtsummary::modify_footnote(gtsummary::all_stat_cols() ~ NA) %>%
+    gtsummary::bold_labels()
+}
 
 # Print HTML table
 if (knitr::is_html_output() && !sjmisc::is_empty(table.part2)) {
@@ -5650,24 +6042,27 @@ turmas.doc$`Docente responsável` <- factor(
   levels = sort(unique(c(levels(turmas.doc$`Docente responsável`), docentes.quadrienio)))
 )
 
-table.part3 <- 
-gtsummary::tbl_summary(
-    turmas.doc %>% dplyr::select(
-      "Período/Ano",
-      "Docente responsável"
-    ),
-    by = "Período/Ano",
-    type = list(
-      "Docente responsável" ~ "categorical"
-    ),
-    statistic = list(
-      "Docente responsável" ~ "{n}"
+# generate table
+if(!sjmisc::is_empty(turmas.doc)){
+  table.part3 <- 
+    gtsummary::tbl_summary(
+      turmas.doc %>% dplyr::select(
+        "Período/Ano",
+        "Docente responsável"
       ),
-    missing = "no",
-    digits = list(gtsummary::everything() ~ 0)) %>%
-  gtsummary::modify_header(label = "**Período/Ano**", gtsummary::all_stat_cols() ~ "**{level}**") %>%
-  gtsummary::modify_footnote(gtsummary::all_stat_cols() ~ NA) %>%
-  gtsummary::bold_labels()
+      by = "Período/Ano",
+      type = list(
+        "Docente responsável" ~ "categorical"
+      ),
+      statistic = list(
+        "Docente responsável" ~ "{n}"
+      ),
+      missing = "no",
+      digits = list(gtsummary::everything() ~ 0)) %>%
+    gtsummary::modify_header(label = "**Período/Ano**", gtsummary::all_stat_cols() ~ "**{level}**") %>%
+    gtsummary::modify_footnote(gtsummary::all_stat_cols() ~ NA) %>%
+    gtsummary::bold_labels()
+}
 
 # Print HTML table
 if (knitr::is_html_output() && !sjmisc::is_empty(table.part3)) {
@@ -5761,26 +6156,25 @@ if (knitr::is_latex_output() && !sjmisc::is_empty(turmas.posdoc)) {
 if(knitr::is_latex_output() && !sjmisc::is_empty(turmas.posdoc)) {
   cat('\\newpage')
 }
-
 ```
 
 \elandscape
 
 <br>
 
-```{r 2-5-2, eval = knitr::is_html_output()}
+```{r 2-5-2, eval = all(render_document, knitr::is_html_output())}
 cat("### **2.5.2**")
 cat('\n\n')
 cat("#### **Responsabilidade por PP/PTT** {.tabset}")
 cat('\n\n')
 ```
 
-```{r, eval = !knitr::is_html_output()}
+```{r, eval = all(render_document, !knitr::is_html_output())}
 cat("### **2.5.2 Responsabilidade por PP/PTT**")
 cat('\n\n')
 ```
 
-```{r 2-5-2-doc, eval = has.sucupira.files, echo = FALSE, warning = FALSE, message = FALSE, fig.align = 'center', results = 'asis', fig.pos='H'}
+```{r 2-5-2-doc, eval = all(render_document, has.sucupira.files), echo = FALSE, warning = FALSE, message = FALSE, fig.align = 'center', results = 'asis', fig.pos='H'}
 table.doc <-
   data.frame(matrix(
     NA,
@@ -5864,7 +6258,7 @@ table.doc.gt <-
   gtsummary::modify_column_hide(columns = paste0("stat_", as.character(length(quadrienal.vigente) + 1)))
 ```
 
-```{r 2-5-2-docentes, eval = has.sucupira.files, echo = FALSE, warning = FALSE, message = FALSE, fig.align = 'center', results = 'asis', fig.pos='H'}
+```{r 2-5-2-docentes, eval = all(render_document, has.sucupira.files), echo = FALSE, warning = FALSE, message = FALSE, fig.align = 'center', results = 'asis', fig.pos='H'}
 if(knitr::is_html_output()) {
   cat("##### **Docentes** {#docentes-linhas-pesquisa}")
   cat('\n\n')
@@ -6003,20 +6397,20 @@ if(knitr::is_latex_output()) {
 
 \blandscape
 
-```{r 2-5-3, eval = knitr::is_html_output()}
+```{r 2-5-3, eval = all(render_document, knitr::is_html_output())}
 cat("### **2.5.3**")
 cat('\n\n')
 cat("#### **Orientação no PPG** {.tabset}")
 cat('\n\n')
 ```
 
-```{r, eval = !knitr::is_html_output()}
+```{r, eval = all(render_document, !knitr::is_html_output())}
 cat("### **2.5.3 Orientação no PPG**")
 cat('\n\n')
 ```
 
-```{r 2-5-3-data, eval = has.sucupira.files, echo = FALSE, warning = FALSE, message = FALSE, fig.align = 'center', results = 'asis', fig.pos='H'}
-# Produções - Autores
+```{r 2-5-3-data, eval = all(render_document, has.sucupira.files), echo = FALSE, warning = FALSE, message = FALSE, fig.align = 'center', results = 'asis', fig.pos='H'}
+# Discentes - Orientadores
 sheet <- "Discentes - Orientadores"
 source("Scripts/read-xlsx-sucupira.R", local = knitr::knit_global())
 
@@ -6059,17 +6453,11 @@ sucupira.df.orient <- sucupira.df.orient %>%
 sucupira.df.orient$`Nome do Orientador`[is.na(sucupira.df.orient$`Nome do Orientador`)] <- "Indefinido"
 sucupira.df.orient$`Orientador Principal?`[is.na(sucupira.df.orient$`Orientador Principal?`)] <- "Indefinido"
 
-# check for missing docentes.quadrienio
-sucupira.df.orient$`Nome do Orientador` <- factor(
-  sucupira.df.orient$`Nome do Orientador`,
-  levels = sort(unique(c("Docentes", levels(factor(sucupira.df.orient$`Nome do Orientador`)), docentes.quadrienio)))
-)
-
 sucupira.df.orient$`Nome do Orientador` <- tools::toTitleCase(tolower(sucupira.df.orient$`Nome do Orientador`))
 sucupira.df.orient$`Nível Discente` <- tools::toTitleCase(tolower(sucupira.df.orient$`Nível Discente`))
 ```
 
-```{r 2-5-3-orient-matr, eval = has.sucupira.files, echo = FALSE, warning = FALSE, message = FALSE, fig.align = 'center', results = 'asis', fig.pos='H'}
+```{r 2-5-3-orient-matr, eval = all(render_document, has.sucupira.files), echo = FALSE, warning = FALSE, message = FALSE, fig.align = 'center', results = 'asis', fig.pos='H'}
 # filter sucupira.df.orient by "Orientador Principal?" == "Sim"
 sucupira.df.matr <- sucupira.df.orient[sucupira.df.orient$`Orientador Principal?` == "Sim", ]
 
@@ -6079,6 +6467,12 @@ sucupira.df.matr <- sucupira.df.matr[sucupira.df.matr$`Situação Discente` == "
 # change all column types to factors
 sucupira.df.matr <- sucupira.df.matr %>%
   dplyr::mutate(dplyr::across(gtsummary::everything(), as.factor))
+
+# check for missing docentes.quadrienio
+sucupira.df.matr$`Nome do Orientador` <- factor(
+  sucupira.df.matr$`Nome do Orientador`,
+  levels = sort(unique(c(levels(factor(sucupira.df.matr$`Nome do Orientador`)), docentes.quadrienio)))
+)
 
 # check nlevels of Nível Discente
 if (nlevels(sucupira.df.matr$`Nível Discente`) != 0) {
@@ -6158,19 +6552,19 @@ if(knitr::is_latex_output()) {
 
 <br>
 
-```{r 2-5-4, eval = knitr::is_html_output()}
+```{r 2-5-4, eval = all(render_document, knitr::is_html_output())}
 cat("### **2.5.4**")
 cat('\n\n')
 cat("#### **Titulação no PPG** {.tabset}")
 cat('\n\n')
 ```
 
-```{r, eval = !knitr::is_html_output()}
+```{r, eval = all(render_document, !knitr::is_html_output())}
 cat("### **2.5.4 Titulação no PPG**")
 cat('\n\n')
 ```
 
-```{r 2-5-4-orient-tit, eval = has.sucupira.files, echo = FALSE, warning = FALSE, message = FALSE, fig.align = 'center', results = 'asis', fig.pos='H'}
+```{r 2-5-4-orient-tit, eval = all(render_document, has.sucupira.files), echo = FALSE, warning = FALSE, message = FALSE, fig.align = 'center', results = 'asis', fig.pos='H'}
 # filter sucupira.df.orient by "Orientador Principal?" == "Sim"
 sucupira.df.tit <- sucupira.df.orient[sucupira.df.orient$`Orientador Principal?` == "Sim", ]
 
@@ -6180,6 +6574,12 @@ sucupira.df.tit <- sucupira.df.tit[sucupira.df.tit$`Situação Discente` == "TIT
 # change all column types to factors
 sucupira.df.tit <- sucupira.df.tit %>%
   dplyr::mutate(dplyr::across(gtsummary::everything(), as.factor))
+
+# check for missing docentes.quadrienio
+sucupira.df.tit$`Nome do Orientador` <- factor(
+  sucupira.df.tit$`Nome do Orientador`,
+  levels = sort(unique(c(levels(factor(sucupira.df.tit$`Nome do Orientador`)), docentes.quadrienio)))
+)
 
 # check nlevels of Nível Discente
 if (nlevels(sucupira.df.tit$`Nível Discente`) != 0) {
@@ -6236,7 +6636,7 @@ if (nlevels(sucupira.df.tit$`Nível Discente`) != 0) {
       format = ifelse(knitr::is_html_output(), "html", "latex"),
       booktabs = TRUE,
       linesep = "",
-      caption = ifelse(knitr::is_html_output(), "", "Relação de orientadores com alunos matriculados por ano"),
+      caption = ifelse(knitr::is_html_output(), "", "Relação de orientadores com alunos titulados por ano"),
     ) %>%
       kableExtra::kable_styling(
         bootstrap_options = c("basic", "hover", "condensed", "responsive"),
@@ -6261,42 +6661,436 @@ if(knitr::is_latex_output()) {
 
 <br>
 
-```{r 2-5-5, eval = knitr::is_html_output()}
+\blandscape
+
+```{r 2-5-5, eval = all(render_document, knitr::is_html_output())}
 cat("### **2.5.5**")
 cat('\n\n')
 cat("#### **Orientação na graduação** {.tabset}")
 cat('\n\n')
 ```
 
-```{r, eval = !knitr::is_html_output()}
+```{r, eval = all(render_document, !knitr::is_html_output())}
 cat("### **2.5.5 Orientação na graduação**")
 cat('\n\n')
 ```
 
+```{r 2-5-5-grad, eval = all(render_document, has.sucupira.files), echo = FALSE, warning = FALSE, message = FALSE, fig.align = 'center', results = 'asis', fig.pos='H'}
+# Docentes
+sheet <- "Docentes"
+source("Scripts/read-xlsx-sucupira.R", local = knitr::knit_global())
 
-<!-- EM CONSTRUÇÃO -->
+# Get years
+source("Scripts/years-sucupira.R", local = knitr::knit_global())
+names(sucupira.list) <- as.character(anos)
 
+# Get data for the current period
+sucupira <- sucupira.list[as.character(quadrienal.vigente)] %>%
+  plyr::compact()
 
-```{=latex}
-\newpage
-\FloatBarrier
+# keep docentes permanente only
+sucupira <- lapply(sucupira, function(x) {
+  x <- x[x$Categoria == "PERMANENTE", ]
+  return(x)
+})
+
+for (i in 1:length(sucupira)) {
+  sucupira[[i]] <- cbind(
+    "Anos" = rep(quadrienal.vigente[i], times = dim(sucupira[[i]])[1]),
+    sucupira[[i]]
+  )
+}
+
+sucupira.df.grad <- data.frame(do.call(dplyr::bind_rows, sucupira))
+names(sucupira.df.grad) <- names(sucupira[[as.character(max(as.numeric(quadrienal.vigente)))]])
+
+# inserção na graduação
+sucupira.df.grad <- sucupira.df.grad %>% 
+dplyr::select(
+  "Anos",
+  "Nome Docente",
+  "Orientações de Monografia",
+  "Orientações de Iniciação Científica",
+  "Orientações de Tutoria",
+  "Número de Disciplinas da Graduação",
+  "Carga Horária na Graduação (Anual)"
+)
+
+sucupira.df.grad$`Nome Docente` <- tools::toTitleCase(tolower(sucupira.df.grad$`Nome Docente`))
 ```
+
+```{r 2-5-5-orient-grad, eval = all(render_document, has.sucupira.files), echo = FALSE, warning = FALSE, message = FALSE, fig.align = 'center', results = 'asis', fig.pos='H'}
+# Create table
+table.mono <- sucupira.df.grad %>% 
+  dplyr::select(
+    "Anos",
+    "Nome Docente",
+    "Orientações de Monografia"
+  )
+
+# drop rows with 0 values
+table.mono <- table.mono %>%
+  dplyr::filter(`Orientações de Monografia` > 0)
+
+# check for missing docentes.quadrienio
+table.mono$"Nome Docente" <- factor(
+  table.mono$"Nome Docente",
+  levels = sort(unique(c("Docentes", levels(table.mono$"Nome Docente"), docentes.quadrienio)))
+)
+
+# check for missing anos in table.mono
+table.mono$"Anos" <- factor(
+  table.mono$"Anos",
+  levels = sort(quadrienal.vigente)
+)
+
+# change all column types to factors
+table.mono <- table.mono %>%
+  dplyr::mutate(dplyr::across(gtsummary::everything(), as.factor))
+
+# print tables tbl_cross with thee levels
+if(!sjmisc::is_empty(table.mono)){
+  table.mono.gt <- table.mono |>
+    gtsummary::tbl_cross(
+      row = 'Nome Docente',
+      col = "Anos",
+      statistic = "{n}",
+      missing = "no",
+      digits = 0,
+      margin = "column"
+    ) %>%
+    gtsummary::modify_header(label = "**Orientações na Graduação**", stat_0 = "Total") %>%
+    gtsummary::modify_footnote(gtsummary::all_stat_cols() ~ NA) %>%
+    gtsummary::bold_labels() 
+} else {
+  table.mono.gt <- list()
+}
+
+# Create table
+table.ic <- sucupira.df.grad %>% 
+  dplyr::select(
+    "Anos",
+    "Nome Docente",
+    "Orientações de Iniciação Científica"
+  )
+
+# drop rows with 0 values
+table.ic <- table.ic %>%
+  dplyr::filter(`Orientações de Iniciação Científica` > 0)
+
+# check for missing docentes.quadrienio
+table.ic$"Nome Docente" <- factor(
+  table.ic$"Nome Docente",
+  levels = sort(unique(c("Docentes", levels(table.ic$"Nome Docente"), docentes.quadrienio)))
+)
+
+# check for missing anos in table.ic
+table.ic$"Anos" <- factor(
+  table.ic$"Anos",
+  levels = sort(quadrienal.vigente)
+)
+
+# change all column types to factors
+table.ic <- table.ic %>%
+  dplyr::mutate(dplyr::across(gtsummary::everything(), as.factor))
+
+# print tables tbl_cross with thee levels
+if(!sjmisc::is_empty(table.ic)){
+  table.ic.gt <- table.ic |>
+    gtsummary::tbl_cross(
+      row = 'Nome Docente',
+      col = "Anos",
+      statistic = "{n}",
+      missing = "no",
+      digits = 0,
+      margin = "column"
+    ) %>%
+    gtsummary::modify_header(label = "**Orientações na Graduação**", stat_0 = "Total") %>%
+    gtsummary::modify_footnote(gtsummary::all_stat_cols() ~ NA) %>%
+    gtsummary::bold_labels()
+} else {
+  table.ic.gt <- list()
+}
+
+# Create table
+table.tut <- sucupira.df.grad %>% 
+  dplyr::select(
+    "Anos",
+    "Nome Docente",
+    "Orientações de Tutoria"
+  )
+
+# drop rows with 0 values
+table.tut <- table.tut %>%
+  dplyr::filter(`Orientações de Tutoria` > 0)
+
+# check for missing docentes.quadrienio
+table.tut$"Nome Docente" <- factor(
+  table.tut$"Nome Docente",
+  levels = sort(unique(c("Docentes", levels(table.tut$"Nome Docente"), docentes.quadrienio)))
+)
+
+# check for missing anos in table.tut
+table.tut$"Anos" <- factor(
+  table.tut$"Anos",
+  levels = sort(quadrienal.vigente)
+)
+
+# change all column types to factors
+table.tut <- table.tut %>%
+  dplyr::mutate(dplyr::across(gtsummary::everything(), as.factor))
+
+# print tables tbl_cross with thee levels
+if(!sjmisc::is_empty(table.tut)){
+  table.tut.gt <- table.tut |>
+    gtsummary::tbl_cross(
+      row = 'Nome Docente',
+      col = "Anos",
+      statistic = "{n}",
+      missing = "no",
+      digits = 0,
+      margin = "column"
+    ) %>%
+    gtsummary::modify_header(label = "**Orientações na Graduação**", stat_0 = "Total") %>%
+    gtsummary::modify_footnote(gtsummary::all_stat_cols() ~ NA) %>%
+    gtsummary::bold_labels()
+} else {
+  table.tut.gt <- list()
+}
+
+# List all tables
+table.2.5.5a <- list(
+  table.mono.gt,
+  table.ic.gt,
+  table.tut.gt
+)
+
+# Drop empty elements from the list
+table.2.5.5a <- table.2.5.5a[lapply(table.2.5.5a, length) > 0]
+
+spann <- c("**Orientações de Monografia**", "**Orientações de Iniciação Científica**", "**Orientações de Tutoria**")
+spann <- spann[which(lapply(table.2.5.5a, length) > 0)]
+
+if(any(lapply(table.2.5.5a, length) > 0)){
+  table.2.5.5a <- gtsummary::tbl_merge(
+    tbls = table.2.5.5a,
+    tab_spanner = spann
+  )
+} else {
+  table.2.5.5a <- NULL
+}
+
+# Print HTML table
+if (knitr::is_html_output() && !sjmisc::is_empty(table.2.5.5a)) {
+  print(table.2.5.5a)
+}
+
+# Print LaTeX table
+if (knitr::is_latex_output() && !sjmisc::is_empty(table.2.5.5a)) {
+  cat('\\FloatBarrier')
+  # Convert gtsummary object to kableExtra object
+  kable_table <- gtsummary::as_kable_extra(
+    x = table.2.5.5a,
+    escape = FALSE,
+    format = ifelse(knitr::is_html_output(), "html", "latex"),
+    booktabs = TRUE,
+    linesep = "",
+    caption = ifelse(knitr::is_html_output(), "", "Inserção na Graduação - Orientação"),
+  ) %>%
+    kableExtra::kable_styling(
+      bootstrap_options = c("basic", "hover", "condensed", "responsive"),
+      latex_options = c("basic", "repeat_header", "HOLD_position"),
+      latex_table_env = "tabularx",
+      full_width = TRUE,
+      position = "center"
+    ) %>% kableExtra::column_spec(column = 1:(1 + (length(unique(sucupira.df.grad$Anos))+1)*length(spann)), width = paste0(c(0.40, rep(0.60/((length(unique(sucupira.df.grad$Anos))+1)*length(spann)*length(spann)), times = (length(unique(sucupira.df.grad$Anos))+1)*length(spann)))*(29-3-3), "cm"))
+  print(kable_table)
+}
+
+source("Scripts/fonte-sucupira.R", local = knitr::knit_global())
+
+# Add LaTeX commands for new page and float barrier
+if(knitr::is_latex_output()) {
+  cat('\\newpage')
+}
+```
+
+```{r 2-5-5-aulas-grad, eval = all(render_document, has.sucupira.files), echo = FALSE, warning = FALSE, message = FALSE, fig.align = 'center', results = 'asis', fig.pos='H'}
+# Create table
+table.aulas <- sucupira.df.grad %>% 
+  dplyr::select(
+    "Anos",
+    "Nome Docente",
+    "Número de Disciplinas da Graduação"
+  )
+
+# drop rows with 0 values
+table.aulas <- table.aulas %>%
+  dplyr::filter(`Número de Disciplinas da Graduação` > 0)
+
+# check for missing docentes.quadrienio
+table.aulas$"Nome Docente" <- factor(
+  table.aulas$"Nome Docente",
+  levels = sort(unique(c("Docentes", levels(table.aulas$"Nome Docente"), docentes.quadrienio)))
+)
+
+# check for missing anos in table.aulas
+table.aulas$"Anos" <- factor(
+  table.aulas$"Anos",
+  levels = sort(quadrienal.vigente)
+)
+
+# change all column types to factors
+table.aulas <- table.aulas %>%
+  dplyr::mutate(dplyr::across(gtsummary::everything(), as.factor))
+
+# print tables tbl_cross with thee levels
+if(!sjmisc::is_empty(table.aulas)){
+  table.aulas.gt <- table.aulas |>
+    gtsummary::tbl_cross(
+      row = 'Nome Docente',
+      col = "Anos",
+      statistic = "{n}",
+      missing = "no",
+      digits = 0,
+      margin = "column"
+    ) %>%
+    gtsummary::modify_header(label = "**Disciplinas na Graduação**", stat_0 = "Total") %>%
+    gtsummary::modify_footnote(gtsummary::all_stat_cols() ~ NA) %>%
+    gtsummary::bold_labels() 
+} else {
+  table.aulas.gt <- list()
+}
+
+# Create table
+table.ch <- sucupira.df.grad %>% 
+  dplyr::select(
+    "Anos",
+    "Nome Docente",
+    "Carga Horária na Graduação (Anual)"
+  )
+
+# drop rows with 0 values
+table.ch <- table.ch %>%
+  dplyr::filter(`Carga Horária na Graduação (Anual)` > 0)
+
+# check for missing docentes.quadrienio
+table.ch$"Nome Docente" <- factor(
+  table.ch$"Nome Docente",
+  levels = sort(unique(c("Docentes", levels(table.ch$"Nome Docente"), docentes.quadrienio)))
+)
+
+# check for missing anos in table.ch
+table.ch$"Anos" <- factor(
+  table.ch$"Anos",
+  levels = sort(quadrienal.vigente)
+)
+
+# change all column types to factors
+table.ch <- table.ch %>%
+  dplyr::mutate(dplyr::across(gtsummary::everything(), as.factor))
+
+# print tables tbl_cross with thee levels
+if(!sjmisc::is_empty(table.ch)){
+  table.ch.gt <- table.ch |>
+    gtsummary::tbl_cross(
+      row = 'Nome Docente',
+      col = "Anos",
+      statistic = "{n}",
+      missing = "no",
+      digits = 0,
+      margin = "column"
+    ) %>%
+    gtsummary::modify_header(label = "**Disciplinas na Graduação - Carga Horária (Anual)**", stat_0 = "Total") %>%
+    gtsummary::modify_footnote(gtsummary::all_stat_cols() ~ NA) %>%
+    gtsummary::bold_labels() 
+} else {
+  table.ch.gt <- list()
+}
+
+# List all tables
+table.2.5.5b <- list(
+  table.aulas.gt,
+  table.ch.gt
+)
+
+# Drop empty elements from the list
+table.2.5.5b <- table.2.5.5b[lapply(table.2.5.5b, length) > 0]
+
+spann <- c("**Disciplinas na Graduação**", "**Carga Horária (Anual)**")
+spann <- spann[which(lapply(table.2.5.5b, length) > 0)]
+
+if(any(lapply(table.2.5.5b, length) > 0)){
+  table.2.5.5b <- gtsummary::tbl_merge(
+    tbls = table.2.5.5b,
+    tab_spanner = spann
+  )
+} else {
+  table.2.5.5b <- NULL
+}
+
+# Print HTML table
+if (knitr::is_html_output() && !sjmisc::is_empty(table.2.5.5b)) {
+  print(table.2.5.5b)
+}
+
+# Print LaTeX table
+if (knitr::is_latex_output() && !sjmisc::is_empty(table.2.5.5b)) {
+  cat('\\FloatBarrier')
+  # Convert gtsummary object to kableExtra object
+  kable_table <- gtsummary::as_kable_extra(
+    x = table.2.5.5b,
+    escape = FALSE,
+    format = ifelse(knitr::is_html_output(), "html", "latex"),
+    booktabs = TRUE,
+    linesep = "",
+    caption = ifelse(knitr::is_html_output(), "", "Inserção na Graduação - Disciplinas"),
+  ) %>%
+    kableExtra::kable_styling(
+      bootstrap_options = c("basic", "hover", "condensed", "responsive"),
+      latex_options = c("basic", "repeat_header", "HOLD_position"),
+      latex_table_env = "tabularx",
+      full_width = TRUE,
+      position = "center"
+    ) %>% kableExtra::column_spec(column = 1:(1 + (length(unique(sucupira.df.grad$Anos))+1)*length(spann)), width = paste0(c(0.40, rep(0.60/((length(unique(sucupira.df.grad$Anos))+1)*length(spann)*length(spann)), times = (length(unique(sucupira.df.grad$Anos))+1)*length(spann)))*(29-3-3), "cm"))
+  print(kable_table)
+}
+
+source("Scripts/fonte-sucupira.R", local = knitr::knit_global())
+
+# Add LaTeX commands for new page and float barrier
+if(knitr::is_latex_output()) {
+  cat('\\newpage')
+}
+```
+
+\elandscape
 
 <br>
 
-## **3. Impacto na sociedade** {#impacto .tabset}
+```{=latex}
+\newpage
+\vspace*{\fill}
+\section{\textbf{3. Impacto}}
+\vspace*{\fill}
+\newpage
+```
 
-<!--script for generating HORIZONTAL LINE-->
-<hr style="height:2px;border-width:0;color:black;background-color:black">
+```{r 3-Impacto, eval = all(render_document, knitr::is_html_output())}
+cat("## **3. Impacto** {#impacto .tabset}")
+cat('\n\n')
+cat('<hr style="height:2px;border-width:0;color:black;background-color:black">')
+cat('\n\n')
+```
 
-```{r 3-1-1, eval = knitr::is_html_output()}
+```{r 3-1-1, eval = all(render_document, knitr::is_html_output())}
 cat("### **3.1.1**")
 cat('\n\n')
 cat("#### **Produção bibliográfica indicada dos DP – Acadêmico** {.tabset}")
 cat('\n\n')
 ```
 
-```{r, eval = !knitr::is_html_output()}
+```{r, eval = all(render_document, !knitr::is_html_output())}
 cat("### **3.1.1 Produção bibliográfica indicada dos DP – Acadêmico**")
 cat('\n\n')
 ```
@@ -6312,19 +7106,19 @@ cat('\n\n')
 
 <br>
 
-```{r 3-1-2, eval = knitr::is_html_output()}
+```{r 3-1-2, eval = all(render_document, knitr::is_html_output())}
 cat("### **3.1.2**")
 cat('\n\n')
 cat("#### **Produção do Programa** {.tabset}")
 cat('\n\n')
 ```
 
-```{r, eval = !knitr::is_html_output()}
+```{r, eval = all(render_document, !knitr::is_html_output())}
 cat("### **3.1.2 Produção do Programa**")
 cat('\n\n')
 ```
 
-```{r 3-1-2-data, eval = has.sucupira.files, echo = FALSE, warning = FALSE, message = FALSE, fig.align = 'center', results = 'asis', fig.pos='H'}
+```{r 3-1-2-data, eval = all(render_document, has.sucupira.files), echo = FALSE, warning = FALSE, message = FALSE, fig.align = 'center', results = 'asis', fig.pos='H'}
 # Produções - Detalhes
 sheet <- "Produções - Detalhes"
 source("Scripts/read-xlsx-sucupira.R", local = knitr::knit_global())
@@ -6373,7 +7167,7 @@ sucupira.df$`Subtipo de Produção`[is.na(sucupira.df$`Subtipo de Produção`)] 
 sucupira.df$`Categoria do Autor Principal`[is.na(sucupira.df$`Categoria do Autor Principal`)] <- "Indefinido"
 ```
 
-```{r 3-1-2-total, eval = has.sucupira.files, echo = FALSE, warning = FALSE, message = FALSE, fig.align = 'center', results = 'asis', fig.pos='H'}
+```{r 3-1-2-total, eval = all(render_document, has.sucupira.files), echo = FALSE, warning = FALSE, message = FALSE, fig.align = 'center', results = 'asis', fig.pos='H'}
 table.total <- data.frame(matrix(
   NA,
   nrow = length(unique(sucupira.df$`ID da Produção`)),
@@ -6427,36 +7221,40 @@ table.total.long <- table.total.long %>%
   dplyr::mutate(dplyr::across(gtsummary::everything(), as.factor))
 
 # Print tables
-table.tot.gt <- gtsummary::tbl_summary(
-  table.total.long,
-  by = "Ano",
-  statistic = list(gtsummary::all_categorical() ~ "{n}"),
-  missing = "no",
-  digits = gtsummary::everything() ~ 0,
-  sort = gtsummary::all_categorical() ~ "frequency"
+if(!sjmisc::is_empty(table.total)){
+  table.tot.gt <- gtsummary::tbl_summary(
+    table.total.long,
+    by = "Ano",
+    statistic = list(gtsummary::all_categorical() ~ "{n}"),
+    missing = "no",
+    digits = gtsummary::everything() ~ 0,
+    sort = gtsummary::all_categorical() ~ "frequency"
   ) %>%
-  gtsummary::add_overall(
-    last = TRUE,
-    col_label = "**Subtotal**",
-    statistic = gtsummary::everything() ~ "{n}"
-  ) %>%
-  gtsummary::modify_header(label = "**Ano**", gtsummary::all_stat_cols() ~ "**{level}**") %>%
-  gtsummary::modify_footnote(gtsummary::all_stat_cols() ~ NA) %>%
-  gtsummary::bold_labels() %>%
-  gtsummary::add_stat(fns = gtsummary::all_categorical() ~ my_N) %>%
-  gtsummary::modify_header(list(
-    add_stat_1 ~ "**Quadriênio**",
-    gtsummary::all_stat_cols() ~ "**{level}**"
-  )) %>%
-  gtsummary::remove_row_type(
-    variables = c('Produção total'),
-    type = "level",
-    level_value = ("Produção")
-  ) %>%
-  gtsummary::modify_column_hide(columns = paste0("stat_", as.character(length(quadrienal.vigente) + 1)))
+    gtsummary::add_overall(
+      last = TRUE,
+      col_label = "**Subtotal**",
+      statistic = gtsummary::everything() ~ "{n}"
+    ) %>%
+    gtsummary::modify_header(label = "**Ano**", gtsummary::all_stat_cols() ~ "**{level}**") %>%
+    gtsummary::modify_footnote(gtsummary::all_stat_cols() ~ NA) %>%
+    gtsummary::bold_labels() %>%
+    gtsummary::add_stat(fns = gtsummary::all_categorical() ~ my_N) %>%
+    gtsummary::modify_header(list(
+      add_stat_1 ~ "**Quadriênio**",
+      gtsummary::all_stat_cols() ~ "**{level}**"
+    )) %>%
+    gtsummary::remove_row_type(
+      variables = c('Produção total'),
+      type = "level",
+      level_value = ("Produção")
+    ) %>%
+    gtsummary::modify_column_hide(columns = paste0("stat_", as.character(length(quadrienal.vigente) + 1)))
+} else {
+  table.tot.gt <- list()
+}
 ```
 
-```{r 3-1-2-producao, eval = has.sucupira.files, echo = FALSE, warning = FALSE, message = FALSE, fig.align = 'center', results = 'asis', fig.pos='H'}
+```{r 3-1-2-producao, eval = all(render_document, has.sucupira.files), echo = FALSE, warning = FALSE, message = FALSE, fig.align = 'center', results = 'asis', fig.pos='H'}
 table.prd <- data.frame(matrix(
   NA,
   nrow = length(unique(sucupira.df$`ID da Produção`)),
@@ -6510,36 +7308,40 @@ table.prd.long <- table.prd.long %>%
   dplyr::mutate(dplyr::across(gtsummary::everything(), as.factor))
 
 # Print tables
-table.prd.gt <- gtsummary::tbl_summary(
-  table.prd.long,
-  by = "Ano",
-  statistic = list(gtsummary::all_categorical() ~ "{n}"),
-  missing = "no",
-  digits = gtsummary::everything() ~ 0,
-  sort = gtsummary::all_categorical() ~ "frequency"
+if(!sjmisc::is_empty(table.prd)){
+  table.prd.gt <- gtsummary::tbl_summary(
+    table.prd.long,
+    by = "Ano",
+    statistic = list(gtsummary::all_categorical() ~ "{n}"),
+    missing = "no",
+    digits = gtsummary::everything() ~ 0,
+    sort = gtsummary::all_categorical() ~ "frequency"
   ) %>%
-  gtsummary::add_overall(
-    last = TRUE,
-    col_label = "**Subtotal**",
-    statistic = gtsummary::everything() ~ "{n}"
-  ) %>%
-  gtsummary::modify_header(label = "**Ano**", gtsummary::all_stat_cols() ~ "**{level}**") %>%
-  gtsummary::modify_footnote(gtsummary::all_stat_cols() ~ NA) %>%
-  gtsummary::bold_labels() %>%
-  gtsummary::add_stat(fns = gtsummary::all_categorical() ~ my_N) %>%
-  gtsummary::modify_header(list(
-    add_stat_1 ~ "**Quadriênio**",
-    gtsummary::all_stat_cols() ~ "**{level}**"
-  )) %>%
-  gtsummary::remove_row_type(
-    variables = c('Tipo de Produção'),
-    type = "level",
-    level_value = ("Produção")
-  ) %>%
-  gtsummary::modify_column_hide(columns = paste0("stat_", as.character(length(quadrienal.vigente) + 1)))
+    gtsummary::add_overall(
+      last = TRUE,
+      col_label = "**Subtotal**",
+      statistic = gtsummary::everything() ~ "{n}"
+    ) %>%
+    gtsummary::modify_header(label = "**Ano**", gtsummary::all_stat_cols() ~ "**{level}**") %>%
+    gtsummary::modify_footnote(gtsummary::all_stat_cols() ~ NA) %>%
+    gtsummary::bold_labels() %>%
+    gtsummary::add_stat(fns = gtsummary::all_categorical() ~ my_N) %>%
+    gtsummary::modify_header(list(
+      add_stat_1 ~ "**Quadriênio**",
+      gtsummary::all_stat_cols() ~ "**{level}**"
+    )) %>%
+    gtsummary::remove_row_type(
+      variables = c('Tipo de Produção'),
+      type = "level",
+      level_value = ("Produção")
+    ) %>%
+    gtsummary::modify_column_hide(columns = paste0("stat_", as.character(length(quadrienal.vigente) + 1)))
+} else {
+  table.prd.gt <- list()
+}
 ```
 
-```{r 3-1-2-bibliografica, eval = has.sucupira.files, echo = FALSE, warning = FALSE, message = FALSE, fig.align = 'center', results = 'asis', fig.pos='H'}
+```{r 3-1-2-bibliografica, eval = all(render_document, has.sucupira.files), echo = FALSE, warning = FALSE, message = FALSE, fig.align = 'center', results = 'asis', fig.pos='H'}
 # filter sucupira.df by "Tipo de Produção" == "Bibliográfica"
 sucupira.df.bib <- unique(sucupira.df[sucupira.df$`Tipo de Produção` == "Bibliográfica", ])
 
@@ -6596,36 +7398,40 @@ table.bib.long <- table.bib.long %>%
   dplyr::mutate(dplyr::across(gtsummary::everything(), as.factor))
 
 # Print tables
-table.bib.gt <- gtsummary::tbl_summary(
-  table.bib.long,
-  by = "Ano",
-  statistic = list(gtsummary::all_categorical() ~ "{n}"),
-  missing = "no",
-  digits = gtsummary::everything() ~ 0,
-  sort = gtsummary::all_categorical() ~ "frequency"
+if(!sjmisc::is_empty(table.bib)){
+  table.bib.gt <- gtsummary::tbl_summary(
+    table.bib.long,
+    by = "Ano",
+    statistic = list(gtsummary::all_categorical() ~ "{n}"),
+    missing = "no",
+    digits = gtsummary::everything() ~ 0,
+    sort = gtsummary::all_categorical() ~ "frequency"
   ) %>%
-  gtsummary::add_overall(
-    last = TRUE,
-    col_label = "**Subtotal**",
-    statistic = gtsummary::everything() ~ "{n}"
-  ) %>%
-  gtsummary::modify_header(label = "**Ano**", gtsummary::all_stat_cols() ~ "**{level}**") %>%
-  gtsummary::modify_footnote(gtsummary::all_stat_cols() ~ NA) %>%
-  gtsummary::bold_labels() %>%
-  gtsummary::add_stat(fns = gtsummary::all_categorical() ~ my_N) %>%
-  gtsummary::modify_header(list(
-    add_stat_1 ~ "**Quadriênio**",
-    gtsummary::all_stat_cols() ~ "**{level}**"
-  )) %>%
-  gtsummary::remove_row_type(
-    variables = c('Produção bibliográfica'),
-    type = "level",
-    level_value = ("Produção")
-  ) %>%
-  gtsummary::modify_column_hide(columns = paste0("stat_", as.character(length(quadrienal.vigente) + 1)))
+    gtsummary::add_overall(
+      last = TRUE,
+      col_label = "**Subtotal**",
+      statistic = gtsummary::everything() ~ "{n}"
+    ) %>%
+    gtsummary::modify_header(label = "**Ano**", gtsummary::all_stat_cols() ~ "**{level}**") %>%
+    gtsummary::modify_footnote(gtsummary::all_stat_cols() ~ NA) %>%
+    gtsummary::bold_labels() %>%
+    gtsummary::add_stat(fns = gtsummary::all_categorical() ~ my_N) %>%
+    gtsummary::modify_header(list(
+      add_stat_1 ~ "**Quadriênio**",
+      gtsummary::all_stat_cols() ~ "**{level}**"
+    )) %>%
+    gtsummary::remove_row_type(
+      variables = c('Produção bibliográfica'),
+      type = "level",
+      level_value = ("Produção")
+    ) %>%
+    gtsummary::modify_column_hide(columns = paste0("stat_", as.character(length(quadrienal.vigente) + 1)))
+} else {
+  table.bib.gt <- list()
+}
 ```
 
-```{r 3-1-2-tecnica, eval = has.sucupira.files, echo = FALSE, warning = FALSE, message = FALSE, fig.align = 'center', results = 'asis', fig.pos='H'}
+```{r 3-1-2-tecnica, eval = all(render_document, has.sucupira.files), echo = FALSE, warning = FALSE, message = FALSE, fig.align = 'center', results = 'asis', fig.pos='H'}
 # filter sucupira.df by "Tipo de Produção" == "Técnica"
 sucupira.df.tec <- unique(sucupira.df[sucupira.df$`Tipo de Produção` == "Técnica", ])
 
@@ -6682,36 +7488,40 @@ table.tec.long <- table.tec.long %>%
   dplyr::mutate(dplyr::across(gtsummary::everything(), as.factor))
 
 # Print tables
-table.tec.gt <- gtsummary::tbl_summary(
-  table.tec.long,
-  by = "Ano",
-  statistic = list(gtsummary::all_categorical() ~ "{n}"),
-  missing = "no",
-  digits = gtsummary::everything() ~ 0,
-  sort = gtsummary::all_categorical() ~ "frequency"
+if(!sjmisc::is_empty(table.tec)){
+  table.tec.gt <- gtsummary::tbl_summary(
+    table.tec.long,
+    by = "Ano",
+    statistic = list(gtsummary::all_categorical() ~ "{n}"),
+    missing = "no",
+    digits = gtsummary::everything() ~ 0,
+    sort = gtsummary::all_categorical() ~ "frequency"
   ) %>%
-  gtsummary::add_overall(
-    last = TRUE,
-    col_label = "**Subtotal**",
-    statistic = gtsummary::everything() ~ "{n}"
-  ) %>%
-  gtsummary::modify_header(label = "**Ano**", gtsummary::all_stat_cols() ~ "**{level}**") %>%
-  gtsummary::modify_footnote(gtsummary::all_stat_cols() ~ NA) %>%
-  gtsummary::bold_labels() %>%
-  gtsummary::add_stat(fns = gtsummary::all_categorical() ~ my_N) %>%
-  gtsummary::modify_header(list(
-    add_stat_1 ~ "**Quadriênio**",
-    gtsummary::all_stat_cols() ~ "**{level}**"
-  )) %>%
-  gtsummary::remove_row_type(
-    variables = c('Produção técnica'),
-    type = "level",
-    level_value = ("Produção")
-  ) %>%
-  gtsummary::modify_column_hide(columns = paste0("stat_", as.character(length(quadrienal.vigente) + 1)))
+    gtsummary::add_overall(
+      last = TRUE,
+      col_label = "**Subtotal**",
+      statistic = gtsummary::everything() ~ "{n}"
+    ) %>%
+    gtsummary::modify_header(label = "**Ano**", gtsummary::all_stat_cols() ~ "**{level}**") %>%
+    gtsummary::modify_footnote(gtsummary::all_stat_cols() ~ NA) %>%
+    gtsummary::bold_labels() %>%
+    gtsummary::add_stat(fns = gtsummary::all_categorical() ~ my_N) %>%
+    gtsummary::modify_header(list(
+      add_stat_1 ~ "**Quadriênio**",
+      gtsummary::all_stat_cols() ~ "**{level}**"
+    )) %>%
+    gtsummary::remove_row_type(
+      variables = c('Produção técnica'),
+      type = "level",
+      level_value = ("Produção")
+    ) %>%
+    gtsummary::modify_column_hide(columns = paste0("stat_", as.character(length(quadrienal.vigente) + 1)))
+} else {
+  table.tec.gt <- list()
+}
 ```
 
-```{r 3-1-2-tcc, eval = has.sucupira.files, echo = FALSE, warning = FALSE, message = FALSE, fig.align = 'center', results = 'asis', fig.pos='H'}
+```{r 3-1-2-tcc, eval = all(render_document, has.sucupira.files), echo = FALSE, warning = FALSE, message = FALSE, fig.align = 'center', results = 'asis', fig.pos='H'}
 table.tcc <- data.frame(matrix(
   NA,
   nrow = length(unique(sucupira.df$`ID da Produção`)),
@@ -6773,36 +7583,40 @@ table.tcc.long <- table.tcc.long %>%
   dplyr::mutate(dplyr::across(gtsummary::everything(), as.factor))
 
 # Print tables
-table.tcc.gt <- gtsummary::tbl_summary(
-  table.tcc.long,
-  by = "Ano",
-  statistic = list(gtsummary::all_categorical() ~ "{n}"),
-  missing = "no",
-  digits = gtsummary::everything() ~ 0,
-  sort = gtsummary::all_categorical() ~ "frequency"
+if(!sjmisc::is_empty(table.tcc)){
+  table.tcc.gt <- gtsummary::tbl_summary(
+    table.tcc.long,
+    by = "Ano",
+    statistic = list(gtsummary::all_categorical() ~ "{n}"),
+    missing = "no",
+    digits = gtsummary::everything() ~ 0,
+    sort = gtsummary::all_categorical() ~ "frequency"
   ) %>%
-  gtsummary::add_overall(
-    last = TRUE,
-    col_label = "**Subtotal**",
-    statistic = gtsummary::everything() ~ "{n}"
-  ) %>%
-  gtsummary::modify_header(label = "**Ano**", gtsummary::all_stat_cols() ~ "**{level}**") %>%
-  gtsummary::modify_footnote(gtsummary::all_stat_cols() ~ NA) %>%
-  gtsummary::bold_labels() %>%
-  gtsummary::add_stat(fns = gtsummary::all_categorical() ~ my_N) %>%
-  gtsummary::modify_header(list(
-    add_stat_1 ~ "**Quadriênio**",
-    gtsummary::all_stat_cols() ~ "**{level}**"
-  )) %>%
-  gtsummary::remove_row_type(
-    variables = c('Produção vinculada a TCC concluído'),
-    type = "level",
-    level_value = ("Produção")
-  ) %>%
-  gtsummary::modify_column_hide(columns = paste0("stat_", as.character(length(quadrienal.vigente) + 1)))
+    gtsummary::add_overall(
+      last = TRUE,
+      col_label = "**Subtotal**",
+      statistic = gtsummary::everything() ~ "{n}"
+    ) %>%
+    gtsummary::modify_header(label = "**Ano**", gtsummary::all_stat_cols() ~ "**{level}**") %>%
+    gtsummary::modify_footnote(gtsummary::all_stat_cols() ~ NA) %>%
+    gtsummary::bold_labels() %>%
+    gtsummary::add_stat(fns = gtsummary::all_categorical() ~ my_N) %>%
+    gtsummary::modify_header(list(
+      add_stat_1 ~ "**Quadriênio**",
+      gtsummary::all_stat_cols() ~ "**{level}**"
+    )) %>%
+    gtsummary::remove_row_type(
+      variables = c('Produção vinculada a TCC concluído'),
+      type = "level",
+      level_value = ("Produção")
+    ) %>%
+    gtsummary::modify_column_hide(columns = paste0("stat_", as.character(length(quadrienal.vigente) + 1)))
+} else {
+  table.tcc.gt <- list()
+}
 ```
 
-```{r 3-1-2-ac, eval = has.sucupira.files, echo = FALSE, warning = FALSE, message = FALSE, fig.align = 'center', results = 'asis', fig.pos='H'}
+```{r 3-1-2-ac, eval = all(render_document, has.sucupira.files), echo = FALSE, warning = FALSE, message = FALSE, fig.align = 'center', results = 'asis', fig.pos='H'}
 table.ac <- data.frame(matrix(
   NA,
   nrow = length(unique(sucupira.df$`ID da Produção`)),
@@ -6856,36 +7670,40 @@ table.ac.long <- table.ac.long %>%
   dplyr::mutate(dplyr::across(gtsummary::everything(), as.factor))
 
 # Print tables
-table.ac.gt <- gtsummary::tbl_summary(
-  table.ac.long,
-  by = "Ano",
-  statistic = list(gtsummary::all_categorical() ~ "{n}"),
-  missing = "no",
-  digits = gtsummary::everything() ~ 0,
-  sort = gtsummary::all_categorical() ~ "frequency"
+if(!sjmisc::is_empty(table.ac)){
+  table.ac.gt <- gtsummary::tbl_summary(
+    table.ac.long,
+    by = "Ano",
+    statistic = list(gtsummary::all_categorical() ~ "{n}"),
+    missing = "no",
+    digits = gtsummary::everything() ~ 0,
+    sort = gtsummary::all_categorical() ~ "frequency"
   ) %>%
-  gtsummary::add_overall(
-    last = TRUE,
-    col_label = "**Subtotal**",
-    statistic = gtsummary::everything() ~ "{n}"
-  ) %>%
-  gtsummary::modify_header(label = "**Ano**", gtsummary::all_stat_cols() ~ "**{level}**") %>%
-  gtsummary::modify_footnote(gtsummary::all_stat_cols() ~ NA) %>%
-  gtsummary::bold_labels() %>%
-  gtsummary::add_stat(fns = gtsummary::all_categorical() ~ my_N) %>%
-  gtsummary::modify_header(list(
-    add_stat_1 ~ "**Quadriênio**",
-    gtsummary::all_stat_cols() ~ "**{level}**"
-  )) %>%
-  gtsummary::remove_row_type(
-    variables = c('Produção vinculada a Área de Concentração'),
-    type = "level",
-    level_value = ("Produção")
-  ) %>%
-  gtsummary::modify_column_hide(columns = paste0("stat_", as.character(length(quadrienal.vigente) + 1)))
+    gtsummary::add_overall(
+      last = TRUE,
+      col_label = "**Subtotal**",
+      statistic = gtsummary::everything() ~ "{n}"
+    ) %>%
+    gtsummary::modify_header(label = "**Ano**", gtsummary::all_stat_cols() ~ "**{level}**") %>%
+    gtsummary::modify_footnote(gtsummary::all_stat_cols() ~ NA) %>%
+    gtsummary::bold_labels() %>%
+    gtsummary::add_stat(fns = gtsummary::all_categorical() ~ my_N) %>%
+    gtsummary::modify_header(list(
+      add_stat_1 ~ "**Quadriênio**",
+      gtsummary::all_stat_cols() ~ "**{level}**"
+    )) %>%
+    gtsummary::remove_row_type(
+      variables = c('Produção vinculada a Área de Concentração'),
+      type = "level",
+      level_value = ("Produção")
+    ) %>%
+    gtsummary::modify_column_hide(columns = paste0("stat_", as.character(length(quadrienal.vigente) + 1)))
+} else {
+  table.ac.gt <- list()
+}
 ```
 
-```{r 3-1-2-lp, eval = has.sucupira.files, echo = FALSE, warning = FALSE, message = FALSE, fig.align = 'center', results = 'asis', fig.pos='H'}
+```{r 3-1-2-lp, eval = all(render_document, has.sucupira.files), echo = FALSE, warning = FALSE, message = FALSE, fig.align = 'center', results = 'asis', fig.pos='H'}
 table.lp <- data.frame(matrix(
   NA,
   nrow = length(unique(sucupira.df$`ID da Produção`)),
@@ -6939,36 +7757,40 @@ table.lp.long <- table.lp.long %>%
   dplyr::mutate(dplyr::across(gtsummary::everything(), as.factor))
 
 # Print tables
-table.lp.gt <- gtsummary::tbl_summary(
-  table.lp.long,
-  by = "Ano",
-  statistic = list(gtsummary::all_categorical() ~ "{n}"),
-  missing = "no",
-  digits = gtsummary::everything() ~ 0,
-  sort = gtsummary::all_categorical() ~ "frequency"
+if(!sjmisc::is_empty(table.lp)){
+  table.lp.gt <- gtsummary::tbl_summary(
+    table.lp.long,
+    by = "Ano",
+    statistic = list(gtsummary::all_categorical() ~ "{n}"),
+    missing = "no",
+    digits = gtsummary::everything() ~ 0,
+    sort = gtsummary::all_categorical() ~ "frequency"
   ) %>%
-  gtsummary::add_overall(
-    last = TRUE,
-    col_label = "**Subtotal**",
-    statistic = gtsummary::everything() ~ "{n}"
-  ) %>%
-  gtsummary::modify_header(label = "**Ano**", gtsummary::all_stat_cols() ~ "**{level}**") %>%
-  gtsummary::modify_footnote(gtsummary::all_stat_cols() ~ NA) %>%
-  gtsummary::bold_labels() %>%
-  gtsummary::add_stat(fns = gtsummary::all_categorical() ~ my_N) %>%
-  gtsummary::modify_header(list(
-    add_stat_1 ~ "**Quadriênio**",
-    gtsummary::all_stat_cols() ~ "**{level}**"
-  )) %>%
-  gtsummary::remove_row_type(
-    variables = c('Produção vinculada a Linha de Pesquisa'),
-    type = "level",
-    level_value = ("Produção")
-  ) %>%
-  gtsummary::modify_column_hide(columns = paste0("stat_", as.character(length(quadrienal.vigente) + 1)))
+    gtsummary::add_overall(
+      last = TRUE,
+      col_label = "**Subtotal**",
+      statistic = gtsummary::everything() ~ "{n}"
+    ) %>%
+    gtsummary::modify_header(label = "**Ano**", gtsummary::all_stat_cols() ~ "**{level}**") %>%
+    gtsummary::modify_footnote(gtsummary::all_stat_cols() ~ NA) %>%
+    gtsummary::bold_labels() %>%
+    gtsummary::add_stat(fns = gtsummary::all_categorical() ~ my_N) %>%
+    gtsummary::modify_header(list(
+      add_stat_1 ~ "**Quadriênio**",
+      gtsummary::all_stat_cols() ~ "**{level}**"
+    )) %>%
+    gtsummary::remove_row_type(
+      variables = c('Produção vinculada a Linha de Pesquisa'),
+      type = "level",
+      level_value = ("Produção")
+    ) %>%
+    gtsummary::modify_column_hide(columns = paste0("stat_", as.character(length(quadrienal.vigente) + 1)))
+} else {
+  table.lp.gt <- list()
+}
 ```
 
-```{r 3-1-2-autor-principal, eval = has.sucupira.files, echo = FALSE, warning = FALSE, message = FALSE, fig.align = 'center', results = 'asis', fig.pos='H'}
+```{r 3-1-2-autor-principal, eval = all(render_document, has.sucupira.files), echo = FALSE, warning = FALSE, message = FALSE, fig.align = 'center', results = 'asis', fig.pos='H'}
 table.aut <- data.frame(matrix(
   NA,
   nrow = length(unique(sucupira.df$`ID da Produção`)),
@@ -7022,36 +7844,40 @@ table.aut.long <- table.aut.long %>%
   dplyr::mutate(dplyr::across(gtsummary::everything(), as.factor))
 
 # Print tables
-table.aut.gt <- gtsummary::tbl_summary(
-  table.aut.long,
-  by = "Ano",
-  statistic = list(gtsummary::all_categorical() ~ "{n}"),
-  missing = "no",
-  digits = gtsummary::everything() ~ 0,
-  sort = gtsummary::all_categorical() ~ "frequency"
+if(!sjmisc::is_empty(table.aut)){
+  table.aut.gt <- gtsummary::tbl_summary(
+    table.aut.long,
+    by = "Ano",
+    statistic = list(gtsummary::all_categorical() ~ "{n}"),
+    missing = "no",
+    digits = gtsummary::everything() ~ 0,
+    sort = gtsummary::all_categorical() ~ "frequency"
   ) %>%
-  gtsummary::add_overall(
-    last = TRUE,
-    col_label = "**Subtotal**",
-    statistic = gtsummary::everything() ~ "{n}"
-  ) %>%
-  gtsummary::modify_header(label = "**Ano**", gtsummary::all_stat_cols() ~ "**{level}**") %>%
-  gtsummary::modify_footnote(gtsummary::all_stat_cols() ~ NA) %>%
-  gtsummary::bold_labels() %>%
-  gtsummary::add_stat(fns = gtsummary::all_categorical() ~ my_N) %>%
-  gtsummary::modify_header(list(
-    add_stat_1 ~ "**Quadriênio**",
-    gtsummary::all_stat_cols() ~ "**{level}**"
-  )) %>%
-  gtsummary::remove_row_type(
-    variables = c('Categoria do Autor Principal'),
-    type = "level",
-    level_value = ("Produção")
-  ) %>%
-  gtsummary::modify_column_hide(columns = paste0("stat_", as.character(length(quadrienal.vigente) + 1)))
+    gtsummary::add_overall(
+      last = TRUE,
+      col_label = "**Subtotal**",
+      statistic = gtsummary::everything() ~ "{n}"
+    ) %>%
+    gtsummary::modify_header(label = "**Ano**", gtsummary::all_stat_cols() ~ "**{level}**") %>%
+    gtsummary::modify_footnote(gtsummary::all_stat_cols() ~ NA) %>%
+    gtsummary::bold_labels() %>%
+    gtsummary::add_stat(fns = gtsummary::all_categorical() ~ my_N) %>%
+    gtsummary::modify_header(list(
+      add_stat_1 ~ "**Quadriênio**",
+      gtsummary::all_stat_cols() ~ "**{level}**"
+    )) %>%
+    gtsummary::remove_row_type(
+      variables = c('Categoria do Autor Principal'),
+      type = "level",
+      level_value = ("Produção")
+    ) %>%
+    gtsummary::modify_column_hide(columns = paste0("stat_", as.character(length(quadrienal.vigente) + 1)))
+} else {
+  table.aut.gt <- list()
+}
 ```
 
-```{r 3-1-2-list-tables, eval = has.sucupira.files, echo = FALSE, warning = FALSE, message = FALSE, fig.align = 'center', results = 'asis', fig.pos='H'}
+```{r 3-1-2-list-tables, eval = all(render_document, has.sucupira.files), echo = FALSE, warning = FALSE, message = FALSE, fig.align = 'center', results = 'asis', fig.pos='H'}
 # List all tables
 table.3.1.2 <- list(
   table.tot.gt,
@@ -7109,19 +7935,19 @@ if(knitr::is_latex_output()) {
 
 <br>
 
-```{r 3-2-1, eval = knitr::is_html_output()}
+```{r 3-2-1, eval = all(render_document, knitr::is_html_output())}
 cat("### **3.2.1**")
 cat('\n\n')
 cat("#### **Avaliação quantitativa dos impactos do PPG** {.tabset}")
 cat('\n\n')
 ```
 
-```{r, eval = !knitr::is_html_output()}
+```{r, eval = all(render_document, !knitr::is_html_output())}
 cat("### **3.2.1 Avaliação quantitativa dos impactos do PPG**")
 cat('\n\n')
 ```
 
-```{r 3-2-1-data, eval = any(has.metricas.doi.ppg, has.metricas.doi.sucupira), echo = FALSE, warning = FALSE, message = FALSE, fig.align = 'center', results = 'asis', fig.pos='H'}
+```{r 3-2-1-data, eval = all(render_document, any(has.metricas.doi.ppg, has.metricas.doi.sucupira)), echo = FALSE, warning = FALSE, message = FALSE, fig.align = 'center', results = 'asis', fig.pos='H'}
 metricas_all_ID <- metricas_all[!duplicated(metricas_all$"ID da Produção"),]
 
 metricas_all_ID$Qualis[is.na(metricas_all_ID$Qualis)] <- "Não classificado"
@@ -7195,84 +8021,87 @@ síntese.ano <- síntese.ano %>%
     )
 
 # generate table (total by year)
-table.3.2.1 <-
-  gtsummary::tbl_summary(
-    síntese.ano,
-    by = "Ano",
-    type = list(
-      "CiteScore" ~ "continuous",
-      "Qualis" ~ "categorical",
-      "SJR" ~ "continuous",
-      "Citações" ~ "continuous",
-      "Altmetric" ~ "continuous",
-      "Facebook" ~ "continuous",
-      "Blogs" ~ "continuous",
-      "Google+" ~ "continuous",
-      "Notícias" ~ "continuous",
-      "Reddit" ~ "continuous",
-      "Stack Exchange" ~ "continuous",
-      "X" ~ "continuous",
-      "Wikipedia" ~ "continuous",
-      "Policies" ~ "continuous",
-      "Patentes" ~ "continuous",
-      "YouTube/Vimeo" ~ "continuous",
-      "Posts" ~ "continuous",
-      "Mendeley" ~ "continuous",
-      "Acesso aberto" ~ "categorical"
+if(!sjmisc::is_empty(síntese.ano)){
+  table.3.2.1 <-
+    gtsummary::tbl_summary(
+      síntese.ano,
+      by = "Ano",
+      type = list(
+        "CiteScore" ~ "continuous",
+        "Qualis" ~ "categorical",
+        "SJR" ~ "continuous",
+        "Citações" ~ "continuous",
+        "Altmetric" ~ "continuous",
+        "Facebook" ~ "continuous",
+        "Blogs" ~ "continuous",
+        "Google+" ~ "continuous",
+        "Notícias" ~ "continuous",
+        "Reddit" ~ "continuous",
+        "Stack Exchange" ~ "continuous",
+        "X" ~ "continuous",
+        "BlueSky" ~ "continuous",
+        "Wikipedia" ~ "continuous",
+        "Policies" ~ "continuous",
+        "Patentes" ~ "continuous",
+        "YouTube/Vimeo" ~ "continuous",
+        "Posts" ~ "continuous",
+        "Mendeley" ~ "continuous",
+        "Acesso aberto" ~ "categorical"
       ),
-    statistic = list(
-      gtsummary::all_continuous() ~ "{median} ({min}-{max})",
-      gtsummary::all_categorical() ~ "{n}"
+      statistic = list(
+        gtsummary::all_continuous() ~ "{median} ({min}-{max})",
+        gtsummary::all_categorical() ~ "{n}"
       ),
-    missing = "no",
-    digits = list(
-      "Qualis" ~ 0,
-      "CiteScore" ~ 2,
-      "SJR" ~ 2,
-      "Citações" ~ 0,
-      "Altmetric" ~ 0,
-      "Facebook" ~ 0,
-      "Blogs" ~ 0,
-      "Google+" ~ 0,
-      "Notícias" ~ 0,
-      "Reddit" ~ 0,
-      "Stack Exchange" ~ 0,
-      "X" ~ 0,
-      "Wikipedia" ~ 0,
-      "Policies" ~ 0,
-      "Patentes" ~ 0,
-      "YouTube/Vimeo" ~ 0,
-      "Posts" ~ 0,
-      "Mendeley" ~ 0,
-      "Acesso aberto" ~ 0
+      missing = "no",
+      digits = list(
+        "Qualis" ~ 0,
+        "CiteScore" ~ 2,
+        "SJR" ~ 2,
+        "Citações" ~ 0,
+        "Altmetric" ~ 0,
+        "Facebook" ~ 0,
+        "Blogs" ~ 0,
+        "Google+" ~ 0,
+        "Notícias" ~ 0,
+        "Reddit" ~ 0,
+        "Stack Exchange" ~ 0,
+        "X" ~ 0,
+        "BlueSky" ~ 0,
+        "Wikipedia" ~ 0,
+        "Policies" ~ 0,
+        "Patentes" ~ 0,
+        "YouTube/Vimeo" ~ 0,
+        "Posts" ~ 0,
+        "Mendeley" ~ 0,
+        "Acesso aberto" ~ 0
       ),
     ) %>%
-  gtsummary::add_overall(
-    last = TRUE,
-    col_label = "**Subtotal**",
-    statistic = list(
-      gtsummary::all_continuous() ~ "{median} ({min}-{max})",
-      gtsummary::all_categorical() ~ "{n}"
-    )
-  ) %>%
-  gtsummary::modify_header(
-    update = stat_0 ~ "**Total**",
-    gtsummary::all_stat_cols() ~ "**{level}**"
-  ) %>%
-  gtsummary::modify_header(
-    label = "**Ano**",
-    gtsummary::all_stat_cols() ~ "**{level}**") %>%
-  gtsummary::modify_footnote(gtsummary::everything() ~ NA) %>%
-  gtsummary::bold_labels()
-
+    gtsummary::add_overall(
+      last = TRUE,
+      col_label = "**Subtotal**",
+      statistic = list(
+        gtsummary::all_continuous() ~ "{median} ({min}-{max})",
+        gtsummary::all_categorical() ~ "{n}"
+      )
+    ) %>%
+    gtsummary::modify_header(
+      update = stat_0 ~ "**Total**",
+      gtsummary::all_stat_cols() ~ "**{level}**"
+    ) %>%
+    gtsummary::modify_header(
+      label = "**Ano**",
+      gtsummary::all_stat_cols() ~ "**{level}**") %>%
+    gtsummary::modify_footnote(gtsummary::everything() ~ NA) %>%
+    gtsummary::bold_labels()
+}
 
 # Print HTML table
-if (knitr::is_html_output() && !sjmisc::is_empty(table.3.2.1)) {
+if (knitr::is_html_output() && !sjmisc::is_empty(síntese.ano)) {
   print(table.3.2.1)
 }
 
 # Print LaTeX table
-if (knitr::is_latex_output() && !sjmisc::is_empty(table.3.2.1)) {
+if (knitr::is_latex_output() && !sjmisc::is_empty(síntese.ano)) {
   cat('\\FloatBarrier')
   # Convert gtsummary object to kableExtra object
   kable_table <- gtsummary::as_kable_extra(
@@ -7307,14 +8136,14 @@ if(knitr::is_latex_output()) {
 
 <br>
 
-```{r 3-2-2, eval = knitr::is_html_output()}
+```{r 3-2-2, eval = all(render_document, knitr::is_html_output())}
 cat("### **3.2.2**")
 cat('\n\n')
 cat("#### **Avaliação qualitativa dos impactos do PPG** {.tabset}")
 cat('\n\n')
 ```
 
-```{r, eval = !knitr::is_html_output()}
+```{r, eval = all(render_document, !knitr::is_html_output())}
 cat("### **3.2.2 Avaliação qualitativa dos impactos do PPG**")
 cat('\n\n')
 ```
@@ -7330,14 +8159,14 @@ cat('\n\n')
 
 <br>
 
-```{r 3-3-1, eval = knitr::is_html_output()}
+```{r 3-3-1, eval = all(render_document, knitr::is_html_output())}
 cat("### **3.3.1**")
 cat('\n\n')
 cat("#### **Visibilidade** {.tabset}")
 cat('\n\n')
 ```
 
-```{r, eval = !knitr::is_html_output()}
+```{r, eval = all(render_document, !knitr::is_html_output())}
 cat("### **3.3.1 Visibilidade**")
 cat('\n\n')
 ```
@@ -7353,14 +8182,14 @@ cat('\n\n')
 
 <br>
 
-```{r 3-3-2, eval = knitr::is_html_output()}
+```{r 3-3-2, eval = all(render_document, knitr::is_html_output())}
 cat("### **3.3.2**")
 cat('\n\n')
 cat("#### **Internacionalização e Inserção** {.tabset}")
 cat('\n\n')
 ```
 
-```{r, eval = !knitr::is_html_output()}
+```{r, eval = all(render_document, !knitr::is_html_output())}
 cat("### **3.3.2 Internacionalização e Inserção**")
 cat('\n\n')
 ```
