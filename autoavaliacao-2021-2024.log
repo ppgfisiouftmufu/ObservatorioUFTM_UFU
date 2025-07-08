@@ -1,11 +1,11 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.6.11)  23 JUN 2025 19:19
+This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.6.29)  8 JUL 2025 12:38
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **autoavaliacao-2021-2024.tex
 (./autoavaliacao-2021-2024.tex
 LaTeX2e <2025-06-01> patch level 1
-L3 programming layer <2025-05-26>
+L3 programming layer <2025-06-09>
 (/usr/local/texlive/2025/texmf-dist/tex/latex/base/book.cls
 Document Class: book 2025/01/22 v1.4n Standard LaTeX document class
 (/usr/local/texlive/2025/texmf-dist/tex/latex/base/bk10.clo
@@ -99,9 +99,9 @@ LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 Package: iftex 2024/12/12 v1.0g TeX engine tests
 ) (/usr/local/texlive/2025/texmf-dist/tex/latex/unicode-math/unicode-math.sty (
 /usr/local/texlive/2025/texmf-dist/tex/latex/l3kernel/expl3.sty
-Package: expl3 2025-05-26 L3 programming layer (loader) 
+Package: expl3 2025-06-09 L3 programming layer (loader) 
 (/usr/local/texlive/2025/texmf-dist/tex/latex/l3backend/l3backend-xetex.def
-File: l3backend-xetex.def 2025-04-14 L3 backend support: XeTeX
+File: l3backend-xetex.def 2025-06-09 L3 backend support: XeTeX
 \g__graphics_track_int=\count292
 \g__pdfannot_backend_int=\count293
 \g__pdfannot_backend_link_int=\count294
@@ -739,11 +739,11 @@ Package: colortbl 2024/10/29 v1.0k Color table columns (DPC)
 \minrowclearance=\skip68
 \rownum=\count342
 ) (/usr/local/texlive/2025/texmf-dist/tex/latex/pdflscape/pdflscape.sty
-Package: pdflscape 2022-10-27 v0.13 Display of landscape pages in PDF
+Package: pdflscape 2025-06-23 v0.14 Display of landscape pages in PDF
 
 (/usr/local/texlive/2025/texmf-dist/tex/latex/pdflscape/pdflscape-nometadata.st
 y
-Package: pdflscape-nometadata 2022-10-28 v0.13 Display of landscape pages in PD
+Package: pdflscape-nometadata 2025-06-23 v0.14 Display of landscape pages in PD
 F (HO)
 (/usr/local/texlive/2025/texmf-dist/tex/latex/graphics/lscape.sty
 Package: lscape 2020/05/28 v3.02 Landscape Pages (DPC)
@@ -1462,7 +1462,7 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 )
 \Hy@SectionHShift=\skip110
 ) (/usr/local/texlive/2025/texmf-dist/tex/latex/siunitx/siunitx.sty
-Package: siunitx 2025-05-22 v3.4.12 A comprehensive (SI) units package
+Package: siunitx 2025-07-05 v3.4.13 A comprehensive (SI) units package
 \l__siunitx_number_uncert_offset_int=\count437
 \l__siunitx_number_exponent_fixed_int=\count438
 \l__siunitx_number_min_decimal_int=\count439
@@ -1950,21 +1950,21 @@ File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 ]
 
 [2]
-Overfull \hbox (3.09442pt too wide) in paragraph at lines 277--289
+Overfull \hbox (3.09442pt too wide) in paragraph at lines 278--290
  [][] 
  []
 
 
 
 [3]
-Overfull \hbox (3.09442pt too wide) in paragraph at lines 298--312
+Overfull \hbox (3.09442pt too wide) in paragraph at lines 299--313
  [][] 
  []
 
 
 
 [4]
-Overfull \hbox (3.09442pt too wide) in paragraph at lines 321--344
+Overfull \hbox (3.09442pt too wide) in paragraph at lines 322--345
  [][] 
  []
 
@@ -1981,22 +1981,22 @@ Overfull \hbox (3.09442pt too wide) in paragraph at lines 321--344
 [8
 
 ]
-Underfull \hbox (badness 2393) in paragraph at lines 460--460
+Underfull \hbox (badness 2393) in paragraph at lines 463--463
 []\TU/lmr/bx/n/10 METODOLOGIA CIENTÍFICA E BIOESTATÍS-
  []
 
 
-Underfull \hbox (badness 2229) in paragraph at lines 460--460
+Underfull \hbox (badness 2229) in paragraph at lines 463--463
 []\TU/lmr/bx/n/10 BIOMECÂNICA DA POSTURA E DO MOVI-
  []
 
 
-Underfull \hbox (badness 2393) in paragraph at lines 460--460
+Underfull \hbox (badness 2393) in paragraph at lines 463--463
 []\TU/lmr/bx/n/10 METODOLOGIA CIENTÍFICA E BIOESTATÍS-
  []
 
 
-Underfull \hbox (badness 2229) in paragraph at lines 460--460
+Underfull \hbox (badness 2229) in paragraph at lines 463--463
 []\TU/lmr/bx/n/10 BIOMECÂNICA DA POSTURA E DO MOVI-
  []
 
@@ -2005,7 +2005,7 @@ Underfull \hbox (badness 2229) in paragraph at lines 460--460
 [9
 
 ]
-Overfull \hbox (3.09442pt too wide) in paragraph at lines 476--493
+Overfull \hbox (3.09442pt too wide) in paragraph at lines 479--496
  [][] 
  []
 
@@ -2014,14 +2014,14 @@ Overfull \hbox (3.09442pt too wide) in paragraph at lines 476--493
 [10
 
 ]
-Overfull \hbox (3.09442pt too wide) in paragraph at lines 506--528
+Overfull \hbox (3.09442pt too wide) in paragraph at lines 509--531
  [][] 
  []
 
 
 
 [11]
-Overfull \hbox (3.09442pt too wide) in paragraph at lines 542--576
+Overfull \hbox (3.09442pt too wide) in paragraph at lines 545--579
  [][] 
  []
 
@@ -2059,174 +2059,174 @@ Overfull \hbox (3.09442pt too wide) in paragraph at lines 542--576
 [21
 
 ]
-Overfull \hbox (12.4192pt too wide) in paragraph at lines 848--848
+Overfull \hbox (12.4192pt too wide) in paragraph at lines 852--852
 []\TU/lmr/bx/n/10 PositiveLRC 
  []
 
 
-Underfull \hbox (badness 2913) in paragraph at lines 848--848
+Underfull \hbox (badness 2913) in paragraph at lines 852--852
 []\TU/lmr/bx/n/10 Processos De Avaliação E
  []
 
 
-Underfull \hbox (badness 5787) in paragraph at lines 848--848
+Underfull \hbox (badness 5787) in paragraph at lines 852--852
 []\TU/lmr/bx/n/10 Processo De Avaliação E
  []
 
 
-Underfull \hbox (badness 2913) in paragraph at lines 848--848
+Underfull \hbox (badness 2913) in paragraph at lines 852--852
 []\TU/lmr/bx/n/10 Processos De Avaliação E
  []
 
 
-Underfull \hbox (badness 5787) in paragraph at lines 848--848
+Underfull \hbox (badness 5787) in paragraph at lines 852--852
 []\TU/lmr/bx/n/10 Processo De Avaliação E
  []
 
 
-Underfull \hbox (badness 2913) in paragraph at lines 848--848
+Underfull \hbox (badness 2913) in paragraph at lines 852--852
 []\TU/lmr/bx/n/10 Processos De Avaliação E
  []
 
 
-Underfull \hbox (badness 5787) in paragraph at lines 848--848
+Underfull \hbox (badness 5787) in paragraph at lines 852--852
 []\TU/lmr/bx/n/10 Processo De Avaliação E
  []
 
 
-Underfull \hbox (badness 2913) in paragraph at lines 848--848
+Underfull \hbox (badness 2913) in paragraph at lines 852--852
 []\TU/lmr/bx/n/10 Processos De Avaliação E
  []
 
 
-Underfull \hbox (badness 5787) in paragraph at lines 848--848
+Underfull \hbox (badness 5787) in paragraph at lines 852--852
 []\TU/lmr/bx/n/10 Processo De Avaliação E
  []
 
 
-Underfull \hbox (badness 2913) in paragraph at lines 848--848
+Underfull \hbox (badness 2913) in paragraph at lines 852--852
 []\TU/lmr/bx/n/10 Processos De Avaliação E
  []
 
 
-Underfull \hbox (badness 5787) in paragraph at lines 848--848
+Underfull \hbox (badness 5787) in paragraph at lines 852--852
 []\TU/lmr/bx/n/10 Processo De Avaliação E
  []
 
 
-Underfull \hbox (badness 2913) in paragraph at lines 848--848
+Underfull \hbox (badness 2913) in paragraph at lines 852--852
 []\TU/lmr/bx/n/10 Processos De Avaliação E
  []
 
 
-Underfull \hbox (badness 5787) in paragraph at lines 848--848
+Underfull \hbox (badness 5787) in paragraph at lines 852--852
 []\TU/lmr/bx/n/10 Processo De Avaliação E
  []
 
 
-Underfull \hbox (badness 2913) in paragraph at lines 848--848
+Underfull \hbox (badness 2913) in paragraph at lines 852--852
 []\TU/lmr/bx/n/10 Processos De Avaliação E
  []
 
 
-Underfull \hbox (badness 5787) in paragraph at lines 848--848
+Underfull \hbox (badness 5787) in paragraph at lines 852--852
 []\TU/lmr/bx/n/10 Processo De Avaliação E
  []
 
 
-Underfull \hbox (badness 2913) in paragraph at lines 848--848
+Underfull \hbox (badness 2913) in paragraph at lines 852--852
 []\TU/lmr/bx/n/10 Processos De Avaliação E
  []
 
 
-Underfull \hbox (badness 5787) in paragraph at lines 848--848
+Underfull \hbox (badness 5787) in paragraph at lines 852--852
 []\TU/lmr/bx/n/10 Processo De Avaliação E
  []
 
 
-Overfull \hbox (12.4192pt too wide) in paragraph at lines 848--848
+Overfull \hbox (12.4192pt too wide) in paragraph at lines 852--852
 []\TU/lmr/bx/n/10 PositiveLRC 
  []
 
 
-Underfull \hbox (badness 2913) in paragraph at lines 848--848
+Underfull \hbox (badness 2913) in paragraph at lines 852--852
 []\TU/lmr/bx/n/10 Processos De Avaliação E
  []
 
 
-Underfull \hbox (badness 5787) in paragraph at lines 848--848
+Underfull \hbox (badness 5787) in paragraph at lines 852--852
 []\TU/lmr/bx/n/10 Processo De Avaliação E
  []
 
 
-Underfull \hbox (badness 2913) in paragraph at lines 848--848
+Underfull \hbox (badness 2913) in paragraph at lines 852--852
 []\TU/lmr/bx/n/10 Processos De Avaliação E
  []
 
 
-Underfull \hbox (badness 5787) in paragraph at lines 848--848
+Underfull \hbox (badness 5787) in paragraph at lines 852--852
 []\TU/lmr/bx/n/10 Processo De Avaliação E
  []
 
 
-Underfull \hbox (badness 2913) in paragraph at lines 848--848
+Underfull \hbox (badness 2913) in paragraph at lines 852--852
 []\TU/lmr/bx/n/10 Processos De Avaliação E
  []
 
 
-Underfull \hbox (badness 5787) in paragraph at lines 848--848
+Underfull \hbox (badness 5787) in paragraph at lines 852--852
 []\TU/lmr/bx/n/10 Processo De Avaliação E
  []
 
 
-Underfull \hbox (badness 2913) in paragraph at lines 848--848
+Underfull \hbox (badness 2913) in paragraph at lines 852--852
 []\TU/lmr/bx/n/10 Processos De Avaliação E
  []
 
 
-Underfull \hbox (badness 5787) in paragraph at lines 848--848
+Underfull \hbox (badness 5787) in paragraph at lines 852--852
 []\TU/lmr/bx/n/10 Processo De Avaliação E
  []
 
 
 
 [22]
-Underfull \hbox (badness 2913) in paragraph at lines 848--848
+Underfull \hbox (badness 2913) in paragraph at lines 852--852
 []\TU/lmr/bx/n/10 Processos De Avaliação E
  []
 
 
-Underfull \hbox (badness 5787) in paragraph at lines 848--848
+Underfull \hbox (badness 5787) in paragraph at lines 852--852
 []\TU/lmr/bx/n/10 Processo De Avaliação E
  []
 
 
-Underfull \hbox (badness 2913) in paragraph at lines 848--848
+Underfull \hbox (badness 2913) in paragraph at lines 852--852
 []\TU/lmr/bx/n/10 Processos De Avaliação E
  []
 
 
-Underfull \hbox (badness 5787) in paragraph at lines 848--848
+Underfull \hbox (badness 5787) in paragraph at lines 852--852
 []\TU/lmr/bx/n/10 Processo De Avaliação E
  []
 
 
-Underfull \hbox (badness 2913) in paragraph at lines 848--848
+Underfull \hbox (badness 2913) in paragraph at lines 852--852
 []\TU/lmr/bx/n/10 Processos De Avaliação E
  []
 
 
-Underfull \hbox (badness 5787) in paragraph at lines 848--848
+Underfull \hbox (badness 5787) in paragraph at lines 852--852
 []\TU/lmr/bx/n/10 Processo De Avaliação E
  []
 
 
-Underfull \hbox (badness 2913) in paragraph at lines 848--848
+Underfull \hbox (badness 2913) in paragraph at lines 852--852
 []\TU/lmr/bx/n/10 Processos De Avaliação E
  []
 
 
-Underfull \hbox (badness 5787) in paragraph at lines 848--848
+Underfull \hbox (badness 5787) in paragraph at lines 852--852
 []\TU/lmr/bx/n/10 Processo De Avaliação E
  []
 
@@ -2241,7 +2241,7 @@ Underfull \hbox (badness 5787) in paragraph at lines 848--848
 [25]
 
 [26]
-Overfull \hbox (3.09442pt too wide) in paragraph at lines 1000--1015
+Overfull \hbox (3.09442pt too wide) in paragraph at lines 1004--1019
  [][] 
  []
 
@@ -2262,7 +2262,7 @@ Overfull \hbox (3.09442pt too wide) in paragraph at lines 1000--1015
 [32]
 
 [33]
-Overfull \hbox (3.09442pt too wide) in paragraph at lines 1203--1232
+Overfull \hbox (3.09442pt too wide) in paragraph at lines 1208--1237
  [][] 
  []
 
@@ -2271,12 +2271,12 @@ Overfull \hbox (3.09442pt too wide) in paragraph at lines 1203--1232
 [34
 
 ]
-Underfull \hbox (badness 7047) in paragraph at lines 1271--1271
+Underfull \hbox (badness 7047) in paragraph at lines 1277--1277
 []\TU/lmr/bx/n/10 Isabel Aparecida Porcatti De
  []
 
 
-Underfull \hbox (badness 7047) in paragraph at lines 1271--1271
+Underfull \hbox (badness 7047) in paragraph at lines 1277--1277
 []\TU/lmr/bx/n/10 Isabel Aparecida Porcatti De
  []
 
@@ -2292,52 +2292,52 @@ Underfull \hbox (badness 7047) in paragraph at lines 1271--1271
 ]
 
 [37]
-Overfull \hbox (5.20757pt too wide) in paragraph at lines 1401--1401
+Overfull \hbox (5.20757pt too wide) in paragraph at lines 1407--1407
 []\TU/lmr/m/n/10 2021|  
  []
 
 
-Overfull \hbox (5.20757pt too wide) in paragraph at lines 1401--1401
+Overfull \hbox (5.20757pt too wide) in paragraph at lines 1407--1407
 []\TU/lmr/m/n/10 2022|  
  []
 
 
-Overfull \hbox (5.20757pt too wide) in paragraph at lines 1401--1401
+Overfull \hbox (5.20757pt too wide) in paragraph at lines 1407--1407
 []\TU/lmr/m/n/10 2023|  
  []
 
 
-Overfull \hbox (5.20757pt too wide) in paragraph at lines 1401--1401
+Overfull \hbox (5.20757pt too wide) in paragraph at lines 1407--1407
 []\TU/lmr/m/n/10 2021|  
  []
 
 
-Overfull \hbox (5.20757pt too wide) in paragraph at lines 1401--1401
+Overfull \hbox (5.20757pt too wide) in paragraph at lines 1407--1407
 []\TU/lmr/m/n/10 2022|  
  []
 
 
-Overfull \hbox (5.20757pt too wide) in paragraph at lines 1401--1401
+Overfull \hbox (5.20757pt too wide) in paragraph at lines 1407--1407
 []\TU/lmr/m/n/10 2023|  
  []
 
 
-Overfull \hbox (5.20757pt too wide) in paragraph at lines 1401--1401
+Overfull \hbox (5.20757pt too wide) in paragraph at lines 1407--1407
 []\TU/lmr/m/n/10 2021|  
  []
 
 
-Overfull \hbox (5.20757pt too wide) in paragraph at lines 1401--1401
+Overfull \hbox (5.20757pt too wide) in paragraph at lines 1407--1407
 []\TU/lmr/m/n/10 2022|  
  []
 
 
-Overfull \hbox (5.20757pt too wide) in paragraph at lines 1401--1401
+Overfull \hbox (5.20757pt too wide) in paragraph at lines 1407--1407
 []\TU/lmr/m/n/10 2023|  
  []
 
 
-Overfull \hbox (3.10945pt too wide) in paragraph at lines 1370--1402
+Overfull \hbox (3.10945pt too wide) in paragraph at lines 1376--1408
  [][] 
  []
 
@@ -2349,7 +2349,7 @@ Overfull \hbox (3.10945pt too wide) in paragraph at lines 1370--1402
 ]
 
 [39]
-Overfull \hbox (19.17883pt too wide) in paragraph at lines 1451--1482
+Overfull \hbox (19.17883pt too wide) in paragraph at lines 1457--1488
  [][] 
  []
 
@@ -2362,7 +2362,7 @@ Overfull \hbox (19.17883pt too wide) in paragraph at lines 1451--1482
 ]
 
 [42]
-Overfull \hbox (15.0944pt too wide) in paragraph at lines 1509--1553
+Overfull \hbox (15.0944pt too wide) in paragraph at lines 1515--1559
  [][] 
  []
 
@@ -2383,17 +2383,17 @@ File: observatorio.png Graphic file (type bmp)
 
 
 [47]
-Underfull \hbox (badness 8000) in paragraph at lines 1777--1777
+Underfull \hbox (badness 8000) in paragraph at lines 1784--1784
 []\TU/lmr/m/n/10 FUNDAÇÃO UNIVERSIDADE FEDERAL DE MATO
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1777--1777
+Underfull \hbox (badness 10000) in paragraph at lines 1784--1784
 []\TU/lmr/m/n/10 Co-Autor, Examinador Ex-
  []
 
 
-Underfull \hbox (badness 8000) in paragraph at lines 1777--1777
+Underfull \hbox (badness 8000) in paragraph at lines 1784--1784
 []\TU/lmr/m/n/10 FUNDAÇÃO UNIVERSIDADE FEDERAL DE MATO
  []
 
@@ -2406,7 +2406,7 @@ Underfull \hbox (badness 8000) in paragraph at lines 1777--1777
 [49]
 
 [50]
-Underfull \hbox (badness 10000) in paragraph at lines 1777--1777
+Underfull \hbox (badness 10000) in paragraph at lines 1784--1784
 []\TU/lmr/m/n/10 Co-Autor, Examinador Ex-
  []
 
@@ -2415,75 +2415,77 @@ Underfull \hbox (badness 10000) in paragraph at lines 1777--1777
 [51]
 
 [52]
-Underfull \hbox (badness 10000) in paragraph at lines 1797--1797
-[]\TU/lmr/bx/n/10 Ano
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1797--1797
-\TU/lmr/bx/n/10 (iní-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1797--1797
-[]\TU/lmr/bx/n/10 Ano
- []
-
-
-Underfull \hbox (badness 5374) in paragraph at lines 1797--1797
-[]\TU/lmr/m/n/10 LUCIANE FERNANDA RODRI-
- []
-
-
-Underfull \hbox (badness 5374) in paragraph at lines 1797--1797
-[]\TU/lmr/m/n/10 LUCIANE FERNANDA RODRI-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1797--1797
-[]\TU/lmr/bx/n/10 Ano
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1797--1797
-\TU/lmr/bx/n/10 (iní-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1797--1797
-[]\TU/lmr/bx/n/10 Ano
- []
-
-
-Underfull \hbox (badness 5374) in paragraph at lines 1797--1797
-[]\TU/lmr/m/n/10 LUCIANE FERNANDA RODRI-
- []
-
-
-Underfull \hbox (badness 5374) in paragraph at lines 1797--1797
-[]\TU/lmr/m/n/10 LUCIANE FERNANDA RODRI-
- []
-
-
 
 [53]
+Underfull \hbox (badness 10000) in paragraph at lines 1805--1805
+[]\TU/lmr/bx/n/10 Ano
+ []
 
-[54] (./autoavaliacao-2021-2024.aux)
+
+Underfull \hbox (badness 10000) in paragraph at lines 1805--1805
+\TU/lmr/bx/n/10 (iní-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1805--1805
+[]\TU/lmr/bx/n/10 Ano
+ []
+
+
+Underfull \hbox (badness 5374) in paragraph at lines 1805--1805
+[]\TU/lmr/m/n/10 LUCIANE FERNANDA RODRI-
+ []
+
+
+Underfull \hbox (badness 5374) in paragraph at lines 1805--1805
+[]\TU/lmr/m/n/10 LUCIANE FERNANDA RODRI-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1805--1805
+[]\TU/lmr/bx/n/10 Ano
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1805--1805
+\TU/lmr/bx/n/10 (iní-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1805--1805
+[]\TU/lmr/bx/n/10 Ano
+ []
+
+
+Underfull \hbox (badness 5374) in paragraph at lines 1805--1805
+[]\TU/lmr/m/n/10 LUCIANE FERNANDA RODRI-
+ []
+
+
+Underfull \hbox (badness 5374) in paragraph at lines 1805--1805
+[]\TU/lmr/m/n/10 LUCIANE FERNANDA RODRI-
+ []
+
+
+
+[54]
+
+[55] (./autoavaliacao-2021-2024.aux)
  ***********
 LaTeX2e <2025-06-01> patch level 1
-L3 programming layer <2025-05-26>
+L3 programming layer <2025-06-09>
  ***********
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 49395 strings out of 468527
- 1039113 string characters out of 5447700
- 1712323 words of memory out of 5000000
- 77129 multiletter control sequences out of 15000+600000
+ 49394 strings out of 468529
+ 1039099 string characters out of 5447722
+ 1714490 words of memory out of 5000000
+ 77126 multiletter control sequences out of 15000+600000
  654149 words of font info for 105 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 99i,19n,114p,1212b,6863s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 99i,19n,114p,1212b,6865s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on autoavaliacao-2021-2024.pdf (57 pages).
+Output written on autoavaliacao-2021-2024.pdf (58 pages).
