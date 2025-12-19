@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.11.27)  2 DEC 2025 15:21
+This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.12.14)  19 DEC 2025 06:53
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -597,23 +597,23 @@ Package graphics Info: Driver file: xetex.def on input line 106.
 )
 \pandoc@box=\box64
 (/usr/local/texlive/2025/texmf-dist/tex/generic/babel/babel.sty
-Package: babel 2025/11/23 v25.16 The multilingual framework for LuaLaTeX, pdfLa
+Package: babel 2025/12/11 v25.17 The multilingual framework for LuaLaTeX, pdfLa
 TeX and XeLaTeX
 \babel@savecnt=\count327
 LaTeX Encoding Info:    Redeclaring text command \ij (encoding OT1) on input li
-ne 2050.
+ne 2068.
 LaTeX Encoding Info:    Redeclaring text command \IJ (encoding OT1) on input li
-ne 2052.
+ne 2070.
 LaTeX Encoding Info:    Redeclaring text command \ij (encoding T1) on input lin
-e 2054.
+e 2072.
 LaTeX Encoding Info:    Redeclaring text command \IJ (encoding T1) on input lin
-e 2055.
+e 2073.
 LaTeX Encoding Info:    Ignoring declaration for text command \ij (encoding ?) 
-on input line 2056.
+on input line 2074.
 LaTeX Encoding Info:    Ignoring declaration for text command \IJ (encoding ?) 
-on input line 2058.
+on input line 2076.
 LaTeX Encoding Info:    Ignoring declaration for text command \SS (encoding ?) 
-on input line 2083.
+on input line 2101.
 \U@D=\dimen191
 \l@unhyphenated=\language90
 (/usr/local/texlive/2025/texmf-dist/tex/generic/babel/xebabel.def)
@@ -623,7 +623,7 @@ on input line 2083.
 (/usr/local/texlive/2025/texmf-dist/tex/generic/babel/locale/pt/babel-brazilian
 .tex)
 Package babel Info: Importing font and identification data for brazilian
-(babel)             from babel-pt-BR.ini. Reported on input line 4298.
+(babel)             from babel-pt-BR.ini. Reported on input line 4320.
 (/usr/local/texlive/2025/texmf-dist/tex/generic/babel-portuges/brazilian.ldf
 Language: portuges 2021/07/09 v1.2t Portuguese support from the babel system
 Package babel Info: Hyphen rules for 'brazilian' set to \l@portuguese
@@ -1042,7 +1042,7 @@ Package: letltxmacro 2019/12/03 v1.6 Let assignment for LaTeX macros (HO)
 ) (/usr/local/texlive/2025/texmf-dist/tex/latex/pdfpages/pdfpages.sty
 Package: pdfpages 2025/07/23 v0.6g Insert pages of external PDF documents (AM)
 (/usr/local/texlive/2025/texmf-dist/tex/latex/eso-pic/eso-pic.sty
-Package: eso-pic 2023/05/03 v3.0c eso-pic (RN)
+Package: eso-pic 2025/12/10 v3.0d eso-pic (RN)
 \ESO@tempdima=\dimen338
 \ESO@tempdimb=\dimen339
 )
@@ -3415,116 +3415,257 @@ Overfull \hbox (15.09442pt too wide) in paragraph at lines 1582--1633
 
 [50] [51
 
+]
+Underfull \hbox (badness 1178) in paragraph at lines 1683--1683
+\TU/lmr/m/n/10 tional, Randomised, Open-Label, Blinded-
+ []
+
+
+Underfull \hbox (badness 1178) in paragraph at lines 1683--1683
+\TU/lmr/m/n/10 tional, Randomised, Open-Label, Blinded-
+ []
+
+[52]
+Underfull \hbox (badness 1466) in paragraph at lines 1722--1722
+[]\TU/lmr/m/n/10 Music-Based Physical Therapy In Parkin-
+ []
+
+
+Underfull \hbox (badness 1466) in paragraph at lines 1722--1722
+[]\TU/lmr/m/n/10 Music-Based Physical Therapy In Parkin-
+ []
+
+[53] [54]
+Underfull \hbox (badness 1082) in paragraph at lines 1749--1749
+[]\TU/lmr/m/n/10 Water- Versus Land-Based Treatment For
+ []
+
+
+Underfull \hbox (badness 1082) in paragraph at lines 1749--1749
+[]\TU/lmr/m/n/10 Water- Versus Land-Based Treatment For
+ []
+
+[55]
+Underfull \hbox (badness 1178) in paragraph at lines 1773--1773
+\TU/lmr/m/n/10 tional, Randomised, Open-Label, Blinded-
+ []
+
+
+Underfull \hbox (badness 1178) in paragraph at lines 1773--1773
+\TU/lmr/m/n/10 tional, Randomised, Open-Label, Blinded-
+ []
+
+[56]
+Underfull \hbox (badness 2111) in paragraph at lines 1815--1815
+\TU/lmr/m/n/10 Anterior Temporalis Muscles In Children
+ []
+
+
+Underfull \hbox (badness 1082) in paragraph at lines 1815--1815
+[]\TU/lmr/m/n/10 Water- Versus Land-Based Treatment For
+ []
+
+
+Overfull \hbox (18.03104pt too wide) in paragraph at lines 1815--1815
+[]\TU/lmr/m/n/10 10.1016/j.jstrokecerebrovasdis.2017.12.028 
+ []
+
+
+Underfull \hbox (badness 3407) in paragraph at lines 1815--1815
+[]\TU/lmr/m/n/10 Can Abdominal Hypropressive Technique
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1815--1815
+\TU/lmr/m/n/10 Assessor-Blinded Randomized Controlled
+ []
+
+
+Underfull \hbox (badness 2111) in paragraph at lines 1815--1815
+\TU/lmr/m/n/10 Anterior Temporalis Muscles In Children
+ []
+
+
+Underfull \hbox (badness 1082) in paragraph at lines 1815--1815
+[]\TU/lmr/m/n/10 Water- Versus Land-Based Treatment For
+ []
+
+[57]
+Overfull \hbox (18.03104pt too wide) in paragraph at lines 1815--1815
+[]\TU/lmr/m/n/10 10.1016/j.jstrokecerebrovasdis.2017.12.028 
+ []
+
+
+Underfull \hbox (badness 3407) in paragraph at lines 1815--1815
+[]\TU/lmr/m/n/10 Can Abdominal Hypropressive Technique
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1815--1815
+\TU/lmr/m/n/10 Assessor-Blinded Randomized Controlled
+ []
+
+[58]
+Underfull \hbox (badness 1082) in paragraph at lines 1851--1851
+[]\TU/lmr/m/n/10 Water- Versus Land-Based Treatment For
+ []
+
+
+Underfull \hbox (badness 3407) in paragraph at lines 1851--1851
+[]\TU/lmr/m/n/10 Can Abdominal Hypropressive Technique
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1851--1851
+\TU/lmr/m/n/10 Assessor-Blinded Randomized Controlled
+ []
+
+
+Underfull \hbox (badness 2111) in paragraph at lines 1851--1851
+\TU/lmr/m/n/10 Anterior Temporalis Muscles In Children
+ []
+
+
+Overfull \hbox (18.03104pt too wide) in paragraph at lines 1851--1851
+[]\TU/lmr/m/n/10 10.1016/j.jstrokecerebrovasdis.2017.12.028 
+ []
+
+
+Underfull \hbox (badness 1082) in paragraph at lines 1851--1851
+[]\TU/lmr/m/n/10 Water- Versus Land-Based Treatment For
+ []
+
+
+Underfull \hbox (badness 3407) in paragraph at lines 1851--1851
+[]\TU/lmr/m/n/10 Can Abdominal Hypropressive Technique
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1851--1851
+\TU/lmr/m/n/10 Assessor-Blinded Randomized Controlled
+ []
+
+[59]
+Underfull \hbox (badness 2111) in paragraph at lines 1851--1851
+\TU/lmr/m/n/10 Anterior Temporalis Muscles In Children
+ []
+
+
+Overfull \hbox (18.03104pt too wide) in paragraph at lines 1851--1851
+[]\TU/lmr/m/n/10 10.1016/j.jstrokecerebrovasdis.2017.12.028 
+ []
+
+[60] [61
 
 ]
 File: site.png Graphic file (type bmp)
 <site.png>
-[52]
+[62]
 File: observatorio.png Graphic file (type bmp)
 <observatorio.png>
-[53]
-Underfull \hbox (badness 8000) in paragraph at lines 1824--1824
+[63]
+Underfull \hbox (badness 8000) in paragraph at lines 2011--2011
 []\TU/lmr/m/n/10 FUNDAÇÃO UNIVERSIDADE FEDERAL DE MATO
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1824--1824
+Underfull \hbox (badness 10000) in paragraph at lines 2011--2011
 []\TU/lmr/m/n/10 Co-Autor, Examinador Ex-
  []
 
-[54
+[64
 
 ]
-Underfull \hbox (badness 8000) in paragraph at lines 1824--1824
+Underfull \hbox (badness 8000) in paragraph at lines 2011--2011
 []\TU/lmr/m/n/10 FUNDAÇÃO UNIVERSIDADE FEDERAL DE MATO
  []
 
-[55] [56]
-Underfull \hbox (badness 10000) in paragraph at lines 1824--1824
+[65] [66]
+Underfull \hbox (badness 10000) in paragraph at lines 2011--2011
 []\TU/lmr/m/n/10 Co-Autor, Examinador Ex-
  []
 
-[57] [58]
-Underfull \hbox (badness 10000) in paragraph at lines 1852--1852
+[67] [68]
+Underfull \hbox (badness 10000) in paragraph at lines 2039--2039
 []\TU/lmr/bx/n/10 Ano
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1852--1852
+Underfull \hbox (badness 10000) in paragraph at lines 2039--2039
 \TU/lmr/bx/n/10 (iní-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1852--1852
+Underfull \hbox (badness 10000) in paragraph at lines 2039--2039
 []\TU/lmr/bx/n/10 Ano
  []
 
 
-Underfull \hbox (badness 5374) in paragraph at lines 1852--1852
+Underfull \hbox (badness 5374) in paragraph at lines 2039--2039
 []\TU/lmr/m/n/10 LUCIANE FERNANDA RODRI-
  []
 
 
-Underfull \hbox (badness 5374) in paragraph at lines 1852--1852
+Underfull \hbox (badness 5374) in paragraph at lines 2039--2039
 []\TU/lmr/m/n/10 LUCIANE FERNANDA RODRI-
  []
 
 
-Underfull \hbox (badness 5374) in paragraph at lines 1852--1852
+Underfull \hbox (badness 5374) in paragraph at lines 2039--2039
 []\TU/lmr/m/n/10 LUCIANE FERNANDA RODRI-
  []
 
 
-Underfull \hbox (badness 3199) in paragraph at lines 1852--1852
+Underfull \hbox (badness 3199) in paragraph at lines 2039--2039
 []\TU/lmr/m/n/10 DANIEL FERREIRA MOREIRA
  []
 
 
-Underfull \hbox (badness 2591) in paragraph at lines 1852--1852
+Underfull \hbox (badness 2591) in paragraph at lines 2039--2039
 []\TU/lmr/m/n/10 International Journal of Environ-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1852--1852
+Underfull \hbox (badness 10000) in paragraph at lines 2039--2039
 []\TU/lmr/bx/n/10 Ano
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1852--1852
+Underfull \hbox (badness 10000) in paragraph at lines 2039--2039
 \TU/lmr/bx/n/10 (iní-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1852--1852
+Underfull \hbox (badness 10000) in paragraph at lines 2039--2039
 []\TU/lmr/bx/n/10 Ano
  []
 
 
-Underfull \hbox (badness 5374) in paragraph at lines 1852--1852
+Underfull \hbox (badness 5374) in paragraph at lines 2039--2039
 []\TU/lmr/m/n/10 LUCIANE FERNANDA RODRI-
  []
 
 
-Underfull \hbox (badness 5374) in paragraph at lines 1852--1852
+Underfull \hbox (badness 5374) in paragraph at lines 2039--2039
 []\TU/lmr/m/n/10 LUCIANE FERNANDA RODRI-
  []
 
 
-Underfull \hbox (badness 5374) in paragraph at lines 1852--1852
+Underfull \hbox (badness 5374) in paragraph at lines 2039--2039
 []\TU/lmr/m/n/10 LUCIANE FERNANDA RODRI-
  []
 
 
-Underfull \hbox (badness 3199) in paragraph at lines 1852--1852
+Underfull \hbox (badness 3199) in paragraph at lines 2039--2039
 []\TU/lmr/m/n/10 DANIEL FERREIRA MOREIRA
  []
 
 
-Underfull \hbox (badness 2591) in paragraph at lines 1852--1852
+Underfull \hbox (badness 2591) in paragraph at lines 2039--2039
 []\TU/lmr/m/n/10 International Journal of Environ-
  []
 
-[59] [60] (./autoavaliacao-2017-2020.aux)
+[69] [70] (./autoavaliacao-2017-2020.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2025-11-14>
@@ -3534,12 +3675,12 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 45685 strings out of 468179
- 919249 string characters out of 5433206
- 1627960 words of memory out of 5000000
- 73772 multiletter control sequences out of 15000+600000
+ 45738 strings out of 468179
+ 920432 string characters out of 5433206
+ 1628083 words of memory out of 5000000
+ 73825 multiletter control sequences out of 15000+600000
  631776 words of font info for 79 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  99i,19n,126p,1212b,6291s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on autoavaliacao-2017-2020.pdf (63 pages).
+Output written on autoavaliacao-2017-2020.pdf (73 pages).
