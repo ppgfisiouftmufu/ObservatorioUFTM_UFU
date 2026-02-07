@@ -32,6 +32,10 @@ params:
   render_document: FALSE
 ---
 
+```{r, include = FALSE, echo = FALSE}
+render_document <- params$render_document
+```
+
 <!--set up-->
 ```{r setup, include = FALSE, echo = FALSE, warning = FALSE, message = FALSE, fig.align = 'center', out.width = "100%", results = "hide"}
 knitr::opts_chunk$set(
@@ -47,19 +51,6 @@ knitr::opts_chunk$set(
   webshot = "webshot",
   dev = "png"
 )
-
-# get from params (header)
-quadrienal.vigente <- as.numeric(strsplit(params$quadrienal.vigente, ";")[[1]])
-
-if(has.sucupira.files){
-  # get years
-  source("Scripts/years-sucupira.R", local = knitr::knit_global())
-  
-  # ajusta para pastas Sucupira
-  quadrienal.vigente <- anos[anos %in% quadrienal.vigente]
-}
-
-render_document <- params$render_document
 ```
 
 <!--load caches-->
@@ -79,11 +70,22 @@ $('#TOC').parent().prepend('<div id=\"nav_logo\"><img src="PPG/Images/logo-progr
 
 <!--script for sharing-->
 <p align="right">
-```{r share, eval = all(render_document, knitr::is_html_output())}
+```{r share, eval = all(knitr::is_html_output())}
 home <- metadata$repository_url
 source("Scripts/social-media-sharing.R", local = knitr::knit_global())
 ```
 </p>
+
+```{r, echo = FALSE, include = FALSE, eval = all(has.sucupira.files)}
+# get from params (header)
+quadrienal.vigente <- as.numeric(strsplit(params$quadrienal.vigente, ";")[[1]])
+
+# get years
+source("Scripts/years-sucupira.R", local = knitr::knit_global())
+
+# ajusta para pastas Sucupira
+quadrienal.vigente <- anos[anos %in% quadrienal.vigente]
+```
 
 ```{r, eval = all(!render_document, knitr::is_html_output())}
 cat('<center><div class="d-grid gap-2" style="width: 100%; display: block;">
@@ -11111,11 +11113,18 @@ metricas_all_ID$Qualis[is.na(metricas_all_ID$Qualis)] <- "Não classificado"
 # get only artigos
 metricas_all_ID <- metricas_all_ID[metricas_all_ID$"Subtipo de Produção" == "ARTIGO EM PERIÓDICO",]
 
-# loop to get Qualis values from matched ISSN values
-for(i in 1:dim(metricas_all_ID)[1]) {
-  # check if ISSN exists in the list
-  if(!sjmisc::is_empty(which(metricas_all_ID$ISSN[i] == qualis$ISSN))){
-    metricas_all_ID$Qualis[i] <- as.character(unique(qualis[which(metricas_all_ID$ISSN[i] == qualis$ISSN), "Estrato"]))
+# if metricas_all_ID$Estrato is empty for this quadrienal.vigente, use latest Qualis
+if (sjmisc::is_empty(
+  metricas_all_ID$Estrato[
+    metricas_all_ID$`Ano da Produção` %in% quadrienal.vigente
+  ]
+)) {
+  # loop to get Qualis values from matched ISSN values
+  for(i in 1:dim(metricas_all_ID)[1]) {
+    # check if ISSN exists in the list
+    if(!sjmisc::is_empty(which(metricas_all_ID$ISSN[i] == qualis$ISSN))){
+      metricas_all_ID$Qualis[i] <- as.character(unique(qualis[which(metricas_all_ID$ISSN[i] == qualis$ISSN), "Estrato"]))
+    }
   }
 }
 
@@ -11303,7 +11312,7 @@ if (knitr::is_latex_output() && !sjmisc::is_empty(síntese.ano)) {
         "\\\\textbf{\\\\href{https://www.crossref.org}{CrossRef}}",
         "\\\\textbf{\\\\href{https://doaj.org}{DOAJ}}",
         "As métricas são referentes apenas às produções com \\\\textit{digital object identifier} (DOI)",
-        "A classificação dos periódicos pelo Qualis refere-se à Avaliação Quadrienal 2017-2020"
+        "A classificação dos periódicos pelo Qualis refere-se à Avaliação Quadrienal 2021-2024"
       ),
       escape = FALSE
     )
@@ -13034,7 +13043,8 @@ if(knitr::is_latex_output()) {
 files.to.read <-
   list.files(file.path(getwd(), "Impacto", "Sage Policy Profiles"),
              full.names = TRUE,
-             recursive = FALSE)
+             recursive = FALSE,
+             pattern = "csv$")
 
 # column bind all into a single dataframe
 sage.profiles.raw <- data.frame()
