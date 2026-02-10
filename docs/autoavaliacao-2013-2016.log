@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2026.1.27)  7 FEB 2026 14:25
+This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2026.2.9)  10 FEB 2026 11:29
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1584,12 +1584,6 @@ LaTeX Warning: Label `tab:2-2-1-list-tables' multiply defined.
 LaTeX Warning: Label `tab:2-2-1-list-tables' multiply defined.
 
 
-LaTeX Warning: Label `tab:2-2-2-list-tables' multiply defined.
-
-
-LaTeX Warning: Label `tab:2-2-2-list-tables' multiply defined.
-
-
 LaTeX Warning: Label `tab:turmas' multiply defined.
 
 
@@ -2512,62 +2506,62 @@ Underfull \hbox (badness 2229) in paragraph at lines 449--449
 ] [32] [33] [34
 
 ]
-Underfull \hbox (badness 5274) in paragraph at lines 1070--1070
+Underfull \hbox (badness 5274) in paragraph at lines 994--994
 []\TU/lmr/bx/n/10 Processo De Avaliação E
  []
 
 
-Underfull \hbox (badness 2591) in paragraph at lines 1070--1070
+Underfull \hbox (badness 2591) in paragraph at lines 994--994
 []\TU/lmr/bx/n/10 Processos De Avaliação E
  []
 
 
-Underfull \hbox (badness 1092) in paragraph at lines 1070--1070
+Underfull \hbox (badness 1092) in paragraph at lines 994--994
 []\TU/lmr/bx/n/10 Ana Paula Magalhaes Resende
  []
 
 
-Underfull \hbox (badness 4699) in paragraph at lines 1070--1070
+Underfull \hbox (badness 4699) in paragraph at lines 994--994
 []\TU/lmr/bx/n/10 Isabel Aparecida Porcatti De
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1070--1070
+Underfull \hbox (badness 10000) in paragraph at lines 994--994
 []\TU/lmr/bx/n/10 Luciane Aparecida Pascucci
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1070--1070
+Underfull \hbox (badness 10000) in paragraph at lines 994--994
 []\TU/lmr/bx/n/10 Luciane Fernanda Rodrigues
  []
 
 
-Underfull \hbox (badness 5274) in paragraph at lines 1070--1070
+Underfull \hbox (badness 5274) in paragraph at lines 994--994
 []\TU/lmr/bx/n/10 Processo De Avaliação E
  []
 
 
-Underfull \hbox (badness 2591) in paragraph at lines 1070--1070
+Underfull \hbox (badness 2591) in paragraph at lines 994--994
 []\TU/lmr/bx/n/10 Processos De Avaliação E
  []
 
 
-Underfull \hbox (badness 1092) in paragraph at lines 1070--1070
+Underfull \hbox (badness 1092) in paragraph at lines 994--994
 []\TU/lmr/bx/n/10 Ana Paula Magalhaes Resende
  []
 
 
-Underfull \hbox (badness 4699) in paragraph at lines 1070--1070
+Underfull \hbox (badness 4699) in paragraph at lines 994--994
 []\TU/lmr/bx/n/10 Isabel Aparecida Porcatti De
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1070--1070
+Underfull \hbox (badness 10000) in paragraph at lines 994--994
 []\TU/lmr/bx/n/10 Luciane Aparecida Pascucci
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1070--1070
+Underfull \hbox (badness 10000) in paragraph at lines 994--994
 []\TU/lmr/bx/n/10 Luciane Fernanda Rodrigues
  []
 
@@ -2603,10 +2597,10 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 46023 strings out of 468174
- 964041 string characters out of 5433150
- 1568312 words of memory out of 5000000
- 74103 multiletter control sequences out of 15000+600000
+ 46021 strings out of 468174
+ 963995 string characters out of 5433151
+ 1568045 words of memory out of 5000000
+ 74101 multiletter control sequences out of 15000+600000
  631776 words of font info for 79 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  99i,19n,126p,1212b,3105s stack positions out of 10000i,1000n,20000p,200000b,200000s
