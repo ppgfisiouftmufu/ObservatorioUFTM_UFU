@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2026.2.9)  11 FEB 2026 10:36
+This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2026.2.16)  22 FEB 2026 16:13
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -597,7 +597,7 @@ Package graphics Info: Driver file: xetex.def on input line 106.
 )
 \pandoc@box=\box64
 (/usr/local/texlive/2025/texmf-dist/tex/generic/babel/babel.sty
-Package: babel 2026/01/26 v26.2 The multilingual framework for LuaLaTeX, pdfLaT
+Package: babel 2026/02/14 v26.3 The multilingual framework for LuaLaTeX, pdfLaT
 eX and XeLaTeX
 \babel@savecnt=\count327
 LaTeX Encoding Info:    Redeclaring text command \ij (encoding OT1) on input li
@@ -1577,6 +1577,15 @@ Package: xurl 2022/01/09 v 0.10 modify URL breaks
 ) (./autoavaliacao-2017-2020.aux
 Package babel Info: 'brazilian' activates 'portuges' shorthands.
 (babel)             Reported on input line 8.
+
+LaTeX Warning: Label `tab:2-1-2-list-tables' multiply defined.
+
+
+LaTeX Warning: Label `tab:2-1-2-list-tables' multiply defined.
+
+
+LaTeX Warning: Label `tab:2-1-2-list-tables' multiply defined.
+
 
 LaTeX Warning: Label `tab:2-2-1-list-tables' multiply defined.
 
@@ -3075,274 +3084,354 @@ Underfull \hbox (badness 2913) in paragraph at lines 873--873
 []\TU/lmr/bx/n/10 Processos De Avaliação E
  []
 
-[29] [30
+[29]
+Overfull \hbox (1.66045pt too wide) in paragraph at lines 902--902
+[]\TU/lmr/bx/n/10 2017|  
+ []
+
+
+Overfull \hbox (1.66045pt too wide) in paragraph at lines 902--902
+[]\TU/lmr/bx/n/10 2018|  
+ []
+
+
+Overfull \hbox (1.66045pt too wide) in paragraph at lines 902--902
+[]\TU/lmr/bx/n/10 2019|  
+ []
+
+
+Overfull \hbox (1.66045pt too wide) in paragraph at lines 902--902
+[]\TU/lmr/bx/n/10 2020|  
+ []
+
+
+Overfull \hbox (1.66045pt too wide) in paragraph at lines 921--921
+[]\TU/lmr/bx/n/10 2017|  
+ []
+
+
+Overfull \hbox (1.66045pt too wide) in paragraph at lines 921--921
+[]\TU/lmr/bx/n/10 2018|  
+ []
+
+
+Overfull \hbox (1.66045pt too wide) in paragraph at lines 921--921
+[]\TU/lmr/bx/n/10 2019|  
+ []
+
+
+Overfull \hbox (1.66045pt too wide) in paragraph at lines 921--921
+[]\TU/lmr/bx/n/10 2020|  
+ []
+
+
+Overfull \hbox (1.66045pt too wide) in paragraph at lines 942--942
+[]\TU/lmr/bx/n/10 2018|  
+ []
+
+
+Overfull \hbox (1.66045pt too wide) in paragraph at lines 942--942
+[]\TU/lmr/bx/n/10 2019|  
+ []
+
+
+Overfull \hbox (1.66045pt too wide) in paragraph at lines 942--942
+[]\TU/lmr/bx/n/10 2020|  
+ []
+
+
+Overfull \hbox (34.20045pt too wide) in paragraph at lines 942--942
+[]\TU/lmr/bx/n/10 Quadriênio|  
+ []
+
+
+Overfull \hbox (1.66045pt too wide) in paragraph at lines 958--958
+[]\TU/lmr/bx/n/10 2017|  
+ []
+
+
+Overfull \hbox (1.66045pt too wide) in paragraph at lines 958--958
+[]\TU/lmr/bx/n/10 2018|  
+ []
+
+
+Overfull \hbox (1.66045pt too wide) in paragraph at lines 958--958
+[]\TU/lmr/bx/n/10 2019|  
+ []
+
+
+Overfull \hbox (1.66045pt too wide) in paragraph at lines 958--958
+[]\TU/lmr/bx/n/10 2020|  
+ []
+
+[30
 
 ]
-Overfull \hbox (1.66045pt too wide) in paragraph at lines 907--907
+Overfull \hbox (1.66045pt too wide) in paragraph at lines 989--989
 []\TU/lmr/bx/n/10 2017|  
  []
 
 
-Overfull \hbox (1.66045pt too wide) in paragraph at lines 907--907
+Overfull \hbox (1.66045pt too wide) in paragraph at lines 989--989
 []\TU/lmr/bx/n/10 2018|  
  []
 
 
-Overfull \hbox (1.66045pt too wide) in paragraph at lines 907--907
+Overfull \hbox (1.66045pt too wide) in paragraph at lines 989--989
 []\TU/lmr/bx/n/10 2019|  
  []
 
 
-Overfull \hbox (1.66045pt too wide) in paragraph at lines 907--907
+Overfull \hbox (1.66045pt too wide) in paragraph at lines 989--989
 []\TU/lmr/bx/n/10 2020|  
  []
 
 
-Overfull \hbox (1.66045pt too wide) in paragraph at lines 926--926
+Overfull \hbox (1.66045pt too wide) in paragraph at lines 1008--1008
 []\TU/lmr/bx/n/10 2017|  
  []
 
 
-Overfull \hbox (1.66045pt too wide) in paragraph at lines 926--926
+Overfull \hbox (1.66045pt too wide) in paragraph at lines 1008--1008
 []\TU/lmr/bx/n/10 2018|  
  []
 
 
-Overfull \hbox (1.66045pt too wide) in paragraph at lines 926--926
+Overfull \hbox (1.66045pt too wide) in paragraph at lines 1008--1008
 []\TU/lmr/bx/n/10 2019|  
  []
 
 
-Overfull \hbox (1.66045pt too wide) in paragraph at lines 926--926
+Overfull \hbox (1.66045pt too wide) in paragraph at lines 1008--1008
 []\TU/lmr/bx/n/10 2020|  
  []
 
 
-Overfull \hbox (1.66045pt too wide) in paragraph at lines 942--942
+Overfull \hbox (1.66045pt too wide) in paragraph at lines 1024--1024
 []\TU/lmr/bx/n/10 2017|  
  []
 
 
-Overfull \hbox (1.66045pt too wide) in paragraph at lines 942--942
+Overfull \hbox (1.66045pt too wide) in paragraph at lines 1024--1024
 []\TU/lmr/bx/n/10 2018|  
  []
 
 
-Overfull \hbox (1.66045pt too wide) in paragraph at lines 942--942
+Overfull \hbox (1.66045pt too wide) in paragraph at lines 1024--1024
 []\TU/lmr/bx/n/10 2019|  
  []
 
 
-Overfull \hbox (1.66045pt too wide) in paragraph at lines 942--942
+Overfull \hbox (1.66045pt too wide) in paragraph at lines 1024--1024
 []\TU/lmr/bx/n/10 2020|  
  []
 
 [31]
-Overfull \hbox (1.66045pt too wide) in paragraph at lines 974--974
+Overfull \hbox (1.66045pt too wide) in paragraph at lines 1056--1056
 []\TU/lmr/bx/n/10 2017|  
  []
 
 
-Overfull \hbox (1.66045pt too wide) in paragraph at lines 974--974
+Overfull \hbox (1.66045pt too wide) in paragraph at lines 1056--1056
 []\TU/lmr/bx/n/10 2018|  
  []
 
 
-Overfull \hbox (1.66045pt too wide) in paragraph at lines 974--974
+Overfull \hbox (1.66045pt too wide) in paragraph at lines 1056--1056
 []\TU/lmr/bx/n/10 2019|  
  []
 
 
-Overfull \hbox (1.66045pt too wide) in paragraph at lines 974--974
+Overfull \hbox (1.66045pt too wide) in paragraph at lines 1056--1056
 []\TU/lmr/bx/n/10 2020|  
  []
 
 
-Overfull \hbox (1.66045pt too wide) in paragraph at lines 993--993
+Overfull \hbox (1.66045pt too wide) in paragraph at lines 1075--1075
 []\TU/lmr/bx/n/10 2017|  
  []
 
 
-Overfull \hbox (1.66045pt too wide) in paragraph at lines 993--993
+Overfull \hbox (1.66045pt too wide) in paragraph at lines 1075--1075
 []\TU/lmr/bx/n/10 2018|  
  []
 
 
-Overfull \hbox (1.66045pt too wide) in paragraph at lines 993--993
+Overfull \hbox (1.66045pt too wide) in paragraph at lines 1075--1075
 []\TU/lmr/bx/n/10 2019|  
  []
 
 
-Overfull \hbox (1.66045pt too wide) in paragraph at lines 993--993
+Overfull \hbox (1.66045pt too wide) in paragraph at lines 1075--1075
 []\TU/lmr/bx/n/10 2020|  
  []
 
 
-Overfull \hbox (1.66045pt too wide) in paragraph at lines 1009--1009
+Overfull \hbox (1.66045pt too wide) in paragraph at lines 1091--1091
 []\TU/lmr/bx/n/10 2017|  
  []
 
 
-Overfull \hbox (1.66045pt too wide) in paragraph at lines 1009--1009
+Overfull \hbox (1.66045pt too wide) in paragraph at lines 1091--1091
 []\TU/lmr/bx/n/10 2018|  
  []
 
 
-Overfull \hbox (1.66045pt too wide) in paragraph at lines 1009--1009
+Overfull \hbox (1.66045pt too wide) in paragraph at lines 1091--1091
 []\TU/lmr/bx/n/10 2019|  
  []
 
 
-Overfull \hbox (1.66045pt too wide) in paragraph at lines 1009--1009
+Overfull \hbox (1.66045pt too wide) in paragraph at lines 1091--1091
 []\TU/lmr/bx/n/10 2020|  
  []
 
 [32]
-Overfull \hbox (1.66045pt too wide) in paragraph at lines 1035--1035
+Overfull \hbox (1.66045pt too wide) in paragraph at lines 1117--1117
 []\TU/lmr/bx/n/10 2017|  
  []
 
 
-Overfull \hbox (1.66045pt too wide) in paragraph at lines 1035--1035
+Overfull \hbox (1.66045pt too wide) in paragraph at lines 1117--1117
 []\TU/lmr/bx/n/10 2018|  
  []
 
 
-Overfull \hbox (1.66045pt too wide) in paragraph at lines 1035--1035
+Overfull \hbox (1.66045pt too wide) in paragraph at lines 1117--1117
 []\TU/lmr/bx/n/10 2019|  
  []
 
 
-Overfull \hbox (1.66045pt too wide) in paragraph at lines 1035--1035
+Overfull \hbox (1.66045pt too wide) in paragraph at lines 1117--1117
 []\TU/lmr/bx/n/10 2020|  
  []
 
 
-Overfull \hbox (15.0944pt too wide) in paragraph at lines 1022--1036
+Overfull \hbox (15.0944pt too wide) in paragraph at lines 1104--1118
  [][] 
  []
 
 [33] [34] [35]
-Overfull \hbox (1.66045pt too wide) in paragraph at lines 1119--1119
+Overfull \hbox (1.66045pt too wide) in paragraph at lines 1201--1201
 []\TU/lmr/bx/n/10 2017|  
  []
 
 
-Overfull \hbox (1.66045pt too wide) in paragraph at lines 1119--1119
+Overfull \hbox (1.66045pt too wide) in paragraph at lines 1201--1201
 []\TU/lmr/bx/n/10 2018|  
  []
 
 
-Overfull \hbox (1.66045pt too wide) in paragraph at lines 1119--1119
+Overfull \hbox (1.66045pt too wide) in paragraph at lines 1201--1201
 []\TU/lmr/bx/n/10 2019|  
  []
 
 
-Overfull \hbox (1.66045pt too wide) in paragraph at lines 1119--1119
+Overfull \hbox (1.66045pt too wide) in paragraph at lines 1201--1201
 []\TU/lmr/bx/n/10 2020|  
  []
 
 [36]
-Overfull \hbox (19.17838pt too wide) in paragraph at lines 1138--1149
+Overfull \hbox (19.17838pt too wide) in paragraph at lines 1220--1231
  [][] 
  []
 
 [37
 
 ]
-Overfull \hbox (19.17752pt too wide) in paragraph at lines 1158--1178
+Overfull \hbox (19.17752pt too wide) in paragraph at lines 1240--1260
  [][] 
  []
 
 [38]
-Overfull \hbox (19.17752pt too wide) in paragraph at lines 1187--1214
+Overfull \hbox (19.17752pt too wide) in paragraph at lines 1269--1296
  [][] 
  []
 
 [39]
-Overfull \hbox (1.66045pt too wide) in paragraph at lines 1254--1254
+Overfull \hbox (1.66045pt too wide) in paragraph at lines 1336--1336
 []\TU/lmr/bx/n/10 2017|  
  []
 
 
-Overfull \hbox (1.66045pt too wide) in paragraph at lines 1254--1254
+Overfull \hbox (1.66045pt too wide) in paragraph at lines 1336--1336
 []\TU/lmr/bx/n/10 2018|  
  []
 
 
-Overfull \hbox (1.66045pt too wide) in paragraph at lines 1254--1254
+Overfull \hbox (1.66045pt too wide) in paragraph at lines 1336--1336
 []\TU/lmr/bx/n/10 2019|  
  []
 
 
-Overfull \hbox (1.66045pt too wide) in paragraph at lines 1254--1254
+Overfull \hbox (1.66045pt too wide) in paragraph at lines 1336--1336
 []\TU/lmr/bx/n/10 2020|  
  []
 
 
-Overfull \hbox (15.0944pt too wide) in paragraph at lines 1228--1255
+Overfull \hbox (15.0944pt too wide) in paragraph at lines 1310--1337
  [][] 
  []
 
 [40
 
 ]
-Underfull \hbox (badness 5274) in paragraph at lines 1295--1295
+Underfull \hbox (badness 5274) in paragraph at lines 1377--1377
 []\TU/lmr/bx/n/10 Processo De Avaliação E
  []
 
 
-Underfull \hbox (badness 2591) in paragraph at lines 1295--1295
+Underfull \hbox (badness 2591) in paragraph at lines 1377--1377
 []\TU/lmr/bx/n/10 Processos De Avaliação E
  []
 
 
-Underfull \hbox (badness 1092) in paragraph at lines 1295--1295
+Underfull \hbox (badness 1092) in paragraph at lines 1377--1377
 []\TU/lmr/bx/n/10 Ana Paula Magalhaes Resende
  []
 
 
-Underfull \hbox (badness 4699) in paragraph at lines 1295--1295
+Underfull \hbox (badness 4699) in paragraph at lines 1377--1377
 []\TU/lmr/bx/n/10 Isabel Aparecida Porcatti De
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1295--1295
+Underfull \hbox (badness 10000) in paragraph at lines 1377--1377
 []\TU/lmr/bx/n/10 Luciane Aparecida Pascucci
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1295--1295
+Underfull \hbox (badness 10000) in paragraph at lines 1377--1377
 []\TU/lmr/bx/n/10 Luciane Fernanda Rodrigues
  []
 
 
-Underfull \hbox (badness 5274) in paragraph at lines 1295--1295
+Underfull \hbox (badness 5274) in paragraph at lines 1377--1377
 []\TU/lmr/bx/n/10 Processo De Avaliação E
  []
 
 
-Underfull \hbox (badness 2591) in paragraph at lines 1295--1295
+Underfull \hbox (badness 2591) in paragraph at lines 1377--1377
 []\TU/lmr/bx/n/10 Processos De Avaliação E
  []
 
 
-Underfull \hbox (badness 1092) in paragraph at lines 1295--1295
+Underfull \hbox (badness 1092) in paragraph at lines 1377--1377
 []\TU/lmr/bx/n/10 Ana Paula Magalhaes Resende
  []
 
 
-Underfull \hbox (badness 4699) in paragraph at lines 1295--1295
+Underfull \hbox (badness 4699) in paragraph at lines 1377--1377
 []\TU/lmr/bx/n/10 Isabel Aparecida Porcatti De
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1295--1295
+Underfull \hbox (badness 10000) in paragraph at lines 1377--1377
 []\TU/lmr/bx/n/10 Luciane Aparecida Pascucci
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1295--1295
+Underfull \hbox (badness 10000) in paragraph at lines 1377--1377
 []\TU/lmr/bx/n/10 Luciane Fernanda Rodrigues
  []
 
@@ -3352,67 +3441,67 @@ Underfull \hbox (badness 10000) in paragraph at lines 1295--1295
 
 
 ] [43]
-Overfull \hbox (8.84317pt too wide) in paragraph at lines 1419--1419
+Overfull \hbox (8.84317pt too wide) in paragraph at lines 1501--1501
 []\TU/lmr/m/n/10 2017|  
  []
 
 
-Overfull \hbox (8.84317pt too wide) in paragraph at lines 1419--1419
+Overfull \hbox (8.84317pt too wide) in paragraph at lines 1501--1501
 []\TU/lmr/m/n/10 2018|  
  []
 
 
-Overfull \hbox (8.84317pt too wide) in paragraph at lines 1419--1419
+Overfull \hbox (8.84317pt too wide) in paragraph at lines 1501--1501
 []\TU/lmr/m/n/10 2019|  
  []
 
 
-Overfull \hbox (8.84317pt too wide) in paragraph at lines 1419--1419
+Overfull \hbox (8.84317pt too wide) in paragraph at lines 1501--1501
 []\TU/lmr/m/n/10 2020|  
  []
 
 
-Overfull \hbox (8.84317pt too wide) in paragraph at lines 1419--1419
+Overfull \hbox (8.84317pt too wide) in paragraph at lines 1501--1501
 []\TU/lmr/m/n/10 2017|  
  []
 
 
-Overfull \hbox (8.84317pt too wide) in paragraph at lines 1419--1419
+Overfull \hbox (8.84317pt too wide) in paragraph at lines 1501--1501
 []\TU/lmr/m/n/10 2018|  
  []
 
 
-Overfull \hbox (8.84317pt too wide) in paragraph at lines 1419--1419
+Overfull \hbox (8.84317pt too wide) in paragraph at lines 1501--1501
 []\TU/lmr/m/n/10 2019|  
  []
 
 
-Overfull \hbox (8.84317pt too wide) in paragraph at lines 1419--1419
+Overfull \hbox (8.84317pt too wide) in paragraph at lines 1501--1501
 []\TU/lmr/m/n/10 2020|  
  []
 
 
-Overfull \hbox (8.84317pt too wide) in paragraph at lines 1419--1419
+Overfull \hbox (8.84317pt too wide) in paragraph at lines 1501--1501
 []\TU/lmr/m/n/10 2017|  
  []
 
 
-Overfull \hbox (8.84317pt too wide) in paragraph at lines 1419--1419
+Overfull \hbox (8.84317pt too wide) in paragraph at lines 1501--1501
 []\TU/lmr/m/n/10 2018|  
  []
 
 
-Overfull \hbox (8.84317pt too wide) in paragraph at lines 1419--1419
+Overfull \hbox (8.84317pt too wide) in paragraph at lines 1501--1501
 []\TU/lmr/m/n/10 2019|  
  []
 
 
-Overfull \hbox (8.84317pt too wide) in paragraph at lines 1419--1419
+Overfull \hbox (8.84317pt too wide) in paragraph at lines 1501--1501
 []\TU/lmr/m/n/10 2020|  
  []
 
 
-Overfull \hbox (3.10945pt too wide) in paragraph at lines 1390--1420
+Overfull \hbox (3.10945pt too wide) in paragraph at lines 1472--1502
  [][] 
  []
 
@@ -3420,181 +3509,181 @@ Overfull \hbox (3.10945pt too wide) in paragraph at lines 1390--1420
 
 
 ] [45]
-Overfull \hbox (37.73654pt too wide) in paragraph at lines 1467--1496
+Overfull \hbox (37.73654pt too wide) in paragraph at lines 1549--1578
  [][] 
  []
 
 [46] [47
 
 ] [48]
-Overfull \hbox (1.66045pt too wide) in paragraph at lines 1567--1567
+Overfull \hbox (1.66045pt too wide) in paragraph at lines 1649--1649
 []\TU/lmr/bx/n/10 2017|  
  []
 
 
-Overfull \hbox (1.66045pt too wide) in paragraph at lines 1567--1567
+Overfull \hbox (1.66045pt too wide) in paragraph at lines 1649--1649
 []\TU/lmr/bx/n/10 2018|  
  []
 
 
-Overfull \hbox (1.66045pt too wide) in paragraph at lines 1567--1567
+Overfull \hbox (1.66045pt too wide) in paragraph at lines 1649--1649
 []\TU/lmr/bx/n/10 2019|  
  []
 
 
-Overfull \hbox (1.66045pt too wide) in paragraph at lines 1567--1567
+Overfull \hbox (1.66045pt too wide) in paragraph at lines 1649--1649
 []\TU/lmr/bx/n/10 2020|  
  []
 
 
-Overfull \hbox (27.09439pt too wide) in paragraph at lines 1523--1568
+Overfull \hbox (27.09439pt too wide) in paragraph at lines 1605--1650
  [][] 
  []
 
 [49]
-Overfull \hbox (15.09442pt too wide) in paragraph at lines 1581--1631
+Overfull \hbox (15.09442pt too wide) in paragraph at lines 1663--1713
  [][] 
  []
 
 [50] [51
 
 ]
-Underfull \hbox (badness 1178) in paragraph at lines 1681--1681
+Underfull \hbox (badness 1178) in paragraph at lines 1763--1763
 \TU/lmr/m/n/10 tional, Randomised, Open-Label, Blinded-
  []
 
 
-Underfull \hbox (badness 1178) in paragraph at lines 1681--1681
+Underfull \hbox (badness 1178) in paragraph at lines 1763--1763
 \TU/lmr/m/n/10 tional, Randomised, Open-Label, Blinded-
  []
 
 [52]
-Underfull \hbox (badness 1466) in paragraph at lines 1720--1720
+Underfull \hbox (badness 1466) in paragraph at lines 1802--1802
 []\TU/lmr/m/n/10 Music-Based Physical Therapy In Parkin-
  []
 
 
-Underfull \hbox (badness 1466) in paragraph at lines 1720--1720
+Underfull \hbox (badness 1466) in paragraph at lines 1802--1802
 []\TU/lmr/m/n/10 Music-Based Physical Therapy In Parkin-
  []
 
 [53] [54]
-Underfull \hbox (badness 1082) in paragraph at lines 1747--1747
+Underfull \hbox (badness 1082) in paragraph at lines 1829--1829
 []\TU/lmr/m/n/10 Water- Versus Land-Based Treatment For
  []
 
 
-Underfull \hbox (badness 1082) in paragraph at lines 1747--1747
+Underfull \hbox (badness 1082) in paragraph at lines 1829--1829
 []\TU/lmr/m/n/10 Water- Versus Land-Based Treatment For
  []
 
 [55]
-Underfull \hbox (badness 1178) in paragraph at lines 1771--1771
+Underfull \hbox (badness 1178) in paragraph at lines 1853--1853
 \TU/lmr/m/n/10 tional, Randomised, Open-Label, Blinded-
  []
 
 
-Underfull \hbox (badness 1178) in paragraph at lines 1771--1771
+Underfull \hbox (badness 1178) in paragraph at lines 1853--1853
 \TU/lmr/m/n/10 tional, Randomised, Open-Label, Blinded-
  []
 
 [56]
-Underfull \hbox (badness 2111) in paragraph at lines 1813--1813
+Underfull \hbox (badness 2111) in paragraph at lines 1895--1895
 \TU/lmr/m/n/10 Anterior Temporalis Muscles In Children
  []
 
 
-Underfull \hbox (badness 1082) in paragraph at lines 1813--1813
+Underfull \hbox (badness 1082) in paragraph at lines 1895--1895
 []\TU/lmr/m/n/10 Water- Versus Land-Based Treatment For
  []
 
 
-Overfull \hbox (18.03104pt too wide) in paragraph at lines 1813--1813
+Overfull \hbox (18.03104pt too wide) in paragraph at lines 1895--1895
 []\TU/lmr/m/n/10 10.1016/j.jstrokecerebrovasdis.2017.12.028 
  []
 
 
-Underfull \hbox (badness 3407) in paragraph at lines 1813--1813
+Underfull \hbox (badness 3407) in paragraph at lines 1895--1895
 []\TU/lmr/m/n/10 Can Abdominal Hypropressive Technique
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1813--1813
+Underfull \hbox (badness 10000) in paragraph at lines 1895--1895
 \TU/lmr/m/n/10 Assessor-Blinded Randomized Controlled
  []
 
 
-Underfull \hbox (badness 2111) in paragraph at lines 1813--1813
+Underfull \hbox (badness 2111) in paragraph at lines 1895--1895
 \TU/lmr/m/n/10 Anterior Temporalis Muscles In Children
  []
 
 
-Underfull \hbox (badness 1082) in paragraph at lines 1813--1813
+Underfull \hbox (badness 1082) in paragraph at lines 1895--1895
 []\TU/lmr/m/n/10 Water- Versus Land-Based Treatment For
  []
 
 [57]
-Overfull \hbox (18.03104pt too wide) in paragraph at lines 1813--1813
+Overfull \hbox (18.03104pt too wide) in paragraph at lines 1895--1895
 []\TU/lmr/m/n/10 10.1016/j.jstrokecerebrovasdis.2017.12.028 
  []
 
 
-Underfull \hbox (badness 3407) in paragraph at lines 1813--1813
+Underfull \hbox (badness 3407) in paragraph at lines 1895--1895
 []\TU/lmr/m/n/10 Can Abdominal Hypropressive Technique
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1813--1813
+Underfull \hbox (badness 10000) in paragraph at lines 1895--1895
 \TU/lmr/m/n/10 Assessor-Blinded Randomized Controlled
  []
 
 [58]
-Underfull \hbox (badness 3407) in paragraph at lines 1849--1849
+Underfull \hbox (badness 3407) in paragraph at lines 1931--1931
 []\TU/lmr/m/n/10 Can Abdominal Hypropressive Technique
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1849--1849
+Underfull \hbox (badness 10000) in paragraph at lines 1931--1931
 \TU/lmr/m/n/10 Assessor-Blinded Randomized Controlled
  []
 
 
-Underfull \hbox (badness 1082) in paragraph at lines 1849--1849
+Underfull \hbox (badness 1082) in paragraph at lines 1931--1931
 []\TU/lmr/m/n/10 Water- Versus Land-Based Treatment For
  []
 
 
-Underfull \hbox (badness 2111) in paragraph at lines 1849--1849
+Underfull \hbox (badness 2111) in paragraph at lines 1931--1931
 \TU/lmr/m/n/10 Anterior Temporalis Muscles In Children
  []
 
 
-Overfull \hbox (18.03104pt too wide) in paragraph at lines 1849--1849
+Overfull \hbox (18.03104pt too wide) in paragraph at lines 1931--1931
 []\TU/lmr/m/n/10 10.1016/j.jstrokecerebrovasdis.2017.12.028 
  []
 
 
-Underfull \hbox (badness 3407) in paragraph at lines 1849--1849
+Underfull \hbox (badness 3407) in paragraph at lines 1931--1931
 []\TU/lmr/m/n/10 Can Abdominal Hypropressive Technique
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1849--1849
+Underfull \hbox (badness 10000) in paragraph at lines 1931--1931
 \TU/lmr/m/n/10 Assessor-Blinded Randomized Controlled
  []
 
 
-Underfull \hbox (badness 1082) in paragraph at lines 1849--1849
+Underfull \hbox (badness 1082) in paragraph at lines 1931--1931
 []\TU/lmr/m/n/10 Water- Versus Land-Based Treatment For
  []
 
 [59]
-Underfull \hbox (badness 2111) in paragraph at lines 1849--1849
+Underfull \hbox (badness 2111) in paragraph at lines 1931--1931
 \TU/lmr/m/n/10 Anterior Temporalis Muscles In Children
  []
 
 
-Overfull \hbox (18.03104pt too wide) in paragraph at lines 1849--1849
+Overfull \hbox (18.03104pt too wide) in paragraph at lines 1931--1931
 []\TU/lmr/m/n/10 10.1016/j.jstrokecerebrovasdis.2017.12.028 
  []
 
@@ -3607,104 +3696,104 @@ File: site.png Graphic file (type bmp)
 File: observatorio.png Graphic file (type bmp)
 <observatorio.png>
 [63]
-Underfull \hbox (badness 8000) in paragraph at lines 2009--2009
+Underfull \hbox (badness 8000) in paragraph at lines 2091--2091
 []\TU/lmr/m/n/10 FUNDAÇÃO UNIVERSIDADE FEDERAL DE MATO
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2009--2009
+Underfull \hbox (badness 10000) in paragraph at lines 2091--2091
 []\TU/lmr/m/n/10 Co-Autor, Examinador Ex-
  []
 
 [64
 
 ]
-Underfull \hbox (badness 8000) in paragraph at lines 2009--2009
+Underfull \hbox (badness 8000) in paragraph at lines 2091--2091
 []\TU/lmr/m/n/10 FUNDAÇÃO UNIVERSIDADE FEDERAL DE MATO
  []
 
 [65] [66]
-Underfull \hbox (badness 10000) in paragraph at lines 2009--2009
+Underfull \hbox (badness 10000) in paragraph at lines 2091--2091
 []\TU/lmr/m/n/10 Co-Autor, Examinador Ex-
  []
 
 [67] [68]
-Underfull \hbox (badness 10000) in paragraph at lines 2037--2037
+Underfull \hbox (badness 10000) in paragraph at lines 2119--2119
 []\TU/lmr/bx/n/10 Ano
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2037--2037
+Underfull \hbox (badness 10000) in paragraph at lines 2119--2119
 \TU/lmr/bx/n/10 (iní-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2037--2037
+Underfull \hbox (badness 10000) in paragraph at lines 2119--2119
 []\TU/lmr/bx/n/10 Ano
  []
 
 
-Underfull \hbox (badness 5374) in paragraph at lines 2037--2037
+Underfull \hbox (badness 5374) in paragraph at lines 2119--2119
 []\TU/lmr/m/n/10 LUCIANE FERNANDA RODRI-
  []
 
 
-Underfull \hbox (badness 5374) in paragraph at lines 2037--2037
+Underfull \hbox (badness 5374) in paragraph at lines 2119--2119
 []\TU/lmr/m/n/10 LUCIANE FERNANDA RODRI-
  []
 
 
-Underfull \hbox (badness 5374) in paragraph at lines 2037--2037
+Underfull \hbox (badness 5374) in paragraph at lines 2119--2119
 []\TU/lmr/m/n/10 LUCIANE FERNANDA RODRI-
  []
 
 
-Underfull \hbox (badness 3199) in paragraph at lines 2037--2037
+Underfull \hbox (badness 3199) in paragraph at lines 2119--2119
 []\TU/lmr/m/n/10 DANIEL FERREIRA MOREIRA
  []
 
 
-Underfull \hbox (badness 2591) in paragraph at lines 2037--2037
+Underfull \hbox (badness 2591) in paragraph at lines 2119--2119
 []\TU/lmr/m/n/10 International Journal of Environ-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2037--2037
+Underfull \hbox (badness 10000) in paragraph at lines 2119--2119
 []\TU/lmr/bx/n/10 Ano
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2037--2037
+Underfull \hbox (badness 10000) in paragraph at lines 2119--2119
 \TU/lmr/bx/n/10 (iní-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2037--2037
+Underfull \hbox (badness 10000) in paragraph at lines 2119--2119
 []\TU/lmr/bx/n/10 Ano
  []
 
 
-Underfull \hbox (badness 5374) in paragraph at lines 2037--2037
+Underfull \hbox (badness 5374) in paragraph at lines 2119--2119
 []\TU/lmr/m/n/10 LUCIANE FERNANDA RODRI-
  []
 
 
-Underfull \hbox (badness 5374) in paragraph at lines 2037--2037
+Underfull \hbox (badness 5374) in paragraph at lines 2119--2119
 []\TU/lmr/m/n/10 LUCIANE FERNANDA RODRI-
  []
 
 
-Underfull \hbox (badness 5374) in paragraph at lines 2037--2037
+Underfull \hbox (badness 5374) in paragraph at lines 2119--2119
 []\TU/lmr/m/n/10 LUCIANE FERNANDA RODRI-
  []
 
 
-Underfull \hbox (badness 3199) in paragraph at lines 2037--2037
+Underfull \hbox (badness 3199) in paragraph at lines 2119--2119
 []\TU/lmr/m/n/10 DANIEL FERREIRA MOREIRA
  []
 
 
-Underfull \hbox (badness 2591) in paragraph at lines 2037--2037
+Underfull \hbox (badness 2591) in paragraph at lines 2119--2119
 []\TU/lmr/m/n/10 International Journal of Environ-
  []
 
@@ -3718,10 +3807,10 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 49678 strings out of 468174
- 1046091 string characters out of 5433151
- 1714803 words of memory out of 5000000
- 77758 multiletter control sequences out of 15000+600000
+ 49679 strings out of 468174
+ 1046114 string characters out of 5433150
+ 1714895 words of memory out of 5000000
+ 77759 multiletter control sequences out of 15000+600000
  631776 words of font info for 79 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  99i,19n,126p,1212b,6873s stack positions out of 10000i,1000n,20000p,200000b,200000s

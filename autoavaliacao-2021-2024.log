@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2026.2.9)  11 FEB 2026 10:40
+This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2026.2.16)  22 FEB 2026 16:15
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -597,7 +597,7 @@ Package graphics Info: Driver file: xetex.def on input line 106.
 )
 \pandoc@box=\box64
 (/usr/local/texlive/2025/texmf-dist/tex/generic/babel/babel.sty
-Package: babel 2026/01/26 v26.2 The multilingual framework for LuaLaTeX, pdfLaT
+Package: babel 2026/02/14 v26.3 The multilingual framework for LuaLaTeX, pdfLaT
 eX and XeLaTeX
 \babel@savecnt=\count327
 LaTeX Encoding Info:    Redeclaring text command \ij (encoding OT1) on input li
@@ -1578,6 +1578,15 @@ Package: xurl 2022/01/09 v 0.10 modify URL breaks
 Package babel Info: 'brazilian' activates 'portuges' shorthands.
 (babel)             Reported on input line 8.
 
+LaTeX Warning: Label `tab:2-1-2-list-tables' multiply defined.
+
+
+LaTeX Warning: Label `tab:2-1-2-list-tables' multiply defined.
+
+
+LaTeX Warning: Label `tab:2-1-2-list-tables' multiply defined.
+
+
 LaTeX Warning: Label `tab:2-2-1-list-tables' multiply defined.
 
 
@@ -2255,29 +2264,34 @@ Underfull \hbox (badness 5787) in paragraph at lines 844--844
 []\TU/lmr/bx/n/10 Processo De Avaliação E
  []
 
-[23] [24
+[23]
+Overfull \hbox (27.08727pt too wide) in paragraph at lines 913--913
+[]\TU/lmr/bx/n/10 Quadriênio|  
+ []
+
+[24
 
 ] [25] [26]
-Overfull \hbox (3.09442pt too wide) in paragraph at lines 990--1004
+Overfull \hbox (3.09442pt too wide) in paragraph at lines 1072--1086
  [][] 
  []
 
 [27] [28] [29] [30] [31
 
 ] [32] [33]
-Overfull \hbox (3.09442pt too wide) in paragraph at lines 1190--1218
+Overfull \hbox (3.09442pt too wide) in paragraph at lines 1272--1300
  [][] 
  []
 
 [34
 
 ]
-Underfull \hbox (badness 7047) in paragraph at lines 1259--1259
+Underfull \hbox (badness 7047) in paragraph at lines 1341--1341
 []\TU/lmr/bx/n/10 Isabel Aparecida Porcatti De
  []
 
 
-Underfull \hbox (badness 7047) in paragraph at lines 1259--1259
+Underfull \hbox (badness 7047) in paragraph at lines 1341--1341
 []\TU/lmr/bx/n/10 Isabel Aparecida Porcatti De
  []
 
@@ -2287,52 +2301,52 @@ Underfull \hbox (badness 7047) in paragraph at lines 1259--1259
 
 
 ] [37]
-Overfull \hbox (5.20757pt too wide) in paragraph at lines 1386--1386
+Overfull \hbox (5.20757pt too wide) in paragraph at lines 1468--1468
 []\TU/lmr/m/n/10 2021|  
  []
 
 
-Overfull \hbox (5.20757pt too wide) in paragraph at lines 1386--1386
+Overfull \hbox (5.20757pt too wide) in paragraph at lines 1468--1468
 []\TU/lmr/m/n/10 2022|  
  []
 
 
-Overfull \hbox (5.20757pt too wide) in paragraph at lines 1386--1386
+Overfull \hbox (5.20757pt too wide) in paragraph at lines 1468--1468
 []\TU/lmr/m/n/10 2023|  
  []
 
 
-Overfull \hbox (5.20757pt too wide) in paragraph at lines 1386--1386
+Overfull \hbox (5.20757pt too wide) in paragraph at lines 1468--1468
 []\TU/lmr/m/n/10 2021|  
  []
 
 
-Overfull \hbox (5.20757pt too wide) in paragraph at lines 1386--1386
+Overfull \hbox (5.20757pt too wide) in paragraph at lines 1468--1468
 []\TU/lmr/m/n/10 2022|  
  []
 
 
-Overfull \hbox (5.20757pt too wide) in paragraph at lines 1386--1386
+Overfull \hbox (5.20757pt too wide) in paragraph at lines 1468--1468
 []\TU/lmr/m/n/10 2023|  
  []
 
 
-Overfull \hbox (5.20757pt too wide) in paragraph at lines 1386--1386
+Overfull \hbox (5.20757pt too wide) in paragraph at lines 1468--1468
 []\TU/lmr/m/n/10 2021|  
  []
 
 
-Overfull \hbox (5.20757pt too wide) in paragraph at lines 1386--1386
+Overfull \hbox (5.20757pt too wide) in paragraph at lines 1468--1468
 []\TU/lmr/m/n/10 2022|  
  []
 
 
-Overfull \hbox (5.20757pt too wide) in paragraph at lines 1386--1386
+Overfull \hbox (5.20757pt too wide) in paragraph at lines 1468--1468
 []\TU/lmr/m/n/10 2023|  
  []
 
 
-Overfull \hbox (3.10945pt too wide) in paragraph at lines 1356--1387
+Overfull \hbox (3.10945pt too wide) in paragraph at lines 1438--1469
  [][] 
  []
 
@@ -2340,46 +2354,46 @@ Overfull \hbox (3.10945pt too wide) in paragraph at lines 1356--1387
 
 
 ] [39]
-Overfull \hbox (19.17883pt too wide) in paragraph at lines 1435--1465
+Overfull \hbox (19.17883pt too wide) in paragraph at lines 1517--1547
  [][] 
  []
 
 [40] [41
 
 ] [42]
-Overfull \hbox (15.0944pt too wide) in paragraph at lines 1492--1535
+Overfull \hbox (15.0944pt too wide) in paragraph at lines 1574--1617
  [][] 
  []
 
 [43] [44] [45
 
 ] [46]
-Underfull \hbox (badness 1515) in paragraph at lines 1684--1684
+Underfull \hbox (badness 1515) in paragraph at lines 1766--1766
 \TU/lmr/m/n/10 Validation Of The Cincinnati Prehospital
  []
 
 
-Underfull \hbox (badness 1515) in paragraph at lines 1684--1684
+Underfull \hbox (badness 1515) in paragraph at lines 1766--1766
 \TU/lmr/m/n/10 Validation Of The Cincinnati Prehospital
  []
 
 [47] [48]
-Underfull \hbox (badness 1515) in paragraph at lines 1732--1732
+Underfull \hbox (badness 1515) in paragraph at lines 1814--1814
 \TU/lmr/m/n/10 Validation Of The Cincinnati Prehospital
  []
 
 
-Underfull \hbox (badness 1515) in paragraph at lines 1732--1732
+Underfull \hbox (badness 1515) in paragraph at lines 1814--1814
 \TU/lmr/m/n/10 Validation Of The Cincinnati Prehospital
  []
 
 [49] [50]
-Underfull \hbox (badness 1515) in paragraph at lines 1766--1766
+Underfull \hbox (badness 1515) in paragraph at lines 1848--1848
 \TU/lmr/m/n/10 Validation Of The Cincinnati Prehospital
  []
 
 
-Underfull \hbox (badness 1515) in paragraph at lines 1766--1766
+Underfull \hbox (badness 1515) in paragraph at lines 1848--1848
 \TU/lmr/m/n/10 Validation Of The Cincinnati Prehospital
  []
 
@@ -2392,84 +2406,84 @@ File: site.png Graphic file (type bmp)
 File: observatorio.png Graphic file (type bmp)
 <observatorio.png>
 [55]
-Underfull \hbox (badness 8000) in paragraph at lines 1934--1934
+Underfull \hbox (badness 8000) in paragraph at lines 2016--2016
 []\TU/lmr/m/n/10 FUNDAÇÃO UNIVERSIDADE FEDERAL DE MATO
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1934--1934
+Underfull \hbox (badness 10000) in paragraph at lines 2016--2016
 []\TU/lmr/m/n/10 Co-Autor, Examinador Ex-
  []
 
 
-Underfull \hbox (badness 8000) in paragraph at lines 1934--1934
+Underfull \hbox (badness 8000) in paragraph at lines 2016--2016
 []\TU/lmr/m/n/10 FUNDAÇÃO UNIVERSIDADE FEDERAL DE MATO
  []
 
 [56
 
 ] [57] [58]
-Underfull \hbox (badness 10000) in paragraph at lines 1934--1934
+Underfull \hbox (badness 10000) in paragraph at lines 2016--2016
 []\TU/lmr/m/n/10 Co-Autor, Examinador Ex-
  []
 
 [59] [60] [61]
-Underfull \hbox (badness 10000) in paragraph at lines 1957--1957
+Underfull \hbox (badness 10000) in paragraph at lines 2039--2039
 []\TU/lmr/bx/n/10 Ano
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1957--1957
+Underfull \hbox (badness 10000) in paragraph at lines 2039--2039
 \TU/lmr/bx/n/10 (iní-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1957--1957
+Underfull \hbox (badness 10000) in paragraph at lines 2039--2039
 []\TU/lmr/bx/n/10 Ano
  []
 
 
-Underfull \hbox (badness 5374) in paragraph at lines 1957--1957
+Underfull \hbox (badness 5374) in paragraph at lines 2039--2039
 []\TU/lmr/m/n/10 LUCIANE FERNANDA RODRI-
  []
 
 
-Underfull \hbox (badness 5374) in paragraph at lines 1957--1957
+Underfull \hbox (badness 5374) in paragraph at lines 2039--2039
 []\TU/lmr/m/n/10 LUCIANE FERNANDA RODRI-
  []
 
 
-Underfull \hbox (badness 5374) in paragraph at lines 1957--1957
+Underfull \hbox (badness 5374) in paragraph at lines 2039--2039
 []\TU/lmr/m/n/10 LUCIANE FERNANDA RODRI-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1957--1957
+Underfull \hbox (badness 10000) in paragraph at lines 2039--2039
 []\TU/lmr/bx/n/10 Ano
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1957--1957
+Underfull \hbox (badness 10000) in paragraph at lines 2039--2039
 \TU/lmr/bx/n/10 (iní-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1957--1957
+Underfull \hbox (badness 10000) in paragraph at lines 2039--2039
 []\TU/lmr/bx/n/10 Ano
  []
 
 
-Underfull \hbox (badness 5374) in paragraph at lines 1957--1957
+Underfull \hbox (badness 5374) in paragraph at lines 2039--2039
 []\TU/lmr/m/n/10 LUCIANE FERNANDA RODRI-
  []
 
 
-Underfull \hbox (badness 5374) in paragraph at lines 1957--1957
+Underfull \hbox (badness 5374) in paragraph at lines 2039--2039
 []\TU/lmr/m/n/10 LUCIANE FERNANDA RODRI-
  []
 
 
-Underfull \hbox (badness 5374) in paragraph at lines 1957--1957
+Underfull \hbox (badness 5374) in paragraph at lines 2039--2039
 []\TU/lmr/m/n/10 LUCIANE FERNANDA RODRI-
  []
 
@@ -2483,10 +2497,10 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 49662 strings out of 468174
- 1046195 string characters out of 5433151
- 1727769 words of memory out of 5000000
- 77742 multiletter control sequences out of 15000+600000
+ 49663 strings out of 468174
+ 1046218 string characters out of 5433150
+ 1727861 words of memory out of 5000000
+ 77743 multiletter control sequences out of 15000+600000
  631776 words of font info for 79 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  99i,19n,126p,1212b,6837s stack positions out of 10000i,1000n,20000p,200000b,200000s
